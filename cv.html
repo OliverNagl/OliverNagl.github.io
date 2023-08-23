@@ -13,7 +13,103 @@
 </head>
 <body>
     <div class="latex">
-        \( \LaTeX \) code: \( E = mc^2 \)
+        \documentclass[11pt,a4paper,sans]{moderncv} % Font sizes: 10, 11, or 12; paper sizes: a4paper, letterpaper, a5paper, legalpaper, executivepaper or landscape; font families: sans or roman
+
+        \moderncvstyle{casual} % CV theme - options include: 'casual' (default), 'classic', 'oldstyle' and 'banking'
+        \moderncvcolor{blue} % CV color - options include: 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+        
+        \usepackage{lipsum} % Used for inserting dummy 'Lorem ipsum' text into the template
+        
+        \usepackage[scale=0.75]{geometry} % Reduce document margins
+
+        \firstname{Oliver} % Your first name
+        \familyname{Nagl} % Your last name
+
+
+        \title{Curriculum Vitae}
+        \address{Moussonstrasse 17}{Zürich}
+        \mobile{CH: +41 77 2773209 AT: +43 660 4183299}
+        \email{olnagl@student.ethz.ch}
+        \homepage{https://www.linkedin.com/in/oliver-nagl-41a40a1b0/}{LinkedIn/OliverNagl} 
+
+        \photo[70pt][0.4pt]{20220824_204209.jpg} 
+        \quote{"The better we get at getting better, the faster we will get better." - Douglas Engelbart}
+
+        \begin{document}
+
+
+
+        \makecvtitle % Print the CV title
+
+        \section{Education}
+
+        \cventry{2022--now}{BSc in Interdisciplinary Sciences}{Swiss federal institute of technology}{Zurich}{}{}  % Arguments not required can be left empty
+        \cventry{2021--2022}{One year of the Bsc Artificial Intelligence curriculum}{Johannes Kepler University}{Linz}{\textit{GPA -- 2}}{}
+
+        \cventry{2016--2021}{Higher School Certificate in Chemical Engineering}{HTL Wels department for Chemistry}{Wels}{\textit{GPA -- 1.1}}{}
+
+        \section{Experience}
+
+        \subsection{Vocational}
+
+        \cventry{08/2020--09/2020}{Intern in the department of research and development}{\textsc{Borealis Polyolefine GmbH}}{Linz}{}{Writing of my diploma thesis for my graduation at HTL Wels in the department for research and development at Borealis Agrolinz Melamine.
+        \newline{}\newline{}
+        Detailed achievements:
+        \begin{itemize}
+        \item First experiences with scientific writing
+        \item learned how to work in an research and development team
+        \item learned how to use different rheometers common in industry
+        \newline{}\newline{}
+        \end{itemize}}
+
+        \cventry{07/2019--08/2019}{Intern in the department of quality management}{\textsc{SKF Austria AG}}{Steyr}{}{Using routine analysis of waste water and 
+        oils used in production to guarantee GMP complience. 
+        \newline{}\newline{}
+        Detailed achievements:
+        \begin{itemize}
+        \item familiarised myself with common (bio-)analytical methods of the industry
+        \newline{}\newline{}
+        \end{itemize}}
+
+        \cventry{08/2018--09/2018}{Intern in the laboratory for water analysis}{\textsc{Vorwagner Kreislaufwirtschaft GmbH}}{Pinsdorf}{}{Analysis of industry waste water for later treatment.
+        \newline{}\newline{}
+        Detailed achievements:
+        \begin{itemize}
+        \item learning how to use and process information from ICP-AES
+        \item learning how to use UV-VIS spectroscopy in the water industry context
+        \item experiences with industry water treatment
+        \newline{}\newline{}
+        \end{itemize}}
+
+
+        \subsection{Miscellaneous}
+
+        \cventry{02/2022--06/2022}{Personal assistant in the work place}{WAG Assistenzgenossenschaft}{St. Valentin}{}{Part time job as personal assistant next to my studies at JKU Linz. Helping people with disabilities in their day to day activities at work and after work.\newline{}\newline{}}
+
+        \cventry{06/2021--09/2021}{Shift worker in chemical industry}{ESIM Chemicals}{Linz}{}{Employee in the production of various chemicals. (Shift work)}
+
+
+        \section{Computer skills}
+
+        \cvitem{Basic}{\textsc{HTML}, \textsc{CSS}, \texttt{C++}}
+        \cvitem{Intermediate}{\LaTeX, \textsc{R},  Microsoft Office, Microsoft Windows}
+        \cvitem{Advanced}{\textsc{python}}
+
+        \section{Languages}
+
+        \cvitemwithcomment{German}{Mothertongue}{}
+        \cvitemwithcomment{English}{Intermediate}{Conversationally fluent -- B2}
+
+
+        \section{Interests}
+
+        \renewcommand{\listitemsymbol}{-~} % Changes the symbol used for lists
+
+        \cvlistdoubleitem{Piano}{Chess}
+        \cvlistdoubleitem{Running}{Skiing}
+
+        \cvlistitem{Member of the local volunteering fire brigade}
+        \end{document}
     </div>
     <!-- Add more details as needed -->
 </body>
