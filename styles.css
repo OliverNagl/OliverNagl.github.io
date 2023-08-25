@@ -19,6 +19,7 @@ p {
     text-align: justify;
     text-align: center;
     font-size: 14px;
+    margin: 20px auto;
 }
 h1 {
     color: #333;
