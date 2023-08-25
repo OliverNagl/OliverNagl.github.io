@@ -145,5 +145,6 @@ document.addEventListener('keydown', function(e) {
 // start the game
 canvas.addEventListener('click', function() {
     gameStarted = true;
+    document.getElementById('playButton').style.display = 'none';
     loop();
   });
