@@ -1,7 +1,7 @@
 .tile {
     width: 250px;
-    height: 200px;
-    margin: 15px auto;
+    height: 150px;
+    margin: 5px auto;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
