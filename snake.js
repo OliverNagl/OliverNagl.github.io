@@ -25,6 +25,9 @@ var apple = {
   y: 320
 };
 
+var appleImage = new Image();
+appleImage.src = 'ETM.png';
+
 // get random whole numbers in a specific range
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -38,7 +41,7 @@ function loop() {
   requestAnimationFrame(loop);
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
   
-  if (++count < 10) {
+  if (++count < 7) {
     return;
   }
 
@@ -49,20 +52,18 @@ function loop() {
   snake.x += snake.dx;
   snake.y += snake.dy;
 
-  // wrap snake position horizontally on edge of screen
-  if (snake.x < 0) {
-    snake.x = canvas.width - grid;
-  }
-  else if (snake.x >= canvas.width) {
-    snake.x = 0;
-  }
-  
-  // wrap snake position vertically on edge of screen
-  if (snake.y < 0) {
-    snake.y = canvas.height - grid;
-  }
-  else if (snake.y >= canvas.height) {
-    snake.y = 0;
+  //collision
+  if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
+    gameStarted = false;
+    snake.x = 160;
+    snake.y = 160;
+    snake.cells = [];
+    snake.maxCells = 4;
+    snake.dx = grid;
+    snake.dy = 0;
+    apple.x = getRandomInt(0, 25) * grid;
+    apple.y = getRandomInt(0, 25) * grid;
+    return;
   }
 
   // keep track of where snake has been. front of the array is always the head
@@ -74,8 +75,7 @@ function loop() {
   }
 
   // draw apple
-  context.fillStyle = 'red';
-  context.fillRect(apple.x, apple.y, grid-1, grid-1);
+  context.drawImage(appleImage, apple.x, apple.y, grid * 2, grid);
 
   // draw snake one cell at a time
   context.fillStyle = 'green';
