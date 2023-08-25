@@ -9,11 +9,25 @@
     transition: transform .2s; /* Animation */
 }
 
+.tile:hover {
+    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
 .tile a {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
     text-decoration: none;
     color: black;
 }
 
-.tile:hover {
-    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+.tile img {
+    width: 50px; /* Set the desired width */
+    height: 50px; /* Set the desired height */
+    object-fit: cover; /* Crop or scale the image to fit the specified dimensions */
+    margin-right: 10px; /* Add some space between the image and the text */
+    border-radius: 50%; /* Make the icon round */
+}
+
+.tile span {
+    font-family: 'Montserrat', sans-serif;
 }
