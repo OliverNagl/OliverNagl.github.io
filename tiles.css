@@ -1,0 +1,19 @@
+.tile {
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s; /* Animation */
+}
+
+.tile a {
+    text-decoration: none;
+    color: black;
+}
+
+.tile:hover {
+    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
