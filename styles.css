@@ -15,12 +15,11 @@ canvas {
 }
 
 p {
-    width: 300px;
-    font-family: 'Montserrat', sans-serif;
     text-align: justify;
-    text-align: center;
+    width: 500px;
+    font-family: 'Montserrat', sans-serif;
     font-size: 14px;
-    margin: 50px auto;
+    margin: 40px auto;
 }
 h1 {
     color: #333;
