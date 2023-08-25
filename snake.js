@@ -3,6 +3,7 @@ var context = canvas.getContext('2d');
 
 var grid = 16;
 var count = 0;
+var gameStarted = false;
 
 var snake = {
   x: 160,
@@ -31,9 +32,13 @@ function getRandomInt(min, max) {
 
 // game loop
 function loop() {
+  if (!gameStarted) { // Add this line
+        return;
+      }
   requestAnimationFrame(loop);
   // slow game loop to 15 fps instead of 60 (60/15 = 4)
-  if (++count < 4) {
+  
+  if (++count < 10) {
     return;
   }
 
@@ -138,4 +143,7 @@ document.addEventListener('keydown', function(e) {
 });
 
 // start the game
-requestAnimationFrame(loop);
+canvas.addEventListener('click', function() {
+    gameStarted = true;
+    loop();
+  });
