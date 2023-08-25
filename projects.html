@@ -1,12 +1,49 @@
-<!DOCTYPE html>
+!DOCTYPE html>
 <html>
 <head>
-    <title>Projects</title>
+    <title>Projects.</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="tiles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .latex {
+            display: inline-block;
+        }
+        .tile {
+            width: 50%; /* Set the desired width */
+            margin: 0 auto; /* Center the tile */
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+        }
+        .tile img {
+            width: 50px; /* Set the desired width */
+            height: 50px; /* Set the desired height */
+            object-fit: cover; /* Crop or scale the image to fit the specified dimensions */
+            margin-right: 10px; /* Add some space between the image and the text */
+        }
+    </style>
 </head>
 <body>
-    <h1>My Projects</h1>
-    <p>Project 1: Description</p>
-    <p>Project 2: Description</p>
-    <!-- Add more projects as needed -->
+    <h1>Repository</h1>
+    <nav>
+        <a href="projects.html">Projects</a> |
+        <a href="Stuff.html">Stuff</a> |
+        <a href="social.html">Social</a>
+    </nav>
+
+    <div class="latex">
+        <!-- Your LaTeX code here -->
+    </div>
+
+    <!-- Add more details as needed -->
+
+    <div class="tile">
+        <a href="Glowing_Plants.html">Student Biolab Project
+            <img src="Plants.png" alt="[Mitiouchkina, 2020]">
+            <span>Student Biolab- Glowing Plants</span>
+        </a>
+    </div>
+   
 </body>
 </html>
