@@ -10,7 +10,7 @@ canvas {
     justify-content: center;
     align-items: center;
     border: 1px solid black;
-    margin: 30px auto;
+    margin: 15px auto;
     background-color: #f0f0f0;
 }
 
@@ -19,7 +19,7 @@ p {
     text-align: justify;
     text-align: center;
     font-size: 14px;
-    margin: 20px auto;
+    margin: 50px auto;
 }
 h1 {
     color: #333;
