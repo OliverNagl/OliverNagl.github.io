@@ -75,7 +75,7 @@ function loop() {
   }
 
   // draw apple
-  context.drawImage(appleImage, apple.x, apple.y, grid * 2, grid);
+  context.drawImage(appleImage, apple.x, apple.y, grid, grid*2);
 
   // draw snake one cell at a time
   context.fillStyle = 'green';
