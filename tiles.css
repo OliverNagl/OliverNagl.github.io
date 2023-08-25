@@ -1,7 +1,7 @@
 .tile {
     width: 200px;
     height: 150px;
-    margin: 15px;
+    margin: 15px auti;
     background-color: #f0f0f0;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
 }
 
 .tile:hover {
-    transform: scale(1.1); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+    transform: scale(1.09); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
 
 .tile a {
@@ -21,8 +21,8 @@
 }
 
 .tile img {
-    width: 50px; /* Set the desired width */
-    height: 50px; /* Set the desired height */
+    width: 55px; /* Set the desired width */
+    height: 55px; /* Set the desired height */
     object-fit: cover; /* Crop or scale the image to fit the specified dimensions */
     margin-right: 10px; /* Add some space between the image and the text */
     border-radius: 50%; /* Make the icon round */
