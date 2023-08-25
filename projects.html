@@ -7,7 +7,7 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        .latex {
+       .latex {
             display: inline-block;
         }
         .tile {
@@ -15,13 +15,22 @@
             margin: 0 auto; /* Center the tile */
             display: flex; /* Use flexbox for layout */
             align-items: center; /* Center items vertically */
+            justify-content: flex-start; /* Start from the left horizontally */
         }
         .tile img {
             width: 50px; /* Set the desired width */
             height: 50px; /* Set the desired height */
             object-fit: cover; /* Crop or scale the image to fit the specified dimensions */
             margin-right: 10px; /* Add some space between the image and the text */
+            border-radius: 50%; /* Make the icon round */
         }
+
+        .tile span {
+            font-family: 'Montserrat', sans-serif;
+            display: flex; /* Use flexbox for layout */
+            align-items: center; /* Center items vertically */
+        }  
+  
     </style>
 </head>
 <body>
