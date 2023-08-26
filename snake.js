@@ -6,9 +6,10 @@ var count = 0;
 var gameStarted = false;
 
 function gameOver() {
-  // Record the score
+  // Prompt the player to enter their name
   var playerName = prompt("Game Over! Please enter your name:");
   if (playerName !== null) {
+    // Record the score
     leaderboard.push({ name: playerName, score: snake.maxCells });
 
     // Sort the leaderboard in descending order of scores
