@@ -28,6 +28,8 @@ var apple = {
 var appleImage = new Image();
 appleImage.src = 'ETM.png';
 
+var leaderboard = [];
+
 // get random whole numbers in a specific range
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
@@ -146,4 +148,30 @@ document.addEventListener('keydown', function(e) {
 canvas.addEventListener('click', function() {
     gameStarted = true;
     loop();
-  });
+});
+
+document.getElementById('score-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var playerName = document.getElementById('player-name').value;
+    leaderboard.push({ name: playerName, score: snake.maxCells });
+
+    // Sort the leaderboard in descending order of scores
+    leaderboard.sort(function(a, b) { return b.score - a.score; });
+
+    // Keep only the top 5 scores
+    if (leaderboard.length > 5) {
+        leaderboard.length = 5;
+    }
+
+    // Update the leaderboard display
+    var scoresList = document.getElementById('scores');
+    scoresList.innerHTML = '';
+    for (var i = 0; i < leaderboard.length; i++) {
+        var li = document.createElement('li');
+        li.textContent = leaderboard[i].name + ': ' + leaderboard[i].score;
+        scoresList.appendChild(li);
+    }
+
+    // Clear the form input
+    document.getElementById('player-name').value = '';
+});
