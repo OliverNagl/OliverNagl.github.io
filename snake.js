@@ -5,6 +5,42 @@ var grid = 16;
 var count = 0;
 var gameStarted = false;
 
+function gameOver() {
+  // Record the score
+  var playerName = prompt("Game Over! Please enter your name:");
+  if (playerName !== null) {
+    leaderboard.push({ name: playerName, score: snake.maxCells });
+
+    // Sort the leaderboard in descending order of scores
+    leaderboard.sort(function(a, b) { return b.score - a.score; });
+
+    // Keep only the top 5 scores
+    if (leaderboard.length > 5) {
+        leaderboard.length = 5;
+    }
+
+    // Update the leaderboard display
+    var scoresList = document.getElementById('scores');
+    scoresList.innerHTML = '';
+    for (var i = 0; i < leaderboard.length; i++) {
+        var li = document.createElement('li');
+        li.textContent = leaderboard[i].name + ': ' + leaderboard[i].score;
+        scoresList.appendChild(li);
+    }
+  }
+
+  // Reset the game
+  gameStarted = false;
+  snake.x = 160;
+  snake.y = 160;
+  snake.cells = [];
+  snake.maxCells = 4;
+  snake.dx = grid;
+  snake.dy = 0;
+  apple.x = getRandomInt(0, 25) * grid;
+  apple.y = getRandomInt(0, 25) * grid;
+}
+
 var snake = {
   x: 160,
   y: 160,
@@ -56,15 +92,7 @@ function loop() {
 
   //collision
   if (snake.x < 0 || snake.x >= canvas.width || snake.y < 0 || snake.y >= canvas.height) {
-    gameStarted = false;
-    snake.x = 160;
-    snake.y = 160;
-    snake.cells = [];
-    snake.maxCells = 4;
-    snake.dx = grid;
-    snake.dy = 0;
-    apple.x = getRandomInt(0, 25) * grid;
-    apple.y = getRandomInt(0, 25) * grid;
+    gameOver();
     return;
   }
 
@@ -100,16 +128,7 @@ function loop() {
       
       // snake occupies same space as a body part. reset game
       if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
-        snake.x = 160;
-        snake.y = 160;
-        snake.cells = [];
-        snake.maxCells = 4;
-        snake.dx = grid;
-        snake.dy = 0;
-
-        // canvas is 400x400 which is 25x25 grids 
-        apple.x = getRandomInt(0, 25) * grid;
-        apple.y = getRandomInt(0, 25) * grid;
+        gameOver();
       }
     }
   });
