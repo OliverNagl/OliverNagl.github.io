@@ -2,11 +2,31 @@
 <html>
 <head>
     <title>Webcam Photo Capture</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f3f3;
+        }
+        #video, #canvas {
+            max-width: 90%;
+            height: auto;
+        }
+        @media only screen and (max-width: 600px) {
+            #video, #canvas {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <video id="video" width="640" height="480" autoplay></video>
+    <video id="video" autoplay></video>
     <button id="snap">Snap Photo</button>
-    <canvas id="canvas" width="640" height="480"></canvas>
+    <canvas id="canvas"></canvas>
 
     <script>
         // Elements for taking the snapshot
@@ -26,7 +46,7 @@
 
         // Trigger photo take
         document.getElementById("snap").addEventListener("click", function() {
-            context.drawImage(video, 0, 0, 640, 480);
+            context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
             var data = canvas.toDataURL('image/png');
             videoStream.getVideoTracks()[0].stop();
             fetch('/', {
