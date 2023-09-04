@@ -168,7 +168,7 @@ document.addEventListener('keydown', function(e) {
     snake.dx = grid;
     snake.dy = 0;
   }
-  else if (e.which === 40 && snake.dy === 0) {
+  else if (e.which === 40 && snake.dy === 0 && snake.dx !== 0) {
     e.preventDefault(); // Prevent default behavior (scrolling)
     snake.dy = grid;
     snake.dx = 0;
