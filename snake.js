@@ -137,28 +137,30 @@ function loop() {
 
 // listen to keyboard events to move the snake
 document.addEventListener('keydown', function(e) {
+  // Check if the snake game is active
+  if (!gameStarted) {
+    return;
+  }
+
   // prevent snake from backtracking on itself by checking that it's 
-  // not already moving on the same axis (pressing left while moving
-  // left won't do anything, and pressing right while moving left
-  // shouldn't let you collide with your own body)
-  
-  // left arrow key
+  // not already moving on the same axis
   if (e.which === 37 && snake.dx === 0) {
+    e.preventDefault(); // Prevent default behavior (scrolling)
     snake.dx = -grid;
     snake.dy = 0;
   }
-  // up arrow key
   else if (e.which === 38 && snake.dy === 0) {
+    e.preventDefault(); // Prevent default behavior (scrolling)
     snake.dy = -grid;
     snake.dx = 0;
   }
-  // right arrow key
   else if (e.which === 39 && snake.dx === 0) {
+    e.preventDefault(); // Prevent default behavior (scrolling)
     snake.dx = grid;
     snake.dy = 0;
   }
-  // down arrow key
   else if (e.which === 40 && snake.dy === 0) {
+    e.preventDefault(); // Prevent default behavior (scrolling)
     snake.dy = grid;
     snake.dx = 0;
   }
