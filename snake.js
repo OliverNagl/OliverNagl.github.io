@@ -42,6 +42,15 @@ function gameOver() {
   apple.y = getRandomInt(0, 25) * grid;
 }
 
+// Add a global event listener to prevent scrolling
+window.addEventListener('keydown', function(e) {
+  // Check if the snake game is active
+  if (gameStarted) {
+    // Prevent default behavior (scrolling)
+    e.preventDefault();
+  }
+});
+
 var snake = {
   x: 160,
   y: 160,
