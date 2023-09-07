@@ -42,7 +42,7 @@
       // You can use the 'photo' variable to send the image data to the server using AJAX or fetch
       
       // Example code to send the photo using fetch
-      fetch('/upload', {
+      fetch('postgres://zkeursujlkqvvy:7fc8b086ccfdda6d83912e3f70547f604cb5e7cbccfc52200f7ad62e9117b392@ec2-52-209-225-31.eu-west-1.compute.amazonaws.com:5432/ddous02qo0iscu', {
         method: 'POST',
         body: JSON.stringify({ photo: photo }),
         headers: {
