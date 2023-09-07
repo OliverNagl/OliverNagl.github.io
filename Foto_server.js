@@ -5,6 +5,15 @@ const { Pool } = require('pg');
 
 // Middleware to parse JSON data
 app.use(express.json());
+app.use(express.static('public'));
+
+app.get('/', (req, res) => {
+    res.sendFile(__dirname + '/index.html');
+  });
+
+app.get('/foto-upload', (req, res) => {
+    res.sendFile(__dirname + '/FotoUpload.html');
+});
 
 // Configure PostgreSQL connection
 const pool = new Pool({
