@@ -7,21 +7,16 @@ const { Pool } = require('pg');
 app.use(express.json());
 app.use(express.static('public'));
 
-app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/index.html');
-  });
-
 // Configure PostgreSQL connection
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
-    rejectUnauthorized: false, // For Heroku, you may need this option
+    rejectUnauthorized: false,
   },
-  host: 'ec2-52-209-225-31.eu-west-1.compute.amazonaws.com',
-  port: '5432',
-  database: 'ddous02qo0iscu',
-  user: 'zkeursujlkqvvy',
-  password: '7fc8b086ccfdda6d83912e3f70547f604cb5e7cbccfc52200f7ad62e9117b392'
+});
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 // Endpoint to handle photo upload

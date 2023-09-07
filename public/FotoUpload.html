@@ -17,7 +17,6 @@
   <script>
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
-    const button = document.querySelector('button');
     
     // Check if the browser supports getUserMedia
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
@@ -38,15 +37,12 @@
       
       const photo = canvas.toDataURL('image/png');
       
-      // Send the photo to the server or perform any other actions
-      // You can use the 'photo' variable to send the image data to the server using AJAX or fetch
-      
-      // Example code to send the photo using fetch
+      // Send the photo to the server using fetch
       fetch('postgres://zkeursujlkqvvy:7fc8b086ccfdda6d83912e3f70547f604cb5e7cbccfc52200f7ad62e9117b392@ec2-52-209-225-31.eu-west-1.compute.amazonaws.com:5432/ddous02qo0iscu', {
         method: 'POST',
         body: JSON.stringify({ photo: photo }),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         }
       })
       .then(response => {
