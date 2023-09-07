@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 });
 
 // Endpoint to handle photo upload
-app.post('postgres://zkeursujlkqvvy:7fc8b086ccfdda6d83912e3f70547f604cb5e7cbccfc52200f7ad62e9117b392@ec2-52-209-225-31.eu-west-1.compute.amazonaws.com:5432/ddous02qo0iscu', (req, res) => {
+app.post('/upload', (req, res) => {
   const photoData = req.body.photo;
   const base64Data = photoData.replace(/^data:image\/\w+;base64,/, '');
   const buffer = Buffer.from(base64Data, 'base64');

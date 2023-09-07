@@ -38,7 +38,7 @@
       const photo = canvas.toDataURL('image/png');
       
       // Send the photo to the server using fetch
-      fetch('postgres://zkeursujlkqvvy:7fc8b086ccfdda6d83912e3f70547f604cb5e7cbccfc52200f7ad62e9117b392@ec2-52-209-225-31.eu-west-1.compute.amazonaws.com:5432/ddous02qo0iscu', {
+      fetch('/upload', {
         method: 'POST',
         body: JSON.stringify({ photo: photo }),
         headers: {
