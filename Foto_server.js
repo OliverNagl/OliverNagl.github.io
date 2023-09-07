@@ -13,6 +13,10 @@ app.get('/', (req, res) => {
 
 // Configure PostgreSQL connection
 const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // For Heroku, you may need this option
+  },
   host: 'ec2-52-209-225-31.eu-west-1.compute.amazonaws.com',
   port: '5432',
   database: 'ddous02qo0iscu',
