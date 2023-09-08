@@ -16,7 +16,7 @@ const pool = new Pool({
 });
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
+  res.sendFile(__dirname + '/public/FotoUpload.html');
 });
 
 // Endpoint to handle photo upload
