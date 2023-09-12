@@ -31,7 +31,7 @@ app.post('/upload', (req, res) => {
   const buffer = Buffer.from(base64Data, 'base64');
 
   const params = {
-    Bucket: 'your-bucket-name', // Replace with your bucket name
+    Bucket: process.env.BUCKETEER_BUCKET_NAME, // Replace with your bucket name
     Key: `photos/photo-${Date.now()}.png`, // Use a unique key for each photo
     Body: buffer,
     ContentType: 'image/png', // Set the content type accordingly
