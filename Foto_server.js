@@ -2,10 +2,7 @@ const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
 const AWS = require('aws-sdk');
-AWS.config.update({
-  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-});
+
 
 const cors = require('cors');
 app.use(cors());
