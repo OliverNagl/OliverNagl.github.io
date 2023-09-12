@@ -1,21 +1,28 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
+const { Pool } = require('pg');
 const AWS = require('aws-sdk');
-
-
 const cors = require('cors');
 app.use(cors());
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(express.static('public'));
 
-// Configure AWS S3 Bucket
+// Configure PostgreSQL connection
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false,
+  },
+});
+
 const s3 = new AWS.S3();
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/FotoUpload.html');
 });
+
 
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
@@ -24,7 +31,7 @@ app.post('/upload', (req, res) => {
   const buffer = Buffer.from(base64Data, 'base64');
 
   const params = {
-    Bucket: 'bucketeer-c2a9c8ca-f9ec-4dcd-a7d3-e8728ffd581c', // Replace with your bucket name
+    Bucket: 'your-bucket-name', // Replace with your bucket name
     Key: `photos/photo-${Date.now()}.png`, // Use a unique key for each photo
     Body: buffer,
     ContentType: 'image/png', // Set the content type accordingly
