@@ -1,19 +1,20 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const { Pool } = require('pg');
+const AWS = require('aws-sdk');
+AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+});
 
+const cors = require('cors');
+app.use(cors());
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(express.static('public'));
 
-// Configure PostgreSQL connection
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+// Configure AWS S3 Bucket
+const s3 = new AWS.S3();
 
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/FotoUpload.html');
@@ -25,13 +26,19 @@ app.post('/upload', (req, res) => {
   const base64Data = photoData.replace(/^data:image\/\w+;base64,/, '');
   const buffer = Buffer.from(base64Data, 'base64');
 
-  // Insert the photo into the PostgreSQL database
-  pool.query('INSERT INTO photos (photo_data) VALUES ($1)', [buffer], (err, result) => {
+  const params = {
+    Bucket: 'bucketeer-c2a9c8ca-f9ec-4dcd-a7d3-e8728ffd581c', // Replace with your bucket name
+    Key: `photos/photo-${Date.now()}.png`, // Use a unique key for each photo
+    Body: buffer,
+    ContentType: 'image/png', // Set the content type accordingly
+  };
+
+  s3.upload(params, (err, data) => {
     if (err) {
-      console.error('Error uploading photo to PostgreSQL:', err);
+      console.error('Error uploading photo to Bucketeer:', err);
       res.status(500).json({ error: 'Failed to upload photo' });
     } else {
-      console.log('Photo uploaded to PostgreSQL');
+      console.log('Photo uploaded to Bucketeer');
       res.status(200).json({ message: 'Photo uploaded successfully' });
     }
   });

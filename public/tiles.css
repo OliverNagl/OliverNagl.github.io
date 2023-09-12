@@ -1,0 +1,33 @@
+.tile {
+    width: 250px;
+    height: 150px;
+    margin: 5px auto;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .2s; /* Animation */
+}
+
+.tile:hover {
+    transform: scale(1.09); /* (110% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.tile a {
+    display: flex; /* Use flexbox for layout */
+    align-items: center; /* Center items vertically */
+    text-decoration: none;
+    color: black;
+}
+
+.tile img {
+    width: 55px; /* Set the desired width */
+    height: 55px; /* Set the desired height */
+    object-fit: cover; /* Crop or scale the image to fit the specified dimensions */
+    margin-right: 10px; /* Add some space between the image and the text */
+    border-radius: 50%; /* Make the icon round */
+}
+
+.tile span {
+    font-family: 'Montserrat', sans-serif;
+}
