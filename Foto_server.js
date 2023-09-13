@@ -1,21 +1,13 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const { Pool } = require('pg');
+
 const AWS = require('aws-sdk');
 const cors = require('cors');
 app.use(cors());
 // Middleware to parse JSON data
 app.use(express.json());
 app.use(express.static('public'));
-
-// Configure PostgreSQL connection
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
 
 const s3 = new AWS.S3();
 
