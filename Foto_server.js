@@ -15,7 +15,6 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/FotoUpload.html');
 });
 
-
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
   const photoData = req.body.photo;
