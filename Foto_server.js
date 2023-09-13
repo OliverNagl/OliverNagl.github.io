@@ -1,13 +1,12 @@
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 3000;
-const sharp = require('sharp');
 const AWS = require('aws-sdk');
 const cors = require('cors');
+const busboy = require('busboy');
+const stream = require('stream');
+
 app.use(cors());
-// Middleware to parse JSON data
-app.use(express.json());
-app.use(express.static('public'));
 
 const s3 = new AWS.S3();
 
@@ -15,21 +14,26 @@ app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/FotoUpload.html');
 });
 
-
+// Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
-  const photoData = req.body.photo;
-  const base64Data = photoData.replace(/^data:image\/\w+;base64,/, '');
-  const buffer = Buffer.from(base64Data, 'base64');
+  const busboyInstance = new busboy({ headers: req.headers });
+  const chunks = [];
 
-  // Compress and convert to JPEG
-  sharp(buffer)
-    .jpeg({ quality: 80 })
-    .toBuffer()
-    .then((compressedBuffer) => {
+  busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
+    const writableStreamBuffer = new stream.PassThrough();
+    
+    file.on('data', (chunk) => {
+      writableStreamBuffer.write(chunk);
+      chunks.push(chunk);
+    });
+
+    file.on('end', () => {
+      writableStreamBuffer.end();
+      const buffer = Buffer.concat(chunks);
       const params = {
         Bucket: process.env.BUCKETEER_BUCKET_NAME,
         Key: `photos/photo-${Date.now()}.jpg`, // Use a unique key for each photo
-        Body: compressedBuffer,
+        Body: buffer,
         ContentType: 'image/jpeg', // Set the content type accordingly
       };
 
@@ -42,13 +46,11 @@ app.post('/upload', (req, res) => {
           res.status(200).json({ message: 'Photo uploaded successfully' });
         }
       });
-    })
-    .catch((error) => {
-      console.error('Error compressing photo:', error);
-      res.status(500).json({ error: 'Failed to compress photo' });
     });
-});
+  });
 
+  req.pipe(busboyInstance);
+});
 
 // Start the server
 app.listen(port, () => {
