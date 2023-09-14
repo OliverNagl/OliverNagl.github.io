@@ -5,9 +5,10 @@ const AWS = require('aws-sdk');
 const cors = require('cors');
 const busboy = require('busboy');
 const stream = require('stream');
+const sharp = require('sharp'); // For image compression
 
 app.use(cors());
-app.use(express.json()); // Parse JSON requests
+
 const s3 = new AWS.S3();
 
 app.get('/', (req, res) => {
@@ -16,20 +17,23 @@ app.get('/', (req, res) => {
 
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
-  const busboyInstance = busboy({ headers: req.headers });
+  const busboyInstance = new busboy({ headers: req.headers });
   const chunks = [];
-  const jsonData = req.body;
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
     const writableStreamBuffer = new stream.PassThrough();
-    
-    file.on('data', (chunk) => {
-      writableStreamBuffer.write(chunk);
+
+    // Compress and convert to JPEG
+    const transformer = sharp()
+      .jpeg({ quality: 80 });
+
+    file.pipe(transformer).pipe(writableStreamBuffer);
+
+    writableStreamBuffer.on('data', (chunk) => {
       chunks.push(chunk);
     });
 
-    file.on('end', () => {
-      writableStreamBuffer.end();
+    writableStreamBuffer.on('end', () => {
       const buffer = Buffer.concat(chunks);
       const params = {
         Bucket: process.env.BUCKETEER_BUCKET_NAME,
