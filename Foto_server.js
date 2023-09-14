@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 const AWS = require('aws-sdk');
 const cors = require('cors');
-const busboy = require('busboy');
+const Busboy = require('busboy');
 const stream = require('stream');
 
 app.use(cors());
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
-  const busboyInstance = new busboy({ headers: req.headers });
+  const busboyInstance = new Busboy({ headers: req.headers });
   const chunks = [];
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
