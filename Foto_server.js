@@ -7,7 +7,7 @@ const busboy = require('busboy');
 const stream = require('stream');
 
 app.use(cors());
-
+app.use(express.json()); // Parse JSON requests
 const s3 = new AWS.S3();
 
 app.get('/', (req, res) => {
@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 app.post('/upload', (req, res) => {
   const busboyInstance = busboy({ headers: req.headers });
   const chunks = [];
+  const jsonData = req.body;
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
     const writableStreamBuffer = new stream.PassThrough();
