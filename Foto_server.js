@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
 
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
-  const busboyInstance = new busboy({ headers: req.headers });
+  const busboyInstance = busboy({ headers: req.headers });
   const chunks = [];
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
