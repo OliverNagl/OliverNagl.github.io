@@ -2,10 +2,58 @@
 <html>
 <head>
   <title>Photo Gallery</title>
+  <style>
+    /* Add your custom styles here */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+
+    .header {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .photos-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between; /* Adjust as needed */
+    }
+
+    .photo-card {
+        width: calc(33.33% - 20px); /* Adjust as needed for your grid */
+        margin: 10px;
+        background-color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+  </style>
 </head>
 <body>
-  <h1>Photo Gallery</h1>
-  <div id="photo-container"></div>
+  <div class="header">
+    <h1>Photo Gallery</h1>
+  </div>
+  <div class="container">
+    <div class="photos-container" id="photo-container">
+      <!-- Photos will be dynamically added here -->
+    </div>
+  </div>
 
   <script>
     fetch('/photos')
@@ -25,6 +73,7 @@
           downloadLink.appendChild(downloadButton);
 
           const photoDiv = document.createElement('div');
+          photoDiv.className = 'photo-card'; // Add the photo-card class for styling
           photoDiv.appendChild(image);
           photoDiv.appendChild(downloadLink);
 
