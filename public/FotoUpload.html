@@ -1,20 +1,80 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FotoUpload</title>
-  <style>
-    /* Add your custom styles here */
-  </style>
+  <title>FotoBox</title>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mousson Photobox</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 100%;
+            padding: 20px;
+        }
+
+        .canvas-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        video {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .buttons-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        /* Add your custom styles here */
+    </style>
 </head>
 <body>
-  <h1>FotoUpload</h1>
+  <div class="header">
+    <h1>Mousson Photobox</h1>
+  </div>
   
-  <video id="video" autoplay></video>
-  <button onclick="takePhoto()">Take Photo</button>
+  <div class="container">
+    <div class="canvas-container">
+        <video id="video" autoplay></video>
+        <canvas id="canvas" style="display: none;"></canvas>
+        <div class="buttons-container">
+            <button onclick="takePhoto()">Take Photo</button>
+            <!-- Add more buttons if needed -->
+            <!-- Create a link to the photo display page -->
+            <a href="/Display.html">View Photos</a>
+        </div>
+    </div>
+  </div>
   
-  <canvas id="canvas" style="display: none;"></canvas>
-  <!-- Create a link to the photo display page -->
-  <a href="/Display.html">View Photos</a>
   <script>
     const video = document.getElementById('video');
     const canvas = document.getElementById('canvas');
