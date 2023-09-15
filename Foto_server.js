@@ -9,6 +9,13 @@ const sharp = require('sharp'); // For image compression
 
 app.use(cors());
 
+AWS.config.update({
+  accessKeyId: process.env.BUCKETEER_AWS_ACCESS_KEY_ID ,
+  secretAccessKey: process.env.BUCKETEER_AWS_SECRET_ACCESS_KEY,
+  // Optionally, you can specify the region as well
+  region: process.env.BUCKETEER_AWS_REGION, // Replace with your desired AWS region
+});
+
 const s3 = new AWS.S3();
 
 app.get('/', (req, res) => {
