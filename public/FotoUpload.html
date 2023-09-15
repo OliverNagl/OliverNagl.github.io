@@ -34,28 +34,29 @@
     function takePhoto() {
       const context = canvas.getContext('2d');
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
-      
-      const photo = canvas.toDataURL('image/png');
-      
-      // Send the photo to the server using fetch
-      fetch('/upload', {
-        method: 'POST',
-        body: JSON.stringify({ photo: photo }),
-        headers: {
-          'Content-Type': 'application/json',
-        }
-      })
-      .then(response => {
-        if (response.ok) {
-          alert('Photo uploaded successfully!');
-        } else {
-          alert('Failed to upload photo.');
-        }
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
+
+      canvas.toBlob(function (blob) {
+        const formData = new FormData();
+        formData.append('photo', blob, 'photo.png');
+
+        // Send the photo as a file upload to the server using fetch
+        fetch('/upload', {
+          method: 'POST',
+          body: formData,
+        })
+        .then(response => {
+          if (response.ok) {
+            alert('Photo uploaded successfully!');
+          } else {
+            alert('Failed to upload photo.');
+          }
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }, 'image/png');
     }
+
   </script>
 </body>
 </html>
