@@ -24,14 +24,13 @@
     }
 
     .photos-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center; /* Center items on small screens */
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid with minimum column width */
+        gap: 20px;
+        justify-items: center; /* Center items horizontally */
     }
 
     .photo-card {
-        width: calc(50% - 20px); /* Display two photos per row on small screens */
-        margin: 10px;
         background-color: #fff;
         padding: 10px;
         border-radius: 5px;
@@ -42,6 +41,19 @@
     img {
         max-width: 100%;
         height: auto;
+    }
+
+    .download-button {
+        display: block;
+        margin-top: 10px;
+        background-color: #333;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none; /* Remove underline from download links */
     }
   </style>
 </head>
@@ -61,6 +73,9 @@
       .then(data => {
         const photoContainer = document.getElementById('photo-container');
         data.photos.forEach(photo => {
+          const photoDiv = document.createElement('div');
+          photoDiv.className = 'photo-card'; // Add the photo-card class for styling
+
           const image = document.createElement('img');
           image.src = photo.url;
 
@@ -70,10 +85,9 @@
 
           const downloadButton = document.createElement('button');
           downloadButton.textContent = 'Download';
+          downloadButton.className = 'download-button'; // Add download button class
           downloadLink.appendChild(downloadButton);
 
-          const photoDiv = document.createElement('div');
-          photoDiv.className = 'photo-card'; // Add the photo-card class for styling
           photoDiv.appendChild(image);
           photoDiv.appendChild(downloadLink);
 

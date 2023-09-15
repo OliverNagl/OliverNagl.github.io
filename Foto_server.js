@@ -31,19 +31,17 @@ app.post('/upload', (req, res) => {
   const chunks = [];
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
-    const writableStreamBuffer = new stream.PassThrough();
-
-    // Compress and convert to JPEG
     const transformer = sharp()
-      .jpeg({ quality: 100 });
+      .resize({ width: 1024 }) // Set the maximum width you desire
+      .jpeg({ quality: 80 });
 
-    file.pipe(transformer).pipe(writableStreamBuffer);
+    file.pipe(transformer).pipe(res);
 
-    writableStreamBuffer.on('data', (chunk) => {
+    transformer.on('data', (chunk) => {
       chunks.push(chunk);
     });
 
-    writableStreamBuffer.on('end', () => {
+    transformer.on('end', () => {
       const buffer = Buffer.concat(chunks);
       const params = {
         Bucket: process.env.BUCKETEER_BUCKET_NAME,
@@ -66,6 +64,12 @@ app.post('/upload', (req, res) => {
 
   req.pipe(busboyInstance);
 });
+
+
+
+
+
+
 
 
 app.get('/photos', (req, res) => {
