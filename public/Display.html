@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Photo Gallery</title>
+</head>
+<body>
+  <h1>Photo Gallery</h1>
+  <div id="photo-container"></div>
+
+  <script>
+    fetch('/photos')
+      .then(response => response.json())
+      .then(data => {
+        const photoContainer = document.getElementById('photo-container');
+        data.photos.forEach(photo => {
+          const image = document.createElement('img');
+          image.src = photo.url;
+
+          const downloadLink = document.createElement('a');
+          downloadLink.href = photo.url;
+          downloadLink.download = photo.key; // Set the filename for downloading
+
+          const downloadButton = document.createElement('button');
+          downloadButton.textContent = 'Download';
+          downloadLink.appendChild(downloadButton);
+
+          const photoDiv = document.createElement('div');
+          photoDiv.appendChild(image);
+          photoDiv.appendChild(downloadLink);
+
+          photoContainer.appendChild(photoDiv);
+        });
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+  </script>
+</body>
+</html>

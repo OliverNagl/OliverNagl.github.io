@@ -10,7 +10,7 @@ const sharp = require('sharp'); // For image compression
 app.use(cors());
 
 AWS.config.update({
-  accessKeyId: process.env.BUCKETEER_AWS_ACCESS_KEY_ID ,
+  accessKeyId: process.env.BUCKETEER_AWS_ACCESS_KEY_ID,
   secretAccessKey: process.env.BUCKETEER_AWS_SECRET_ACCESS_KEY,
   // Optionally, you can specify the region as well
   region: process.env.BUCKETEER_AWS_REGION, // Replace with your desired AWS region
@@ -21,6 +21,7 @@ const s3 = new AWS.S3();
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/FotoUpload.html');
 });
+
 
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
@@ -64,7 +65,32 @@ app.post('/upload', (req, res) => {
   req.pipe(busboyInstance);
 });
 
+
+app.get('/photos', (req, res) => {
+  const params = {
+    Bucket: process.env.BUCKETEER_BUCKET_NAME, // Replace with your bucket name
+  };
+
+  s3.listObjects(params, (err, data) => {
+    if (err) {
+      console.error('Error listing photos:', err);
+      res.status(500).json({ error: 'Failed to list photos' });
+    } else {
+      const photos = data.Contents.map(photo => ({
+        key: photo.Key,
+        url: s3.getSignedUrl('getObject', { Bucket: params.Bucket, Key: photo.Key }),
+      }));
+      res.json({ photos });
+    }
+  });
+});
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+
+
+
+
+
