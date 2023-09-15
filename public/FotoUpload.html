@@ -93,6 +93,13 @@
     }
     
     function takePhoto() {
+      const video = document.getElementById('video');
+      const canvas = document.getElementById('canvas');
+      
+      // Ensure that canvas dimensions match the video's intrinsic size
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      
       const context = canvas.getContext('2d');
       context.drawImage(video, 0, 0, canvas.width, canvas.height);
 
@@ -117,6 +124,7 @@
         });
       }, 'image/png');
     }
+
 
   </script>
 </body>
