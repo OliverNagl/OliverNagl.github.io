@@ -8,6 +8,8 @@ const stream = require('stream');
 const sharp = require('sharp'); // For image compression
 
 app.use(cors());
+// Serve static files from the "public" directory
+app.use(express.static('public'));
 
 AWS.config.update({
   accessKeyId: process.env.BUCKETEER_AWS_ACCESS_KEY_ID,
