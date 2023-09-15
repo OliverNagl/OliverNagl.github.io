@@ -35,7 +35,7 @@ app.post('/upload', (req, res) => {
 
     // Compress and convert to JPEG
     const transformer = sharp()
-      .jpeg({ quality: 80 });
+      .jpeg({ quality: 100 });
 
     file.pipe(transformer).pipe(writableStreamBuffer);
 
