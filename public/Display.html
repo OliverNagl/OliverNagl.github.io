@@ -67,30 +67,32 @@
     </div>
   </div>
 
-  <script>
+ 
+    <script>
     fetch('/photos')
       .then(response => response.json())
       .then(data => {
         const photoContainer = document.getElementById('photo-container');
-        data.photos.forEach(photo => {
+        // Reverse the order of photos here
+        data.photos.reverse().forEach(photo => {
           const photoDiv = document.createElement('div');
           photoDiv.className = 'photo-card'; // Add the photo-card class for styling
-
+  
           const image = document.createElement('img');
           image.src = photo.url;
-
+  
           const downloadLink = document.createElement('a');
           downloadLink.href = photo.url;
           downloadLink.download = photo.key; // Set the filename for downloading
-
+  
           const downloadButton = document.createElement('button');
           downloadButton.textContent = 'Download';
           downloadButton.className = 'download-button'; // Add download button class
           downloadLink.appendChild(downloadButton);
-
+  
           photoDiv.appendChild(image);
           photoDiv.appendChild(downloadLink);
-
+  
           photoContainer.appendChild(photoDiv);
         });
       })

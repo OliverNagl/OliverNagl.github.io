@@ -60,8 +60,6 @@ app.post('/upload', (req, res) => {
   req.pipe(busboyInstance);
 });
 
-
-
 app.get('/photos', (req, res) => {
   const params = {
     Bucket: process.env.BUCKETEER_BUCKET_NAME, // Replace with your bucket name
