@@ -25,23 +25,18 @@ app.get('/', (req, res) => {
 });
 
 
+
 // Endpoint to handle photo upload
 app.post('/upload', (req, res) => {
   const busboyInstance = busboy({ headers: req.headers });
   const chunks = [];
 
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
-    const transformer = sharp()
-      .resize({ width: 1024 }) // Set the maximum width you desire
-      .jpeg({ quality: 80 });
-
-    file.pipe(transformer, { end: false }).pipe(res);
-
-    transformer.on('data', (chunk) => {
+    file.on('data', (chunk) => {
       chunks.push(chunk);
     });
 
-    transformer.on('end', () => {
+    file.on('end', () => {
       const buffer = Buffer.concat(chunks);
       const params = {
         Bucket: process.env.BUCKETEER_BUCKET_NAME,
@@ -53,11 +48,10 @@ app.post('/upload', (req, res) => {
       s3.upload(params, (err, data) => {
         if (err) {
           console.error('Error uploading photo to Bucketeer:', err);
-          return res.status(500).json({ error: 'Failed to upload photo' });
+          res.status(500).json({ error: 'Failed to upload photo' });
         } else {
           console.log('Photo uploaded to Bucketeer');
-          // Only send a success response here, no need to send another response below
-          return res.status(200).json({ message: 'Photo uploaded successfully' });
+          res.status(200).json({ message: 'Photo uploaded successfully' });
         }
       });
     });
@@ -65,6 +59,7 @@ app.post('/upload', (req, res) => {
 
   req.pipe(busboyInstance);
 });
+
 
 
 app.get('/photos', (req, res) => {
