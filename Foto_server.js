@@ -33,7 +33,7 @@ app.post('/upload', (req, res) => {
   busboyInstance.on('file', (fieldname, file, filename, encoding, mimetype) => {
     const transformer = sharp()
       .resize({ width: 1024 }) // Set the maximum width you desire
-      .jpeg({ quality: 80 });
+      .jpeg({ quality: 100 });
 
     file.pipe(transformer).pipe(res);
 
