@@ -50,8 +50,8 @@
         color: #fff;
         border: none;
         padding: 10px 20px;
-        font-size: 16px;
-        border-radius: 5px;
+        font-size: 14px;
+        border-radius: 4px;
         cursor: pointer;
         text-decoration: none; /* Remove underline from download links */
     }
@@ -64,11 +64,12 @@
   <div class="container">
     <div class="photos-container" id="photo-container">
       <!-- Photos will be dynamically added here -->
+      
     </div>
   </div>
 
  
-    <script>
+  <script>
     fetch('/photos')
       .then(response => response.json())
       .then(data => {
@@ -90,8 +91,14 @@
           downloadButton.className = 'download-button'; // Add download button class
           downloadLink.appendChild(downloadButton);
   
+          const hideButton = document.createElement('button');
+          hideButton.textContent = 'Hide';
+          hideButton.className = 'hide-button'; // Add hide button class
+          hideButton.addEventListener('click', () => toggleVisibility(image));
+  
           photoDiv.appendChild(image);
           photoDiv.appendChild(downloadLink);
+          photoDiv.appendChild(hideButton);
   
           photoContainer.appendChild(photoDiv);
         });
@@ -99,6 +106,16 @@
       .catch(error => {
         console.error('Error:', error);
       });
+  
+    function toggleVisibility(image) {
+      // Toggle visibility by changing the image's CSS display property
+      if (image.style.display === 'none') {
+        image.style.display = 'block';
+      } else {
+        image.style.display = 'none';
+      }
+    }
   </script>
+  
 </body>
 </html>
