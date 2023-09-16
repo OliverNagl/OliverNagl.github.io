@@ -82,6 +82,9 @@
           const image = document.createElement('img');
           image.src = photo.url;
   
+          const buttonContainer = document.createElement('div'); // Container for buttons
+          buttonContainer.className = 'button-container'; // Add a class for styling
+  
           const downloadLink = document.createElement('a');
           downloadLink.href = photo.url;
           downloadLink.download = photo.key; // Set the filename for downloading
@@ -92,13 +95,15 @@
           downloadLink.appendChild(downloadButton);
   
           const hideButton = document.createElement('button');
-          hideButton.textContent = 'Hide';
-          hideButton.className = 'hide-button'; // Add hide button class
-          hideButton.addEventListener('click', () => toggleVisibility(image));
+          hideButton.textContent = 'Delete';
+          hideButton.className = 'download-button hide-button'; // Add download button class and hide-button class
+          hideButton.addEventListener('click', () => hidePhoto(photoDiv));
+  
+          buttonContainer.appendChild(downloadLink);
+          buttonContainer.appendChild(hideButton);
   
           photoDiv.appendChild(image);
-          photoDiv.appendChild(downloadLink);
-          photoDiv.appendChild(hideButton);
+          photoDiv.appendChild(buttonContainer);
   
           photoContainer.appendChild(photoDiv);
         });
@@ -107,15 +112,12 @@
         console.error('Error:', error);
       });
   
-    function toggleVisibility(image) {
-      // Toggle visibility by changing the image's CSS display property
-      if (image.style.display === 'none') {
-        image.style.display = 'block';
-      } else {
-        image.style.display = 'none';
-      }
+    function hidePhoto(photoDiv) {
+      // Set the display property of the entire photo card to 'none'
+      photoDiv.style.display = 'none';
     }
   </script>
+  
   
 </body>
 </html>
