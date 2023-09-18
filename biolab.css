@@ -1,0 +1,50 @@
+/* Biolab.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ddd; /* Light grey background */
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+    font-family: 'Helvetica', sans-serif;
+    color: #333;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.abstract {
+    background-color: #ddd; /* Light grey background */
+    color: #333;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
