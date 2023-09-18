@@ -1,11 +1,11 @@
 table {
     border-collapse: collapse;
-    width: 80%;
+    width: 100%;
 }
 
 th, td {
     border: 2px solid #ddd;
-    text-align: justify;
+    text-align: left;
     padding: 8px;
 }
 
@@ -22,5 +22,6 @@ a {
 }
 
 td.wiso {
+    text-align: justify; /* Align text in the "Wiso" column to justify (Blocksatz) */
     padding-left: 20px;
 }
