@@ -6,30 +6,6 @@ var count = 0;
 var gameStarted = false;
 
 function gameOver() {
-  // Prompt the player to enter their name
-  var playerName = prompt("Game Over! Please enter your name:");
-  if (playerName !== null) {
-    // Record the score
-    leaderboard.push({ name: playerName, score: snake.maxCells });
-
-    // Sort the leaderboard in descending order of scores
-    leaderboard.sort(function(a, b) { return b.score - a.score; });
-
-    // Keep only the top 5 scores
-    if (leaderboard.length > 5) {
-        leaderboard.length = 5;
-    }
-
-    // Update the leaderboard display
-    var scoresList = document.getElementById('scores');
-    scoresList.innerHTML = '';
-    for (var i = 0; i < leaderboard.length; i++) {
-        var li = document.createElement('li');
-        li.textContent = leaderboard[i].name + ': ' + leaderboard[i].score;
-        scoresList.appendChild(li);
-    }
-  }
-
   // Reset the game
   gameStarted = false;
   snake.x = 160;
