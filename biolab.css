@@ -45,6 +45,6 @@ p {
     width: 90px; /* Adjust the size as needed */
     height: 90px; /* Adjust the size as needed */
     position: absolute;
-    top: 5px;
-    left: 80px;
+    top: 10px;
+    left: 300px;
 }
