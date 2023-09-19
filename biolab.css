@@ -38,6 +38,7 @@ p {
     color: #333;
     padding: 10px 20px;
     margin-bottom: 20px;
+    text-align: justify;
 }
 
 .profile-image {
@@ -45,6 +46,6 @@ p {
     width: 90px; /* Adjust the size as needed */
     height: 90px; /* Adjust the size as needed */
     position: absolute;
-    top: 10px;
-    left: 300px;
+    top: 14px;
+    left: 320px;
 }
