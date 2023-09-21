@@ -13,7 +13,7 @@
     <style>
         section.mathy{
             text-align: justify;
-            max-width: 800px;
+            max-width: 700px;
         }
         .centered-line {
         text-align: center;
@@ -30,12 +30,20 @@
         der Vektorraum der glatten Funktionen auf dem Kreis  \(S^{1},\mathbb{R}/2\pi \mathbb{Z}\) und
         sei <br> <br> <div class="centered-line">\(V_N = span_{\mathbb{C}}\{f_{-N},...,0,...,f_N\}\)</div> <br> 
         der Vektorraum der von den Funktionen
-        \(f_n: \mathbb{R}/2\pi \mathbb{Z} \ni x \rightarrow e^{inx} \) 
+        \(f_n: \mathbb{R}/2\pi \mathbb{Z} \ni x \mapsto e^{inx} \) 
         mit \( n = -N,...,0,...,N \) aufgespannt ist.
         
         <h3>Aufgabe 1.a:</h3>
-        Es sei zu beweisen das: <br>
-        Sei <div class="latex">f, g, h \(\mathbb{C}\)</div>
+        Es sei zu beweisen das die Abbildung <br><br>
+        <div class="centered-line">\( (f,g) \mapsto \frac{1}{2 \pi} \int_0^{2\pi} \overline{f(x)} g(x) dx \) </div>
+        <br>
+        ein Skalarprodukt auf \(V_N\) bildet.
+        <br>
+        Zuerst zeigen wir die eigenschaft der bilinearität: <br>
+        Sei \(f, g, h \in V_N \) dann folgt aus \( (f+h,g) = \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)+h(x)}) g(x) dx =
+        \frac{1}{2 \pi} \int_0^{2\pi} \overline{f(x)} g(x) dx + \frac{1}{2 \pi} \int_0^{2\pi} \overline{h(x)} g(x) dx = (f,g) + (h,g) \)
+        und \((a*f,g) = \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)*a}) g(x) dx = a* \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)}) g(x) dx = a*(f,g) \)
+        sowie dem gleichem argument für linearität in zweiter position, die bilinearität der funktion.
         
         
     </section>
