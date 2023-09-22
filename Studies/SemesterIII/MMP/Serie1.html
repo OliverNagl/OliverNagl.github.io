@@ -39,18 +39,34 @@
         <br>
         ein Skalarprodukt auf \(V_N\) bildet.
         <br><br>
-        1) Zuerst zeigen wir die Eigenschaft der bilinearität: <br>
+        1) Zuerst zeigen wir die Eigenschaft der sesquilinearität: <br>
         Sei \(f, g, h \in V_N \) dann folgt aus <br> <div class="centered-line">\( (f+h,g) = \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)+h(x)}) g(x) dx \)</div> <br>
         <div class="centered-line"> \(= \frac{1}{2 \pi} \int_0^{2\pi} \overline{f(x)} g(x) dx + \frac{1}{2 \pi} \int_0^{2\pi} \overline{h(x)} g(x) dx \)</div> <br>
         <div class="centered-line"> \(= (f,g) + (h,g) \)</div> <br>
         und \( a \in \mathbb{C} \) <br>
         <div class="centered-line">\((a*f,g) = \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)*a}) g(x) dx \)</div> <br>
         <div class="centered-line"> \(= \overline{a}* \frac{1}{2 \pi} \int_0^{2\pi} (\overline{f(x)}) g(x) dx = \overline{a}*(f,g) \) </div> <br>
-        sowie dem gleichem argument für linearität in zweiter position, die bilinearität der Abbildung.
+        beweist die semilinearität im ersten argument. Mit dem gleichem argument für linearität in zweiter position ist die sesquilinearität der Abbildung bewiesen.
         <br>
         <br>
 
-        2) Nun zeigen wir die Symmetrie: <br>
+        2) Nun zeigen wir das das Skalarprodukt hermitesch ist: <br>
+        Sei \(f, g \in V_N \) 
+        dann folgt aus <br> <div class="centered-line">\( \overline{(f,g)} = \overline{\frac{1}{2 \pi} \int_0^{2\pi} \overline{f(x)} g(x) dx} \)</div> <br>
+        <div class="centered-line">\( = \frac{1}{2 \pi} \int_0^{2\pi} \overline{\overline{f(x)} g(x)} dx \)</div> <br>
+        <div class="centered-line">\( = \frac{1}{2 \pi} \int_0^{2\pi} f(x) \overline{g(x)} dx \)</div> <br>
+        <div class="centered-line">\( = (g,f) \)</div> <br>
+        das hermetische axiom des Skalarprodukts.
+
+        3) zuletzt Positiv definitheit:
+        Sei \(f \in V_N \) dann ist 
+        <br> <div class="centered-line">\((f,f) = \frac{1}{2 \pi} \int_0^{2\pi} \overline{f(x)} f(x) dx \)</div> <br>
+        <div class="centered-line">\(= \frac{1}{2 \pi} \int_0^{2\pi} e^{-inx} e^{inx} dx \)</div> <br>
+        <div class="centered-line">\(= \frac{1}{2 \pi} \int_0^{2\pi} 1 dx \)</div> <br>
+        <div class="centered-line">\(= \frac{1}{2 \pi} 2 \pi = 1 \)</div> <br>
+        daraus folgt das  \( (f,f) = \abs{f}^2 \greq 0 \) insbesondere \((f,f) = 0 \iff f = 0\).
+        <br>
+        \(\qedsymbol \)
 
         
     </section>
