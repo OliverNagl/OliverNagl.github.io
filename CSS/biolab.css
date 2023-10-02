@@ -63,3 +63,21 @@ h1 {
     top: 14px;
     left: 320px;
 }
+
+.logo {
+    border-radius: 50%;
+    width: 160px; /* Adjust the size as needed */
+    height: 66px; /* Adjust the size as needed */
+    position: absolute;
+    top: 7px;
+    left: 640px;
+}
+
+.logo2 {
+    border-radius: 50%;
+    width: 300px; /* Adjust the size as needed */
+    height: 176px; /* Adjust the size as needed */
+    position: absolute;
+    top: 15px;
+    left: 670px;
+}
