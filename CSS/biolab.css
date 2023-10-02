@@ -65,19 +65,17 @@ h1 {
 }
 
 .logo {
-    border-radius: 50%;
     width: 120px; /* Adjust the size as needed */
     height: 50px; /* Adjust the size as needed */
     position: absolute;
     top: 7px;
-    left: 640px;
+    left: 700px;
 }
 
 .logo2 {
-    border-radius: 50%;
-    width: 160px; /* Adjust the size as needed */
-    height: 95px; /* Adjust the size as needed */
+    width: 150px; /* Adjust the size as needed */
+    height: 75px; /* Adjust the size as needed */
     position: absolute;
     top: 15px;
-    left: 670px;
+    left: 870px;
 }
