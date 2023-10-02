@@ -57,8 +57,8 @@ h1 {
 
 .profile-image {
     border-radius: 50%;
-    width: 90px; /* Adjust the size as needed */
-    height: 90px; /* Adjust the size as needed */
+    width: 100px; /* Adjust the size as needed */
+    height: 100px; /* Adjust the size as needed */
     position: absolute;
     top: 14px;
     left: 320px;
@@ -66,8 +66,8 @@ h1 {
 
 .logo {
     border-radius: 50%;
-    width: 160px; /* Adjust the size as needed */
-    height: 66px; /* Adjust the size as needed */
+    width: 120px; /* Adjust the size as needed */
+    height: 50px; /* Adjust the size as needed */
     position: absolute;
     top: 7px;
     left: 640px;
@@ -75,8 +75,8 @@ h1 {
 
 .logo2 {
     border-radius: 50%;
-    width: 300px; /* Adjust the size as needed */
-    height: 176px; /* Adjust the size as needed */
+    width: 160px; /* Adjust the size as needed */
+    height: 95px; /* Adjust the size as needed */
     position: absolute;
     top: 15px;
     left: 670px;
