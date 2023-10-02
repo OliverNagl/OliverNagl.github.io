@@ -65,17 +65,17 @@ h1 {
 }
 
 .logo {
-    width: 120px; /* Adjust the size as needed */
-    height: 50px; /* Adjust the size as needed */
+    width: 100px; /* Adjust the size as needed */
+    height: 40px; /* Adjust the size as needed */
     position: absolute;
     top: 7px;
-    left: 700px;
+    left: 900px;
 }
 
 .logo2 {
-    width: 150px; /* Adjust the size as needed */
-    height: 75px; /* Adjust the size as needed */
+    width: 120px; /* Adjust the size as needed */
+    height: 70px; /* Adjust the size as needed */
     position: absolute;
     top: 15px;
-    left: 870px;
+    left: 1000px;
 }
