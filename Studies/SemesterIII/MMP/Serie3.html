@@ -34,12 +34,18 @@
         \( f(0) = f(a) = 0 \) zu zeigen ist: <br> <br>
         <div class="centered-line">\( f(x) = \sum_{n=1}^{\infty}b_n sin(\frac{\pi n n}{a}) \) </div> <br> <br>
         
-        Da \( f(0) = f(a) = 0 \) ist, kann f(x) als eine 2a-periodische funktion als Fourier Series geschrieben werden: <br>
+        Da \( f(0) = f(a) = 0 \) ist, kann f(x) als eine 2a-periodische ungeraden funktion als Fourier Series geschrieben werden: <br><br>
         <div class="centered-line">\( f(x) = \sum_{n \in \mathbb{Z}} f_n e^{\frac{2\pi ixn}{2a}} \) </div> <br> <br>
         Für Reelwertige \( f(x) \) gilt dass: \( f_n = f_{-n} \) da \(f(x) = \overline{f(x)} \)
         
-
-        Wir können also 
+        Wir können also \( f \) als reele fourierreihe schreiben: <br> <br>
+        \( f(x) = \frac{1}{2} a_0 + \sum_{n=1}{\infty} a_n cos(\frac{2\pi n}{a} x) + b_n sin(\frac{2\pin}{a} x) \) <br><br>
+        mit den koefiezienten: <br>
+        \( a_n =  2 Re(f_n) = \frac{2}{a} \int_0^{a} f(x) cos(\frac{2\pi n}{2a} x) dx \) <br>
+        \( b_n =  -2 Im(f_n) = \frac{2}{a} \int_0^{a} f(x) sin(\frac{2\pi n}{2a} x) dx \) <br><br>
+        Da sich \( f(x) \) als ungerade Funktion eindeutig fortsetzen lässt, sind alle \(a_n = 0 \) (ungerade Funktionen multipliziert mit geraden funktionen sind ungerade, daher integral = 0)
+        <br> <br>   
+        \(\blacksquare \)
     </section> 
 
     </main>
