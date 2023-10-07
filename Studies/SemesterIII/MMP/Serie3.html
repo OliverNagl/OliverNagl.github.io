@@ -83,10 +83,11 @@
         <h3>Aufgabe 3a:</h3>
         <div class="centered-line">\( \widehat{f}(k) = \int_{-\infty}^{\infty} e^{\vert{x}\vert}e^{-ikx} dx \)</div> <br>
         <div class="centered-line">\( = \int_{-\infty}^{\infty} e^{\vert{x}\vert -ikx} dx \)</div><br>
-        <div class="centered-line">\( = \int_{-\infty}^{0} e^{x-ikx} dx + \int_{0}^{\infty} e^{x-ikx} \)</div> <br>
-        <div class="centered-line">\( = \int_{-\infty}^{0} e^{x(1-ik)} dx + \int_{0}^{\infty} e^{x(1-ik)} \)</div> <br>
-        <div class="centered-line">\( = (1-ik) e^{x(1-ik)}|_{-\infty}^{0} + (1-ik) e^{x(1-ik)}|_{0}^{\infty} \)</div> <br>
-        <div class="centered-line">\( = (1-ik) + (1-ik) e^{x(1-ik)}|_{0}^{\infty} \)</div> <br>
+        <div class="centered-line">\( = \int_{-\infty}^{0} e^{-x-ikx} dx + \int_{0}^{\infty} e^{x-ikx} dx \)</div> <br>
+        <div class="centered-line">\( = \int_{-\infty}^{0} e^{x(-1-ik)} dx + \int_{0}^{\infty} e^{x(1-ik)} dx \)</div> <br>
+        <div class="centered-line">\( = (-1-ik) e^{x} e^{(-1-ik)}|_{-\infty}^{0} + (-1+ik) e^{-x}e^{(-1+ik)}|_{0}^{\infty} \)</div> <br>
+        <div class="centered-line">\( = (-1-ik) e^{(-1-ik)} - (-1+ik) e^{(-1+ik)} \)</div> <br>
+        <div class="centered-line">\( = -e^{(-1-ik)} - ik e^{(-1-ik)} + e^{(-1+ik)} - ik e^{(-1+ik)}  \)</div> <br>
     </section>
     </main>
 </body>
