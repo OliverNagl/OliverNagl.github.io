@@ -65,8 +65,15 @@
         <div class="centered-line">\(u(0,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} 0) = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{a \pi n}{a}) = u(a,t) = 0 \)  </div>
         <br> <br>   
         \(\blacksquare \)<br> <br>  
-
-
+        <h3>Aufgabe 1c:</h3>
+        Wir suchen die funktion g(x), die die Randbedingungen erfüllt, jedoch nicht unbedingt die Anfangsbedingung. 
+        Die funktion \(g(x) = \frac{x}{a}(T_2 - T_1) + T_1 \) erfüllt die Randbedingungen. 
+        Mit der Gesuchten funktion u(x,t) erfüllt die Funktion \(u(x,t) - g(x)\) die PDE aus b) mit 
+        Anfangsbedingung \(f(x) - g(x) = u(x,0) \). Somit ist die Lösung: <br>
+        \( u(x,t) = \frac{x}{a}(T_2 - T_1) + T_1 + \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} x)  \) <br> <br>
+        mit der Anfangsbedingung \( u(x,0) = f(x) = g(x) + f_b(x) \) wobei \( f_b(x) \) die anfangsbedingung aus 1b) darstellt.
+        <br> <br>   
+        \(\blacksquare \)<br> <br> 
 
     </section> 
 
