@@ -58,7 +58,14 @@
         <div class="centered-line">\(   \partial_t u_n(t)  =  - D (\frac{2 \pi n}{a})^2 u_n(t)  \)  </div> <br>  
         <div class="centered-line">\(u_n(t)  =  e^{- D (\frac{2 \pi n}{a})^2 t} u_n(0)  \)  </div> <br>
         Daher der Lösungsvorschlag:
-        <div class="centered-line">\(u(x,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} x)  \)  </div> <br>
+        <div class="centered-line">\(u(x,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} x)  \)  </div> <br> <br>
+        Da f glatt konvergiert die Reihe. Überprüfung der Randbedingungen:
+        <div class="centered-line">\(u(x,0)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 0} \sin(\frac{\pi n}{a} x)  \)  </div> <br>
+        <div class="centered-line">\( = \sum_{n=1}^{\infty} b_n \sin(\frac{\pi n}{a} x) = f(x) \)  </div> <br> <br>
+        <div class="centered-line">\(u(0,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} 0) = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{a \pi n}{a}) = u(a,t) = 0 \)  </div>
+        <br> <br>   
+        \(\blacksquare \)<br> <br>  
+
 
 
     </section> 
