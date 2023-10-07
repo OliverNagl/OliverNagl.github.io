@@ -47,7 +47,7 @@
         <br> <br>   
         \(\blacksquare \)<br> <br>  
         <h3>Aufgabe 1b:</h3>
-        Da \( u(0, t) = u(a,t) = 0 \) kann die Wärmeleitungsfunktion als a periodische funktion geschrieben werden.
+        Da \( u(0, t) = u(a,t) = 0 \) kann die Wärmeleitungsfunktion als a periodische funktion (wie in 1a) geschrieben werden.
         Mit der FR:
         <br>
         <div class="centered-line">\( \sum_{n=1}^{\infty} c_n(t=0) \sin(\frac{\pi n}{a} x) = \sum_{n=1}^{\infty} b_n \sin(\frac{2 \pi n}{a} x) \)  </div> <br> <br>
@@ -55,10 +55,11 @@
         <br>
         <div class="centered-line">\( \partial_t \sum_{n=1}^{\infty} u_n(t) \sin(\frac{2 \pi n}{a} x) = D \partial_x^2 \sum_{n=1}^{\infty} u_n(t) \sin(\frac{2 \pi n}{a} x)  \)  </div> <br>
         <div class="centered-line">\( \overset{!}{\rightarrow}  \sum_{n=1}^{\infty} \partial_t u_n \sin(\frac{2 \pi n}{a} x) = \sum_{n=1}^{\infty} - D (\frac{2 \pi n}{a})^2 u_n \sin(\frac{2 \pi n}{a} x)  \)  </div> <br>
-        <div class="centered-line">\(   \partial_t u_n(t)  =  - D (\frac{2 \pi n}{a})^2 u_n  \)  </div> <br>  
-        <div class="centered-line">\(u_n(t)  =  e^{- D (\frac{2 \pi n}{a})^2} b_n  \)  </div> <br>
+        <div class="centered-line">\(   \partial_t u_n(t)  =  - D (\frac{2 \pi n}{a})^2 u_n(t)  \)  </div> <br>  
+        <div class="centered-line">\(u_n(t)  =  e^{- D (\frac{2 \pi n}{a})^2 t} u_n(0)  \)  </div> <br>
         Daher der Lösungsvorschlag:
-        <div class="centered-line">\(u(x,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2} \sin(\frac{\pi n}{a} x)  \)  </div> <br>
+        <div class="centered-line">\(u(x,t)  = \sum_{n=1}^{\infty} b_n e^{- D (\frac{2 \pi n}{a})^2 t} \sin(\frac{\pi n}{a} x)  \)  </div> <br>
+
 
     </section> 
 
