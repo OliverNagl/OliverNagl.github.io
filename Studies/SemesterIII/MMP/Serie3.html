@@ -98,14 +98,32 @@
         \( I_n \) die A überdecken so dass \( A \subset_{n=1}^{\infty} I_n \) mit \( \sum_{n=1}^{\infty} \vert I_n \vert < \epsilon \)
         <br> <br>
         Jedes zählbare Set hat maß 0:
-        Lass A ein Zählbares unterset von \( \R \) sein. Bemerke das jeder einzelne punkt x maß 0 hat.
-        Lass \( x \in \R \) dann <br><br>
+        Lass A ein Zählbares unterset von \( \mathbb{R} \) sein. Bemerke das jeder einzelne punkt x maß 0 hat.
+        Lass \( x \in \mathbb{R} \) dann <br><br>
         <div class="centered-line">\(x \in [x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]  \) </div><br>
         <div class="centered-line">\(\implies m(\{x\}) < m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) \) </div><br>
         <div class="centered-line">\(m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) = \vert [x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ] \vert = x + \frac{\epsilon}{2} - (x - \frac{\epsilon}{2}) = \epsilon \) </div><br>
         <div class="centered-line">\(\implies m(\{x\}) < m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) = \epsilon \) </div><br> <br>
-        Daher ist \(m(\{x\} = 0 \forall x \in \R)). Durch das Axiom der additivität ist damit \(m(A) = 0 \) für A zählbar.
-        \(\Q \)ist Zählbar daher hat \( \Q \)ein maß von null.
+        Daher ist \(m(\{x\} = 0 \forall x \in \mathbb{R})\). Durch das Axiom der additivität ist damit \(m(A) = 0 \) für A zählbar.
+    \(\Q \)ist Zählbar daher hat \( \mathbb{Q} \) ein maß von null.
+        <br> <br>   
+        \(\blacksquare \)<br> <br> 
+        <h3>Aufgabe 5b:</h3>
+        Nein die funktion \( f \) ist nicht Riemann integrierbar, da nach den 
+        Lebesgue kriterien der Riemann integrierbarkeit dass integral existiert wenn und nur wenn 
+        das set der unstetigkeiten ein Lebesgue maß von 0 hat. Für jede irrationale x zahl 
+        kann man eine Sequenz an rationalen Zahlen finden die zu der zahl konvergiert damit ist 
+        die funktion hier nicht stetig. Gleiches Argument kann für Rationale Zahlen gebildet werden.
+        Damit ist \( f \) diskontinuierlich in allen punkten [a,b] jedoch ist [a,b] Lesbegue messbar mit maß
+        \( b - a \notequal 0 \).
+
+        Die funktion ist Lesbegue integrierbar da sie an fasst allen punkten 0 ist. 
+        Somit ist das Lesbegue integral:
+        <div class="centered-line">\( \mu(\mathbb{Q}) = 0 und \mu(\mathbb{Q} \ \mathbb{Q}) = 1 \) </div><br>
+        <div class="centered-line">\( \int_a^b f(x) d\mu = 0 * 1 + 1 * 0 = 0 \) </div><br>
+        <br> <br>   
+        \(\blacksquare \)<br> <br> 
+        
     </section>
     </main>
 </body>
