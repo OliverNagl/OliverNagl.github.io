@@ -92,11 +92,20 @@
     <section class="mathy">
         <h3>Aufgabe 5a:</h3>
         Zu finden ist das Lesbeque-maß von \( \mathbb{Q} \). 
-        Jede zählbare Menge hat maß 0 Beweis: <br>
+        <br>
         Definition maß 0: <br>
         Ein Set A hat maß null in \( \mathbb{R} \) wenn es ein epsilon \( \epsilon > 0 \) gibt so dass zählbare Intervalle
         \( I_n \) die A überdecken so dass \( A \subset_{n=1}^{\infty} I_n \) mit \( \sum_{n=1}^{\infty} \vert I_n \vert < \epsilon \)
-        
+        <br> <br>
+        Jedes zählbare Set hat maß 0:
+        Lass A ein Zählbares unterset von \( \R \) sein. Bemerke das jeder einzelne punkt x maß 0 hat.
+        Lass \( x \in \R \) dann <br><br>
+        <div class="centered-line">\(x \in [x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]  \) </div><br>
+        <div class="centered-line">\(\implies m(\{x\}) < m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) \) </div><br>
+        <div class="centered-line">\(m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) = \vert [x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ] \vert = x + \frac{\epsilon}{2} - (x - \frac{\epsilon}{2}) = \epsilon \) </div><br>
+        <div class="centered-line">\(\implies m(\{x\}) < m([x - \frac{\epsilon}{2},x + \frac{\epsilon}{2} ]) = \epsilon \) </div><br> <br>
+        Daher ist \(m(\{x\} = 0 \forall x \in \R)). Durch das Axiom der additivität ist damit \(m(A) = 0 \) für A zählbar.
+        \(\Q \)ist Zählbar daher hat \( \Q \)ein maß von null.
     </section>
     </main>
 </body>
