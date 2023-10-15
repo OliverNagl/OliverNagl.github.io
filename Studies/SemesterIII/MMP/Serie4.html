@@ -27,7 +27,7 @@
         <h2>Mulriple Choice:</h2>
         <h3>a: </h3>
         <h3>b: </h3>
-        
+
         <h2>Aufgabe 1:</h2>
     <section class="mathy">
         <br>
@@ -73,13 +73,34 @@
            <br> Für alle messbaren \(f: \mathbb{R} \to [0, \infty]  \)
         </div> <br> <br>
         1) \( f_n \in L^1 \) für alle \( n \in \mathbb{N} \) <br>
-        2) \( f_n(x) \geq 0  \) since \( log(g(x)) \) stricly positive and \(n \geq 0 \). <br>
+        2) \( f_n(x) \geq 0  \) since \( log(g(x)) \) strictly positive and \(n \geq 0 \). <br>
         3) Monotonie: <br>
         log(g(x)) ist streng monoton. Somit ist zu zeigen das \( (1+\frac{f(x)}{n})^n \) monoton ist. <br>
         <div class="centered-line">
             \( (1+\frac{f(x)}{n})^n  =  \sum_{k=0}^{n} a_k^n(x) \)
 
         </div>
+
+        <h3>Aufgabe 2b:</h3>
+        <br>
+
+        <div class="centered-line">\( \lim_{n \to \infty} \int_{1}^{2} \frac{n}{1+nx^2} dx \) 
+           <br>
+        </div> <br> <br>
+        1) \( f_n \in L^1 \) für alle \( n \in \mathbb{N} \) <br>
+        2) \( f_n(x) \geq 0  \) <br>
+        3) Monotonie: <br>
+        <div class="centered-line">
+            \( f_n - f_{n+1} = \frac{n}{1+nx^2} - \frac{n+1}{1+n x^2 + x^2} = - \frac{1}{(1+nx^2)(1+(n+1)x^2)} \geq 0 \)
+        </div> <br>
+        4) \(\lim_{n \to \infty} \frac{n}{1+nx^2} = \frac{1}{x^2} := f(x) \) <br>
+        5) Die folge \( \left\{\int f_n dx \right\}_n \) ist durch \( \int \frac{1}{x^2}dx \) beschränkt und somit ist 
+        nach satz der monotonen konvergenz: <br>
+        <div class="centered-line">
+            \( \lim_{n \to \infty} \int_{1}^{2} \frac{n}{1+nx^2} dx = \int_{1}^{2} \frac{1}{x^2} dx = \frac{1}{2} \)
+        </div> <br>
+
+
 
     </section>
     </main>
