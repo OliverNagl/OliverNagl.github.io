@@ -166,6 +166,17 @@
         <div class="centered-line">
             \(= \lim_{n \to \infty} [n x]_{0}^{\frac{1}{n}} = 1 \)
         </div> <br> <br>
+
+        <h3>Aufgabe 3b:</h3>
+        Wähle funktion \( b: \mathbb{R} \to  \mathbb{R} \vert b(x) := f(x) * f(1-x) \) wobei \( f(x) := \left\{\begin{array}{ll} 0,  x \leq 0 \\
+        a * e^{-\frac{1}{x}}, x > 0 \end{array}\right. \). Such that \( lim_{n \to 0} \int_n^1 a * e^{-\frac{1}{x}} = 1 \) <br>
+        <div class="centered-line">
+            \(\equiv a * lim_{n \downarrow 0} \int_n^1 e^{-\frac{1}{x}} = 1 \) <br>
+            \(\equiv a * lim_{n \downarrow 0} [-x e^{-\frac{1}{x}}]_n^1 = 1 \) <br>
+            \(\equiv a * lim_{n \downarrow 0} - \frac{1}{e} + n e^{-\frac{1}{n}} = 1 \) <br>
+            \(\equiv a = -e \) <br>
+        </div> 
+
     </section>
     </main>
 </body>
