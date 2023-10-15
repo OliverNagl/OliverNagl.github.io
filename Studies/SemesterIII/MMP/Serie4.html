@@ -108,7 +108,7 @@
         1) \( f_x \in L^1 \) für alle \( n \in \mathbb{N} \) <br>
         2) \( f_x(t) \geq 0  \) <br>
         3) Monotonie: <br>
-        Sei \( f_{(t)} = \frac{e^{-x_n t}}{1+t^2} \) mit \( \left\{x_n \right\}_{n=0}^{\infty} \) eine beliebige monoton fallende folge mit 
+        Sei \( f_x(t) = \frac{e^{-x_n t}}{1+t^2} \) mit \( \left\{x_n \right\}_{n=0}^{\infty} \) eine beliebige monoton fallende folge mit 
         \( \lim_{n \to \infty} x_n = 0 \). Somit ist die monotonie gegeben. <br>
         4) \(\lim_{x \downarrow 0} = \frac{1}{1+t^2} := f(t) \) <br>
         5)  Die folge \( \left\{\int f_x dt \right\}_x \) ist durch \( \int \frac{1}{1+t^2}dt \) beschränkt und somit ist 
@@ -125,8 +125,23 @@
     <section class="mathy">
         <h3>Aufgabe 3a:</h3>
         <br>
-        
+        1) \(f_n(x) = \Xi_{[n,n+1]}(x)\) <br>
+        <div class="centered-line">
+            \( \lim_{n \to \infty}  \Xi_{[n,n+1]}(x) = 0 \)
+        </div> <br>
+        but:
+        <div class="centered-line">
+            \( \lim_{n \to \infty} \int_{-\infty}^{\infty} \Xi_{[n,n+1]}(x) dx = \infty \)
 
+        </div>
+        <div class="centered-line">
+            \( \lim_{n \to \infty}  \frac{1}{n} \Xi_{[0,n]}(x) = 0 \)
+        </div> <br>
+        but:
+        <div class="centered-line">
+            \( \lim_{n \to \infty} \int_{-\infty}^{\infty} \frac{1}{n} \Xi_{[0,n]}(x) dx = \infty \)
+
+        </div>
     </section>
     </main>
 </body>
