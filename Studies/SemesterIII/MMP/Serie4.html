@@ -24,9 +24,9 @@
     <header>
         <h1>Serie 4</h1>
     </header>
-        <h2>Mulriple Choice:</h2>
-        <h3>a: </h3>
-        <h3>b: </h3>
+        <h2>Multiple Choice:</h2>
+        <h3>a: Nr. 2 stimmt nicht </h3>
+        <h3>b: Nr. 4 stimmt </h3>
 
         <h2>Aufgabe 1:</h2>
     <section class="mathy">
@@ -123,7 +123,9 @@
 
     <h2>Aufgabe 3:</h2>
     <section class="mathy">
-            
+        <h3>Aufgabe 3a:</h3>
+        Die Punktweisen limes der charakteristischen funktionen sind 0 da man zuerst ein x fixiert und leicht 
+        ein N findet für das gilt \( \vert f_n(x) - 0 \vert  < \epsilon \). Zum Beispiel: \( x = 1, N = 10 \).
         <br>
         1) \(f_n(x) = \chi_{[n,n+1]}(x)\) <br>
         <div class="centered-line">
@@ -171,18 +173,29 @@
         Wähle funktion \( b: \mathbb{R} \to  \mathbb{R} \vert b(x) := \left\{\begin{array}{ll} a * e^{\frac{0.5^2}{(x-0.5)^2-0.5^2}},  \vert x \vert < \frac{1}{2} \\
         0, x \geq 0 \end{array}\right. \) Mit \( a \in \mathbb{R}\) so dass \( \int_0^1 b(x) dx = 1 \) <br>
 
+        hier habe ich schwirigkeiten das integral auf den wert 1 zu normieren/ falscher ansatz?
 
         
     </section>
     <h2>Aufgabe 4:</h2>
     <section class="mathy">
-        \(f: (0,R) \cross (0, \infty) \to \mathbb{R}, f(x,t) := e^{-tx} \sin{x} \) <br>
+        \(f: (0,R) \times (0, \infty) \to \mathbb{R}, f(x,t) := e^{-tx} \sin{x} \) <br>
         <div class="centered-line">
             \( \int_0^{\infty} e^{-tx} \sin{x} dt = \sin{x} \int_0^{\infty} e^{-tx} dt <br>
             = \frac{\sin{x}}{x} \) <br> <br>
-            
-        </div> <br>
-        
+        </div> 
+        Der Satz von fubini ist anwendbar dar die funktion klar für alle x, t integrierbar ist. <br>
+        Also ist:
+        <div class="centered-line">
+            \(\lim_{0 \to \infty} \int_0^{R} \frac{\sin{x}}{x} = \lim_{0 \to \infty} \int_0^{R} \int_0^{\infty} e^{-tx} \sin{x} dt dx \) <br>
+            \(= \lim_{0 \to \infty}  \int_0^{\infty} \int_0^{R} e^{-tx} \sin{x} dx dt\) <br>
+            with\( \left\vert\begin{array}{ll}  D \vert  I  \\
+            + sin(x) \vert e^{-tx} \\
+            - cos(x) \vert -\frac{1}{t} e^{-tx} \\
+            + (-sin(x)) \vert \frac{1}{t^2} e^{-tx} 
+            \end{array}\right\vert \) we get: <br> 
+            \(= \lim_{0 \to \infty}  \int_0^{\infty} \frac{e^{-tR}(t sin(R) + cos(R))}{t^2+1}-\frac{1}{t^2+1} dt \) <br>
+        </div>
     </section>
 
     </main>
