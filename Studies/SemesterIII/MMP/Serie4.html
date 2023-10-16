@@ -190,9 +190,9 @@
             \(\lim_{0 \to \infty} \int_0^{R} \frac{\sin{x}}{x} = \lim_{0 \to \infty} \int_0^{R} \int_0^{\infty} e^{-tx} \sin{x} dt dx \) <br>
             \(= \lim_{0 \to \infty}  \int_0^{\infty} \int_0^{R} e^{-tx} \sin{x} dx dt\) <br>
             by integrating by part we get: <br> 
-            \(= \lim_{0 \to \infty}  \int_0^{\infty} \frac{e^{-tR}(t \sin{R} + \cos{R})}{t^2+1}-\frac{1}{t^2+1} dt \) <br>
-            \(= \int_0^{\infty} \lim_{0 \to \infty} \frac{e^{-tR}(t \sin{R} + \cos{R})}{t^2+1}-\frac{1}{t^2+1} dt \) <br>
-            \(= \int_0^{\infty} -\frac{1}{t^2+1} dt = -\arctan{t}\vert_0^{\infty} = -\frac{pi}{2}  \) <br>
+            \(= \lim_{0 \to \infty}  \int_0^{\infty} \frac{e^{-tR}(t \sin{R} + \cos{R})}{t^2+1}+\frac{1}{t^2+1} dt \) <br>
+            \(= \int_0^{\infty} \lim_{0 \to \infty} \frac{e^{-tR}(t \sin{R} + \cos{R})}{t^2+1}+\frac{1}{t^2+1} dt \) <br>
+            \(= \int_0^{\infty} \frac{1}{t^2+1} dt = \arctan{t}\vert_0^{\infty} = \frac{pi}{2}  \) <br>
 
         </div>
         <br> <br>   
