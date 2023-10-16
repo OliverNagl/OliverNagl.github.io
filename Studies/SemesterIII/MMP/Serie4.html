@@ -189,12 +189,8 @@
         <div class="centered-line">
             \(\lim_{0 \to \infty} \int_0^{R} \frac{\sin{x}}{x} = \lim_{0 \to \infty} \int_0^{R} \int_0^{\infty} e^{-tx} \sin{x} dt dx \) <br>
             \(= \lim_{0 \to \infty}  \int_0^{\infty} \int_0^{R} e^{-tx} \sin{x} dx dt\) <br>
-            with\( \left\vert\begin{array}{ll}  D \vert  I  \\
-            + sin(x) \vert e^{-tx} \\
-            - cos(x) \vert -\frac{1}{t} e^{-tx} \\
-            + (-sin(x)) \vert \frac{1}{t^2} e^{-tx} 
-            \end{array}\right\vert \) we get: <br> 
-            \(= \lim_{0 \to \infty}  \int_0^{\infty} \frac{e^{-tR}(t sin(R) + cos(R))}{t^2+1}-\frac{1}{t^2+1} dt \) <br>
+            by integrating by part we get: <br> 
+            \(= \lim_{0 \to \infty}  \int_0^{\infty} \frac{e^{-tR}(t \sin{R} + \cos{R})}{t^2+1}-\frac{1}{t^2+1} dt \) <br>
         </div>
     </section>
 
