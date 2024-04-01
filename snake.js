@@ -152,7 +152,7 @@ document.addEventListener('keydown', function(e) {
 
 // start the game
 canvas.addEventListener('click', function() {
-    gameStarted = true;
-    loop();
+  gameStarted = true;
+  loop();
 });
 
