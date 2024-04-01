@@ -48,7 +48,7 @@ var apple = {
 };
 
 var appleImage = new Image();
-appleImage.src = 'ETM.png';
+appleImage.src = 'Graphics/ETM.png';
 
 
 // get random whole numbers in a specific range
