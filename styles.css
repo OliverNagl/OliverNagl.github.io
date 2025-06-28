@@ -130,6 +130,12 @@ body {
 
 .hero-content {
     z-index: 2;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 20px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
 .hero-title {
@@ -137,6 +143,8 @@ body {
     font-weight: 700;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    color: #1f2937;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .gradient-text {
@@ -146,11 +154,29 @@ body {
     background-clip: text;
 }
 
+.quote-author {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(31, 41, 55, 0.7);
+    font-style: italic;
+    margin-top: 0.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
 .hero-description {
     font-size: 1.2rem;
     margin-bottom: 2rem;
-    color: #666;
+    color: #1f2937;
     max-width: 500px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 1.5rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    line-height: 1.6;
+    font-weight: 400;
 }
 
 .hero-buttons {
