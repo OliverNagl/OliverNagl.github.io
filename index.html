@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -52,40 +53,8 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="floating-molecule">
-                    <svg viewBox="0 0 200 200" class="molecule-svg">
-                        <!-- Penicillin structure simplified -->
-                        <g class="molecule-group">
-                            <!-- Beta-lactam ring -->
-                            <circle cx="60" cy="100" r="8" class="atom carbon"/>
-                            <circle cx="80" cy="120" r="8" class="atom nitrogen"/>
-                            <circle cx="100" cy="100" r="8" class="atom carbon"/>
-                            <circle cx="80" cy="80" r="8" class="atom carbon"/>
-                            
-                            <!-- Thiazolidine ring -->
-                            <circle cx="120" cy="120" r="8" class="atom sulfur"/>
-                            <circle cx="140" cy="100" r="8" class="atom carbon"/>
-                            <circle cx="140" cy="140" r="8" class="atom carbon"/>
-                            
-                            <!-- Side chains -->
-                            <circle cx="40" cy="100" r="6" class="atom oxygen"/>
-                            <circle cx="160" cy="100" r="6" class="atom oxygen"/>
-                            <circle cx="160" cy="140" r="6" class="atom nitrogen"/>
-                            
-                            <!-- Bonds -->
-                            <line x1="60" y1="100" x2="80" y2="120" class="bond"/>
-                            <line x1="80" y1="120" x2="100" y2="100" class="bond"/>
-                            <line x1="100" y1="100" x2="80" y2="80" class="bond"/>
-                            <line x1="80" y1="80" x2="60" y2="100" class="bond"/>
-                            <line x1="100" y1="100" x2="120" y2="120" class="bond"/>
-                            <line x1="120" y1="120" x2="140" y2="140" class="bond"/>
-                            <line x1="140" y1="140" x2="140" y2="100" class="bond"/>
-                            <line x1="140" y1="100" x2="100" y2="100" class="bond"/>
-                            <line x1="60" y1="100" x2="40" y2="100" class="bond"/>
-                            <line x1="140" y1="100" x2="160" y2="100" class="bond"/>
-                            <line x1="140" y1="140" x2="160" y2="140" class="bond"/>
-                        </g>
-                    </svg>
+                <div class="advanced-molecule-container">
+                    <canvas id="threejs-molecule"></canvas>
                 </div>
             </div>
         </div>

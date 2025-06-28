@@ -193,13 +193,30 @@ body {
     transform: translateY(-2px);
 }
 
-/* Floating Molecule */
+/* Advanced Three.js Molecule */
 .hero-image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.advanced-molecule-container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.2);
+}
+
+#threejs-molecule {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.05) 100%);
+}
+
+/* Legacy floating molecule styles (keeping for fallback) */
 .floating-molecule {
     width: 300px;
     height: 300px;
@@ -669,13 +686,10 @@ body {
         gap: 1rem;
     }
     
-    .floating-molecule {
-        width: 200px;
-        height: 200px;
-    }
-    
-    .hero-buttons {
-        justify-content: center;
+    .floating-molecule,
+    .advanced-molecule-container {
+        width: 250px;
+        height: 250px;
     }
 }
 
@@ -703,6 +717,16 @@ body {
     .social-links {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .floating-molecule,
+    .advanced-molecule-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
     }
 }
 

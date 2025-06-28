@@ -1,3 +1,352 @@
+// Advanced Three.js Molecular Visualization
+class AdvancedMolecularVisualization {
+    constructor() {
+        this.container = document.getElementById('threejs-molecule');
+        if (!this.container) return;
+        
+        this.scene = null;
+        this.camera = null;
+        this.renderer = null;
+        this.moleculeGroup = null;
+        this.orbitals = [];
+        this.atoms = [];
+        this.bonds = [];
+        this.animationId = null;
+        this.time = 0;
+        
+        this.init();
+    }
+    
+    init() {
+        this.setupScene();
+        this.createMolecule();
+        this.createElectronClouds();
+        this.addLighting();
+        this.animate();
+        
+        window.addEventListener('resize', () => this.onWindowResize());
+        this.container.addEventListener('mousemove', (e) => this.onMouseMove(e));
+    }
+    
+    setupScene() {
+        // Scene
+        this.scene = new THREE.Scene();
+        
+        // Camera
+        this.camera = new THREE.PerspectiveCamera(
+            75,
+            this.container.clientWidth / this.container.clientHeight,
+            0.1,
+            1000
+        );
+        this.camera.position.set(0, 0, 15);
+        
+        // Renderer
+        this.renderer = new THREE.WebGLRenderer({ 
+            canvas: this.container,
+            alpha: true,
+            antialias: true 
+        });
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+        this.renderer.setClearColor(0x000000, 0);
+        
+        // Enable shadows
+        this.renderer.shadowMap.enabled = true;
+        this.renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    }
+    
+    createMolecule() {
+        this.moleculeGroup = new THREE.Group();
+        
+        // Penicillin structure atoms with enhanced materials
+        const atomPositions = [
+            // Beta-lactam ring
+            { pos: [-3, 0, 0], type: 'carbon', size: 0.7 },
+            { pos: [-1, 1.5, 0], type: 'nitrogen', size: 0.65 },
+            { pos: [1, 0, 0], type: 'carbon', size: 0.7 },
+            { pos: [-1, -1.5, 0], type: 'carbon', size: 0.7 },
+            
+            // Thiazolidine ring
+            { pos: [2.5, 1.5, 0], type: 'sulfur', size: 0.8 },
+            { pos: [4, 0, 0], type: 'carbon', size: 0.7 },
+            { pos: [4, 3, 0], type: 'carbon', size: 0.7 },
+            
+            // Side chains
+            { pos: [-5, 0, 0], type: 'oxygen', size: 0.6 },
+            { pos: [6, 0, 0], type: 'oxygen', size: 0.6 },
+            { pos: [6, 3, 0], type: 'nitrogen', size: 0.65 }
+        ];
+        
+        const atomColors = {
+            carbon: 0x4f46e5,
+            nitrogen: 0x059669,
+            oxygen: 0xdc2626,
+            sulfur: 0xeab308
+        };
+        
+        // Create atoms with glow effect
+        atomPositions.forEach((atom, index) => {
+            // Core atom
+            const geometry = new THREE.SphereGeometry(atom.size, 32, 32);
+            const material = new THREE.MeshPhongMaterial({
+                color: atomColors[atom.type],
+                shininess: 100,
+                transparent: true,
+                opacity: 0.9
+            });
+            
+            const atomMesh = new THREE.Mesh(geometry, material);
+            atomMesh.position.set(...atom.pos);
+            atomMesh.castShadow = true;
+            atomMesh.receiveShadow = true;
+            
+            // Glow effect
+            const glowGeometry = new THREE.SphereGeometry(atom.size * 1.5, 16, 16);
+            const glowMaterial = new THREE.MeshBasicMaterial({
+                color: atomColors[atom.type],
+                transparent: true,
+                opacity: 0.3,
+                side: THREE.BackSide
+            });
+            
+            const glowMesh = new THREE.Mesh(glowGeometry, glowMaterial);
+            glowMesh.position.set(...atom.pos);
+            
+            this.atoms.push({ core: atomMesh, glow: glowMesh, originalPos: atom.pos });
+            this.moleculeGroup.add(atomMesh);
+            this.moleculeGroup.add(glowMesh);
+        });
+        
+        // Create bonds
+        const bondConnections = [
+            [0, 1], [1, 2], [2, 3], [3, 0], // Beta-lactam ring
+            [2, 4], [4, 6], [6, 5], [5, 2], // Thiazolidine ring
+            [0, 7], [5, 8], [6, 9] // Side chains
+        ];
+        
+        bondConnections.forEach(([i, j]) => {
+            const start = new THREE.Vector3(...atomPositions[i].pos);
+            const end = new THREE.Vector3(...atomPositions[j].pos);
+            const distance = start.distanceTo(end);
+            
+            const geometry = new THREE.CylinderGeometry(0.1, 0.1, distance, 8);
+            const material = new THREE.MeshPhongMaterial({
+                color: 0x6b7280,
+                transparent: true,
+                opacity: 0.8
+            });
+            
+            const bond = new THREE.Mesh(geometry, material);
+            
+            // Position and orient the bond
+            const midpoint = new THREE.Vector3().addVectors(start, end).multiplyScalar(0.5);
+            bond.position.copy(midpoint);
+            bond.lookAt(end);
+            bond.rotateX(Math.PI / 2);
+            
+            this.bonds.push(bond);
+            this.moleculeGroup.add(bond);
+        });
+        
+        this.scene.add(this.moleculeGroup);
+    }
+    
+    createElectronClouds() {
+        // Create volumetric electron orbitals around atoms
+        const orbitalShaderMaterial = new THREE.ShaderMaterial({
+            uniforms: {
+                time: { value: 0.0 },
+                color1: { value: new THREE.Color(0x4f46e5) },
+                color2: { value: new THREE.Color(0x7c3aed) },
+                opacity: { value: 0.15 }
+            },
+            vertexShader: `
+                varying vec3 vPosition;
+                varying vec3 vNormal;
+                void main() {
+                    vPosition = position;
+                    vNormal = normal;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+                }
+            `,
+            fragmentShader: `
+                uniform float time;
+                uniform vec3 color1;
+                uniform vec3 color2;
+                uniform float opacity;
+                varying vec3 vPosition;
+                varying vec3 vNormal;
+                
+                float noise(vec3 p) {
+                    return sin(p.x * 10.0 + time) * sin(p.y * 10.0 + time * 1.1) * sin(p.z * 10.0 + time * 0.9);
+                }
+                
+                float orbital(vec3 p, float n, float l, float m) {
+                    float r = length(p);
+                    float theta = acos(p.z / r);
+                    float phi = atan(p.y, p.x);
+                    
+                    // Simplified orbital function
+                    float radial = exp(-r * 2.0) * pow(r, float(l));
+                    float angular = sin(theta * float(n)) * cos(phi * float(m));
+                    
+                    return radial * angular * angular;
+                }
+                
+                void main() {
+                    vec3 pos = vPosition * 0.5;
+                    
+                    // Combine multiple orbitals
+                    float orb1 = orbital(pos, 1.0, 0.0, 0.0); // 1s
+                    float orb2 = orbital(pos, 2.0, 1.0, 0.0); // 2p
+                    float orb3 = orbital(pos, 2.0, 1.0, 1.0); // 2p
+                    
+                    float density = abs(orb1) + abs(orb2) * 0.5 + abs(orb3) * 0.3;
+                    density += noise(pos * 2.0 + time * 0.5) * 0.1;
+                    
+                    vec3 color = mix(color1, color2, density);
+                    float alpha = density * opacity * (1.0 + sin(time * 2.0) * 0.2);
+                    
+                    gl_FragColor = vec4(color, alpha);
+                }
+            `,
+            transparent: true,
+            side: THREE.DoubleSide,
+            blending: THREE.AdditiveBlending
+        });
+        
+        // Create orbital clouds around major atoms
+        [0, 1, 2, 4, 5].forEach(atomIndex => {
+            const atom = this.atoms[atomIndex];
+            if (!atom) return;
+            
+            // Create multiple orbital shapes
+            const orbitalGeometries = [
+                new THREE.SphereGeometry(2, 32, 32), // s-orbital
+                new THREE.TorusGeometry(2.5, 0.8, 16, 32), // p-orbital approximation
+                new THREE.SphereGeometry(3, 24, 24) // outer shell
+            ];
+            
+            orbitalGeometries.forEach((geometry, i) => {
+                const material = orbitalShaderMaterial.clone();
+                material.uniforms.opacity.value = 0.1 - i * 0.02;
+                material.uniforms.color1.value = new THREE.Color(
+                    atomIndex % 2 === 0 ? 0x4f46e5 : 0x059669
+                );
+                
+                const orbital = new THREE.Mesh(geometry, material);
+                orbital.position.copy(atom.core.position);
+                orbital.userData = { 
+                    originalScale: 1 + i * 0.2,
+                    phase: atomIndex * 0.5 + i * 0.3 
+                };
+                
+                this.orbitals.push(orbital);
+                this.moleculeGroup.add(orbital);
+            });
+        });
+    }
+    
+    addLighting() {
+        // Ambient light
+        const ambientLight = new THREE.AmbientLight(0x404040, 0.4);
+        this.scene.add(ambientLight);
+        
+        // Main directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(10, 10, 5);
+        directionalLight.castShadow = true;
+        directionalLight.shadow.mapSize.width = 2048;
+        directionalLight.shadow.mapSize.height = 2048;
+        this.scene.add(directionalLight);
+        
+        // Point lights for atom glow
+        const colors = [0x4f46e5, 0x059669, 0xdc2626];
+        colors.forEach((color, i) => {
+            const pointLight = new THREE.PointLight(color, 0.5, 10);
+            pointLight.position.set(
+                Math.cos(i * 2.1) * 5,
+                Math.sin(i * 2.1) * 5,
+                2
+            );
+            this.scene.add(pointLight);
+        });
+    }
+    
+    onMouseMove(event) {
+        const rect = this.container.getBoundingClientRect();
+        const mouseX = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+        const mouseY = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+        
+        // Rotate molecule based on mouse position
+        if (this.moleculeGroup) {
+            this.moleculeGroup.rotation.y = mouseX * 0.5;
+            this.moleculeGroup.rotation.x = mouseY * 0.3;
+        }
+    }
+    
+    onWindowResize() {
+        this.camera.aspect = this.container.clientWidth / this.container.clientHeight;
+        this.camera.updateProjectionMatrix();
+        this.renderer.setSize(this.container.clientWidth, this.container.clientHeight);
+    }
+    
+    animate() {
+        this.animationId = requestAnimationFrame(() => this.animate());
+        
+        this.time += 0.01;
+        
+        // Update orbital shaders
+        this.orbitals.forEach(orbital => {
+            if (orbital.material.uniforms) {
+                orbital.material.uniforms.time.value = this.time;
+            }
+            
+            // Pulsing animation
+            const scale = orbital.userData.originalScale + 
+                         Math.sin(this.time * 2 + orbital.userData.phase) * 0.1;
+            orbital.scale.setScalar(scale);
+            
+            // Rotation
+            orbital.rotation.x += 0.005;
+            orbital.rotation.y += 0.003;
+        });
+        
+        // Gentle molecule rotation
+        if (this.moleculeGroup) {
+            this.moleculeGroup.rotation.z += 0.002;
+        }
+        
+        // Atom glow pulsing
+        this.atoms.forEach((atom, index) => {
+            const pulse = 1 + Math.sin(this.time * 3 + index * 0.5) * 0.1;
+            atom.glow.scale.setScalar(pulse);
+        });
+        
+        this.renderer.render(this.scene, this.camera);
+    }
+    
+    destroy() {
+        if (this.animationId) {
+            cancelAnimationFrame(this.animationId);
+        }
+        
+        // Clean up Three.js resources
+        this.scene.traverse((child) => {
+            if (child.geometry) child.geometry.dispose();
+            if (child.material) {
+                if (Array.isArray(child.material)) {
+                    child.material.forEach(material => material.dispose());
+                } else {
+                    child.material.dispose();
+                }
+            }
+        });
+        
+        this.renderer.dispose();
+    }
+}
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
@@ -382,16 +731,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-// Initialize molecular background
+// Initialize molecular background and advanced visualization
 let molecularBg;
+let advancedMolecule;
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize advanced Three.js molecule
+    advancedMolecule = new AdvancedMolecularVisualization();
+    
+    // Initialize canvas background (fallback)
     molecularBg = new MolecularBackground();
+    
+    const animatedElements = document.querySelectorAll('.about-card, .stat-card, .project-card');
+    animatedElements.forEach(el => {
+        el.style.animationPlayState = 'paused';
+        observer.observe(el);
+    });
+    
+    // Start particle animation
+    animateParticles();
 });
 
 // Cleanup on page unload
 window.addEventListener('beforeunload', () => {
     if (molecularBg) {
         molecularBg.destroy();
+    }
+    if (advancedMolecule) {
+        advancedMolecule.destroy();
     }
 });
 
