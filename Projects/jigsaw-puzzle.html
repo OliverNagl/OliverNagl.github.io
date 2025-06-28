@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Solution Jigsaw Puzzles - Oliver Nagl</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2>Oliver Nagl</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">Double Solution Jigsaw Puzzles</h1>
+                <p class="project-subtitle">Algorithmic generation of jigsaw puzzles with exactly two non-trivial solutions</p>
+                <div class="project-tags">
+                    <span class="tag">pySAT</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Group Theory</span>
+                    <span class="tag">Constraint Satisfiability</span>
+                    <span class="tag">Computational Mathematics</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <div class="container">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    Most jigsaw puzzles have multiple trivial solutions where pieces can be placed anywhere without forming a coherent image, 
+                    or they have a single unique solution that creates the intended picture. This project explores a fascinating middle ground: 
+                    creating jigsaw puzzles that can be solved in exactly two non-trivial ways, each forming a meaningful arrangement.
+                </p>
+                <p>
+                    Inspired by recent advances in diffusion-based image generation and the work of Ryan Burgert et al. on 
+                    <a href="https://diffusionillusions.com/" target="_blank">diffusion illusions</a>, this project tackles the 
+                    computational challenge of generating larger double-solution jigsaw puzzles than previously possible.
+                </p>
+            </section>
+
+            <!-- Results Section -->
+            <section class="content-section">
+                <h2>Generated Puzzle Solutions</h2>
+                <p>Below are the two unique solutions for a 15×15 jigsaw puzzle generated using this algorithm:</p>
+                
+                <div class="puzzle-showcase">
+                    <div class="puzzle-solution">
+                        <h3>Solution 1</h3>
+                        <img src="../Images/jigsaw_puzzle_14.svg" alt="Jigsaw Puzzle Solution 1" class="puzzle-image">
+                    </div>
+                    <div class="puzzle-solution">
+                        <h3>Solution 2 (Mapped)</h3>
+                        <img src="../Images/jigsaw_puzzle_mapped_14.svg" alt="Jigsaw Puzzle Solution 2" class="puzzle-image">
+                    </div>
+                </div>
+
+                <p class="note">
+                    <strong>Note:</strong> These represent the only two possible arrangements for this specific set of puzzle pieces, 
+                    demonstrating the mathematical precision required to create such constrained systems.
+                </p>
+            </section>
+
+            <!-- Diffusion Results Section -->
+            <section class="content-section">
+                <h2>Diffusion Illusion Results</h2>
+                <p>
+                    After generating the double-solution puzzle, I applied diffusion illusion algorithms to create visual images 
+                    that correspond to each solution. While challenging due to the complexity of mapping two distinct images onto 
+                    a 15×15 grid within 512×512 pixel constraints, the results demonstrate the potential of this approach:
+                </p>
+                
+                <div class="diffusion-showcase">
+                    <div class="diffusion-result">
+                        <h3>Van Gogh Style - Solution 1</h3>
+                        <div class="image-placeholder">
+                            <p>VanGogh61.png<br><small>(Image will be added)</small></p>
+                        </div>
+                    </div>
+                    <div class="diffusion-result">
+                        <h3>Van Gogh Style - Solution 2</h3>
+                        <div class="image-placeholder">
+                            <p>VanGogh62.png<br><small>(Image will be added)</small></p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Approach Section -->
+            <section class="content-section">
+                <h2>Technical Approach</h2>
+                <p>
+                    This project extends beyond Matt Parker's brute-force approach (limited to ~6×6 puzzles) by implementing 
+                    a sophisticated algorithm capable of generating puzzles up to 15×15 pieces. The solution combines multiple 
+                    computational techniques:
+                </p>
+
+                <div class="approach-steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3>Initial Puzzle Generation</h3>
+                            <p>Create a random valid jigsaw puzzle with a predetermined number of initialized edge connections.</p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3>SAT Encoding</h3>
+                            <p>
+                                Transform the puzzle into a Boolean satisfiability problem where each piece has variables for:
+                                <ul>
+                                    <li>Connection types for each edge (4 × number of connection types)</li>
+                                    <li>Possible positions on the grid</li>
+                                    <li>Constraints ensuring valid piece placement and connectivity</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3>Constraint Optimization</h3>
+                            <p>
+                                Add sophisticated constraints to prevent trivial solutions:
+                                <ul>
+                                    <li>Disallow global rotations</li>
+                                    <li>Prevent simple row/column swaps</li>
+                                    <li>Ensure meaningful visual differences between solutions</li>
+                                </ul>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3>Solution Verification</h3>
+                            <p>
+                                Use pySAT solver to find the second solution, then verify no third solution exists, 
+                                ensuring the puzzle has exactly two valid arrangements.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h3>Visualization Mapping</h3>
+                            <p>
+                                Generate UV-identity maps for the solutions to enable diffusion illusion processing 
+                                and visual representation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Challenges and Achievements -->
+            <section class="content-section">
+                <h2>Challenges & Achievements</h2>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                        <h3>Scale Improvement</h3>
+                        <p>Extended puzzle generation capability from 6×6 to 15×15 pieces, representing a 6.25× increase in complexity.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Algorithm Innovation</h3>
+                        <p>Developed novel constraint patterns to ensure "interesting" second solutions rather than trivial variations.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Performance Optimization</h3>
+                        <p>Achieved overnight computation on standard laptop hardware for complex 15×15 puzzles.</p>
+                    </div>
+
+                    <div class="achievement-card">
+                        <i class="fas fa-puzzle-piece"></i>
+                        <h3>Mathematical Rigor</h3>
+                        <p>Implemented verification systems to guarantee exactly two solutions exist for each generated puzzle.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Work -->
+            <section class="content-section">
+                <h2>Future Developments</h2>
+                <ul class="future-list">
+                    <li><strong>Algorithm Documentation:</strong> Improve code documentation and constraint explanation</li>
+                    <li><strong>Shotgun Edge Assembly:</strong> Implement initial puzzle generation using research-backed methods</li>
+                    <li><strong>Parameter Optimization:</strong> Fine-tune hyperparameters for better solution diversity</li>
+                    <li><strong>Scalability:</strong> Explore techniques for even larger puzzle dimensions</li>
+                    <li><strong>Visual Enhancement:</strong> Improve diffusion illusion quality for complex imagery</li>
+                </ul>
+            </section>
+
+            <!-- Research References -->
+            <section class="content-section">
+                <h2>Research Foundation</h2>
+                <p>This work builds upon established mathematical research in jigsaw puzzle theory:</p>
+                
+                <div class="references">
+                    <div class="reference">
+                        <h4>Anders Martinsson (2019)</h4>
+                        <p><em>"A linear threshold for uniqueness of solutions to random jigsaw puzzles"</em></p>
+                        <p>Combinatorics, Probability and Computing, 28(2)</p>
+                        <a href="https://arxiv.org/abs/1701.04813" target="_blank">arXiv:1701.04813</a>
+                    </div>
+
+                    <div class="reference">
+                        <h4>Anders Martinsson (2016)</h4>
+                        <p><em>"Shotgun edge assembly of random jigsaw puzzles"</em></p>
+                        <p>arXiv preprint</p>
+                        <a href="https://arxiv.org/abs/1605.03086" target="_blank">arXiv:1605.03086</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Links -->
+            <section class="content-section">
+                <h2>Project Resources</h2>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        View Code on GitHub
+                    </a>
+                    <a href="https://diffusionillusions.com/" target="_blank" class="btn-secondary">
+                        <i class="fas fa-external-link-alt"></i>
+                        Diffusion Illusions
+                    </a>
+                    <a href="https://www.youtube.com/watch?v=b5nElEbbnfU" target="_blank" class="btn-secondary">
+                        <i class="fab fa-youtube"></i>
+                        Matt Parker's Video
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Oliver Nagl. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

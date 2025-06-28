@@ -1,0 +1,353 @@
+/* Project Page Specific Styles */
+.project-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 120px 0 80px;
+    min-height: 50vh;
+    display: flex;
+    align-items: center;
+}
+
+.project-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: white;
+}
+
+.project-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.project-subtitle {
+    font-size: 1.25rem;
+    margin: 0 0 2rem 0;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+/* Main Content */
+.project-content {
+    padding: 80px 0;
+    background: #fafafa;
+}
+
+.content-section {
+    background: white;
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.content-section h2 {
+    color: #4f46e5;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 0.5rem;
+}
+
+.content-section h3 {
+    color: #374151;
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem 0;
+}
+
+.content-section p {
+    line-height: 1.8;
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+}
+
+.content-section a {
+    color: #4f46e5;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.content-section a:hover {
+    text-decoration: underline;
+}
+
+/* Puzzle Showcase */
+.puzzle-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin: 3rem 0;
+}
+
+.puzzle-solution {
+    text-align: center;
+}
+
+.puzzle-solution h3 {
+    margin-bottom: 1rem;
+    color: #374151;
+}
+
+.puzzle-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.puzzle-image:hover {
+    transform: scale(1.05);
+}
+
+/* Diffusion Showcase */
+.diffusion-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.diffusion-result {
+    text-align: center;
+}
+
+.image-placeholder {
+    background: #f3f4f6;
+    border: 2px dashed #d1d5db;
+    border-radius: 8px;
+    padding: 3rem 2rem;
+    color: #6b7280;
+    font-style: italic;
+}
+
+/* Technical Approach */
+.approach-steps {
+    margin: 2rem 0;
+}
+
+.step {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+}
+
+.step-number {
+    background: #4f46e5;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    flex-shrink: 0;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    margin: 0 0 1rem 0;
+    color: #374151;
+}
+
+.step-content p {
+    margin-bottom: 1rem;
+}
+
+.step-content ul {
+    color: #6b7280;
+    line-height: 1.6;
+    margin-left: 1.5rem;
+}
+
+.step-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Achievements */
+.achievements-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.achievement-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.achievement-card i {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.achievement-card h3 {
+    margin: 1rem 0;
+    color: #374151;
+    font-size: 1.25rem;
+}
+
+.achievement-card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Future Work */
+.future-list {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.future-list li {
+    background: #f8fafc;
+    border-left: 4px solid #4f46e5;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0 8px 8px 0;
+    line-height: 1.6;
+}
+
+.future-list strong {
+    color: #374151;
+}
+
+/* References */
+.references {
+    margin: 2rem 0;
+}
+
+.reference {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid #4f46e5;
+}
+
+.reference h4 {
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.reference p {
+    margin: 0.5rem 0;
+    font-size: 0.95rem;
+}
+
+.reference a {
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.note {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 8px;
+    padding: 1.5rem;
+    color: #1e40af;
+    font-style: italic;
+    margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .content-section {
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .step {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .step-number {
+        align-self: flex-start;
+    }
+    
+    .puzzle-showcase,
+    .achievements-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .project-links .btn-primary,
+    .project-links .btn-secondary {
+        text-align: center;
+    }
+}
