@@ -1,6 +1,16 @@
-# Scientific Portfolio Website
+# Oliver Nagl's Scientific Portfolio Website
 
 A modern, science-themed personal portfolio website featuring animated molecular backgrounds and interactive elements.
+
+## Live Website
+
+Visit the website at: https://olivernagl.github.io
+
+## Personal Information
+
+- **Name**: Oliver Nagl
+- **LinkedIn**: https://www.linkedin.com/in/oliver-nagl-41a40a1b0/
+- **GitHub**: https://github.com/OliverNagl
 
 ## Features
 
