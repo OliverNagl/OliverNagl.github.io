@@ -1,11 +1,15 @@
 // mRNA Translation Animation
 class TranslationAnimation {
     constructor() {
+        console.log('Initializing TranslationAnimation...');
         this.canvas = document.getElementById('translationCanvas');
-        if (!this.canvas) return;
+        if (!this.canvas) {
+            console.error('Canvas not found!');
+            return;
+        }
+        console.log('Canvas found:', this.canvas);
         
         this.ctx = this.canvas.getContext('2d');
-        this.setupCanvas();
         
         // Animation state
         this.time = 0;
@@ -24,33 +28,38 @@ class TranslationAnimation {
             'His', 'Val', 'Ile', 'Trp', 'Pro', 'Stop'
         ];
         
-        // Animation components
+        // Animation components - will be set after setupCanvas
+        this.mRNAPosition = 0;
+        this.proteinChain = [];
+        this.currentCodon = 0;
+        this.tRNAs = [];
+        
+        this.setupCanvas();
+        this.setupScrollObserver();
+        this.animate();
+    }
+    
+    setupCanvas() {
+        // Set fixed canvas dimensions
+        this.canvas.width = 500;
+        this.canvas.height = 400;
+        this.canvas.style.width = '500px';
+        this.canvas.style.height = '400px';
+        
+        // Update ribosome position based on actual canvas size
         this.ribosome = {
             x: this.canvas.width * 0.3,
             y: this.canvas.height * 0.5,
             width: 120,
             height: 80
         };
-        
-        this.mRNAPosition = 0;
-        this.proteinChain = [];
-        this.currentCodon = 0;
-        this.tRNAs = [];
-        
-        this.setupScrollObserver();
-        this.animate();
-    }
-    
-    setupCanvas() {
-        const rect = this.canvas.getBoundingClientRect();
-        this.canvas.width = rect.width * window.devicePixelRatio;
-        this.canvas.height = rect.height * window.devicePixelRatio;
-        this.ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
-        this.canvas.style.width = rect.width + 'px';
-        this.canvas.style.height = rect.height + 'px';
     }
     
     setupScrollObserver() {
+        // Start animation immediately for testing
+        this.isVisible = true;
+        this.startTranslation();
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 this.isVisible = entry.isIntersecting;
@@ -375,8 +384,9 @@ class TranslationAnimation {
     }
     
     draw() {
-        // Clear canvas
-        this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+        // Clear canvas with a visible background for debugging
+        this.ctx.fillStyle = '#1e293b';
+        this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
         // Draw components
         this.drawmRNA();
