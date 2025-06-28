@@ -9,6 +9,7 @@ Visit the website at: https://olivernagl.github.io
 ## Personal Information
 
 - **Name**: Oliver Nagl
+- **Email**: olnagl@ethz.ch
 - **LinkedIn**: https://www.linkedin.com/in/oliver-nagl-41a40a1b0/
 - **GitHub**: https://github.com/OliverNagl
 
@@ -102,4 +103,3 @@ The scientific color palette includes:
 
 ---
 
-**Note**: Remember to replace all placeholder content with your actual information before deploying the website.
