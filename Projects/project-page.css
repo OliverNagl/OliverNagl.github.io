@@ -692,6 +692,491 @@
     font-size: 0.95rem;
 }
 
+/* Mitral Valve Project Specific Styles */
+.results-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.result-video {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.result-video h3 {
+    color: #374151;
+    margin: 0 0 1.5rem 0;
+    text-align: center;
+}
+
+.result-gif {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    display: block;
+    margin: 0 auto 1rem auto;
+}
+
+.result-description {
+    color: #6b7280;
+    font-style: italic;
+    text-align: center;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.performance-metrics {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.performance-metrics h3 {
+    color: #374151;
+    margin: 0 0 2rem 0;
+    text-align: center;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.metric-card {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    border-left: 4px solid #4f46e5;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4f46e5;
+    line-height: 1;
+}
+
+.metric-label {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #374151;
+    margin: 0.5rem 0;
+}
+
+.metric-desc {
+    font-size: 0.9rem;
+    color: #6b7280;
+    margin: 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: #4f46e5;
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin: 1rem 0;
+    color: #374151;
+    font-size: 1.25rem;
+}
+
+.feature-card p {
+    color: #6b7280;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.architecture-overview {
+    margin: 2rem 0;
+}
+
+.model-variants {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.model-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.model-card:hover {
+    border-color: #4f46e5;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+}
+
+.model-number {
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: #4f46e5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.model-card h4 {
+    color: #374151;
+    margin: 1rem 0;
+    padding-top: 0.5rem;
+}
+
+.model-card p {
+    color: #6b7280;
+    margin-bottom: 1rem;
+}
+
+.model-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.model-card li {
+    padding: 0.25rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.model-card li::before {
+    content: '→';
+    color: #4f46e5;
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.processing-pipeline {
+    margin: 2rem 0;
+}
+
+.pipeline-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.step {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #4f46e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.step-icon {
+    background: #eff6ff;
+    color: #4f46e5;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.step-content h4 {
+    color: #374151;
+    margin: 0 0 0.5rem 0;
+}
+
+.step-content p {
+    color: #6b7280;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.augmentation-stats {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.augmentation-stats h3 {
+    color: #374151;
+    margin: 0 0 2rem 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #4f46e5;
+    line-height: 1;
+}
+
+.stat-label {
+    color: #374151;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    text-align: center;
+}
+
+.loss-functions {
+    margin: 2rem 0;
+}
+
+.loss-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.loss-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+}
+
+.loss-card h4 {
+    color: #374151;
+    margin: 0 0 1rem 0;
+}
+
+.loss-card p {
+    color: #6b7280;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.formula {
+    background: #1f2937;
+    color: #e5e7eb;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.training-strategy {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #4f46e5;
+}
+
+.training-strategy h3 {
+    color: #374151;
+    margin: 0 0 1.5rem 0;
+}
+
+.training-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.training-list li {
+    background: white;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 8px;
+    color: #6b7280;
+    border-left: 3px solid #4f46e5;
+}
+
+.training-list strong {
+    color: #374151;
+}
+
+.code-structure {
+    margin: 2rem 0;
+}
+
+.file-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.file-category {
+    background: #1f2937;
+    border-radius: 12px;
+    padding: 2rem;
+    color: white;
+}
+
+.file-category h4 {
+    color: #e5e7eb;
+    margin: 0 0 1.5rem 0;
+    border-bottom: 2px solid #4f46e5;
+    padding-bottom: 0.5rem;
+}
+
+.clinical-benefits {
+    margin: 2rem 0;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.benefit-card {
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+}
+
+.benefit-card i {
+    font-size: 2.5rem;
+    color: #1e40af;
+    margin-bottom: 1rem;
+}
+
+.benefit-card h4 {
+    color: #1e40af;
+    margin: 1rem 0;
+    font-size: 1.25rem;
+}
+
+.benefit-card p {
+    color: #1e40af;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.clinical-workflow {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    border-left: 4px solid #4f46e5;
+}
+
+.clinical-workflow h3 {
+    color: #374151;
+    margin: 0 0 1rem 0;
+}
+
+.clinical-workflow p {
+    color: #6b7280;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.tech-stack {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.tech-category {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid #4f46e5;
+}
+
+.tech-category h3 {
+    color: #374151;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+}
+
+.tech-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tech-category li {
+    padding: 0.75rem 0;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    line-height: 1.5;
+}
+
+.tech-category li:last-child {
+    border-bottom: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .project-title {
@@ -750,5 +1235,33 @@
     .equation {
         font-size: 1.2rem;
         padding: 0.75rem 1.5rem;
+    }
+    
+    .results-showcase {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .features-grid,
+    .model-variants,
+    .pipeline-steps,
+    .loss-grid,
+    .file-categories,
+    .benefits-grid,
+    .tech-stack {
+        grid-template-columns: 1fr;
+    }
+    
+    .metrics-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .step {
+        flex-direction: column;
+        text-align: center;
     }
 }

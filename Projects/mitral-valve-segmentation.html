@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitral Valve Segmentation - Oliver Nagl</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2>Oliver Nagl</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">Mitral Valve Segmentation</h1>
+                <p class="project-subtitle">Automated mitral valve segmentation from ultrasound echocardiography videos using U-Net deep learning</p>
+                <div class="project-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">U-Net</span>
+                    <span class="tag">Medical Imaging</span>
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Deep Learning</span>
+                    <span class="tag">Cardiac Segmentation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <div class="container">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    This comprehensive project implements automated mitral valve segmentation from ultrasound echocardiography videos 
+                    using state-of-the-art deep learning techniques. Developed as the final project for the "Advanced Machine Learning" 
+                    course taught by Prof. Joachim M. Buhmann at ETH Zurich, it addresses a critical need in cardiac imaging and diagnosis.
+                </p>
+                <p>
+                    The mitral valve is a crucial cardiac structure, and its accurate segmentation from ultrasound images is essential 
+                    for cardiac diagnosis and monitoring. This project implements a U-Net-based deep learning approach to automatically 
+                    segment mitral valve regions from apical four-chamber (A4C) view echocardiography videos.
+                </p>
+
+                <div class="course-info">
+                    <div class="course-detail">
+                        <h4>Course</h4>
+                        <p>Advanced Machine Learning</p>
+                    </div>
+                    <div class="course-detail">
+                        <h4>Professor</h4>
+                        <p>Prof. Joachim M. Buhmann</p>
+                    </div>
+                    <div class="course-detail">
+                        <h4>Institution</h4>
+                        <p>ETH Zurich</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Showcase -->
+            <section class="content-section">
+                <h2>Segmentation Results</h2>
+                <div class="results-showcase">
+                    <div class="result-video">
+                        <h3>Real-time Segmentation Performance</h3>
+                        <img src="../Images/mitral_valve_segmentation.gif" alt="Mitral valve segmentation results showing automated detection" class="result-gif">
+                        <p class="result-description">
+                            Automated mitral valve segmentation results on test echocardiography data, demonstrating 
+                            real-time detection and boundary delineation with high accuracy.
+                        </p>
+                    </div>
+                    
+                    <div class="performance-metrics">
+                        <h3>Model Performance</h3>
+                        <div class="metrics-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">0.77</div>
+                                <div class="metric-label">IoU Score</div>
+                                <div class="metric-desc">Intersection over Union</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">512×512</div>
+                                <div class="metric-label">Resolution</div>
+                                <div class="metric-desc">Processed Image Size</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">45×</div>
+                                <div class="metric-label">Augmentation</div>
+                                <div class="metric-desc">Data Multiplication</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Key Features -->
+            <section class="content-section">
+                <h2>Key Features & Innovations</h2>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <i class="fas fa-sitemap"></i>
+                        <h3>Dual-Task Architecture</h3>
+                        <p>Simultaneous bounding box detection and mitral valve segmentation for improved accuracy and efficiency.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-random"></i>
+                        <h3>Advanced Data Augmentation</h3>
+                        <p>Elastic deformation, rotation, and intensity variations to enhance model robustness and generalization.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Custom Loss Functions</h3>
+                        <p>IoU-based losses specifically optimized for medical image segmentation tasks.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Multi-Scale U-Net Variants</h3>
+                        <p>Specialized architectures for different segmentation tasks with configurable complexity.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-video"></i>
+                        <h3>End-to-End Pipeline</h3>
+                        <p>Complete workflow from raw ultrasound videos to final segmentation masks.</p>
+                    </div>
+
+                    <div class="feature-card">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Clinical Relevance</h3>
+                        <p>Real-world application for cardiac diagnosis and automated medical image analysis.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Technical Architecture -->
+            <section class="content-section">
+                <h2>Technical Architecture</h2>
+                
+                <div class="architecture-overview">
+                    <h3>U-Net Model Variants</h3>
+                    <p>The project implements three specialized U-Net architectures, each optimized for specific tasks:</p>
+                    
+                    <div class="model-variants">
+                        <div class="model-card">
+                            <div class="model-number">1</div>
+                            <h4>UNet_seg</h4>
+                            <p><strong>Purpose:</strong> Dedicated mitral valve segmentation</p>
+                            <ul>
+                                <li>5-layer encoder-decoder with skip connections</li>
+                                <li>Configurable channel reduction factor</li>
+                                <li>Optimized for pixel-level boundary detection</li>
+                            </ul>
+                        </div>
+
+                        <div class="model-card">
+                            <div class="model-number">2</div>
+                            <h4>UNet_box</h4>
+                            <p><strong>Purpose:</strong> Bounding box detection</p>
+                            <ul>
+                                <li>Similar architecture to UNet_seg</li>
+                                <li>Optimized for coarse localization</li>
+                                <li>Provides region-of-interest constraints</li>
+                            </ul>
+                        </div>
+
+                        <div class="model-card">
+                            <div class="model-number">3</div>
+                            <h4>Combined UNet</h4>
+                            <p><strong>Purpose:</strong> Unified multi-task architecture</p>
+                            <ul>
+                                <li>Simultaneous box detection and segmentation</li>
+                                <li>Shared feature representations</li>
+                                <li>Efficient joint optimization</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="technical-highlight">
+                    <i class="fas fa-cogs"></i>
+                    <div>
+                        <h4>Advanced Data Processing Pipeline</h4>
+                        <p>Sophisticated preprocessing and augmentation strategy designed specifically for ultrasound echocardiography data with medical-grade quality standards.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Data Processing & Augmentation -->
+            <section class="content-section">
+                <h2>Data Processing & Augmentation</h2>
+                
+                <div class="processing-pipeline">
+                    <h3>Preprocessing Steps</h3>
+                    <div class="pipeline-steps">
+                        <div class="step">
+                            <div class="step-icon"><i class="fas fa-expand-arrows-alt"></i></div>
+                            <div class="step-content">
+                                <h4>Multi-scale Training</h4>
+                                <p>Bicubic interpolation to standardized 512×512 resolution for consistent processing</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-icon"><i class="fas fa-adjust"></i></div>
+                            <div class="step-content">
+                                <h4>Intensity Normalization</h4>
+                                <p>Grayscale normalization with random scaling (0.51-1.2×) for robustness</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-icon"><i class="fas fa-sync-alt"></i></div>
+                            <div class="step-content">
+                                <h4>Geometric Augmentations</h4>
+                                <p>180-degree rotations with 70% probability for orientation invariance</p>
+                            </div>
+                        </div>
+
+                        <div class="step">
+                            <div class="step-icon"><i class="fas fa-wave-square"></i></div>
+                            <div class="step-content">
+                                <h4>Elastic Deformation</h4>
+                                <p>Random grid-based deformation with configurable sigma and rotation parameters</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="augmentation-stats">
+                    <h3>Augmentation Strategy</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number">45×</span>
+                            <span class="stat-label">Data Multiplication</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">70%</span>
+                            <span class="stat-label">Rotation Probability</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">0.51-1.2×</span>
+                            <span class="stat-label">Intensity Scaling Range</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Loss Functions & Training -->
+            <section class="content-section">
+                <h2>Loss Functions & Training Strategy</h2>
+                
+                <div class="loss-functions">
+                    <h3>Custom Loss Functions</h3>
+                    <div class="loss-grid">
+                        <div class="loss-card">
+                            <h4>IoU Loss</h4>
+                            <p>Intersection over Union loss for pixel-wise optimization, specifically designed for segmentation tasks.</p>
+                            <div class="formula">IoU = |A ∩ B| / |A ∪ B|</div>
+                        </div>
+
+                        <div class="loss-card">
+                            <h4>Median IoU Loss</h4>
+                            <p>Robust variant using median instead of mean across batches to handle outliers effectively.</p>
+                            <div class="formula">L = 1 - median(IoU_batch)</div>
+                        </div>
+
+                        <div class="loss-card">
+                            <h4>Combined Loss</h4>
+                            <p>Weighted combination for multi-task learning, balancing box detection and segmentation objectives.</p>
+                            <div class="formula">L_total = α·L_seg + β·L_box</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="training-strategy">
+                    <h3>Training Configuration</h3>
+                    <ul class="training-list">
+                        <li><strong>Train-Validation Split:</strong> 80/20 with random sampling</li>
+                        <li><strong>Batch Size:</strong> 16 with gradient accumulation</li>
+                        <li><strong>Optimizer:</strong> Adam with customizable learning rate</li>
+                        <li><strong>Early Stopping:</strong> Based on validation IoU performance</li>
+                        <li><strong>Model Checkpointing:</strong> Automatic saving of best-performing models</li>
+                        <li><strong>Convergence:</strong> Achieved within 50-100 epochs</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Implementation Details -->
+            <section class="content-section">
+                <h2>Implementation & Repository Structure</h2>
+                
+                <div class="code-structure">
+                    <h3>Core Implementation</h3>
+                    <div class="file-categories">
+                        <div class="file-category">
+                            <h4>Model Architecture</h4>
+                            <div class="file-list">
+                                <div class="file-item">
+                                    <i class="fas fa-file-code"></i>
+                                    <span><code>model_2.py</code> - U-Net architecture implementations</span>
+                                </div>
+                                <div class="file-item">
+                                    <i class="fas fa-file-code"></i>
+                                    <span><code>losses.py</code> - Custom IoU and Median IoU loss functions</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-category">
+                            <h4>Training & Inference</h4>
+                            <div class="file-list">
+                                <div class="file-item">
+                                    <i class="fas fa-play-circle"></i>
+                                    <span><code>train.py</code> - Training pipeline with validation</span>
+                                </div>
+                                <div class="file-item">
+                                    <i class="fas fa-search"></i>
+                                    <span><code>predict.py</code> - Inference pipeline for test data</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-category">
+                            <h4>Data Processing</h4>
+                            <div class="file-list">
+                                <div class="file-item">
+                                    <i class="fas fa-database"></i>
+                                    <span><code>dataset.py</code> - Custom PyTorch dataset class</span>
+                                </div>
+                                <div class="file-item">
+                                    <i class="fas fa-random"></i>
+                                    <span><code>augment_data_3.py</code> - Advanced augmentation pipeline</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="file-category">
+                            <h4>Visualization</h4>
+                            <div class="file-list">
+                                <div class="file-item">
+                                    <i class="fas fa-video"></i>
+                                    <span><code>make_video_A4C_view.py</code> - Video generation with overlays</span>
+                                </div>
+                                <div class="file-item">
+                                    <i class="fas fa-file-image"></i>
+                                    <span><code>convert_to_gif.py</code> - GIF conversion utilities</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Clinical Relevance -->
+            <section class="content-section">
+                <h2>Clinical Impact & Applications</h2>
+                
+                <div class="clinical-benefits">
+                    <h3>Healthcare Benefits</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-card">
+                            <i class="fas fa-user-md"></i>
+                            <h4>Automated Analysis</h4>
+                            <p>Reduces manual annotation time for cardiologists, allowing focus on critical diagnosis and treatment decisions.</p>
+                        </div>
+
+                        <div class="benefit-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Consistent Measurements</h4>
+                            <p>Eliminates inter-observer variability and provides standardized, reproducible segmentation results.</p>
+                        </div>
+
+                        <div class="benefit-card">
+                            <i class="fas fa-clock"></i>
+                            <h4>Real-time Processing</h4>
+                            <p>Enables rapid clinical decision-making with immediate feedback during ultrasound examinations.</p>
+                        </div>
+
+                        <div class="benefit-card">
+                            <i class="fas fa-expand"></i>
+                            <h4>Scalable Deployment</h4>
+                            <p>Can be integrated into existing ultrasound systems for widespread clinical adoption.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="clinical-workflow">
+                    <h3>Clinical Workflow Integration</h3>
+                    <p>
+                        This automated segmentation system integrates seamlessly into existing cardiac imaging workflows, 
+                        providing immediate visual feedback to clinicians during echocardiography examinations. The system 
+                        processes standard A4C view ultrasound videos in real-time, highlighting mitral valve boundaries 
+                        and enabling quantitative measurements for cardiac function assessment.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Future Improvements -->
+            <section class="content-section">
+                <h2>Future Research Directions</h2>
+                <ul class="future-list">
+                    <li><strong>3D Temporal Modeling:</strong> Incorporate temporal consistency across video frames for improved accuracy</li>
+                    <li><strong>Multi-view Integration:</strong> Combine multiple echocardiography views for robust segmentation</li>
+                    <li><strong>Uncertainty Quantification:</strong> Add probabilistic outputs for clinical confidence estimation</li>
+                    <li><strong>Real-time Optimization:</strong> Model compression and optimization for real-time clinical deployment</li>
+                    <li><strong>Multi-structure Segmentation:</strong> Extend to other cardiac structures (aortic valve, ventricles)</li>
+                    <li><strong>Clinical Validation:</strong> Large-scale clinical trials and FDA approval pathway</li>
+                </ul>
+            </section>
+
+            <!-- Technology Stack -->
+            <section class="content-section">
+                <h2>Technology Stack & Requirements</h2>
+                
+                <div class="tech-stack">
+                    <div class="tech-category">
+                        <h3>Deep Learning Framework</h3>
+                        <ul>
+                            <li>PyTorch ≥1.9.0 - Core deep learning framework</li>
+                            <li>torchvision ≥0.10.0 - Computer vision utilities</li>
+                            <li>CUDA support - GPU acceleration for training</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Image Processing</h3>
+                        <ul>
+                            <li>OpenCV ≥4.5.0 - Image and video processing</li>
+                            <li>elasticdeform ≥0.4.0 - Advanced data augmentation</li>
+                            <li>SciPy ≥1.7.0 - Scientific computing functions</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-category">
+                        <h3>Data Science Stack</h3>
+                        <ul>
+                            <li>NumPy ≥1.20.0 - Numerical computing</li>
+                            <li>Pandas ≥1.3.0 - Data manipulation and analysis</li>
+                            <li>Matplotlib ≥3.3.0 - Visualization and plotting</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Links -->
+            <section class="content-section">
+                <h2>Project Resources</h2>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        View Code on GitHub
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-file-pdf"></i>
+                        Technical Report
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-graduation-cap"></i>
+                        Course Information
+                    </a>
+                </div>
+                
+                <div class="note">
+                    <strong>Note:</strong> Due to data privacy considerations and file size limitations, 
+                    the trained models and medical data are not publicly available. The repository contains 
+                    the complete implementation code and documentation for reproducibility.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Oliver Nagl. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

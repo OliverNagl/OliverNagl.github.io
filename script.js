@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Don't trigger if clicking on overlay links
             if (!e.target.closest('.project-link')) {
                 const projectLinks = [
-                    '#', // Mitral Valve - placeholder
+                    'Projects/mitral-valve-segmentation.html', // Mitral Valve
                     'Projects/pde-neural-operators.html', // PDE identification
                     'Projects/jigsaw-puzzle.html', // Jigsaw Puzzle
                     '#'  // DFT calculation - placeholder
