@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (!e.target.closest('.project-link')) {
                 const projectLinks = [
                     '#', // Mitral Valve - placeholder
-                    '#', // PDE identification - placeholder  
+                    'Projects/pde-neural-operators.html', // PDE identification
                     'Projects/jigsaw-puzzle.html', // Jigsaw Puzzle
                     '#'  // DFT calculation - placeholder
                 ];

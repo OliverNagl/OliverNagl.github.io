@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neural Operators for PDEs - Oliver Nagl</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="project-page.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html"><h2>Oliver Nagl</h2></a>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html#home" class="nav-link">Home</a></li>
+                <li><a href="../index.html#about" class="nav-link">About</a></li>
+                <li><a href="../index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero Section -->
+    <section class="project-hero">
+        <div class="container">
+            <div class="project-header">
+                <a href="../index.html#projects" class="back-link">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+                <h1 class="project-title">Neural Operators for PDEs</h1>
+                <p class="project-subtitle">AI-powered identification and solution of partial differential equations using deep learning</p>
+                <div class="project-tags">
+                    <span class="tag">PyTorch</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Neural Operators</span>
+                    <span class="tag">PDE Discovery</span>
+                    <span class="tag">Fourier Transform</span>
+                    <span class="tag">Scientific ML</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <div class="container">
+            <!-- Overview Section -->
+            <section class="content-section">
+                <h2>Project Overview</h2>
+                <p>
+                    This comprehensive project explores three cutting-edge neural network approaches for solving and discovering 
+                    partial differential equations (PDEs) using modern deep learning techniques. Developed as the final project 
+                    for the "Artificial Intelligence for Science and Engineering" course at ETH Zurich, it demonstrates the 
+                    power of AI in scientific computing.
+                </p>
+                <p>
+                    The project encompasses Fourier Neural Operators (FNOs), automated PDE discovery methods, and phase field 
+                    dynamics modeling, representing state-of-the-art approaches to computational physics problems.
+                </p>
+
+                <div class="course-info">
+                    <div class="course-detail">
+                        <h4>Course</h4>
+                        <p>Artificial Intelligence for Science and Engineering (AISE)</p>
+                    </div>
+                    <div class="course-detail">
+                        <h4>Institution</h4>
+                        <p>ETH Zurich</p>
+                    </div>
+                    <div class="course-detail">
+                        <h4>Year</h4>
+                        <p>2024/2025</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Parts Overview -->
+            <section class="content-section">
+                <h2>Project Components</h2>
+                <div class="parts-grid">
+                    <div class="part-card">
+                        <div class="part-number">1</div>
+                        <h3>Fourier Neural Operators</h3>
+                        <p>Implementation of FNOs for solving the 1D wave equation using spectral convolutions in Fourier space.</p>
+                        <ul>
+                            <li>Spectral convolution layers</li>
+                            <li>Multi-resolution training</li>
+                            <li>Out-of-distribution testing</li>
+                        </ul>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-number">2</div>
+                        <h3>PDE Discovery</h3>
+                        <p>Neural network-based methods for identifying unknown governing equations from observational data.</p>
+                        <ul>
+                            <li>Gradient-based discovery</li>
+                            <li>Sparse regression techniques</li>
+                            <li>Multi-variable system support</li>
+                        </ul>
+                    </div>
+
+                    <div class="part-card">
+                        <div class="part-number">3</div>
+                        <h3>Phase Field Dynamics</h3>
+                        <p>Neural network solution for the Allen-Cahn equation modeling phase transitions and interface dynamics.</p>
+                        <ul>
+                            <li>Curriculum learning strategy</li>
+                            <li>Multi-scale modeling</li>
+                            <li>Temporal extrapolation</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Part 1: Fourier Neural Operators -->
+            <section class="content-section">
+                <h2>Part 1: Fourier Neural Operators for Wave Equation</h2>
+                
+                <div class="technical-highlight">
+                    <i class="fas fa-wave-square"></i>
+                    <div>
+                        <h4>Key Innovation</h4>
+                        <p>Leverages spectral properties of PDEs by performing convolutions in Fourier space, making them highly effective for periodic and quasi-periodic problems.</p>
+                    </div>
+                </div>
+
+                <h3>Technical Implementation</h3>
+                <ul class="feature-list">
+                    <li><strong>Spectral Convolution Layer:</strong> Custom implementation of Fourier-domain convolutions</li>
+                    <li><strong>Time-dependent Models:</strong> Support for both static and temporal predictions</li>
+                    <li><strong>Multi-resolution Training:</strong> Training on different spatial resolutions (32, 64, 96, 128 grid points)</li>
+                    <li><strong>Generalization Testing:</strong> Evaluation on unseen resolutions and time horizons</li>
+                </ul>
+
+                <div class="code-showcase">
+                    <h4>Core Components</h4>
+                    <div class="file-list">
+                        <div class="file-item">
+                            <i class="fas fa-file-code"></i>
+                            <span><code>FNO_model.py</code> - Core FNO architecture implementation</span>
+                        </div>
+                        <div class="file-item">
+                            <i class="fas fa-file-code"></i>
+                            <span><code>FNO_model_time_dependent.py</code> - Time-continuous FNO variant</span>
+                        </div>
+                        <div class="file-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span><code>FNO_visualisation.py</code> - Visualization utilities</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-placeholder">
+                    <p><strong>Visualization needed:</strong> FNO wave equation results<br>
+                    <small>Please copy relevant plots from Part1/ folder showing wave predictions and error analysis</small></p>
+                </div>
+            </section>
+
+            <!-- Part 2: PDE Discovery -->
+            <section class="content-section">
+                <h2>Part 2: PDE Discovery and System Identification</h2>
+                
+                <div class="technical-highlight">
+                    <i class="fas fa-search"></i>
+                    <div>
+                        <h4>Key Innovation</h4>
+                        <p>Combines function approximation with symbolic regression to discover interpretable PDE terms from data automatically.</p>
+                    </div>
+                </div>
+
+                <h3>Discovery Capabilities</h3>
+                <p>The system can automatically identify various PDE terms including:</p>
+                
+                <div class="discovery-terms">
+                    <div class="term-category">
+                        <h4>Linear Terms</h4>
+                        <div class="math-terms">
+                            <span class="math-term">u</span>
+                            <span class="math-term">v</span>
+                        </div>
+                    </div>
+                    
+                    <div class="term-category">
+                        <h4>Diffusion Terms</h4>
+                        <div class="math-terms">
+                            <span class="math-term">∂²u/∂x²</span>
+                            <span class="math-term">∂²v/∂y²</span>
+                        </div>
+                    </div>
+                    
+                    <div class="term-category">
+                        <h4>Advection Terms</h4>
+                        <div class="math-terms">
+                            <span class="math-term">∂u/∂x</span>
+                            <span class="math-term">∂v/∂y</span>
+                        </div>
+                    </div>
+                    
+                    <div class="term-category">
+                        <h4>Nonlinear Terms</h4>
+                        <div class="math-terms">
+                            <span class="math-term">u²</span>
+                            <span class="math-term">v²</span>
+                            <span class="math-term">u·∂u/∂x</span>
+                        </div>
+                    </div>
+                    
+                    <div class="term-category">
+                        <h4>Coupled Terms</h4>
+                        <div class="math-terms">
+                            <span class="math-term">A²u</span>
+                            <span class="math-term">A²v</span>
+                            <span class="math-note">where A² = u² + v²</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-placeholder">
+                    <p><strong>Current Project Image:</strong> Part2_PDE1_dudx.png is already in use<br>
+                    <small>Additional visualizations available: Copy PDE discovery results and identified terms plots from Part2/ folder</small></p>
+                </div>
+            </section>
+
+            <!-- Part 3: Phase Field Dynamics -->
+            <section class="content-section">
+                <h2>Part 3: Phase Field Dynamics (Allen-Cahn Equation)</h2>
+                
+                <div class="technical-highlight">
+                    <i class="fas fa-layer-group"></i>
+                    <div>
+                        <h4>Key Innovation</h4>
+                        <p>Implements curriculum learning to handle multiple spatial scales in phase transition modeling.</p>
+                    </div>
+                </div>
+
+                <div class="equation-showcase">
+                    <h4>Allen-Cahn Equation</h4>
+                    <div class="equation">
+                        ∂u/∂t = ε²∇²u + u - u³
+                    </div>
+                    <p class="equation-description">
+                        Where ε controls the interface width and u represents the phase field variable.
+                    </p>
+                </div>
+
+                <h3>Advanced Features</h3>
+                <ul class="feature-list">
+                    <li><strong>Curriculum Learning:</strong> Progressive training strategy across different epsilon values</li>
+                    <li><strong>Multi-scale Modeling:</strong> Handles sharp and diffuse interfaces (ε ∈ [0.003125, 1])</li>
+                    <li><strong>Diverse Initial Conditions:</strong> Fourier, GMM, and piecewise linear conditions</li>
+                    <li><strong>Temporal Extrapolation:</strong> Prediction beyond training time horizons</li>
+                    <li><strong>Out-of-distribution Testing:</strong> Evaluation on unseen parameters</li>
+                </ul>
+
+                <div class="image-placeholder">
+                    <p><strong>Visualization needed:</strong> Allen-Cahn phase evolution<br>
+                    <small>Please copy phase field evolution plots from Part3/ folder showing interface dynamics</small></p>
+                </div>
+            </section>
+
+            <!-- Technical Specifications -->
+            <section class="content-section">
+                <h2>Technical Specifications</h2>
+                
+                <div class="tech-specs">
+                    <div class="spec-category">
+                        <h3>Technology Stack</h3>
+                        <ul>
+                            <li>PyTorch 2.5.0 - Deep learning framework</li>
+                            <li>NumPy 1.26.4 - Numerical computing</li>
+                            <li>SciPy 1.14.1 - Scientific computing</li>
+                            <li>Matplotlib 3.9.2 - Visualization</li>
+                            <li>scikit-learn 1.5.2 - Machine learning utilities</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Performance Metrics</h3>
+                        <ul>
+                            <li><strong>Relative L2 Error:</strong> Primary accuracy metric</li>
+                            <li><strong>Generalization Error:</strong> Out-of-distribution performance</li>
+                            <li><strong>Computational Efficiency:</strong> Training and inference speed</li>
+                            <li><strong>Stability Analysis:</strong> Long-term prediction accuracy</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="spec-category">
+                        <h3>Hardware Requirements</h3>
+                        <ul>
+                            <li>GPU with CUDA support (recommended)</li>
+                            <li>Minimum 8GB RAM</li>
+                            <li>10GB+ storage for datasets and models</li>
+                            <li>Python 3.8+ environment</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results and Impact -->
+            <section class="content-section">
+                <h2>Key Contributions & Results</h2>
+                
+                <div class="contributions-grid">
+                    <div class="contribution-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>Efficient FNO Implementation</h3>
+                        <p>Optimized Fourier Neural Operator with spectral convolutions for wave equation solutions across multiple resolutions.</p>
+                    </div>
+
+                    <div class="contribution-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>Robust PDE Discovery</h3>
+                        <p>Gradient-based approach successfully identifying unknown governing equations from observational data with high accuracy.</p>
+                    </div>
+
+                    <div class="contribution-card">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Multi-scale Modeling</h3>
+                        <p>Curriculum learning strategy enabling effective handling of multiple spatial scales in phase field dynamics.</p>
+                    </div>
+
+                    <div class="contribution-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Comprehensive Evaluation</h3>
+                        <p>Extensive testing on out-of-distribution scenarios demonstrating robust generalization capabilities.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Future Extensions -->
+            <section class="content-section">
+                <h2>Future Research Directions</h2>
+                <ul class="future-list">
+                    <li><strong>Higher Dimensions:</strong> Extension to 2D/3D problems for more complex geometries</li>
+                    <li><strong>Physics-Informed Integration:</strong> Combination with physics-informed neural networks (PINNs)</li>
+                    <li><strong>Real-time Optimization:</strong> Inference speed optimization for real-time applications</li>
+                    <li><strong>Uncertainty Quantification:</strong> Probabilistic predictions with confidence intervals</li>
+                    <li><strong>Multi-physics Systems:</strong> Extension to coupled multi-physics problems</li>
+                </ul>
+            </section>
+
+            <!-- Research Foundation -->
+            <section class="content-section">
+                <h2>Research Foundation</h2>
+                <p>This work builds upon cutting-edge research in scientific machine learning:</p>
+                
+                <div class="references">
+                    <div class="reference">
+                        <h4>Li, Z., et al. (2021)</h4>
+                        <p><em>"Fourier Neural Operator for Parametric Partial Differential Equations"</em></p>
+                        <p>International Conference on Learning Representations (ICLR)</p>
+                    </div>
+
+                    <div class="reference">
+                        <h4>Raissi, M., et al. (2019)</h4>
+                        <p><em>"Physics-informed neural networks: A deep learning framework for solving forward and inverse problems involving nonlinear partial differential equations"</em></p>
+                        <p>Journal of Computational Physics</p>
+                    </div>
+
+                    <div class="reference">
+                        <h4>Allen, S. M., & Cahn, J. W. (1979)</h4>
+                        <p><em>"A microscopic theory for antiphase boundary motion and its application to antiphase domain coarsening"</em></p>
+                        <p>Acta Metallurgica</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Links -->
+            <section class="content-section">
+                <h2>Project Resources</h2>
+                <div class="project-links">
+                    <a href="#" class="btn-primary">
+                        <i class="fab fa-github"></i>
+                        View Code on GitHub
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-file-pdf"></i>
+                        Project Report
+                    </a>
+                    <a href="#" class="btn-secondary">
+                        <i class="fas fa-graduation-cap"></i>
+                        ETH Course Page
+                    </a>
+                </div>
+                
+                <div class="note">
+                    <strong>Note:</strong> Due to GitHub's file size limitations, large datasets and trained models 
+                    are not hosted online but can be regenerated using the provided scripts.
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Oliver Nagl. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

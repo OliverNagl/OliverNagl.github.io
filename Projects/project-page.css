@@ -313,6 +313,343 @@
     margin: 2rem 0;
 }
 
+/* AISE Project Specific Styles */
+.course-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    padding: 2rem;
+    background: #f8fafc;
+    border-radius: 12px;
+}
+
+.course-detail {
+    text-align: center;
+}
+
+.course-detail h4 {
+    color: #4f46e5;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.course-detail p {
+    color: #374151;
+    font-weight: 600;
+    margin: 0;
+}
+
+.parts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.part-card {
+    background: white;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.part-card:hover {
+    border-color: #4f46e5;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(79, 70, 229, 0.15);
+}
+
+.part-number {
+    position: absolute;
+    top: -15px;
+    left: 2rem;
+    background: #4f46e5;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.part-card h3 {
+    margin: 1rem 0;
+    color: #374151;
+    padding-top: 0.5rem;
+}
+
+.part-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0 0;
+}
+
+.part-card li {
+    padding: 0.25rem 0;
+    color: #6b7280;
+    font-size: 0.9rem;
+}
+
+.part-card li::before {
+    content: '✓';
+    color: #4f46e5;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.technical-highlight {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.technical-highlight i {
+    font-size: 2rem;
+    color: #4f46e5;
+    margin-top: 0.25rem;
+}
+
+.technical-highlight h4 {
+    margin: 0 0 0.5rem 0;
+    color: #1e40af;
+}
+
+.technical-highlight p {
+    margin: 0;
+    color: #1e40af;
+    line-height: 1.6;
+}
+
+.feature-list {
+    margin: 1rem 0;
+    padding-left: 0;
+    list-style: none;
+}
+
+.feature-list li {
+    background: white;
+    border-left: 4px solid #4f46e5;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 0 8px 8px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.feature-list strong {
+    color: #374151;
+}
+
+.code-showcase {
+    background: #1f2937;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    color: white;
+}
+
+.code-showcase h4 {
+    color: #e5e7eb;
+    margin-bottom: 1.5rem;
+}
+
+.file-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1rem;
+    background: rgba(79, 70, 229, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid #4f46e5;
+}
+
+.file-item i {
+    color: #4f46e5;
+}
+
+.file-item code {
+    color: #e5e7eb;
+    background: transparent;
+    padding: 0;
+    font-weight: 600;
+}
+
+.discovery-terms {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.term-category {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 1.5rem;
+    border-left: 4px solid #4f46e5;
+}
+
+.term-category h4 {
+    color: #374151;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.math-terms {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.math-term {
+    background: white;
+    color: #4f46e5;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border: 1px solid #e0e7ff;
+}
+
+.math-note {
+    width: 100%;
+    font-style: italic;
+    color: #6b7280;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.equation-showcase {
+    background: #f8fafc;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.equation-showcase h4 {
+    color: #374151;
+    margin-bottom: 1rem;
+}
+
+.equation {
+    font-family: 'Courier New', monospace;
+    font-size: 1.5rem;
+    color: #4f46e5;
+    font-weight: 700;
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    display: inline-block;
+    border: 1px solid #e0e7ff;
+}
+
+.equation-description {
+    color: #6b7280;
+    font-style: italic;
+    margin: 1rem 0 0 0;
+}
+
+.tech-specs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.spec-category {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 2rem;
+    border-left: 4px solid #4f46e5;
+}
+
+.spec-category h3 {
+    color: #374151;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.25rem;
+}
+
+.spec-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.spec-category li {
+    padding: 0.5rem 0;
+    color: #6b7280;
+    border-bottom: 1px solid #e5e7eb;
+    line-height: 1.5;
+}
+
+.spec-category li:last-child {
+    border-bottom: none;
+}
+
+.spec-category strong {
+    color: #374151;
+}
+
+.contributions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contribution-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.contribution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-color: #4f46e5;
+}
+
+.contribution-card i {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.contribution-card h3 {
+    margin: 1rem 0;
+    color: #374151;
+    font-size: 1.25rem;
+}
+
+.contribution-card p {
+    color: #6b7280;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .project-title {
@@ -349,5 +686,27 @@
     .project-links .btn-primary,
     .project-links .btn-secondary {
         text-align: center;
+    }
+    
+    .parts-grid,
+    .discovery-terms,
+    .tech-specs,
+    .contributions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .technical-highlight {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .equation {
+        font-size: 1.2rem;
+        padding: 0.75rem 1.5rem;
     }
 }
