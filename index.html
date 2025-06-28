@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oliver Nagl - Scientific Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Oliver Nagl</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Animated Background -->
+    <div class="molecular-background">
+        <canvas id="moleculeCanvas"></canvas>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="gradient-text">Scientific Innovation</span>
+                    <br>Through Code
+                </h1>
+                <p class="hero-description">
+                    Bridging the gap between computational science and software development.
+                    Exploring molecular dynamics, bioinformatics, and cutting-edge technology.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn-primary">View Projects</a>
+                    <a href="#about" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-molecule">
+                    <svg viewBox="0 0 200 200" class="molecule-svg">
+                        <!-- Penicillin structure simplified -->
+                        <g class="molecule-group">
+                            <!-- Beta-lactam ring -->
+                            <circle cx="60" cy="100" r="8" class="atom carbon"/>
+                            <circle cx="80" cy="120" r="8" class="atom nitrogen"/>
+                            <circle cx="100" cy="100" r="8" class="atom carbon"/>
+                            <circle cx="80" cy="80" r="8" class="atom carbon"/>
+                            
+                            <!-- Thiazolidine ring -->
+                            <circle cx="120" cy="120" r="8" class="atom sulfur"/>
+                            <circle cx="140" cy="100" r="8" class="atom carbon"/>
+                            <circle cx="140" cy="140" r="8" class="atom carbon"/>
+                            
+                            <!-- Side chains -->
+                            <circle cx="40" cy="100" r="6" class="atom oxygen"/>
+                            <circle cx="160" cy="100" r="6" class="atom oxygen"/>
+                            <circle cx="160" cy="140" r="6" class="atom nitrogen"/>
+                            
+                            <!-- Bonds -->
+                            <line x1="60" y1="100" x2="80" y2="120" class="bond"/>
+                            <line x1="80" y1="120" x2="100" y2="100" class="bond"/>
+                            <line x1="100" y1="100" x2="80" y2="80" class="bond"/>
+                            <line x1="80" y1="80" x2="60" y2="100" class="bond"/>
+                            <line x1="100" y1="100" x2="120" y2="120" class="bond"/>
+                            <line x1="120" y1="120" x2="140" y2="140" class="bond"/>
+                            <line x1="140" y1="140" x2="140" y2="100" class="bond"/>
+                            <line x1="140" y1="100" x2="100" y2="100" class="bond"/>
+                            <line x1="60" y1="100" x2="40" y2="100" class="bond"/>
+                            <line x1="140" y1="100" x2="160" y2="100" class="bond"/>
+                            <line x1="140" y1="140" x2="160" y2="140" class="bond"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <div class="about-card">
+                        <h3>Background</h3>
+                        <p>
+                            I'm a passionate researcher and developer with expertise in computational biology, 
+                            molecular modeling, and software engineering. My work focuses on bridging the gap 
+                            between theoretical science and practical applications.
+                        </p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Expertise</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <i class="fas fa-dna"></i>
+                                <span>Bioinformatics</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-atom"></i>
+                                <span>Molecular Dynamics</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-code"></i>
+                                <span>Software Development</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Data Analysis</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-brain"></i>
+                                <span>Machine Learning</span>
+                            </div>
+                            <div class="skill-item">
+                                <i class="fas fa-microscope"></i>
+                                <span>Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <h3>Education</h3>
+                        <div class="education-item">
+                            <h4>PhD in Computational Biology</h4>
+                            <p>ETH Zurich</p>
+                            <span>2020 - Present</span>
+                        </div>
+                        <div class="education-item">
+                            <h4>MSc in Biochemistry</h4>
+                            <p>University of Zurich</p>
+                            <span>2018 - 2020</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Research Interests</h3>
+                        <ul>
+                            <li>Protein-ligand interactions</li>
+                            <li>Drug discovery algorithms</li>
+                            <li>Molecular simulation</li>
+                            <li>Computational chemistry</li>
+                            <li>AI in drug design</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="cv-download">
+                <a href="cv.pdf" class="btn-primary" download>
+                    <i class="fas fa-download"></i>
+                    Download CV
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="https://github.com/OliverNagl" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=Molecular+Viewer" alt="Molecular Viewer">
+                    </div>
+                    <div class="project-content">
+                        <h3>3D Molecular Viewer</h3>
+                        <p>Interactive web-based molecular visualization tool with real-time protein-ligand docking simulation.</p>
+                        <div class="project-tags">
+                            <span class="tag">Three.js</span>
+                            <span class="tag">WebGL</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">BioPython</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/059669/ffffff?text=Drug+Discovery+AI" alt="Drug Discovery AI">
+                    </div>
+                    <div class="project-content">
+                        <h3>AI Drug Discovery Platform</h3>
+                        <p>Machine learning pipeline for predicting molecular properties and drug-target interactions.</p>
+                        <div class="project-tags">
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">RDKit</span>
+                            <span class="tag">Flask</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/dc2626/ffffff?text=Protein+Folding" alt="Protein Folding Simulator">
+                    </div>
+                    <div class="project-content">
+                        <h3>Protein Folding Simulator</h3>
+                        <p>High-performance molecular dynamics simulation framework for studying protein conformational changes.</p>
+                        <div class="project-tags">
+                            <span class="tag">C++</span>
+                            <span class="tag">CUDA</span>
+                            <span class="tag">OpenMP</span>
+                            <span class="tag">VMD</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/7c3aed/ffffff?text=Bioinformatics+Tools" alt="Bioinformatics Toolkit">
+                    </div>
+                    <div class="project-content">
+                        <h3>Bioinformatics Toolkit</h3>
+                        <p>Comprehensive suite of tools for sequence analysis, phylogenetic reconstruction, and structural bioinformatics.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">Shiny</span>
+                            <span class="tag">Plotly</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/ea580c/ffffff?text=Lab+Management" alt="Lab Management System">
+                    </div>
+                    <div class="project-content">
+                        <h3>Lab Management System</h3>
+                        <p>Digital laboratory notebook and inventory management system with integrated data analysis capabilities.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">GraphQL</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
+                                <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <img src="https://via.placeholder.com/400x250/0891b2/ffffff?text=Quantum+Chemistry" alt="Quantum Chemistry Calculator">
+                    </div>
+                    <div class="project-content">
+                        <h3>Quantum Chemistry Calculator</h3>
+                        <p>Web-based quantum mechanical calculations for small molecules with interactive orbital visualization.</p>
+                        <div class="project-tags">
+                            <span class="tag">Psi4</span>
+                            <span class="tag">WebAssembly</span>
+                            <span class="tag">Vue.js</span>
+                            <span class="tag">D3.js</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <p>Interested in collaboration or want to discuss research opportunities? I'd love to hear from you.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/oliver-nagl-41a40a1b0/" class="social-link linkedin" target="_blank">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://github.com/OliverNagl" class="social-link github" target="_blank">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="mailto:oliver.nagl@example.com" class="social-link email">
+                            <i class="fas fa-envelope"></i>
+                            <span>Email</span>
+                        </a>
+                        <a href="https://orcid.org/0000-0000-0000-0000" class="social-link orcid" target="_blank">
+                            <i class="fab fa-orcid"></i>
+                            <span>ORCID</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Oliver Nagl. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
