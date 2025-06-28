@@ -61,4 +61,28 @@ document.addEventListener('DOMContentLoaded', function() {
             navbar.classList.remove('scrolled');
         }
     });
+
+    // Project card click navigation
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach((card, index) => {
+        // Add click handler for project cards
+        card.addEventListener('click', function(e) {
+            // Don't trigger if clicking on overlay links
+            if (!e.target.closest('.project-link')) {
+                const projectLinks = [
+                    '#', // Mitral Valve - placeholder
+                    '#', // PDE identification - placeholder  
+                    'Projects/jigsaw-puzzle.html', // Jigsaw Puzzle
+                    '#'  // DFT calculation - placeholder
+                ];
+                
+                if (projectLinks[index] && projectLinks[index] !== '#') {
+                    window.location.href = projectLinks[index];
+                }
+            }
+        });
+        
+        // Add cursor pointer to indicate clickability
+        card.style.cursor = 'pointer';
+    });
 });
