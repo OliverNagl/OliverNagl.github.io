@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -53,9 +53,75 @@
                 </div>
             </div>
             <div class="hero-image">
-                <div class="advanced-molecule-container">
-                    <canvas id="threejs-molecule"></canvas>
+                <div class="floating-molecule">
+                    <svg viewBox="0 0 200 200" class="molecule-svg">
+                        <!-- Enhanced Penicillin structure -->
+                        <defs>
+                            <radialGradient id="carbonGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:0.8" />
+                            </radialGradient>
+                            <radialGradient id="nitrogenGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#059669;stop-opacity:0.8" />
+                            </radialGradient>
+                            <radialGradient id="oxygenGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#f87171;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#dc2626;stop-opacity:0.8" />
+                            </radialGradient>
+                            <radialGradient id="sulfurGrad" cx="50%" cy="50%" r="50%">
+                                <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#eab308;stop-opacity:0.8" />
+                            </radialGradient>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        
+                        <g class="molecule-group">
+                            <!-- Electron clouds -->
+                            <circle cx="60" cy="100" r="15" class="electron-cloud" fill="url(#carbonGrad)" opacity="0.3"/>
+                            <circle cx="80" cy="120" r="13" class="electron-cloud" fill="url(#nitrogenGrad)" opacity="0.3"/>
+                            <circle cx="100" cy="100" r="15" class="electron-cloud" fill="url(#carbonGrad)" opacity="0.3"/>
+                            <circle cx="120" cy="120" r="16" class="electron-cloud" fill="url(#sulfurGrad)" opacity="0.3"/>
+                            
+                            <!-- Beta-lactam ring -->
+                            <circle cx="60" cy="100" r="8" class="atom carbon" fill="url(#carbonGrad)" filter="url(#glow)"/>
+                            <circle cx="80" cy="120" r="8" class="atom nitrogen" fill="url(#nitrogenGrad)" filter="url(#glow)"/>
+                            <circle cx="100" cy="100" r="8" class="atom carbon" fill="url(#carbonGrad)" filter="url(#glow)"/>
+                            <circle cx="80" cy="80" r="8" class="atom carbon" fill="url(#carbonGrad)" filter="url(#glow)"/>
+                            
+                            <!-- Thiazolidine ring -->
+                            <circle cx="120" cy="120" r="8" class="atom sulfur" fill="url(#sulfurGrad)" filter="url(#glow)"/>
+                            <circle cx="140" cy="100" r="8" class="atom carbon" fill="url(#carbonGrad)" filter="url(#glow)"/>
+                            <circle cx="140" cy="140" r="8" class="atom carbon" fill="url(#carbonGrad)" filter="url(#glow)"/>
+                            
+                            <!-- Side chains -->
+                            <circle cx="40" cy="100" r="6" class="atom oxygen" fill="url(#oxygenGrad)" filter="url(#glow)"/>
+                            <circle cx="160" cy="100" r="6" class="atom oxygen" fill="url(#oxygenGrad)" filter="url(#glow)"/>
+                            <circle cx="160" cy="140" r="6" class="atom nitrogen" fill="url(#nitrogenGrad)" filter="url(#glow)"/>
+                            
+                            <!-- Enhanced bonds with gradients -->
+                            <line x1="60" y1="100" x2="80" y2="120" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="80" y1="120" x2="100" y2="100" class="bond" stroke="url(#nitrogenGrad)" opacity="0.8"/>
+                            <line x1="100" y1="100" x2="80" y2="80" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="80" y1="80" x2="60" y2="100" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="100" y1="100" x2="120" y2="120" class="bond" stroke="url(#sulfurGrad)" opacity="0.8"/>
+                            <line x1="120" y1="120" x2="140" y2="140" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="140" y1="140" x2="140" y2="100" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="140" y1="100" x2="100" y2="100" class="bond" stroke="url(#carbonGrad)" opacity="0.8"/>
+                            <line x1="60" y1="100" x2="40" y2="100" class="bond" stroke="url(#oxygenGrad)" opacity="0.8"/>
+                            <line x1="140" y1="100" x2="160" y2="100" class="bond" stroke="url(#oxygenGrad)" opacity="0.8"/>
+                            <line x1="140" y1="140" x2="160" y2="140" class="bond" stroke="url(#nitrogenGrad)" opacity="0.8"/>
+                        </g>
+                    </svg>
                 </div>
+                <!-- Three.js enhanced container (will be added dynamically) -->
+                <div id="threejs-enhancement" class="threejs-container"></div>
             </div>
         </div>
     </section>
