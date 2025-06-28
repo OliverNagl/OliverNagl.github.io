@@ -1,75 +1,63 @@
-# Oliver Nagl's Scientific Portfolio Website
+# Oliver Nagl's Portfolio Website
 
-A modern, science-themed personal portfolio website featuring animated molecular backgrounds and interactive elements.
-
-## Live Website
-
-Visit the website at: https://olivernagl.github.io
-
-## Personal Information
-
-- **Name**: Oliver Nagl
-- **Email**: olnagl@ethz.ch
-- **LinkedIn**: https://www.linkedin.com/in/oliver-nagl-41a40a1b0/
-- **GitHub**: https://github.com/OliverNagl
+A modern, science-themed personal portfolio website featuring animated backgrounds and interactive elements.
 
 ## Features
 
-- **Animated Molecular Background**: Dynamic penicillin molecule structure with particle effects
+- **Animated Background**: Dynamic science-themed visualizations with particle effects
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Clean, professional design with smooth animations
-- **Scientific Theme**: Molecular visualizations and scientific color schemes
-- **Interactive Elements**: Hover effects, scroll animations, and particle trails
-- **Portfolio Sections**: Projects showcase, about me, CV download, and contact information
+- **Scientific Theme**: Academic color schemes and professional styling
+- **Interactive Elements**: Hover effects, scroll animations, and visual feedback
+- **Portfolio Sections**: Projects showcase, about section, CV download, and contact information
 
 ## Customization
 
-### Personal Information
-Edit the following in `index.html`:
-- Replace "Your Name" with your actual name
-- Update email, LinkedIn, and GitHub links
-- Modify education and research interests in the about section
-- Add your actual project information and links
-
 ### Styling
 Modify `styles.css` to:
-- Change color schemes (currently uses purple/blue scientific theme)
+- Change color schemes (currently uses purple/blue academic theme)
 - Adjust animations and transitions
-- Customize molecular structure colors
+- Customize background elements
 - Modify responsive breakpoints
 
 ### Functionality
 Update `script.js` to:
-- Adjust molecular animation parameters
-- Customize particle effects
+- Adjust animation parameters
+- Customize interactive effects
 - Modify scroll behavior
-- Add new interactive features
+- Add new features
 
 ## File Structure
 
 ```
 Website/
-├── index.html          # Main HTML file
-├── styles.css          # All CSS styles and animations
-├── script.js           # JavaScript functionality
-├── cv.pdf             # Sample CV file (replace with your own)
-└── README.md          # This file
+├── index.html                    # Main HTML file
+├── styles.css                    # All CSS styles and animations
+├── script.js                     # JavaScript functionality
+├── cv.pdf                        # CV file
+├── Projects/                     # Project detail pages
+│   ├── project-page.css         # Shared project page styles
+│   ├── jigsaw-puzzle.html       # Jigsaw puzzle project
+│   ├── pde-neural-operators.html # PDE neural operators project
+│   └── mitral-valve-segmentation.html # Medical segmentation project
+├── Images/                       # Project images and assets
+└── README.md                     # Documentation
 ```
 
 ## Setup Instructions
 
-1. Replace placeholder content with your actual information
-2. Update social media links in the contact section
-3. Replace the sample CV file with your actual CV
-4. Add real project images and links
-5. Customize colors and styling to match your preferences
+1. Open index.html in a web browser to view the portfolio
+2. Visit individual project pages for detailed information
+3. Download CV from the contact section
+4. View source code for technical implementation details
 
 ## Technical Features
 
-- **Molecular Background Animation**: Canvas-based particle system
+- **Animated Backgrounds**: Canvas-based animation systems
 - **Smooth Scrolling**: Enhanced navigation experience
 - **Mobile Navigation**: Hamburger menu for mobile devices
-- **Performance Optimized**: Throttled scroll events and efficient animations
+- **Performance Optimized**: Throttled events and efficient animations
+- **Project Pages**: Dedicated detail pages for portfolio items
 - **Accessibility**: Semantic HTML and keyboard navigation support
 
 ## Browser Compatibility
@@ -78,26 +66,19 @@ Website/
 - Firefox: Full support
 - Mobile browsers: Optimized for touch interactions
 
-## Molecular Structure
-
-The background features a simplified penicillin molecule structure with:
-- Beta-lactam ring (core antibiotic structure)
-- Thiazolidine ring
-- Various functional groups
-- Animated electron clouds and particle effects
-
 ## Color Scheme
 
-The scientific color palette includes:
-- Primary: #4f46e5 (Indigo) - represents Carbon atoms
-- Secondary: #059669 (Emerald) - represents Nitrogen atoms
-- Accent: #dc2626 (Red) - represents Oxygen atoms
-- Warning: #eab308 (Amber) - represents Sulfur atoms
+The academic color palette includes:
+- Primary: #4f46e5 (Indigo) - professional primary color
+- Secondary: #059669 (Emerald) - accent and highlights
+- Warning: #eab308 (Amber) - call-to-action elements
+- Various shades for depth and visual hierarchy
 
 ## Performance Notes
 
-- Canvas animations are optimized for 60fps
-- Particle effects are throttled to maintain performance
+- Animations are optimized for 60fps performance
+- Effects are throttled to maintain smooth experience
+- Responsive design ensures fast loading on all devices
 - Responsive images and efficient CSS animations
 - Minimal external dependencies
 
