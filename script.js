@@ -1,7 +1,7 @@
-// mRNA Translation Animation
-class TranslationAnimation {
+// Interdisciplinary Network Animation
+class NetworkAnimation {
     constructor() {
-        console.log('Initializing TranslationAnimation...');
+        console.log('Initializing NetworkAnimation...');
         this.canvas = document.getElementById('translationCanvas');
         if (!this.canvas) {
             console.error('Canvas not found!');
@@ -10,394 +10,281 @@ class TranslationAnimation {
         console.log('Canvas found:', this.canvas);
         
         this.ctx = this.canvas.getContext('2d');
+        this.setupCanvas();
         
-        // Animation state
+        // Network parameters
+        this.nodes = [];
+        this.connections = [];
         this.time = 0;
-        this.animationProgress = 0;
+        this.scrollPosition = 0;
         this.isVisible = false;
         
-        // mRNA sequence (simplified codons)
-        this.mRNA = [
-            'AUG', 'UUC', 'GAA', 'CUG', 'AAG', 'GCA', 'UUA', 'GGU', 
-            'CAC', 'GUC', 'AUC', 'UGG', 'CCU', 'UAG'
+        // Disciplines with colors and positions
+        this.disciplines = [
+            { name: 'Biotechnology', color: '#8b5cf6', x: 0.2, y: 0.3 },
+            { name: 'Computer Science', color: '#3b82f6', x: 0.8, y: 0.2 },
+            { name: 'Chemical Engineering', color: '#ef4444', x: 0.7, y: 0.7 },
+            { name: 'Bioinformatics', color: '#10b981', x: 0.3, y: 0.8 },
+            { name: 'Machine Learning', color: '#f59e0b', x: 0.5, y: 0.15 },
+            { name: 'Molecular Dynamics', color: '#ec4899', x: 0.1, y: 0.6 },
+            { name: 'Data Science', color: '#06b6d4', x: 0.85, y: 0.5 },
+            { name: 'Wet Lab', color: '#84cc16', x: 0.4, y: 0.5 }
         ];
         
-        // Amino acids corresponding to codons
-        this.aminoAcids = [
-            'Met', 'Phe', 'Glu', 'Leu', 'Lys', 'Ala', 'Leu', 'Gly',
-            'His', 'Val', 'Ile', 'Trp', 'Pro', 'Stop'
-        ];
-        
-        // Animation components - will be set after setupCanvas
-        this.mRNAPosition = 0;
-        this.proteinChain = [];
-        this.currentCodon = 0;
-        this.tRNAs = [];
-        
-        this.setupCanvas();
+        this.createNetwork();
         this.setupScrollObserver();
         this.animate();
     }
     
     setupCanvas() {
-        // Set fixed canvas dimensions
         this.canvas.width = 500;
         this.canvas.height = 400;
         this.canvas.style.width = '500px';
         this.canvas.style.height = '400px';
+    }
+    
+    createNetwork() {
+        // Create nodes for each discipline
+        this.nodes = this.disciplines.map((discipline, index) => ({
+            id: index,
+            name: discipline.name,
+            x: discipline.x * this.canvas.width,
+            y: discipline.y * this.canvas.height,
+            originalX: discipline.x * this.canvas.width,
+            originalY: discipline.y * this.canvas.height,
+            color: discipline.color,
+            radius: 20 + Math.random() * 15,
+            pulse: Math.random() * Math.PI * 2,
+            velocity: { x: 0, y: 0 },
+            connections: []
+        }));
         
-        // Update ribosome position based on actual canvas size
-        this.ribosome = {
-            x: this.canvas.width * 0.3,
-            y: this.canvas.height * 0.5,
-            width: 120,
-            height: 80
+        // Create connections between nodes with varying strengths
+        this.connections = [];
+        for (let i = 0; i < this.nodes.length; i++) {
+            for (let j = i + 1; j < this.nodes.length; j++) {
+                const distance = this.getDistance(this.nodes[i], this.nodes[j]);
+                const maxDistance = Math.sqrt(this.canvas.width * this.canvas.width + this.canvas.height * this.canvas.height);
+                
+                // Connection strength based on distance and conceptual similarity
+                let strength = 1 - (distance / maxDistance);
+                
+                // Add conceptual connections (stronger between related fields)
+                const conceptualStrength = this.getConceptualStrength(this.nodes[i].name, this.nodes[j].name);
+                strength = Math.max(strength * 0.3, conceptualStrength);
+                
+                if (strength > 0.2) {
+                    this.connections.push({
+                        nodeA: i,
+                        nodeB: j,
+                        strength: strength,
+                        thickness: strength * 3,
+                        alpha: strength * 0.8,
+                        oscillation: Math.random() * Math.PI * 2
+                    });
+                    
+                    this.nodes[i].connections.push(j);
+                    this.nodes[j].connections.push(i);
+                }
+            }
+        }
+    }
+    
+    getConceptualStrength(nameA, nameB) {
+        const strongConnections = {
+            'Biotechnology': ['Bioinformatics', 'Molecular Dynamics', 'Wet Lab'],
+            'Computer Science': ['Machine Learning', 'Data Science', 'Bioinformatics'],
+            'Chemical Engineering': ['Molecular Dynamics', 'Biotechnology'],
+            'Machine Learning': ['Data Science', 'Bioinformatics'],
+            'Bioinformatics': ['Data Science', 'Machine Learning', 'Molecular Dynamics']
         };
+        
+        if (strongConnections[nameA] && strongConnections[nameA].includes(nameB)) {
+            return 0.8 + Math.random() * 0.2;
+        }
+        if (strongConnections[nameB] && strongConnections[nameB].includes(nameA)) {
+            return 0.8 + Math.random() * 0.2;
+        }
+        
+        return Math.random() * 0.4;
+    }
+    
+    getDistance(nodeA, nodeB) {
+        return Math.sqrt(Math.pow(nodeA.x - nodeB.x, 2) + Math.pow(nodeA.y - nodeB.y, 2));
     }
     
     setupScrollObserver() {
-        // Start animation immediately for testing
         this.isVisible = true;
-        this.startTranslation();
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 this.isVisible = entry.isIntersecting;
-                if (this.isVisible) {
-                    this.startTranslation();
-                }
             });
         }, { threshold: 0.3 });
         
         observer.observe(this.canvas);
-    }
-    
-    startTranslation() {
-        this.animationProgress = 0;
-        this.currentCodon = 0;
-        this.proteinChain = [];
-        this.tRNAs = [];
-        this.mRNAPosition = 0;
-    }
-    
-    drawmRNA() {
-        const startX = 50;
-        const y = this.canvas.height * 0.7;
-        const codonWidth = 40;
-        const codonHeight = 25;
         
-        // Draw mRNA backbone
-        this.ctx.strokeStyle = '#3b82f6';
-        this.ctx.lineWidth = 4;
-        this.ctx.beginPath();
-        this.ctx.moveTo(startX, y);
-        this.ctx.lineTo(startX + this.mRNA.length * codonWidth + 50, y);
-        this.ctx.stroke();
-        
-        // Draw codons
-        this.mRNA.forEach((codon, index) => {
-            const x = startX + index * codonWidth + this.mRNAPosition;
-            const isCurrentCodon = index === this.currentCodon;
-            
-            // Codon background
-            this.ctx.fillStyle = isCurrentCodon ? '#fbbf24' : '#1e40af';
-            this.ctx.fillRect(x, y - codonHeight/2, codonWidth - 5, codonHeight);
-            
-            // Codon text
-            this.ctx.fillStyle = 'white';
-            this.ctx.font = 'bold 10px Arial';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(codon, x + codonWidth/2 - 2.5, y + 3);
-            
-            // Draw nucleotides as small circles
-            for (let i = 0; i < 3; i++) {
-                const nucleotideX = x + (i + 0.5) * (codonWidth - 5) / 3;
-                this.ctx.fillStyle = this.getNucleotideColor(codon[i]);
-                this.ctx.beginPath();
-                this.ctx.arc(nucleotideX, y - codonHeight/2 - 10, 4, 0, Math.PI * 2);
-                this.ctx.fill();
-            }
+        // Listen for scroll events to create thrumming effect
+        window.addEventListener('scroll', (e) => {
+            this.scrollPosition = window.scrollY;
         });
     }
     
-    getNucleotideColor(nucleotide) {
-        const colors = {
-            'A': '#ef4444', // red
-            'U': '#22c55e', // green
-            'G': '#8b5cf6', // purple
-            'C': '#f59e0b'  // orange
-        };
-        return colors[nucleotide] || '#6b7280';
-    }
-    
-    drawRibosome() {
-        const { x, y, width, height } = this.ribosome;
-        
-        // Large subunit (60S)
-        const gradient1 = this.ctx.createRadialGradient(x, y - 20, 0, x, y - 20, width/2);
-        gradient1.addColorStop(0, '#a855f7');
-        gradient1.addColorStop(1, '#7c3aed');
-        
-        this.ctx.fillStyle = gradient1;
-        this.ctx.beginPath();
-        this.ctx.ellipse(x, y - 20, width/2, height/3, 0, 0, Math.PI * 2);
-        this.ctx.fill();
-        
-        // Small subunit (40S)
-        const gradient2 = this.ctx.createRadialGradient(x, y + 20, 0, x, y + 20, width/2.5);
-        gradient2.addColorStop(0, '#ec4899');
-        gradient2.addColorStop(1, '#db2777');
-        
-        this.ctx.fillStyle = gradient2;
-        this.ctx.beginPath();
-        this.ctx.ellipse(x, y + 20, width/2.5, height/3.5, 0, 0, Math.PI * 2);
-        this.ctx.fill();
-        
-        // Binding sites
-        this.ctx.fillStyle = '#1f2937';
-        this.ctx.beginPath();
-        this.ctx.arc(x - 25, y, 8, 0, Math.PI * 2); // A site
-        this.ctx.fill();
-        
-        this.ctx.beginPath();
-        this.ctx.arc(x, y, 8, 0, Math.PI * 2); // P site
-        this.ctx.fill();
-        
-        this.ctx.beginPath();
-        this.ctx.arc(x + 25, y, 8, 0, Math.PI * 2); // E site
-        this.ctx.fill();
-        
-        // Labels
-        this.ctx.fillStyle = 'white';
-        this.ctx.font = 'bold 8px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText('A', x - 25, y + 3);
-        this.ctx.fillText('P', x, y + 3);
-        this.ctx.fillText('E', x + 25, y + 3);
-        
-        // Tunnel for nascent protein
-        this.ctx.strokeStyle = '#374151';
-        this.ctx.lineWidth = 3;
-        this.ctx.beginPath();
-        this.ctx.arc(x + 40, y - 15, 6, 0, Math.PI * 2);
-        this.ctx.stroke();
-    }
-    
-    drawtRNAs() {
-        this.tRNAs.forEach((tRNA, index) => {
-            const { x, y, aminoAcid, isActive } = tRNA;
-            
-            // tRNA body
-            this.ctx.fillStyle = isActive ? '#10b981' : '#6b7280';
-            this.ctx.beginPath();
-            this.ctx.moveTo(x, y - 20);
-            this.ctx.lineTo(x - 10, y);
-            this.ctx.lineTo(x + 10, y);
-            this.ctx.closePath();
-            this.ctx.fill();
-            
-            // Amino acid
-            if (aminoAcid !== 'Stop') {
-                this.ctx.fillStyle = '#fbbf24';
-                this.ctx.beginPath();
-                this.ctx.arc(x, y - 25, 6, 0, Math.PI * 2);
-                this.ctx.fill();
-                
-                // Amino acid label
-                this.ctx.fillStyle = 'black';
-                this.ctx.font = 'bold 8px Arial';
-                this.ctx.textAlign = 'center';
-                this.ctx.fillText(aminoAcid, x, y - 22);
-            }
-            
-            // Anticodon
-            this.ctx.fillStyle = 'white';
-            this.ctx.font = '8px Arial';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText('tRNA', x, y + 5);
-        });
-    }
-    
-    drawProteinChain() {
-        if (this.proteinChain.length === 0) return;
-        
-        const startX = this.ribosome.x + 60;
-        const startY = this.ribosome.y - 30;
-        
-        // Protein backbone
-        this.ctx.strokeStyle = '#dc2626';
-        this.ctx.lineWidth = 3;
-        this.ctx.beginPath();
-        this.ctx.moveTo(startX, startY);
-        
-        this.proteinChain.forEach((aminoAcid, index) => {
-            const x = startX + (index + 1) * 20;
-            const y = startY + Math.sin(index * 0.5) * 10;
-            this.ctx.lineTo(x, y);
-        });
-        this.ctx.stroke();
-        
-        // Amino acid residues
-        this.proteinChain.forEach((aminoAcid, index) => {
-            const x = startX + (index + 1) * 20;
-            const y = startY + Math.sin(index * 0.5) * 10;
-            
-            // Amino acid circle
-            this.ctx.fillStyle = this.getAminoAcidColor(aminoAcid);
-            this.ctx.beginPath();
-            this.ctx.arc(x, y, 8, 0, Math.PI * 2);
-            this.ctx.fill();
-            
-            // Amino acid label
-            this.ctx.fillStyle = 'white';
-            this.ctx.font = 'bold 6px Arial';
-            this.ctx.textAlign = 'center';
-            this.ctx.fillText(aminoAcid.substring(0, 3), x, y + 2);
-        });
-        
-        // "Newly Formed Protein" label with arrow
-        if (this.proteinChain.length > 2) {
-            const lastX = startX + this.proteinChain.length * 20;
-            const lastY = startY + Math.sin((this.proteinChain.length - 1) * 0.5) * 10;
-            
-            // Arrow
-            this.ctx.strokeStyle = '#374151';
-            this.ctx.lineWidth = 2;
-            this.ctx.beginPath();
-            this.ctx.moveTo(lastX + 15, lastY - 20);
-            this.ctx.lineTo(lastX + 5, lastY - 5);
-            this.ctx.stroke();
-            
-            // Arrowhead
-            this.ctx.beginPath();
-            this.ctx.moveTo(lastX + 5, lastY - 5);
-            this.ctx.lineTo(lastX + 2, lastY - 10);
-            this.ctx.moveTo(lastX + 5, lastY - 5);
-            this.ctx.lineTo(lastX + 10, lastY - 8);
-            this.ctx.stroke();
-            
-            // Label
-            this.ctx.fillStyle = '#374151';
-            this.ctx.font = 'bold 10px Arial';
-            this.ctx.textAlign = 'left';
-            this.ctx.fillText('Newly Formed', lastX + 20, lastY - 25);
-            this.ctx.fillText('Protein', lastX + 20, lastY - 15);
-        }
-    }
-    
-    getAminoAcidColor(aminoAcid) {
-        const colors = {
-            'Met': '#8b5cf6', 'Phe': '#3b82f6', 'Glu': '#ef4444', 'Leu': '#10b981',
-            'Lys': '#f59e0b', 'Ala': '#6366f1', 'Gly': '#ec4899', 'His': '#14b8a6',
-            'Val': '#f97316', 'Ile': '#84cc16', 'Trp': '#a855f7', 'Pro': '#06b6d4'
-        };
-        return colors[aminoAcid] || '#6b7280';
-    }
-    
-    updateAnimation() {
+    updateNetwork() {
         if (!this.isVisible) return;
         
         this.time += 0.02;
-        this.animationProgress += 0.005;
         
-        // Update current codon based on animation progress
-        const targetCodon = Math.floor(this.animationProgress * this.mRNA.length);
-        if (targetCodon < this.mRNA.length && targetCodon !== this.currentCodon) {
-            this.currentCodon = targetCodon;
+        // Calculate scroll influence (thrumming effect)
+        const scrollInfluence = Math.sin(this.scrollPosition * 0.01) * 0.5 + 0.5;
+        const thrumIntensity = scrollInfluence * 2;
+        
+        // Update nodes
+        this.nodes.forEach((node, index) => {
+            // Gentle floating motion
+            const baseFloat = Math.sin(this.time + index) * 2;
+            const scrollFloat = Math.cos(this.time * 2 + index + this.scrollPosition * 0.01) * thrumIntensity;
             
-            // Add new tRNA
-            if (this.currentCodon < this.aminoAcids.length) {
-                this.tRNAs.push({
-                    x: this.ribosome.x - 25,
-                    y: this.ribosome.y,
-                    aminoAcid: this.aminoAcids[this.currentCodon],
-                    isActive: true
-                });
+            node.x = node.originalX + baseFloat + scrollFloat;
+            node.y = node.originalY + Math.cos(this.time * 0.7 + index) * 1.5 + scrollFloat * 0.5;
+            
+            // Update pulse for breathing effect
+            node.pulse += 0.03 + scrollInfluence * 0.02;
+        });
+        
+        // Update connections
+        this.connections.forEach(connection => {
+            connection.oscillation += 0.05 + scrollInfluence * 0.1;
+        });
+    }
+    
+    drawConnections() {
+        this.connections.forEach(connection => {
+            const nodeA = this.nodes[connection.nodeA];
+            const nodeB = this.nodes[connection.nodeB];
+            
+            // Dynamic thickness and alpha based on oscillation and scroll
+            const oscillation = Math.sin(connection.oscillation) * 0.3 + 0.7;
+            const thickness = connection.thickness * oscillation;
+            const alpha = connection.alpha * oscillation;
+            
+            // Create gradient line
+            const gradient = this.ctx.createLinearGradient(nodeA.x, nodeA.y, nodeB.x, nodeB.y);
+            gradient.addColorStop(0, nodeA.color + Math.floor(alpha * 255).toString(16).padStart(2, '0'));
+            gradient.addColorStop(1, nodeB.color + Math.floor(alpha * 255).toString(16).padStart(2, '0'));
+            
+            this.ctx.strokeStyle = gradient;
+            this.ctx.lineWidth = thickness;
+            this.ctx.beginPath();
+            this.ctx.moveTo(nodeA.x, nodeA.y);
+            this.ctx.lineTo(nodeB.x, nodeB.y);
+            this.ctx.stroke();
+            
+            // Add flowing particles along strong connections
+            if (connection.strength > 0.6) {
+                const t = (Math.sin(this.time * 2 + connection.oscillation) + 1) / 2;
+                const particleX = nodeA.x + (nodeB.x - nodeA.x) * t;
+                const particleY = nodeA.y + (nodeB.y - nodeA.y) * t;
                 
-                // Add amino acid to growing protein chain
-                if (this.aminoAcids[this.currentCodon] !== 'Stop') {
-                    this.proteinChain.push(this.aminoAcids[this.currentCodon]);
-                }
+                this.ctx.fillStyle = '#ffffff80';
+                this.ctx.beginPath();
+                this.ctx.arc(particleX, particleY, 2, 0, Math.PI * 2);
+                this.ctx.fill();
             }
+        });
+    }
+    
+    drawNodes() {
+        this.nodes.forEach(node => {
+            // Breathing radius based on pulse and scroll
+            const pulseRadius = Math.sin(node.pulse) * 3;
+            const currentRadius = node.radius + pulseRadius;
             
-            // Deactivate old tRNAs
-            this.tRNAs.forEach((tRNA, index) => {
-                if (index < this.tRNAs.length - 1) {
-                    tRNA.isActive = false;
-                    tRNA.x += 25; // Move to E site then away
-                }
-            });
+            // Outer glow
+            const glowGradient = this.ctx.createRadialGradient(
+                node.x, node.y, 0,
+                node.x, node.y, currentRadius * 2
+            );
+            glowGradient.addColorStop(0, node.color + '80');
+            glowGradient.addColorStop(0.5, node.color + '40');
+            glowGradient.addColorStop(1, node.color + '00');
             
-            // Remove old tRNAs
-            this.tRNAs = this.tRNAs.filter(tRNA => tRNA.x < this.ribosome.x + 100);
-        }
-        
-        // Move mRNA
-        this.mRNAPosition = -this.currentCodon * 15;
-        
-        // Reset animation when complete
-        if (this.animationProgress >= 1) {
-            setTimeout(() => {
-                this.startTranslation();
-            }, 2000);
-        }
+            this.ctx.fillStyle = glowGradient;
+            this.ctx.beginPath();
+            this.ctx.arc(node.x, node.y, currentRadius * 1.5, 0, Math.PI * 2);
+            this.ctx.fill();
+            
+            // Main node
+            const nodeGradient = this.ctx.createRadialGradient(
+                node.x - currentRadius * 0.3, node.y - currentRadius * 0.3, 0,
+                node.x, node.y, currentRadius
+            );
+            nodeGradient.addColorStop(0, this.lightenColor(node.color, 0.3));
+            nodeGradient.addColorStop(1, node.color);
+            
+            this.ctx.fillStyle = nodeGradient;
+            this.ctx.beginPath();
+            this.ctx.arc(node.x, node.y, currentRadius, 0, Math.PI * 2);
+            this.ctx.fill();
+            
+            // Highlight
+            this.ctx.fillStyle = '#ffffff60';
+            this.ctx.beginPath();
+            this.ctx.arc(node.x - currentRadius * 0.3, node.y - currentRadius * 0.3, currentRadius * 0.3, 0, Math.PI * 2);
+            this.ctx.fill();
+            
+            // Label
+            this.ctx.fillStyle = '#ffffff';
+            this.ctx.font = 'bold 8px Arial';
+            this.ctx.textAlign = 'center';
+            this.ctx.fillText(node.name, node.x, node.y + currentRadius + 15);
+        });
+    }
+    
+    lightenColor(color, amount) {
+        // Simple color lightening
+        const num = parseInt(color.replace("#", ""), 16);
+        const amt = Math.round(2.55 * amount * 100);
+        const R = (num >> 16) + amt;
+        const G = (num >> 8 & 0x00FF) + amt;
+        const B = (num & 0x0000FF) + amt;
+        return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 +
+            (G < 255 ? G < 1 ? 0 : G : 255) * 0x100 +
+            (B < 255 ? B < 1 ? 0 : B : 255)).toString(16).slice(1);
     }
     
     drawLabels() {
         // Title
-        this.ctx.fillStyle = '#1f2937';
-        this.ctx.font = 'bold 16px Arial';
+        this.ctx.fillStyle = '#ffffff';
+        this.ctx.font = 'bold 18px Arial';
         this.ctx.textAlign = 'center';
-        this.ctx.fillText('Protein Translation', this.canvas.width / 2, 30);
+        this.ctx.fillText('Interdisciplinary Network', this.canvas.width / 2, 30);
         
-        // mRNA label
-        this.ctx.fillStyle = '#3b82f6';
-        this.ctx.font = 'bold 12px Arial';
-        this.ctx.textAlign = 'left';
-        this.ctx.fillText('mRNA', 20, this.canvas.height * 0.7 - 30);
+        // Subtitle
+        this.ctx.fillStyle = '#cccccc';
+        this.ctx.font = '12px Arial';
+        this.ctx.fillText('Scroll to see network thrumming', this.canvas.width / 2, 50);
         
-        // Ribosome label
-        this.ctx.fillStyle = '#7c3aed';
-        this.ctx.font = 'bold 12px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText('Ribosome', this.ribosome.x, this.ribosome.y + 60);
-        
-        // Progress indicator
-        const progress = Math.min(this.animationProgress, 1);
-        const progressWidth = 200;
-        const progressX = (this.canvas.width - progressWidth) / 2;
-        const progressY = this.canvas.height - 30;
-        
-        // Progress bar background
-        this.ctx.fillStyle = '#e5e7eb';
-        this.ctx.fillRect(progressX, progressY, progressWidth, 6);
-        
-        // Progress bar fill
-        this.ctx.fillStyle = '#3b82f6';
-        this.ctx.fillRect(progressX, progressY, progressWidth * progress, 6);
-        
-        // Progress text
-        this.ctx.fillStyle = '#374151';
+        // Connection strength legend
+        this.ctx.fillStyle = '#aaaaaa';
         this.ctx.font = '10px Arial';
-        this.ctx.textAlign = 'center';
-        this.ctx.fillText(`Translation Progress: ${Math.round(progress * 100)}%`, this.canvas.width / 2, progressY - 8);
+        this.ctx.textAlign = 'left';
+        this.ctx.fillText('Line thickness = Connection strength', 20, this.canvas.height - 20);
     }
     
     draw() {
-        // Clear canvas with a visible background for debugging
-        this.ctx.fillStyle = '#1e293b';
+        // Clear with dark background
+        this.ctx.fillStyle = '#0f172a';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         
-        // Draw components
-        this.drawmRNA();
-        this.drawRibosome();
-        this.drawtRNAs();
-        this.drawProteinChain();
+        // Draw network
+        this.drawConnections();
+        this.drawNodes();
         this.drawLabels();
     }
     
     animate() {
-        this.updateAnimation();
+        this.updateNetwork();
         this.draw();
         requestAnimationFrame(() => this.animate());
     }
@@ -405,7 +292,7 @@ class TranslationAnimation {
 
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
-    new TranslationAnimation();
+    new NetworkAnimation();
     
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
