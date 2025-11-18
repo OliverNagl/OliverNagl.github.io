@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r150/three.min.js"></script>
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar">
@@ -42,7 +44,7 @@
                     <span class="quote-author">- George Box</span>
                 </h1>
                 <p class="hero-description">
-                    Interest in translational research, 
+                    Interest in translational research,
                     computational science and technology.
                 </p>
                 <div class="hero-buttons">
@@ -51,7 +53,9 @@
                 </div>
             </div>
             <div class="hero-image">
-                <!-- Animation space for future design -->
+                <div id="protein-container" class="protein-container">
+                    <canvas id="proteinCanvas"></canvas>
+                </div>
             </div>
         </div>
     </section>
@@ -65,8 +69,8 @@
                     <div class="about-card">
                         <h3>Background</h3>
                         <p>
-                            I'm a passionate student with experience in computational biology, 
-                            molecular modeling, data analysis and extensive wetlab training. 
+                            I'm a passionate student with experience in computational biology,
+                            molecular modeling, data analysis and extensive wetlab training.
                             As well as a background in chemical engineering.
                         </p>
                     </div>
@@ -149,8 +153,10 @@
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/OliverNagl" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="Projects/mitral-valve-segmentation.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/OliverNagl" class="project-link"><i
+                                        class="fab fa-github"></i></a>
+                                <a href="Projects/mitral-valve-segmentation.html" class="project-link"><i
+                                        class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                         <img src="Images/mitral_valve_segmentation.gif" alt="Mitral Valve Segmentation">
@@ -175,7 +181,8 @@
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="Projects/pde-neural-operators.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="Projects/pde-neural-operators.html" class="project-link"><i
+                                        class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                         <img src="Images/Part2_PDE1_dudx.png" alt="PDE identification and foundation models">
@@ -200,12 +207,15 @@
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="Projects/jigsaw-puzzle.html" class="project-link"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="Projects/jigsaw-puzzle.html" class="project-link"><i
+                                        class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
                         <div class="jigsaw-slideshow">
-                            <img src="Images/jigsaw_puzzle_14.svg" alt="Jigsaw Puzzle Solution 1" class="jigsaw-image active">
-                            <img src="Images/jigsaw_puzzle_mapped_14.svg" alt="Jigsaw Puzzle Solution 2" class="jigsaw-image">
+                            <img src="Images/jigsaw_puzzle_14.svg" alt="Jigsaw Puzzle Solution 1"
+                                class="jigsaw-image active">
+                            <img src="Images/jigsaw_puzzle_mapped_14.svg" alt="Jigsaw Puzzle Solution 2"
+                                class="jigsaw-image">
                         </div>
                     </div>
                     <div class="project-content">
@@ -237,7 +247,8 @@
                 <div class="contact-info">
                     <p>Interested in collaboration or a coffee?</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/in/oliver-nagl-41a40a1b0/" class="social-link linkedin" target="_blank">
+                        <a href="https://www.linkedin.com/in/oliver-nagl-41a40a1b0/" class="social-link linkedin"
+                            target="_blank">
                             <i class="fab fa-linkedin-in"></i>
                             <span>LinkedIn</span>
                         </a>
@@ -262,6 +273,8 @@
         </div>
     </footer>
 
+    <script src="protein-viz.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
