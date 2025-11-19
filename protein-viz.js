@@ -1,13 +1,18 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('protein-container');
     const canvas = document.getElementById('proteinCanvas');
 
-    if (!container || !canvas) return;
+    if (!container || !canvas) {
+        return;
+    }
+
+    if (container.clientWidth === 0 || container.clientHeight === 0) {
+        // Simple retry mechanism could go here, but let's just log for now
+    }
 
     // Scene Setup
     const scene = new THREE.Scene();
-    
+
     // Camera Setup
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
     camera.position.z = 30;
@@ -47,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < particleCount; i++) {
         const t = i / particleCount;
         const point = curve.getPoint(t);
-        
+
         // Add some randomness/volume around the curve
         const spread = 2.5;
         const x = point.x + (Math.random() - 0.5) * spread;
@@ -109,10 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
         particles.rotation.z = time * 0.05;
 
         const positions = particles.geometry.attributes.position.array;
-        
+
         // Unraveling factor based on scroll
         // Normalize scroll based on viewport height (start unraveling immediately, max out at 100vh)
-        const unravelFactor = Math.min(Math.max(scrollY / window.innerHeight, 0), 2.0); 
+        const unravelFactor = Math.min(Math.max(scrollY / window.innerHeight, 0), 2.0);
 
         for (let i = 0; i < particleCount; i++) {
             const ix = i * 3;
@@ -131,22 +136,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Unraveling direction (explode outwards from center)
             // We can use the original position as a direction vector
-            const dist = Math.sqrt(ox*ox + oy*oy + oz*oz);
+            const dist = Math.sqrt(ox * ox + oy * oy + oz * oz);
             const dirX = ox / (dist || 1);
             const dirY = oy / (dist || 1);
             const dirZ = oz / (dist || 1);
 
             // Apply forces
             // 1. Vibe: always present
-            // 2. Unravel: increases with scroll. 
+            // 2. Unravel: increases with scroll.
             //    We want it to explode significantly.
-            
+
             const explosionStrength = unravelFactor * 30; // Multiplier for distance
             const noiseStrength = unravelFactor * 5; // Add chaos as it expands
 
-            positions[ix] = ox + vibeX + (dirX * explosionStrength) + (Math.random()-0.5) * noiseStrength;
-            positions[iy] = oy + vibeY + (dirY * explosionStrength) + (Math.random()-0.5) * noiseStrength;
-            positions[iz] = oz + vibeZ + (dirZ * explosionStrength) + (Math.random()-0.5) * noiseStrength;
+            positions[ix] = ox + vibeX + (dirX * explosionStrength) + (Math.random() - 0.5) * noiseStrength;
+            positions[iy] = oy + vibeY + (dirY * explosionStrength) + (Math.random() - 0.5) * noiseStrength;
+            positions[iz] = oz + vibeZ + (dirZ * explosionStrength) + (Math.random() - 0.5) * noiseStrength;
         }
 
         particles.geometry.attributes.position.needsUpdate = true;
