@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Rotation
         const time = now * 0.001;
-        particles.rotation.y = (mouseX * 0.5) + (time * 0.05);
+        particles.rotation.y = (mouseX * 0.5);
         particles.rotation.x = (-mouseY * 0.5);
 
         renderer.render(scene, camera);
