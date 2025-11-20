@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scene = new THREE.Scene();
 
     // Camera Setup
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1500);
-    camera.position.z = 425; // Closer again, as requested
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 3000);
+    camera.position.z = 600;
 
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer({
@@ -22,163 +22,262 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Load Protein Data
-    fetch('protein_coords.bin')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
+    // Shader Material for per-particle opacity and morphing
+    const particleMaterial = new THREE.ShaderMaterial({
+        uniforms: {
+            pixelRatio: { value: renderer.getPixelRatio() },
+            color1: { value: new THREE.Color('#4ECDC4') },
+            color2: { value: new THREE.Color('#26A69A') },
+            transitionProgress: { value: 0.0 }
+        },
+        vertexShader: `
+            attribute float alpha;
+            attribute float colorMix;
+            attribute vec3 targetPosition;
+            attribute float targetAlpha;
+            
+            varying float vAlpha;
+            varying float vColorMix;
+            
+            uniform float transitionProgress;
+
+            void main() {
+                // Interpolate position and alpha
+                vec3 currentPos = mix(position, targetPosition, transitionProgress);
+                vAlpha = mix(alpha, targetAlpha, transitionProgress);
+                
+                vColorMix = colorMix;
+                
+                vec4 mvPosition = modelViewMatrix * vec4(currentPos, 1.0);
+                gl_PointSize = 2.0 * (300.0 / -mvPosition.z); // Size attenuation
+                gl_Position = projectionMatrix * mvPosition;
             }
-            return response.arrayBuffer();
-        })
-        .then(data => {
-            const rawPositions = new Float32Array(data);
-            const rawCount = rawPositions.length / 3;
+        `,
+        fragmentShader: `
+            uniform vec3 color1;
+            uniform vec3 color2;
+            varying float vAlpha;
+            varying float vColorMix;
 
-            // Subsampling: Keep 1 out of every 3 particles
-            const step = 3;
-            const particleCount = Math.floor(rawCount / step);
-            const positions = new Float32Array(particleCount * 3);
+            void main() {
+                if (vAlpha < 0.01) discard;
+                vec3 color = mix(color1, color2, vColorMix);
+                
+                // Circular particle
+                vec2 coord = gl_PointCoord - vec2(0.5);
+                if(length(coord) > 0.5) discard;
 
-            console.log(`Loaded ${rawCount} particles, subsampled to ${particleCount}`);
-
-            for (let i = 0; i < particleCount; i++) {
-                positions[i * 3] = rawPositions[i * step * 3];
-                positions[i * 3 + 1] = rawPositions[i * step * 3 + 1];
-                positions[i * 3 + 2] = rawPositions[i * step * 3 + 2];
+                gl_FragColor = vec4(color, vAlpha);
             }
+        `,
+        transparent: true,
+        depthWrite: false,
+        blending: THREE.AdditiveBlending
+    });
 
-            const geometry = new THREE.BufferGeometry();
-            geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+    // State
+    let proteins = [];
+    let currentProteinIndex = 0;
+    let nextProteinIndex = 1;
+    let particles;
+    let geometry;
 
-            // Create a copy for animation reference
-            const originalPositions = new Float32Array(positions);
+    // Animation State
+    const HOLD_DURATION = 10000; // 10 seconds
+    const TRANSITION_DURATION = 5000; // 5 seconds
+    let lastStateChangeTime = Date.now();
+    let state = 'HOLD'; // 'HOLD' or 'TRANSITION'
 
-            // Pre-calculate random directions for unraveling
-            const randomDirections = new Float32Array(particleCount * 3);
-            for (let i = 0; i < particleCount; i++) {
-                // Random direction vector
-                const rx = (Math.random() - 0.5) * 2;
-                const ry = (Math.random() - 0.5) * 2;
-                const rz = (Math.random() - 0.5) * 2;
+    // Mouse Interaction
+    let mouseX = 0;
+    let mouseY = 0;
+    document.addEventListener('mousemove', (event) => {
+        mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
 
-                // Normalize
-                const len = Math.sqrt(rx * rx + ry * ry + rz * rz) || 1;
+    // Resize Listener
+    window.addEventListener('resize', () => {
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        particleMaterial.uniforms.pixelRatio.value = renderer.getPixelRatio();
+    });
 
-                randomDirections[i * 3] = rx / len;
-                randomDirections[i * 3 + 1] = ry / len;
-                randomDirections[i * 3 + 2] = rz / len;
-            }
+    // Load Data
+    async function loadProteins() {
+        try {
+            const manifestRes = await fetch('Protein_coords/protein_manifest.json');
+            const manifest = await manifestRes.json();
 
-            // Colors
-            const colors = new Float32Array(particleCount * 3);
-            const color1 = new THREE.Color('#4ECDC4');
-            const color2 = new THREE.Color('#26A69A');
+            for (const item of manifest) {
+                const res = await fetch(`Protein_coords/${item.file}`);
+                const buffer = await res.arrayBuffer();
+                const positions = new Float32Array(buffer);
 
-            for (let i = 0; i < particleCount; i++) {
-                const mixedColor = color1.clone().lerp(color2, Math.random());
-                colors[i * 3] = mixedColor.r;
-                colors[i * 3 + 1] = mixedColor.g;
-                colors[i * 3 + 2] = mixedColor.b;
-            }
-            geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+                // Subsample if needed
+                const step = 3;
+                const count = Math.floor(positions.length / 3 / step);
+                const subsampled = new Float32Array(count * 3);
 
-            const material = new THREE.PointsMaterial({
-                size: 0.5, // Slightly larger since we have fewer points
-                vertexColors: true,
-                transparent: true,
-                opacity: 0.8,
-                blending: THREE.AdditiveBlending
-            });
-
-            const particles = new THREE.Points(geometry, material);
-
-            // Center the protein
-            geometry.computeBoundingBox();
-            const center = new THREE.Vector3();
-            geometry.boundingBox.getCenter(center);
-            particles.position.sub(center);
-
-            scene.add(particles);
-
-            // Animation Variables
-            let time = 0;
-            let scrollY = 0;
-            let mouseX = 0;
-            let mouseY = 0;
-
-            // Mouse Listener
-            document.addEventListener('mousemove', (event) => {
-                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
-            });
-
-            // Scroll Listener
-            window.addEventListener('scroll', () => {
-                scrollY = window.scrollY;
-            });
-
-            // Resize Listener
-            window.addEventListener('resize', () => {
-                camera.aspect = container.clientWidth / container.clientHeight;
-                camera.updateProjectionMatrix();
-                renderer.setSize(container.clientWidth, container.clientHeight);
-            });
-
-            // Animation Loop
-            function animate() {
-                requestAnimationFrame(animate);
-                time += 0.005;
-
-                // Vibing (Rotation + slight pulse)
-                // Base rotation from time
-                const baseRotationY = time * 0.05;
-                const baseRotationZ = time * 0.02;
-
-                // Mouse influence (smoothly interpolate)
-                const targetRotationY = mouseX * 0.5;
-                const targetRotationX = -mouseY * 0.5;
-
-                particles.rotation.y = baseRotationY + targetRotationY;
-                particles.rotation.x = targetRotationX;
-                particles.rotation.z = baseRotationZ;
-
-                const currentPositions = particles.geometry.attributes.position.array;
-
-                // Unraveling factor based on scroll
-                const unravelFactor = Math.min(Math.max(scrollY / window.innerHeight, 0), 2.0);
-
-                if (unravelFactor > 0.01 || true) {
-                    for (let i = 0; i < particleCount; i++) {
-                        const ix = i * 3;
-                        const iy = i * 3 + 1;
-                        const iz = i * 3 + 2;
-
-                        const ox = originalPositions[ix];
-                        const oy = originalPositions[iy];
-                        const oz = originalPositions[iz];
-
-                        const vibeX = Math.sin(time + ox * 0.05) * 0.2;
-                        const vibeY = Math.cos(time + oy * 0.05) * 0.2;
-                        const vibeZ = Math.sin(time + oz * 0.05) * 0.2;
-
-                        // Use pre-calculated random direction
-                        const dirX = randomDirections[ix];
-                        const dirY = randomDirections[iy];
-                        const dirZ = randomDirections[iz];
-
-                        const explosionStrength = unravelFactor * 80;
-
-                        currentPositions[ix] = ox + vibeX + (dirX * explosionStrength);
-                        currentPositions[iy] = oy + vibeY + (dirY * explosionStrength);
-                        currentPositions[iz] = oz + vibeZ + (dirZ * explosionStrength);
-                    }
-                    particles.geometry.attributes.position.needsUpdate = true;
+                for (let i = 0; i < count; i++) {
+                    subsampled[i * 3] = positions[i * step * 3];
+                    subsampled[i * 3 + 1] = positions[i * step * 3 + 1];
+                    subsampled[i * 3 + 2] = positions[i * step * 3 + 2];
                 }
 
-                renderer.render(scene, camera);
+                proteins.push({
+                    name: item.name,
+                    positions: subsampled,
+                    count: count
+                });
             }
 
-            animate();
-        })
-        .catch(error => console.error('Error loading protein data:', error));
+            initVisualization();
+
+        } catch (error) {
+            console.error("Error loading proteins:", error);
+        }
+    }
+
+    function initVisualization() {
+        if (proteins.length === 0) return;
+
+        // Find max particle count to allocate buffers
+        let maxCount = 0;
+        proteins.forEach(p => maxCount = Math.max(maxCount, p.count));
+
+        geometry = new THREE.BufferGeometry();
+
+        // Attributes
+        const positions = new Float32Array(maxCount * 3);
+        const targetPositions = new Float32Array(maxCount * 3);
+        const alphas = new Float32Array(maxCount);
+        const targetAlphas = new Float32Array(maxCount);
+        const colorMix = new Float32Array(maxCount);
+
+        // Initialize with first protein
+        const firstProtein = proteins[0];
+        for (let i = 0; i < maxCount; i++) {
+            if (i < firstProtein.count) {
+                positions[i * 3] = firstProtein.positions[i * 3];
+                positions[i * 3 + 1] = firstProtein.positions[i * 3 + 1];
+                positions[i * 3 + 2] = firstProtein.positions[i * 3 + 2];
+                alphas[i] = 1.0;
+            } else {
+                positions[i * 3] = 0; positions[i * 3 + 1] = 0; positions[i * 3 + 2] = 0;
+                alphas[i] = 0.0;
+            }
+            // Target is same as current initially
+            targetPositions[i * 3] = positions[i * 3];
+            targetPositions[i * 3 + 1] = positions[i * 3 + 1];
+            targetPositions[i * 3 + 2] = positions[i * 3 + 2];
+            targetAlphas[i] = alphas[i];
+
+            colorMix[i] = Math.random();
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('targetPosition', new THREE.BufferAttribute(targetPositions, 3));
+        geometry.setAttribute('alpha', new THREE.BufferAttribute(alphas, 1));
+        geometry.setAttribute('targetAlpha', new THREE.BufferAttribute(targetAlphas, 1));
+        geometry.setAttribute('colorMix', new THREE.BufferAttribute(colorMix, 1));
+
+        particles = new THREE.Points(geometry, particleMaterial);
+        scene.add(particles);
+
+        animate();
+    }
+
+    function prepareTransition() {
+        const current = proteins[currentProteinIndex];
+        const next = proteins[nextProteinIndex];
+
+        const positions = geometry.attributes.position.array;
+        const targetPositions = geometry.attributes.targetPosition.array;
+        const alphas = geometry.attributes.alpha.array;
+        const targetAlphas = geometry.attributes.targetAlpha.array;
+
+        const maxCount = geometry.attributes.position.count;
+
+        // 1. Update 'position' (Start State)
+        // Use .set() for fast copy
+        positions.set(targetPositions);
+        alphas.set(targetAlphas);
+
+        // 2. Update 'targetPosition' (End State)
+        for (let i = 0; i < maxCount; i++) {
+            if (i < next.count) {
+                targetPositions[i * 3] = next.positions[i * 3];
+                targetPositions[i * 3 + 1] = next.positions[i * 3 + 1];
+                targetPositions[i * 3 + 2] = next.positions[i * 3 + 2];
+                targetAlphas[i] = 1.0;
+            } else {
+                // If not in next, it should fade out.
+                // Stay at current position (which is now in 'positions').
+                // So targetPosition should equal position (start state).
+                targetPositions[i * 3] = positions[i * 3];
+                targetPositions[i * 3 + 1] = positions[i * 3 + 1];
+                targetPositions[i * 3 + 2] = positions[i * 3 + 2];
+                targetAlphas[i] = 0.0;
+            }
+
+            // Handle "appear gradually" for new points
+            // If it was hidden in the start state, we want it to appear at 'targetPositions'.
+            // To prevent flying from 0,0,0, we set start 'positions' to 'targetPositions'.
+            if (alphas[i] < 0.01) {
+                positions[i * 3] = targetPositions[i * 3];
+                positions[i * 3 + 1] = targetPositions[i * 3 + 1];
+                positions[i * 3 + 2] = targetPositions[i * 3 + 2];
+            }
+        }
+
+        geometry.attributes.position.needsUpdate = true;
+        geometry.attributes.targetPosition.needsUpdate = true;
+        geometry.attributes.alpha.needsUpdate = true;
+        geometry.attributes.targetAlpha.needsUpdate = true;
+    }
+
+    function animate() {
+        requestAnimationFrame(animate);
+
+        const now = Date.now();
+        const timeSinceChange = now - lastStateChangeTime;
+
+        // Update Logic
+        if (state === 'HOLD') {
+            if (timeSinceChange > HOLD_DURATION) {
+                state = 'TRANSITION';
+                lastStateChangeTime = now;
+
+                // Prepare next indices
+                nextProteinIndex = (currentProteinIndex + 1) % proteins.length;
+                console.log(`Transitioning from ${proteins[currentProteinIndex].name} to ${proteins[nextProteinIndex].name}`);
+
+                prepareTransition();
+                particleMaterial.uniforms.transitionProgress.value = 0.0;
+            }
+        } else if (state === 'TRANSITION') {
+            if (timeSinceChange > TRANSITION_DURATION) {
+                state = 'HOLD';
+                lastStateChangeTime = now;
+                currentProteinIndex = nextProteinIndex;
+                particleMaterial.uniforms.transitionProgress.value = 1.0;
+            } else {
+                const progress = timeSinceChange / TRANSITION_DURATION;
+                // Ease in-out
+                const eased = progress < .5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+                particleMaterial.uniforms.transitionProgress.value = eased;
+            }
+        }
+
+        // Rotation (Vibing + Mouse)
+        const time = now * 0.001;
+        particles.rotation.y = (mouseX * 0.5) + (time * 0.05);
+        particles.rotation.x = (-mouseY * 0.5);
+
+        renderer.render(scene, camera);
+    }
+
+    loadProteins();
 });
