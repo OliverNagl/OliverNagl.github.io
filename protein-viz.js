@@ -256,25 +256,77 @@ document.addEventListener('DOMContentLoaded', () => {
         positions.set(targetPositions);
         alphas.set(targetAlphas);
 
-        // 2. Update 'targetPosition' (End State)
-        for (let i = 0; i < maxCount; i++) {
-            if (i < next.count) {
-                targetPositions[i * 3] = next.positions[i * 3];
-                targetPositions[i * 3 + 1] = next.positions[i * 3 + 1];
-                targetPositions[i * 3 + 2] = next.positions[i * 3 + 2];
-                targetAlphas[i] = 1.0;
-            } else {
-                targetPositions[i * 3] = positions[i * 3];
-                targetPositions[i * 3 + 1] = positions[i * 3 + 1];
-                targetPositions[i * 3 + 2] = positions[i * 3 + 2];
-                targetAlphas[i] = 0.0;
-            }
+        // Spatial Sort Mapping
 
-            if (alphas[i] < 0.01) {
-                positions[i * 3] = targetPositions[i * 3];
-                positions[i * 3 + 1] = targetPositions[i * 3 + 1];
-                positions[i * 3 + 2] = targetPositions[i * 3 + 2];
+        // 1. Identify Active and Free particles
+        // Since particles get scattered, we can't assume active ones are 0..current.count
+        const activeIndices = [];
+        const freeIndices = [];
+        for (let i = 0; i < maxCount; i++) {
+            if (alphas[i] > 0.5) {
+                activeIndices.push(i);
+            } else {
+                freeIndices.push(i);
             }
+        }
+
+        // Sort active particles by current X position
+        activeIndices.sort((a, b) => positions[a * 3] - positions[b * 3]);
+
+        // 2. Get indices for target particles
+        const nextIndices = new Int32Array(next.count);
+        for (let i = 0; i < next.count; i++) nextIndices[i] = i;
+        // Sort by target X position
+        nextIndices.sort((a, b) => next.positions[a * 3] - next.positions[b * 3]);
+
+        const commonCount = Math.min(activeIndices.length, next.count);
+
+        // 3. Match common particles
+        for (let k = 0; k < commonCount; k++) {
+            const currIdx = activeIndices[k];
+            const nextIdx = nextIndices[k];
+
+            targetPositions[currIdx * 3] = next.positions[nextIdx * 3];
+            targetPositions[currIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+            targetPositions[currIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+            targetAlphas[currIdx] = 1.0;
+        }
+
+        // 4. Fade out excess active particles
+        for (let k = commonCount; k < activeIndices.length; k++) {
+            const currIdx = activeIndices[k];
+            targetPositions[currIdx * 3] = positions[currIdx * 3];
+            targetPositions[currIdx * 3 + 1] = positions[currIdx * 3 + 1];
+            targetPositions[currIdx * 3 + 2] = positions[currIdx * 3 + 2];
+            targetAlphas[currIdx] = 0.0;
+        }
+
+        // 5. Fade in new particles (using free slots)
+        for (let k = commonCount; k < next.count; k++) {
+            if (freeIndices.length === 0) {
+                console.warn("Not enough free particles!");
+                break;
+            }
+            const nextIdx = nextIndices[k];
+            const freeIdx = freeIndices.pop(); // Take a free particle
+
+            // Setup start state (invisible at target location)
+            positions[freeIdx * 3] = next.positions[nextIdx * 3];
+            positions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+            positions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+            alphas[freeIdx] = 0.0;
+
+            // Setup target state (visible at target location)
+            targetPositions[freeIdx * 3] = next.positions[nextIdx * 3];
+            targetPositions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+            targetPositions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+            targetAlphas[freeIdx] = 1.0;
+        }
+
+        // 6. Ensure remaining free particles stay hidden
+        for (const freeIdx of freeIndices) {
+            targetAlphas[freeIdx] = 0.0;
+            alphas[freeIdx] = 0.0;
         }
 
         geometry.attributes.position.needsUpdate = true;
