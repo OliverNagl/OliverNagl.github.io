@@ -22,30 +22,44 @@ document.addEventListener('DOMContentLoaded', () => {
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-    // Shader Material for per-particle opacity and morphing
+    // Shader Material
     const particleMaterial = new THREE.ShaderMaterial({
         uniforms: {
             pixelRatio: { value: renderer.getPixelRatio() },
             color1: { value: new THREE.Color('#4ECDC4') },
             color2: { value: new THREE.Color('#26A69A') },
-            transitionProgress: { value: 0.0 }
+            transitionProgress: { value: 0.0 },
+            scrollProgress: { value: 0.0 },
+            time: { value: 0.0 }
         },
         vertexShader: `
             attribute float alpha;
             attribute float colorMix;
             attribute vec3 targetPosition;
             attribute float targetAlpha;
+            attribute vec3 randomDir;
             
             varying float vAlpha;
             varying float vColorMix;
             
             uniform float transitionProgress;
+            uniform float scrollProgress;
+            uniform float time;
 
             void main() {
                 // Interpolate position and alpha
                 vec3 currentPos = mix(position, targetPosition, transitionProgress);
                 vAlpha = mix(alpha, targetAlpha, transitionProgress);
                 
+                // Scroll explosion effect
+                // Add some noise based on time to make it feel alive
+                vec3 explosion = randomDir * scrollProgress * 300.0;
+                
+                // Vibe check (gentle movement)
+                float vibe = sin(time * 2.0 + currentPos.x * 0.01) * 2.0;
+                currentPos += explosion;
+                currentPos.y += vibe;
+
                 vColorMix = colorMix;
                 
                 vec4 mvPosition = modelViewMatrix * vec4(currentPos, 1.0);
@@ -78,15 +92,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // State
     let proteins = [];
     let currentProteinIndex = 0;
-    let nextProteinIndex = 1;
+    let nextProteinIndex = 0;
     let particles;
     let geometry;
 
     // Animation State
     const HOLD_DURATION = 10000; // 10 seconds
     const TRANSITION_DURATION = 5000; // 5 seconds
-    let lastStateChangeTime = Date.now();
+    let lastStateChangeTime = performance.now();
     let state = 'HOLD'; // 'HOLD' or 'TRANSITION'
+    let isPaused = false;
 
     // Mouse Interaction
     let mouseX = 0;
@@ -94,6 +109,18 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('mousemove', (event) => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+    });
+
+    // Scroll Interaction
+    let scrollY = 0;
+    window.addEventListener('scroll', () => {
+        scrollY = window.scrollY;
+        const maxScroll = window.innerHeight;
+        const progress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+        particleMaterial.uniforms.scrollProgress.value = progress;
+
+        // Pause morphing when scrolling/exploded
+        isPaused = progress > 0.05;
     });
 
     // Resize Listener
@@ -115,8 +142,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 const buffer = await res.arrayBuffer();
                 const positions = new Float32Array(buffer);
 
-                // Subsample if needed
-                const step = 3;
+                // Subsample: Increase step to reduce points (User request)
+                const step = 6;
                 const count = Math.floor(positions.length / 3 / step);
                 const subsampled = new Float32Array(count * 3);
 
@@ -143,6 +170,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function initVisualization() {
         if (proteins.length === 0) return;
 
+        // Random Initialization
+        currentProteinIndex = Math.floor(Math.random() * proteins.length);
+        nextProteinIndex = (currentProteinIndex + 1) % proteins.length;
+
         // Find max particle count to allocate buffers
         let maxCount = 0;
         proteins.forEach(p => maxCount = Math.max(maxCount, p.count));
@@ -155,14 +186,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const alphas = new Float32Array(maxCount);
         const targetAlphas = new Float32Array(maxCount);
         const colorMix = new Float32Array(maxCount);
+        const randomDir = new Float32Array(maxCount * 3);
 
-        // Initialize with first protein
-        const firstProtein = proteins[0];
+        // Initialize with random starting protein
+        const startProtein = proteins[currentProteinIndex];
         for (let i = 0; i < maxCount; i++) {
-            if (i < firstProtein.count) {
-                positions[i * 3] = firstProtein.positions[i * 3];
-                positions[i * 3 + 1] = firstProtein.positions[i * 3 + 1];
-                positions[i * 3 + 2] = firstProtein.positions[i * 3 + 2];
+            if (i < startProtein.count) {
+                positions[i * 3] = startProtein.positions[i * 3];
+                positions[i * 3 + 1] = startProtein.positions[i * 3 + 1];
+                positions[i * 3 + 2] = startProtein.positions[i * 3 + 2];
                 alphas[i] = 1.0;
             } else {
                 positions[i * 3] = 0; positions[i * 3 + 1] = 0; positions[i * 3 + 2] = 0;
@@ -175,6 +207,13 @@ document.addEventListener('DOMContentLoaded', () => {
             targetAlphas[i] = alphas[i];
 
             colorMix[i] = Math.random();
+
+            // Random direction for explosion
+            const theta = Math.random() * Math.PI * 2;
+            const phi = Math.acos((Math.random() * 2) - 1);
+            randomDir[i * 3] = Math.sin(phi) * Math.cos(theta);
+            randomDir[i * 3 + 1] = Math.sin(phi) * Math.sin(theta);
+            randomDir[i * 3 + 2] = Math.cos(phi);
         }
 
         geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
@@ -182,6 +221,7 @@ document.addEventListener('DOMContentLoaded', () => {
         geometry.setAttribute('alpha', new THREE.BufferAttribute(alphas, 1));
         geometry.setAttribute('targetAlpha', new THREE.BufferAttribute(targetAlphas, 1));
         geometry.setAttribute('colorMix', new THREE.BufferAttribute(colorMix, 1));
+        geometry.setAttribute('randomDir', new THREE.BufferAttribute(randomDir, 3));
 
         particles = new THREE.Points(geometry, particleMaterial);
         scene.add(particles);
@@ -201,7 +241,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const maxCount = geometry.attributes.position.count;
 
         // 1. Update 'position' (Start State)
-        // Use .set() for fast copy
         positions.set(targetPositions);
         alphas.set(targetAlphas);
 
@@ -213,18 +252,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetPositions[i * 3 + 2] = next.positions[i * 3 + 2];
                 targetAlphas[i] = 1.0;
             } else {
-                // If not in next, it should fade out.
-                // Stay at current position (which is now in 'positions').
-                // So targetPosition should equal position (start state).
                 targetPositions[i * 3] = positions[i * 3];
                 targetPositions[i * 3 + 1] = positions[i * 3 + 1];
                 targetPositions[i * 3 + 2] = positions[i * 3 + 2];
                 targetAlphas[i] = 0.0;
             }
 
-            // Handle "appear gradually" for new points
-            // If it was hidden in the start state, we want it to appear at 'targetPositions'.
-            // To prevent flying from 0,0,0, we set start 'positions' to 'targetPositions'.
             if (alphas[i] < 0.01) {
                 positions[i * 3] = targetPositions[i * 3];
                 positions[i * 3 + 1] = targetPositions[i * 3 + 1];
@@ -241,37 +274,43 @@ document.addEventListener('DOMContentLoaded', () => {
     function animate() {
         requestAnimationFrame(animate);
 
-        const now = Date.now();
-        const timeSinceChange = now - lastStateChangeTime;
+        const now = performance.now();
 
-        // Update Logic
-        if (state === 'HOLD') {
-            if (timeSinceChange > HOLD_DURATION) {
-                state = 'TRANSITION';
-                lastStateChangeTime = now;
+        // Update time uniform for shader
+        particleMaterial.uniforms.time.value = now * 0.001;
 
-                // Prepare next indices
-                nextProteinIndex = (currentProteinIndex + 1) % proteins.length;
-                console.log(`Transitioning from ${proteins[currentProteinIndex].name} to ${proteins[nextProteinIndex].name}`);
+        if (!isPaused) {
+            const timeSinceChange = now - lastStateChangeTime;
 
-                prepareTransition();
-                particleMaterial.uniforms.transitionProgress.value = 0.0;
+            if (state === 'HOLD') {
+                if (timeSinceChange > HOLD_DURATION) {
+                    state = 'TRANSITION';
+                    lastStateChangeTime = now;
+
+                    nextProteinIndex = (currentProteinIndex + 1) % proteins.length;
+                    // console.log(`Transitioning to ${proteins[nextProteinIndex].name}`);
+
+                    prepareTransition();
+                    particleMaterial.uniforms.transitionProgress.value = 0.0;
+                }
+            } else if (state === 'TRANSITION') {
+                if (timeSinceChange > TRANSITION_DURATION) {
+                    state = 'HOLD';
+                    lastStateChangeTime = now;
+                    currentProteinIndex = nextProteinIndex;
+                    particleMaterial.uniforms.transitionProgress.value = 1.0;
+                } else {
+                    const progress = timeSinceChange / TRANSITION_DURATION;
+                    const eased = progress < .5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+                    particleMaterial.uniforms.transitionProgress.value = eased;
+                }
             }
-        } else if (state === 'TRANSITION') {
-            if (timeSinceChange > TRANSITION_DURATION) {
-                state = 'HOLD';
-                lastStateChangeTime = now;
-                currentProteinIndex = nextProteinIndex;
-                particleMaterial.uniforms.transitionProgress.value = 1.0;
-            } else {
-                const progress = timeSinceChange / TRANSITION_DURATION;
-                // Ease in-out
-                const eased = progress < .5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
-                particleMaterial.uniforms.transitionProgress.value = eased;
-            }
+        } else {
+            // If paused, just keep updating lastStateChangeTime so we don't jump when unpaused
+            lastStateChangeTime = now - (state === 'TRANSITION' ? (particleMaterial.uniforms.transitionProgress.value * TRANSITION_DURATION) : 0);
         }
 
-        // Rotation (Vibing + Mouse)
+        // Rotation
         const time = now * 0.001;
         particles.rotation.y = (mouseX * 0.5) + (time * 0.05);
         particles.rotation.x = (-mouseY * 0.5);
