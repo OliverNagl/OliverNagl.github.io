@@ -52,11 +52,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 vAlpha = mix(alpha, targetAlpha, transitionProgress);
                 
                 // Scroll explosion effect
-                // Add some noise based on time to make it feel alive
                 vec3 explosion = randomDir * scrollProgress * 300.0;
                 
-                // Vibe check (gentle movement)
-                float vibe = sin(time * 2.0 + currentPos.x * 0.01) * 2.0;
+                // Vibe check - REDUCED to prevent flickering
+                // Very slow, very subtle movement just to keep it "alive" but not jittery
+                float vibe = sin(time * 0.5 + currentPos.x * 0.01) * 0.5;
+                
                 currentPos += explosion;
                 currentPos.y += vibe;
 
@@ -110,6 +111,17 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     });
+
+    // Zoom Interaction
+    container.addEventListener('wheel', (event) => {
+        event.preventDefault(); // Prevent page scroll while zooming
+
+        const zoomSpeed = 0.5;
+        camera.position.z += event.deltaY * zoomSpeed;
+
+        // Clamp zoom
+        camera.position.z = Math.max(120, Math.min(1000, camera.position.z));
+    }, { passive: false });
 
     // Scroll Interaction
     let scrollY = 0;
