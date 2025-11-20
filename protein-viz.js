@@ -103,6 +103,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Animation Variables
             let time = 0;
             let scrollY = 0;
+            let mouseX = 0;
+            let mouseY = 0;
+
+            // Mouse Listener
+            document.addEventListener('mousemove', (event) => {
+                mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+                mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+            });
 
             // Scroll Listener
             window.addEventListener('scroll', () => {
@@ -122,8 +130,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 time += 0.005;
 
                 // Vibing (Rotation + slight pulse)
-                particles.rotation.y = time * 0.05;
-                particles.rotation.z = time * 0.02;
+                // Base rotation from time
+                const baseRotationY = time * 0.05;
+                const baseRotationZ = time * 0.02;
+
+                // Mouse influence (smoothly interpolate)
+                const targetRotationY = mouseX * 0.5;
+                const targetRotationX = -mouseY * 0.5;
+
+                particles.rotation.y = baseRotationY + targetRotationY;
+                particles.rotation.x = targetRotationX;
+                particles.rotation.z = baseRotationZ;
 
                 const currentPositions = particles.geometry.attributes.position.array;
 
