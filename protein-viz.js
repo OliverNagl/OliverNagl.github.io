@@ -279,51 +279,90 @@ document.addEventListener('DOMContentLoaded', () => {
         // Sort by target X position
         nextIndices.sort((a, b) => next.positions[a * 3] - next.positions[b * 3]);
 
-        const commonCount = Math.min(activeIndices.length, next.count);
+        const activeCount = activeIndices.length;
+        const targetCount = next.count;
 
-        // 3. Match common particles
-        for (let k = 0; k < commonCount; k++) {
-            const currIdx = activeIndices[k];
-            const nextIdx = nextIndices[k];
+        if (activeCount > targetCount) {
+            // Shrinking: Select subset of active to map to all targets
+            // We want to map 'targetCount' active particles to 'targetCount' target particles.
+            // We should pick them evenly from the sorted active list.
 
-            targetPositions[currIdx * 3] = next.positions[nextIdx * 3];
-            targetPositions[currIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
-            targetPositions[currIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
-            targetAlphas[currIdx] = 1.0;
-        }
+            const step = activeCount / targetCount;
+            const keptSet = new Set();
 
-        // 4. Fade out excess active particles
-        for (let k = commonCount; k < activeIndices.length; k++) {
-            const currIdx = activeIndices[k];
-            targetPositions[currIdx * 3] = positions[currIdx * 3];
-            targetPositions[currIdx * 3 + 1] = positions[currIdx * 3 + 1];
-            targetPositions[currIdx * 3 + 2] = positions[currIdx * 3 + 2];
-            targetAlphas[currIdx] = 0.0;
-        }
+            for (let i = 0; i < targetCount; i++) {
+                const activeSortedIdx = Math.floor(i * step);
+                const currIdx = activeIndices[activeSortedIdx];
+                const nextIdx = nextIndices[i];
 
-        // 5. Fade in new particles (using free slots)
-        for (let k = commonCount; k < next.count; k++) {
-            if (freeIndices.length === 0) {
-                console.warn("Not enough free particles!");
-                break;
+                // Map
+                targetPositions[currIdx * 3] = next.positions[nextIdx * 3];
+                targetPositions[currIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+                targetPositions[currIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+                targetAlphas[currIdx] = 1.0;
+
+                keptSet.add(currIdx);
             }
-            const nextIdx = nextIndices[k];
-            const freeIdx = freeIndices.pop(); // Take a free particle
 
-            // Setup start state (invisible at target location)
-            positions[freeIdx * 3] = next.positions[nextIdx * 3];
-            positions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
-            positions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
-            alphas[freeIdx] = 0.0;
+            // Fade out others
+            for (let i = 0; i < activeCount; i++) {
+                const currIdx = activeIndices[i];
+                if (!keptSet.has(currIdx)) {
+                    targetPositions[currIdx * 3] = positions[currIdx * 3]; // Stay put
+                    targetPositions[currIdx * 3 + 1] = positions[currIdx * 3 + 1];
+                    targetPositions[currIdx * 3 + 2] = positions[currIdx * 3 + 2];
+                    targetAlphas[currIdx] = 0.0;
+                }
+            }
 
-            // Setup target state (visible at target location)
-            targetPositions[freeIdx * 3] = next.positions[nextIdx * 3];
-            targetPositions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
-            targetPositions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
-            targetAlphas[freeIdx] = 1.0;
+        } else {
+            // Growing: Map all active to subset of targets
+            // We want to map 'activeCount' active particles to 'activeCount' target particles.
+            // We should pick the targets evenly.
+
+            const step = targetCount / activeCount;
+            const usedTargetSet = new Set();
+
+            for (let i = 0; i < activeCount; i++) {
+                const targetSortedIdx = Math.floor(i * step);
+                const currIdx = activeIndices[i];
+                const nextIdx = nextIndices[targetSortedIdx];
+
+                // Map
+                targetPositions[currIdx * 3] = next.positions[nextIdx * 3];
+                targetPositions[currIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+                targetPositions[currIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+                targetAlphas[currIdx] = 1.0;
+
+                usedTargetSet.add(nextIdx);
+            }
+
+            // Fill remaining targets with free particles
+            for (let i = 0; i < targetCount; i++) {
+                const nextIdx = nextIndices[i];
+                if (!usedTargetSet.has(nextIdx)) {
+                    if (freeIndices.length > 0) {
+                        const freeIdx = freeIndices.pop();
+
+                        // Start invisible at target
+                        positions[freeIdx * 3] = next.positions[nextIdx * 3];
+                        positions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+                        positions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+                        alphas[freeIdx] = 0.0;
+
+                        // End visible at target
+                        targetPositions[freeIdx * 3] = next.positions[nextIdx * 3];
+                        targetPositions[freeIdx * 3 + 1] = next.positions[nextIdx * 3 + 1];
+                        targetPositions[freeIdx * 3 + 2] = next.positions[nextIdx * 3 + 2];
+                        targetAlphas[freeIdx] = 1.0;
+                    } else {
+                        console.warn("Not enough free particles");
+                    }
+                }
+            }
         }
 
-        // 6. Ensure remaining free particles stay hidden
+        // Ensure remaining free particles stay hidden
         for (const freeIdx of freeIndices) {
             targetAlphas[freeIdx] = 0.0;
             alphas[freeIdx] = 0.0;
