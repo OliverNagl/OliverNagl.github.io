@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const scene = new THREE.Scene();
 
     // Camera Setup
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 2000);
-    camera.position.z = 700; // Adjusted for larger protein structure
+    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1500);
+    camera.position.z = 250; // Closer again, as requested
 
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer({
@@ -31,16 +31,43 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.arrayBuffer();
         })
         .then(data => {
-            const positions = new Float32Array(data);
-            const particleCount = positions.length / 3;
+            const rawPositions = new Float32Array(data);
+            const rawCount = rawPositions.length / 3;
 
-            console.log(`Loaded ${particleCount} particles`);
+            // Subsampling: Keep 1 out of every 3 particles
+            const step = 3;
+            const particleCount = Math.floor(rawCount / step);
+            const positions = new Float32Array(particleCount * 3);
+
+            console.log(`Loaded ${rawCount} particles, subsampled to ${particleCount}`);
+
+            for (let i = 0; i < particleCount; i++) {
+                positions[i * 3] = rawPositions[i * step * 3];
+                positions[i * 3 + 1] = rawPositions[i * step * 3 + 1];
+                positions[i * 3 + 2] = rawPositions[i * step * 3 + 2];
+            }
 
             const geometry = new THREE.BufferGeometry();
             geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
 
             // Create a copy for animation reference
             const originalPositions = new Float32Array(positions);
+
+            // Pre-calculate random directions for unraveling
+            const randomDirections = new Float32Array(particleCount * 3);
+            for (let i = 0; i < particleCount; i++) {
+                // Random direction vector
+                const rx = (Math.random() - 0.5) * 2;
+                const ry = (Math.random() - 0.5) * 2;
+                const rz = (Math.random() - 0.5) * 2;
+
+                // Normalize
+                const len = Math.sqrt(rx * rx + ry * ry + rz * rz) || 1;
+
+                randomDirections[i * 3] = rx / len;
+                randomDirections[i * 3 + 1] = ry / len;
+                randomDirections[i * 3 + 2] = rz / len;
+            }
 
             // Colors
             const colors = new Float32Array(particleCount * 3);
@@ -56,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
             const material = new THREE.PointsMaterial({
-                size: 0.3,
+                size: 0.5, // Slightly larger since we have fewer points
                 vertexColors: true,
                 transparent: true,
                 opacity: 0.8,
@@ -103,10 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Unraveling factor based on scroll
                 const unravelFactor = Math.min(Math.max(scrollY / window.innerHeight, 0), 2.0);
 
-                // Optimization: Only update if necessary (e.g. scroll changed or time passed)
-                // For "vibing", we need to update every frame.
-
-                if (unravelFactor > 0.01 || true) { // Always update for vibe
+                if (unravelFactor > 0.01 || true) {
                     for (let i = 0; i < particleCount; i++) {
                         const ix = i * 3;
                         const iy = i * 3 + 1;
@@ -120,24 +144,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         const vibeY = Math.cos(time + oy * 0.05) * 0.2;
                         const vibeZ = Math.sin(time + oz * 0.05) * 0.2;
 
-                        // Explosion
-                        const dx = ox - center.x;
-                        const dy = oy - center.y;
-                        const dz = oz - center.z;
-
-                        // Optimization: Calculate distSq first
-                        const distSq = dx * dx + dy * dy + dz * dz;
-                        const dist = Math.sqrt(distSq);
-
-                        // Avoid divide by zero
-                        const scale = (dist > 0.001) ? (1.0 / dist) : 0;
-
-                        const dirX = dx * scale;
-                        const dirY = dy * scale;
-                        const dirZ = dz * scale;
+                        // Use pre-calculated random direction
+                        const dirX = randomDirections[ix];
+                        const dirY = randomDirections[iy];
+                        const dirZ = randomDirections[iz];
 
                         const explosionStrength = unravelFactor * 300;
-                        const noiseStrength = unravelFactor * 5;
 
                         currentPositions[ix] = ox + vibeX + (dirX * explosionStrength);
                         currentPositions[iy] = oy + vibeY + (dirY * explosionStrength);
