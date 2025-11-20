@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const positions = new Float32Array(buffer);
 
                 // Subsample: Increase step to reduce points (User request)
-                const step = 2;
+                const step = 1;
                 const count = Math.floor(positions.length / 3 / step);
                 const subsampled = new Float32Array(count * 3);
 
