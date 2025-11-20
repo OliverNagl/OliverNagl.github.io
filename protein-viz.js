@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Camera Setup
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 3000);
-    camera.position.z = 600;
+    camera.position.z = 470;
 
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer({
@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 float vibe = sin(time * 0.5 + currentPos.x * 0.01) * 0.5;
                 
                 currentPos += explosion;
-                currentPos.y += vibe;
+                // currentPos.y += vibe;
 
                 vColorMix = colorMix;
                 
