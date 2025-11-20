@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Camera Setup
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1500);
-    camera.position.z = 300; // Closer again, as requested
+    camera.position.z = 350; // Closer again, as requested
 
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer({
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const dirY = randomDirections[iy];
                         const dirZ = randomDirections[iz];
 
-                        const explosionStrength = unravelFactor * 20;
+                        const explosionStrength = unravelFactor * 80;
 
                         currentPositions[ix] = ox + vibeX + (dirX * explosionStrength);
                         currentPositions[iy] = oy + vibeY + (dirY * explosionStrength);
