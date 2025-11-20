@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Camera Setup
     const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1500);
-    camera.position.z = 350; // Closer again, as requested
+    camera.position.z = 425; // Closer again, as requested
 
     // Renderer Setup
     const renderer = new THREE.WebGLRenderer({
