@@ -38,13 +38,11 @@
                     <i class="fas fa-arrow-left"></i> Back to Projects
                 </a>
                 <h1 class="project-title">Neural Operators for PDEs</h1>
-                <p class="project-subtitle">AI-powered identification and solution of partial differential equations using deep learning</p>
+                <p class="project-subtitle">Solving and discovering partial differential equations with neural networks</p>
                 <div class="project-tags">
                     <span class="tag">PyTorch</span>
-                    <span class="tag">Python</span>
                     <span class="tag">Neural Operators</span>
                     <span class="tag">PDE Discovery</span>
-                    <span class="tag">Fourier Transform</span>
                     <span class="tag">Scientific ML</span>
                 </div>
             </div>
@@ -56,22 +54,18 @@
         <div class="container">
             <!-- Overview Section -->
             <section class="content-section">
-                <h2>Project Overview</h2>
+                <h2>Overview</h2>
                 <p>
-                    This comprehensive project explores three cutting-edge neural network approaches for solving and discovering 
-                    partial differential equations (PDEs) using modern deep learning techniques. Developed as the final project 
-                    for the "Artificial Intelligence for Science and Engineering" course at ETH Zurich, it demonstrates the 
-                    power of AI in scientific computing.
-                </p>
-                <p>
-                    The project encompasses Fourier Neural Operators (FNOs), automated PDE discovery methods, and phase field 
-                    dynamics modeling, representing state-of-the-art approaches to computational physics problems.
+                    Final project for the "Artificial Intelligence for Science and Engineering" (AISE) course
+                    at ETH Zurich. It has three parts: solving the wave equation with Fourier Neural Operators,
+                    discovering unknown PDE terms from data, and modelling phase transitions with the
+                    Allen-Cahn equation.
                 </p>
 
                 <div class="course-info">
                     <div class="course-detail">
                         <h4>Course</h4>
-                        <p>Artificial Intelligence for Science and Engineering (AISE)</p>
+                        <p>AI for Science and Engineering</p>
                     </div>
                     <div class="course-detail">
                         <h4>Institution</h4>
@@ -86,105 +80,53 @@
 
             <!-- Project Parts Overview -->
             <section class="content-section">
-                <h2>Project Components</h2>
+                <h2>The three parts</h2>
                 <div class="parts-grid">
                     <div class="part-card">
                         <div class="part-number">1</div>
                         <h3>Fourier Neural Operators</h3>
-                        <p>Implementation of FNOs for solving the 1D wave equation using spectral convolutions in Fourier space.</p>
-                        <ul>
-                            <li>Spectral convolution layers</li>
-                            <li>Multi-resolution training</li>
-                            <li>Out-of-distribution testing</li>
-                        </ul>
+                        <p>FNOs for the 1D wave equation, using spectral convolutions in Fourier space.</p>
                     </div>
 
                     <div class="part-card">
                         <div class="part-number">2</div>
                         <h3>PDE Discovery</h3>
-                        <p>Neural network-based methods for identifying unknown governing equations from observational data.</p>
-                        <ul>
-                            <li>Gradient-based discovery</li>
-                            <li>Sparse regression techniques</li>
-                            <li>Multi-variable system support</li>
-                        </ul>
+                        <p>Identifying unknown governing equations directly from observational data.</p>
                     </div>
 
                     <div class="part-card">
                         <div class="part-number">3</div>
                         <h3>Phase Field Dynamics</h3>
-                        <p>Neural network solution for the Allen-Cahn equation modeling phase transitions and interface dynamics.</p>
-                        <ul>
-                            <li>Curriculum learning strategy</li>
-                            <li>Multi-scale modeling</li>
-                            <li>Temporal extrapolation</li>
-                        </ul>
+                        <p>Solving the Allen-Cahn equation for phase transitions and interface dynamics.</p>
                     </div>
                 </div>
             </section>
 
             <!-- Part 1: Fourier Neural Operators -->
             <section class="content-section">
-                <h2>Part 1: Fourier Neural Operators for Wave Equation</h2>
-                
-                <div class="technical-highlight">
-                    <i class="fas fa-wave-square"></i>
-                    <div>
-                        <h4>Key Innovation</h4>
-                        <p>Leverages spectral properties of PDEs by performing convolutions in Fourier space, making them highly effective for periodic and quasi-periodic problems.</p>
-                    </div>
-                </div>
-
-                <h3>Technical Implementation</h3>
-                <ul class="feature-list">
-                    <li><strong>Spectral Convolution Layer:</strong> Custom implementation of Fourier-domain convolutions</li>
-                    <li><strong>Time-dependent Models:</strong> Support for both static and temporal predictions</li>
-                    <li><strong>Multi-resolution Training:</strong> Training on different spatial resolutions (32, 64, 96, 128 grid points)</li>
-                    <li><strong>Generalization Testing:</strong> Evaluation on unseen resolutions and time horizons</li>
-                </ul>
-
-                <div class="code-showcase">
-                    <h4>Core Components</h4>
-                    <div class="file-list">
-                        <div class="file-item">
-                            <i class="fas fa-file-code"></i>
-                            <span><code>FNO_model.py</code> - Core FNO architecture implementation</span>
-                        </div>
-                        <div class="file-item">
-                            <i class="fas fa-file-code"></i>
-                            <span><code>FNO_model_time_dependent.py</code> - Time-continuous FNO variant</span>
-                        </div>
-                        <div class="file-item">
-                            <i class="fas fa-chart-line"></i>
-                            <span><code>FNO_visualisation.py</code> - Visualization utilities</span>
-                        </div>
-                    </div>
-                </div>
+                <h2>Part 1 — Fourier Neural Operators</h2>
+                <p>
+                    FNOs perform their convolutions in Fourier space, which suits the periodic structure of the
+                    wave equation. The model was trained across several spatial resolutions (32–128 grid points)
+                    and tested on unseen resolutions and time horizons.
+                </p>
 
                 <div class="project-showcase">
-                    <h4>FNO Wave Equation Results</h4>
-                    <img src="../Images/AISE/Part1/Part1.png" alt="Fourier Neural Operator wave equation predictions and analysis" class="showcase-image">
+                    <img src="../Images/AISE/Part1/Part1.png" alt="Fourier Neural Operator wave equation predictions" class="showcase-image">
                     <p class="image-caption">
-                        Fourier Neural Operator predictions for 1D wave equation showing accuracy across multiple resolutions and time steps.
+                        FNO predictions for the 1D wave equation across resolutions and time steps.
                     </p>
                 </div>
             </section>
 
             <!-- Part 2: PDE Discovery -->
             <section class="content-section">
-                <h2>Part 2: PDE Discovery and System Identification</h2>
-                
-                <div class="technical-highlight">
-                    <i class="fas fa-search"></i>
-                    <div>
-                        <h4>Key Innovation</h4>
-                        <p>Combines function approximation with symbolic regression to discover interpretable PDE terms from data automatically.</p>
-                    </div>
-                </div>
+                <h2>Part 2 — PDE Discovery</h2>
+                <p>
+                    A gradient-based method identifies which differential terms make up an unknown PDE from data.
+                    The terms it can recover include:
+                </p>
 
-                <h3>Discovery Capabilities</h3>
-                <p>The system can automatically identify various PDE terms including:</p>
-                
                 <div class="discovery-terms">
                     <div class="term-category">
                         <h4>Linear Terms</h4>
@@ -230,25 +172,16 @@
                 </div>
 
                 <div class="project-showcase">
-                    <h4>PDE Discovery Results</h4>
-                    <img src="../Images/AISE/Part2/Part2_PDE1_dudx.png" alt="PDE discovery and gradient computation results" class="showcase-image">
+                    <img src="../Images/AISE/Part2/Part2_PDE1_dudx.png" alt="PDE discovery gradient computation" class="showcase-image">
                     <p class="image-caption">
-                        Neural network-based PDE discovery showing gradient computation and identified differential equation terms.
+                        Gradient computation used to recover the differential terms of an unknown PDE.
                     </p>
                 </div>
             </section>
 
             <!-- Part 3: Phase Field Dynamics -->
             <section class="content-section">
-                <h2>Part 3: Phase Field Dynamics (Allen-Cahn Equation)</h2>
-                
-                <div class="technical-highlight">
-                    <i class="fas fa-layer-group"></i>
-                    <div>
-                        <h4>Key Innovation</h4>
-                        <p>Implements curriculum learning to handle multiple spatial scales in phase transition modeling.</p>
-                    </div>
-                </div>
+                <h2>Part 3 — Allen-Cahn Phase Field</h2>
 
                 <div class="equation-showcase">
                     <h4>Allen-Cahn Equation</h4>
@@ -256,114 +189,28 @@
                         ∂u/∂t = ε²∇²u + u - u³
                     </div>
                     <p class="equation-description">
-                        Where ε controls the interface width and u represents the phase field variable.
+                        ε controls the interface width; u is the phase field variable.
                     </p>
                 </div>
 
-                <h3>Advanced Features</h3>
-                <ul class="feature-list">
-                    <li><strong>Curriculum Learning:</strong> Progressive training strategy across different epsilon values</li>
-                    <li><strong>Multi-scale Modeling:</strong> Handles sharp and diffuse interfaces (ε ∈ [0.003125, 1])</li>
-                    <li><strong>Diverse Initial Conditions:</strong> Fourier, GMM, and piecewise linear conditions</li>
-                    <li><strong>Temporal Extrapolation:</strong> Prediction beyond training time horizons</li>
-                    <li><strong>Out-of-distribution Testing:</strong> Evaluation on unseen parameters</li>
-                </ul>
+                <p>
+                    The interface width ε spans two orders of magnitude, from sharp to diffuse. Curriculum
+                    learning — training on easier (larger ε) cases first — let a single network handle the full
+                    range and extrapolate beyond the training time horizon.
+                </p>
 
                 <div class="project-showcase">
-                    <h4>Allen-Cahn Phase Field Evolution</h4>
-                    <img src="../Images/AISE/Part3/u(x,t)_[0.25]_batch36_truth_OOD.png" alt="Allen-Cahn phase field dynamics and interface evolution" class="showcase-image">
+                    <img src="../Images/AISE/Part3/u(x,t)_[0.25]_batch36_truth_OOD.png" alt="Allen-Cahn phase field evolution" class="showcase-image">
                     <p class="image-caption">
-                        Phase field evolution showing interface dynamics in the Allen-Cahn equation with ε = 0.25, demonstrating out-of-distribution generalization capabilities.
+                        Phase field evolution for the Allen-Cahn equation (ε = 0.25), on an out-of-distribution case.
                     </p>
                 </div>
-            </section>
-
-            <!-- Technical Specifications -->
-            <section class="content-section">
-                <h2>Technical Specifications</h2>
-                
-                <div class="tech-specs">
-                    <div class="spec-category">
-                        <h3>Technology Stack</h3>
-                        <ul>
-                            <li>PyTorch 2.5.0 - Deep learning framework</li>
-                            <li>NumPy 1.26.4 - Numerical computing</li>
-                            <li>SciPy 1.14.1 - Scientific computing</li>
-                            <li>Matplotlib 3.9.2 - Visualization</li>
-                            <li>scikit-learn 1.5.2 - Machine learning utilities</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="spec-category">
-                        <h3>Performance Metrics</h3>
-                        <ul>
-                            <li><strong>Relative L2 Error:</strong> Primary accuracy metric</li>
-                            <li><strong>Generalization Error:</strong> Out-of-distribution performance</li>
-                            <li><strong>Computational Efficiency:</strong> Training and inference speed</li>
-                            <li><strong>Stability Analysis:</strong> Long-term prediction accuracy</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="spec-category">
-                        <h3>Hardware Requirements</h3>
-                        <ul>
-                            <li>GPU with CUDA support (recommended)</li>
-                            <li>Minimum 8GB RAM</li>
-                            <li>10GB+ storage for datasets and models</li>
-                            <li>Python 3.8+ environment</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Results and Impact -->
-            <section class="content-section">
-                <h2>Key Contributions & Results</h2>
-                
-                <div class="contributions-grid">
-                    <div class="contribution-card">
-                        <i class="fas fa-cogs"></i>
-                        <h3>Efficient FNO Implementation</h3>
-                        <p>Optimized Fourier Neural Operator with spectral convolutions for wave equation solutions across multiple resolutions.</p>
-                    </div>
-
-                    <div class="contribution-card">
-                        <i class="fas fa-brain"></i>
-                        <h3>Robust PDE Discovery</h3>
-                        <p>Gradient-based approach successfully identifying unknown governing equations from observational data with high accuracy.</p>
-                    </div>
-
-                    <div class="contribution-card">
-                        <i class="fas fa-layer-group"></i>
-                        <h3>Multi-scale Modeling</h3>
-                        <p>Curriculum learning strategy enabling effective handling of multiple spatial scales in phase field dynamics.</p>
-                    </div>
-
-                    <div class="contribution-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h3>Comprehensive Evaluation</h3>
-                        <p>Extensive testing on out-of-distribution scenarios demonstrating robust generalization capabilities.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Future Extensions -->
-            <section class="content-section">
-                <h2>Future Research Directions</h2>
-                <ul class="future-list">
-                    <li><strong>Higher Dimensions:</strong> Extension to 2D/3D problems for more complex geometries</li>
-                    <li><strong>Physics-Informed Integration:</strong> Combination with physics-informed neural networks (PINNs)</li>
-                    <li><strong>Real-time Optimization:</strong> Inference speed optimization for real-time applications</li>
-                    <li><strong>Uncertainty Quantification:</strong> Probabilistic predictions with confidence intervals</li>
-                    <li><strong>Multi-physics Systems:</strong> Extension to coupled multi-physics problems</li>
-                </ul>
             </section>
 
             <!-- Research Foundation -->
             <section class="content-section">
-                <h2>Research Foundation</h2>
-                <p>This work builds upon cutting-edge research in scientific machine learning:</p>
-                
+                <h2>References</h2>
+
                 <div class="references">
                     <div class="reference">
                         <h4>Li, Z., et al. (2021)</h4>

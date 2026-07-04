@@ -4,20 +4,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oliver Nagl - Portfolio</title>
+    <title>Oliver Nagl — Computational Biology & Protein Design</title>
+    <meta name="description"
+        content="Oliver Nagl — computational biology, protein design and molecular simulation. Portfolio of scientific programming projects.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script src="three.min.js"
         onerror="console.error('Failed to load Three.js'); document.body.innerHTML += '<div style=\'color:red;position:fixed;top:0;left:0;z-index:9999\'>Failed to load Three.js</div>'"></script>
 </head>
 
 <body>
+    <!-- Global capsid particle field (full-bleed background) -->
+    <div id="protein-container" class="protein-field">
+        <canvas id="proteinCanvas"></canvas>
+    </div>
+    <div class="backdrop-grid" aria-hidden="true"></div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <h2>Oliver Nagl</h2>
+                <h2>Oliver&nbsp;Nagl<span class="logo-dot">.</span></h2>
             </div>
             <ul class="nav-menu">
                 <li><a href="#home" class="nav-link">Home</a></li>
@@ -33,50 +45,55 @@
         </div>
     </nav>
 
-
-
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-container">
-            <div class="hero-content">
+            <div class="hero-content reveal">
+                <span class="eyebrow">// computational biology · protein design</span>
                 <h1 class="hero-title">
-                    <span class="gradient-text">All models are wrong, </span>
-                    <br>some are useful
-                    <span class="quote-author">- George Box</span>
+                    <span class="gradient-text">All models are wrong,</span>
+                    <br>some are useful.
+                    <span class="quote-author">— George Box</span>
                 </h1>
                 <p class="hero-description">
-                    Interest in translational research,
-                    computational science and technology.
+                    Translational research at the interface of biology, computation and
+                    technology — protein design, molecular simulation and machine learning.
                 </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn-primary">View Projects</a>
-                    <a href="#about" class="btn-secondary">Learn More</a>
+                    <a href="#projects" class="btn-primary">View Projects <i class="fas fa-arrow-right"></i></a>
+                    <a href="#about" class="btn-secondary">About Me</a>
                 </div>
-            </div>
-            <div class="hero-image">
-                <div id="protein-container" class="protein-container">
-                    <canvas id="proteinCanvas"></canvas>
+                <div class="hero-meta">
+                    <span><i class="fas fa-atom"></i> ETH Zürich</span>
+                    <span><i class="fas fa-dna"></i> Biotechnology MSc</span>
                 </div>
             </div>
         </div>
+        <a href="#about" class="scroll-cue" aria-label="Scroll down">
+            <span class="scroll-cue-dot"></span>
+            <span class="scroll-cue-label">scroll</span>
+        </a>
     </section>
 
     <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
-            <h2 class="section-title">About Me</h2>
+            <div class="section-head">
+                <span class="section-index">01</span>
+                <h2 class="section-title">About Me</h2>
+            </div>
             <div class="about-content">
                 <div class="about-text">
-                    <div class="about-card">
-                        <h3>Background</h3>
+                    <div class="about-card reveal">
+                        <h3><i class="fas fa-user-astronaut"></i> Background</h3>
                         <p>
                             I'm a passionate student with experience in computational biology,
-                            molecular modeling, data analysis and extensive wetlab training.
-                            As well as a background in chemical engineering.
+                            molecular modeling, data analysis and extensive wetlab training,
+                            with a background in chemical engineering.
                         </p>
                     </div>
-                    <div class="about-card">
-                        <h3>Skills</h3>
+                    <div class="about-card reveal">
+                        <h3><i class="fas fa-flask"></i> Skills</h3>
                         <div class="skills-grid">
                             <div class="skill-item">
                                 <i class="fas fa-dna"></i>
@@ -92,42 +109,42 @@
                             </div>
                             <div class="skill-item">
                                 <i class="fas fa-brain"></i>
-                                <span>Machine Learning (Pytorch)</span>
+                                <span>Machine Learning (PyTorch)</span>
                             </div>
                             <div class="skill-item">
                                 <i class="fas fa-vial"></i>
-                                <span>Wet lab (BSL2, Organoids, Cell Cultures, Westernblot, qPCR)</span>
+                                <span>Wet lab (BSL2, Organoids, Cell Cultures, Western blot, qPCR)</span>
                             </div>
                             <div class="skill-item">
                                 <i class="fas fa-microscope"></i>
-                                <span>BioChemical Analytics (TEM, NMR, FPLC, HPLC, GC, MS, IR, UV-Vis)</span>
+                                <span>Biochemical Analytics (TEM, NMR, FPLC, HPLC, GC, MS, IR, UV-Vis)</span>
                             </div>
                             <div class="skill-item">
-                                <i class="fas fa-microscope"></i>
+                                <i class="fas fa-atom"></i>
                                 <span>Organic Synthesis (Retrosynthesis, Reaction Mechanisms, Spectroscopy)</span>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="about-stats">
-                    <div class="stat-card">
-                        <h3>Education</h3>
+                    <div class="stat-card reveal">
+                        <h3><i class="fas fa-graduation-cap"></i> Education</h3>
                         <div class="education-item">
-                            <h4>Msc. Biotechnology</h4>
+                            <h4>MSc. Biotechnology</h4>
                             <p>ETH Zurich</p>
-                            <span>2025 - Present</span>
+                            <span>2025 — Present</span>
                         </div>
                         <div class="education-item">
-                            <h4>Bsc. Interdisciplinary Sciences</h4>
+                            <h4>BSc. Interdisciplinary Sciences</h4>
                             <p>ETH Zurich</p>
-                            <span>2022 - 2025</span>
+                            <span>2022 — 2025</span>
                         </div>
                     </div>
-                    <div class="stat-card">
-                        <h3>Research Interests</h3>
+                    <div class="stat-card reveal">
+                        <h3><i class="fas fa-lightbulb"></i> Research Interests</h3>
                         <ul>
                             <li>Protein design</li>
-                            <li>Protein Biotechnology</li>
+                            <li>Protein biotechnology</li>
                             <li>Drug discovery</li>
                             <li>Molecular simulation</li>
                             <li>Computational chemistry</li>
@@ -136,7 +153,7 @@
                     </div>
                 </div>
             </div>
-            <div class="cv-download">
+            <div class="cv-download reveal">
                 <a href="cv.pdf" class="btn-primary" download>
                     <i class="fas fa-download"></i>
                     Download CV
@@ -148,67 +165,74 @@
     <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
+            <div class="section-head">
+                <span class="section-index">02</span>
+                <h2 class="section-title">Featured Projects</h2>
+            </div>
             <div class="projects-grid">
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="https://github.com/OliverNagl" class="project-link"><i
-                                        class="fab fa-github"></i></a>
-                                <a href="Projects/mitral-valve-segmentation.html" class="project-link"><i
-                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/OliverNagl" class="project-link"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="Projects/mitral-valve-segmentation.html" class="project-link"
+                                    aria-label="View details"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <img src="Images/mitral_valve_segmentation.gif" alt="Mitral Valve Segmentation">
+                        <img src="Images/mitral_valve_segmentation.gif" alt="Mitral Valve Segmentation" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Mitral Valve Segmentation</h3>
-                        <p>UNet segmentation of heart ultrasound videos
-                            as project in the course "Advanced Machine Learning" at ETH Zurich.
+                        <p>UNet segmentation of heart ultrasound videos as a project in the course
+                            "Advanced Machine Learning" at ETH Zurich.
                         </p>
                         <div class="project-tags">
                             <span class="tag">PyTorch</span>
                             <span class="tag">Python</span>
                         </div>
                         <div class="project-action">
-                            <a href="Projects/mitral-valve-segmentation.html" class="btn-project">View Details</a>
+                            <a href="Projects/mitral-valve-segmentation.html" class="btn-project">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="Projects/pde-neural-operators.html" class="project-link"><i
-                                        class="fas fa-external-link-alt"></i></a>
+                                <a href="#" class="project-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="Projects/pde-neural-operators.html" class="project-link"
+                                    aria-label="View details"><i class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
-                        <img src="Images/Part2_PDE1_dudx.png" alt="PDE identification and foundation models">
+                        <img src="Images/Part2_PDE1_dudx.png" alt="PDE identification and foundation models"
+                            loading="lazy">
                     </div>
                     <div class="project-content">
-                        <h3>PDE identification and foundation models</h3>
-                        <p>Neural Net based models to solve and identify PDE's (from data)
-                            Final project of the course "AI in the Sciences and Engineering"
+                        <h3>PDE Identification & Foundation Models</h3>
+                        <p>Neural-net based models to solve and identify PDEs from data.
+                            Final project of the course "AI in the Sciences and Engineering".
                         </p>
                         <div class="project-tags">
                             <span class="tag">PyTorch</span>
                             <span class="tag">Python</span>
                         </div>
                         <div class="project-action">
-                            <a href="Projects/pde-neural-operators.html" class="btn-project">View Details</a>
+                            <a href="Projects/pde-neural-operators.html" class="btn-project">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card reveal">
                     <div class="project-image">
                         <div class="project-overlay">
                             <div class="project-links">
-                                <a href="#" class="project-link"><i class="fab fa-github"></i></a>
-                                <a href="Projects/jigsaw-puzzle.html" class="project-link"><i
+                                <a href="https://github.com/OliverNagl/DoubleSolutionPuzzle" class="project-link"
+                                    aria-label="GitHub"><i class="fab fa-github"></i></a>
+                                <a href="Projects/jigsaw-puzzle.html" class="project-link" aria-label="View details"><i
                                         class="fas fa-external-link-alt"></i></a>
                             </div>
                         </div>
@@ -220,18 +244,19 @@
                         </div>
                     </div>
                     <div class="project-content">
-                        <h3>Double solution Jigsaw-Puzzle</h3>
-                        <p>Personal project finding jigsaw puzzle configuration with exactly 2 (non-trivial) solutions
-                            inspired by "Parker puzzles" (Mat Parker YouTube channel).
+                        <h3>Double-Solution Jigsaw Puzzle</h3>
+                        <p>Personal project finding jigsaw puzzle configurations with exactly two
+                            non-trivial solutions, inspired by "Parker puzzles" (Matt Parker's YouTube channel).
                         </p>
                         <div class="project-tags">
                             <span class="tag">pySAT</span>
                             <span class="tag">Python</span>
                             <span class="tag">Group Theory</span>
-                            <span class="tag">Constraint Satisfiability</span>
+                            <span class="tag">SAT</span>
                         </div>
                         <div class="project-action">
-                            <a href="Projects/jigsaw-puzzle.html" class="btn-project">View Details</a>
+                            <a href="Projects/jigsaw-puzzle.html" class="btn-project">View Details <i
+                                    class="fas fa-arrow-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -243,25 +268,26 @@
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p>Interested in collaboration or a coffee?</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/oliver-nagl-41a40a1b0/" class="social-link linkedin"
-                            target="_blank">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="https://github.com/OliverNagl" class="social-link github" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="mailto:olnagl@ethz.ch" class="social-link email">
-                            <i class="fas fa-envelope"></i>
-                            <span>Email</span>
-                        </a>
-                    </div>
+            <div class="section-head section-head-center">
+                <span class="section-index">03</span>
+                <h2 class="section-title">Let's Connect</h2>
+            </div>
+            <div class="contact-content reveal">
+                <p class="contact-lead">Interested in collaboration, protein design, or a coffee?</p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/oliver-nagl-41a40a1b0/" class="social-link linkedin"
+                        target="_blank" rel="noopener">
+                        <i class="fab fa-linkedin-in"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://github.com/OliverNagl" class="social-link github" target="_blank" rel="noopener">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="mailto:olnagl@ethz.ch" class="social-link email">
+                        <i class="fas fa-envelope"></i>
+                        <span>Email</span>
+                    </a>
                 </div>
             </div>
         </div>
@@ -270,7 +296,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Oliver Nagl. All rights reserved.</p>
+            <p>&copy; 2025 Oliver Nagl · Built with Three.js &amp; curiosity.</p>
         </div>
     </footer>
 

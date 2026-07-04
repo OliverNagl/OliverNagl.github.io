@@ -62,6 +62,28 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // Scroll-reveal: fade/slide elements in as they enter the viewport
+    const reveals = document.querySelectorAll('.reveal');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+        // No animation: show everything immediately
+        reveals.forEach(el => el.classList.add('is-visible'));
+    } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    // Small stagger for grouped siblings
+                    entry.target.style.transitionDelay = `${(i % 4) * 0.08}s`;
+                    entry.target.classList.add('is-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
+        reveals.forEach(el => revealObserver.observe(el));
+    }
+
     // Project card click navigation
     const projectCards = document.querySelectorAll('.project-card');
     projectCards.forEach((card, index) => {

@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
         uniforms: {
             pixelRatio: { value: renderer.getPixelRatio() },
             color1: { value: new THREE.Color('#4ECDC4') },
-            color2: { value: new THREE.Color('#26A69A') },
+            color2: { value: new THREE.Color('#7c5cff') },
             transitionProgress: { value: 0.0 },
             scrollProgress: { value: 0.0 },
             time: { value: 0.0 }
@@ -41,10 +41,12 @@ document.addEventListener('DOMContentLoaded', () => {
             
             varying float vAlpha;
             varying float vColorMix;
-            
+            varying float vDepth;
+
             uniform float transitionProgress;
             uniform float scrollProgress;
             uniform float time;
+            uniform float pixelRatio;
 
             void main() {
                 // Interpolate position and alpha
@@ -52,19 +54,22 @@ document.addEventListener('DOMContentLoaded', () => {
                 vAlpha = mix(alpha, targetAlpha, transitionProgress);
                 
                 // Scroll explosion effect
-                vec3 explosion = randomDir * scrollProgress * 300.0;
-                
-                // Vibe check - REDUCED to prevent flickering
-                // Very slow, very subtle movement just to keep it "alive" but not jittery
-                float vibe = sin(time * 0.5 + currentPos.x * 0.01) * 0.5;
-                
-                currentPos += explosion;
-                // currentPos.y += vibe;
+                vec3 explosion = randomDir * scrollProgress * 180.0;
+
+                // "Alive" drift - slow, subtle 3D shimmer so the cloud breathes
+                vec3 vibe = vec3(
+                    sin(time * 0.5 + currentPos.y * 0.012),
+                    cos(time * 0.4 + currentPos.z * 0.012),
+                    sin(time * 0.45 + currentPos.x * 0.012)
+                ) * 1.4;
+
+                currentPos += explosion + vibe;
 
                 vColorMix = colorMix;
-                
+                vDepth = currentPos.z;
+
                 vec4 mvPosition = modelViewMatrix * vec4(currentPos, 1.0);
-                gl_PointSize = 2.0 * (300.0 / -mvPosition.z); // Size attenuation
+                gl_PointSize = 2.6 * pixelRatio * (300.0 / -mvPosition.z); // Size attenuation
                 gl_Position = projectionMatrix * mvPosition;
             }
         `,
@@ -73,16 +78,22 @@ document.addEventListener('DOMContentLoaded', () => {
             uniform vec3 color2;
             varying float vAlpha;
             varying float vColorMix;
+            varying float vDepth;
 
             void main() {
                 if (vAlpha < 0.01) discard;
                 vec3 color = mix(color1, color2, vColorMix);
-                
-                // Circular particle
-                vec2 coord = gl_PointCoord - vec2(0.5);
-                if(length(coord) > 0.5) discard;
 
-                gl_FragColor = vec4(color, vAlpha);
+                // Soft glowing particle with radial falloff
+                vec2 coord = gl_PointCoord - vec2(0.5);
+                float d = length(coord);
+                if (d > 0.5) discard;
+                float glow = smoothstep(0.5, 0.0, d);
+
+                // Depth cue: particles further back are a touch dimmer / cooler
+                float depthFade = clamp(0.65 + vDepth * 0.0016, 0.4, 1.0);
+
+                gl_FragColor = vec4(color, vAlpha * glow * depthFade);
             }
         `,
         transparent: true,
@@ -111,17 +122,6 @@ document.addEventListener('DOMContentLoaded', () => {
         mouseX = (event.clientX / window.innerWidth) * 2 - 1;
         mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
     });
-
-    // Zoom Interaction
-    container.addEventListener('wheel', (event) => {
-        event.preventDefault(); // Prevent page scroll while zooming
-
-        const zoomSpeed = 0.5;
-        camera.position.z += event.deltaY * zoomSpeed;
-
-        // Clamp zoom
-        camera.position.z = Math.max(120, Math.min(1000, camera.position.z));
-    }, { passive: false });
 
     // Scroll Interaction
     let scrollY = 0;
@@ -413,10 +413,19 @@ document.addEventListener('DOMContentLoaded', () => {
             lastStateChangeTime = now - (state === 'TRANSITION' ? (particleMaterial.uniforms.transitionProgress.value * TRANSITION_DURATION) : 0);
         }
 
-        // Rotation
+        // Continuous slow auto-rotation + gentle mouse parallax
         const time = now * 0.001;
-        particles.rotation.y = (mouseX * 0.5);
-        particles.rotation.x = (-mouseY * 0.5);
+        particles.rotation.y = time * 0.05 + mouseX * 0.35;
+        particles.rotation.x = -mouseY * 0.22;
+
+        // Keep the cloud aligned with the canvas mask (right of the hero card on
+        // wide screens, centred on narrow ones). Recomputed each frame so it
+        // tracks resizes and stays put in world space regardless of zoom.
+        const worldHeight = 2 * Math.tan((camera.fov * Math.PI / 180) / 2) * camera.position.z;
+        const worldWidth = worldHeight * camera.aspect;
+        const wide = window.innerWidth > 1024;
+        particles.position.x = wide ? worldWidth * 0.17 : 0;
+        particles.position.y = worldHeight * 0.07;
 
         renderer.render(scene, camera);
     }
