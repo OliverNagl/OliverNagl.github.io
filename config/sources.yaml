@@ -24,7 +24,7 @@ arxiv:
   expected_min: 80
 
 pubmed:
-  enabled: false          # phase 2
+  enabled: true
   journals:
     - Nature
     - Science
@@ -53,13 +53,19 @@ pubmed:
     - Journal of Virology
   expected_min: 150
 
-chemrxiv:
-  enabled: false          # phase 2
-  expected_min: 20
-
+# ChemRxiv's own public API sits behind a Cloudflare challenge and returns 403 to any
+# script, so it is reached through OpenAlex instead (which also carries the abstracts).
+# The same source runs the catch-all searches for venues nothing else covers.
 openalex:
-  enabled: false          # phase 2 — supplement + citation counts for the recall audit
+  enabled: true
   mailto: olnagl@ethz.ch
+  source_ids:
+    ChemRxiv: S4393918830
+  searches:
+    - de novo protein design
+    - protein nanoparticle assembly
+    - designed protein nanomaterial
+  expected_min: 100
 
 # Papers by these people bypass the prefilter entirely. Single best precision/effort
 # ratio in the system (spec §2). Matched on normalised surname + first initial.

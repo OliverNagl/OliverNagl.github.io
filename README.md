@@ -52,6 +52,8 @@ produces a worse digest; it never produces an empty one.
 ```bash
 uv sync
 uv run radar run --week 2026-W35 --no-llm     # full pipeline, real data, zero tokens
+uv run radar eval                             # check against eval/goldset.yaml
+uv run radar audit                            # what did it reject that later mattered?
 uv run pytest -q
 python3 -m http.server                        # then open http://localhost:8000
 ```
@@ -91,6 +93,12 @@ overfitted filter produces.
 `data/raw/*.jsonl.gz` keeps everything fetched, so `--cached` replays a week with no
 network calls. You cannot tune prompts or weights honestly without that.
 
+`radar audit` is the other half, and the only one that finds misses you never knew about:
+it takes papers the filter *rejected* two to six months ago, asks OpenAlex what happened to
+them since, and reports anything that has accumulated citations or reached a tracked
+journal — grouped by the rule that rejected it, so you can see which rule is costing you
+the most recall. It needs a couple of months of history before it says anything useful.
+
 ## Notes on the sources
 
 Verified live against the APIs, and worth knowing before changing anything:
@@ -103,6 +111,13 @@ Verified live against the APIs, and worth knowing before changing anything:
   four full categories. The methodology gate is therefore pushed into the arXiv *query*,
   which brings that to ~300 with no truncation — capping the fetch instead would silently
   drop papers, which is the failure this radar exists to avoid.
+- **ChemRxiv's public API sits behind a Cloudflare challenge and returns 403 to any
+  script.** It is reached through OpenAlex instead, which indexes it with abstracts
+  (~244 records per window). The same source runs the catch-all searches.
+- PubMed allows 3 requests/second anonymously and 10 with `NCBI_API_KEY` in the
+  environment.
+
+A cold run over all five sources fetches ~3,500 records per week.
 
 ## Failure is loud
 

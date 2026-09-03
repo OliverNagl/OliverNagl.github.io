@@ -307,6 +307,43 @@ def eval_cmd(cfg, offline: bool, as_json: bool) -> None:
         click.echo("\n  Nothing is applied automatically. Edit config/categories.yaml yourself.")
 
 
+@cli.command()
+@click.option("--min-age-days", default=60, show_default=True)
+@click.option("--max-age-days", default=190, show_default=True)
+@click.option("--citations", "citation_threshold", default=5, show_default=True,
+              help="Citation count that makes a rejected paper a miss.")
+@click.pass_obj
+def audit(cfg, min_age_days: int, max_age_days: int, citation_threshold: int) -> None:
+    """Recall audit: what did the filter reject 2-6 months ago that has since mattered?"""
+    from .audit import run_audit, write_audit
+
+    report = run_audit(
+        cfg, min_age_days=min_age_days, max_age_days=max_age_days,
+        citation_threshold=citation_threshold,
+    )
+    write_audit(cfg.root, report)
+
+    if report.get("note"):
+        click.echo(report["note"])
+        return
+
+    click.echo(f"\n  checked {report['checked']} rejected papers from "
+               f"{len(report['weeks'])} weeks")
+    click.secho(f"  {report['miss_count']} crossed the bar\n",
+                fg="red" if report["miss_count"] else "green")
+
+    for m in report["misses"][:20]:
+        click.echo(f"    {m['cited_by_count']:>4} cites  {m['title'][:66]}")
+        click.secho(f"               rejected because: {m['rejected_because']}", fg="yellow")
+        if m["in_tracked_journal"]:
+            click.echo(f"               now in {m['venue']}")
+
+    if report["misses_by_rule"]:
+        click.echo("\n  misses by rule — which rule is costing you the most recall:")
+        for rule, n in report["misses_by_rule"].items():
+            click.echo(f"    {n:>4}  {rule}")
+
+
 # --------------------------------------------------------------------- utility ----
 
 

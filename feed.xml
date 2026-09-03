@@ -6,56 +6,66 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 21:28:50 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 21:39:52 +0000</lastBuildDate>
     <item>
-      <title>The first OpenBind release: An open experimental structure-affinity dataset and benchmark for structure-based AI</title>
-      <link>https://doi.org/10.64898/2026.08.27.747600</link>
-      <guid isPermaLink="false">2026-W36:10.64898/2026.08.27.747600</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>watchlist author: AlQuraishi M
-
-Nelen, J., …, Imrie, F. · bioRxiv · 1 Sep · struct-pred</description>
-    </item>
-    <item>
-      <title>From neuropeptide and receptor annotation to ligand-receptor pairing: a sequence- and structure-based framework for mapping the neuropeptide-receptor interactome in Gryllus bimaculatus</title>
-      <link>https://doi.org/10.64898/2026.08.28.747697</link>
-      <guid isPermaLink="false">2026-W36:10.64898/2026.08.28.747697</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
+      <title>Design of peptides with non-canonical amino acids using flow matching.</title>
+      <link>https://doi.org/10.1093/bioinformatics/btag654</link>
+      <guid isPermaLink="false">2026-W36:10.1093/bioinformatics/btag654</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       <category>struct-pred</category>
       <description>hard-include phrase: 'alphafold3'
 
-Margaretha, F., …, Mochizuki, T. · bioRxiv · 3 Sep · struct-pred</description>
+Lee JS, Kim PM · Bioinformatics (Oxford, England) · 31 Aug · struct-pred</description>
     </item>
     <item>
-      <title>InstEditSeg: Instruction-Driven Image Editing for Polyp and Skin Lesion Segmentation</title>
-      <link>https://arxiv.org/abs/2609.02004v1</link>
-      <guid isPermaLink="false">2026-W36:arxiv:2609.02004v1</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>general-CS cs.CV: decisive method term 'latent diffusion'
+      <title>Efficient matching of predicted protein structures into high to intermediate resolution CryoEM maps with Slice’N’Dice and ABCFold</title>
+      <link>https://doi.org/10.17638/03199430</link>
+      <guid isPermaLink="false">2026-W36:10.17638/03199430</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>must_any hit 'protein', lexical score 14.5
 
-Ziquan Liu, …, Xuyang Shi · arXiv · 2 Sep · ml-method</description>
+Luc Elliott · University of Liverpool · 1 Sep · struct-pred</description>
     </item>
     <item>
-      <title>Language-Informed Flow Matching for Trend-Guided Structure-Based 3D Molecular Generation</title>
-      <link>https://arxiv.org/abs/2608.31009v1</link>
-      <guid isPermaLink="false">2026-W36:arxiv:2608.31009v1</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
+      <title>Lenacapavir allosterically remodels the HIV-1 capsid.</title>
+      <link>https://doi.org/10.1126/sciadv.aed8384</link>
+      <guid isPermaLink="false">2026-W36:10.1126/sciadv.aed8384</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>watchlist author: Sundquist WI
+
+Dos Santos NFB, …, Pornillos O · Science advances · 2 Sep · assembly</description>
+    </item>
+    <item>
+      <title>Advances and Challenges in Nanodelivery Systems for RNA Vaccines.</title>
+      <link>https://doi.org/10.1021/acsnano.6c10327</link>
+      <guid isPermaLink="false">2026-W36:10.1021/acsnano.6c10327</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>must_any hit 'virus', lexical score 7.5
+
+Li H, …, Tong A · ACS nano · 1 Sep · assembly</description>
+    </item>
+    <item>
+      <title>De novo pan-rhodamine binders for fluorescence microscopy from mammalian cells to extremophiles.</title>
+      <link>https://doi.org/10.1016/j.cell.2026.08.007</link>
+      <guid isPermaLink="false">2026-W36:10.1016/j.cell.2026.08.007</guid>
+      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
       <description>hard-include phrase: 'de novo design'
 
-Tianyu Gao, …, Ye Wei · arXiv · 31 Aug · ml-method</description>
+Chen Y, …, Huang B · Cell · 1 Sep · design-method</description>
     </item>
     <item>
-      <title>Cryo-electron microscopy structure of Jabs, a bacteriophage infecting the multidrug-resistant pathogen Mycobacterium abscessus</title>
-      <link>https://doi.org/10.64898/2026.07.24.740622</link>
-      <guid isPermaLink="false">2026-W36:10.64898/2026.07.24.740622</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>must_any hit 'protein', lexical score 5.5
+      <title>De Novo Design of a Protein Binder to Probe Gas Channel and Enhance the Oxygen Tolerance of [NiFe]‐Hydrogenase</title>
+      <link>https://doi.org/10.1002/anie.6395554</link>
+      <guid isPermaLink="false">2026-W35:10.1002/anie.6395554</guid>
+      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>hard-include phrase: 'de novo design'
 
-Cambillau, C., …, Goulet, A. · bioRxiv · 31 Aug · assembly</description>
+Xuan Sun, …, Liyun Zhang · Angewandte Chemie International Edition · 26 Aug · design-method</description>
     </item>
     <item>
       <title>Programmable De Novo Design of Mesoporous Protein Crystal Frameworks</title>
@@ -68,14 +78,24 @@ Cambillau, C., …, Goulet, A. · bioRxiv · 31 Aug · assembly</description>
 Li, Z., …, Baker, D. · bioRxiv · 26 Aug · design-method</description>
     </item>
     <item>
-      <title>From Code to Cure: Computationally Designed BMP-2 Binders Using AI-Integrated Pipelines for Controlled Bone Regeneration</title>
-      <link>https://doi.org/10.64898/2026.08.20.745793</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.20.745793</guid>
-      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>hard-include phrase: 'de novo design'
+      <title>Assessment of generative de novo peptide design methods for G protein-coupled receptors</title>
+      <link>https://doi.org/10.1371/journal.pone.0355549</link>
+      <guid isPermaLink="false">2026-W35:10.1371/journal.pone.0355549</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>hard-include phrase: 'rfdiffusion'
 
-Burress, B. J., …, Hosseinzadeh, P. · bioRxiv · 21 Aug · design-method</description>
+Hannes Junker, Clara T. Schoeder · PLoS ONE · 27 Aug · struct-pred</description>
+    </item>
+    <item>
+      <title>Why viruses build icosahedra: a quantitative framework for capsid architecture and nanocage design</title>
+      <link>https://doi.org/10.64336/001c.168714</link>
+      <guid isPermaLink="false">2026-W35:10.64336/001c.168714</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>hard-include phrase: 'nanocage'
+
+Ethan Chang · Journal of High School Science · 27 Aug · assembly</description>
     </item>
     <item>
       <title>FoldKit: A Python library for efficient storage and retrieval of co-folding predictions</title>
@@ -86,26 +106,6 @@ Burress, B. J., …, Hosseinzadeh, P. · bioRxiv · 21 Aug · design-method</des
       <description>hard-include phrase: 'de novo protein'
 
 Jonathan A. Levine, …, Benjamin D. Greenbaum · arXiv · 28 Aug · struct-pred</description>
-    </item>
-    <item>
-      <title>Consensus native-like hepatitis C virus E1E2 engages broadly neutralizing antibody precursors</title>
-      <link>https://doi.org/10.64898/2026.08.25.746952</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.25.746952</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      <category>immunogen</category>
-      <description>watchlist author: Ward AB
-
-Mulder, F., …, Sliepen, K. · bioRxiv · 26 Aug · immunogen</description>
-    </item>
-    <item>
-      <title>A novel benchmark dataset for enzyme function prediction reveals the limitations of state-of-the-art models</title>
-      <link>https://doi.org/10.64898/2026.08.21.746242</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.21.746242</guid>
-      <pubDate>Sat, 22 Aug 2026 00:00:00 +0000</pubDate>
-      <category>enzyme</category>
-      <description>must_any hit 'protein', lexical score 11.5
-
-Sartori, J., …, Machado, L. d. A. · bioRxiv · 22 Aug · enzyme</description>
     </item>
   </channel>
 </rss>

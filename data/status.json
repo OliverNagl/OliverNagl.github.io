@@ -1,6 +1,6 @@
 {
   "week": "2026-W36",
-  "ran_at": "2026-09-03T21:28:50.093676+00:00",
+  "ran_at": "2026-09-03T21:36:52.124046+00:00",
   "ok": true,
   "degraded": true,
   "stale_after_days": 11,
@@ -27,6 +27,20 @@
       "ok": true,
       "fetched": 55,
       "expected_min": 20,
+      "error": null
+    },
+    {
+      "source": "openalex",
+      "ok": true,
+      "fetched": 874,
+      "expected_min": 100,
+      "error": null
+    },
+    {
+      "source": "pubmed",
+      "ok": true,
+      "fetched": 497,
+      "expected_min": 150,
       "error": null
     }
   ],

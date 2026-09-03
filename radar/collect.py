@@ -24,6 +24,8 @@ from .models import Paper, SourceHealth
 from .sources.arxiv import ArxivSource
 from .sources.base import Fetcher
 from .sources.biorxiv import BioRxivSource
+from .sources.openalex import OpenAlexSource
+from .sources.pubmed import PubMedSource
 
 log = logging.getLogger("radar.collect")
 
@@ -43,6 +45,17 @@ def build_sources(cfg: Config) -> list:
             t for c in cfg.categories if c.gate_general_cs for t in c.boost
         ]
         out.append(ArxivSource(s, gate_terms=gate_terms))
+
+    s = cfg.source_cfg("pubmed")
+    if s.get("enabled", False):
+        out.append(PubMedSource(s))
+
+    # One source covers both ChemRxiv and the supplement: ChemRxiv's own API is behind a
+    # Cloudflare challenge and 403s any script, but OpenAlex indexes it with abstracts.
+    s = cfg.source_cfg("openalex")
+    if s.get("enabled", False):
+        out.append(OpenAlexSource(s))
+
     return out
 
 
