@@ -24,6 +24,10 @@ note it — it will already be on the front page banner, but say so in your fina
 If `collect` fails outright, **stop and report it**. Do not publish a partial week: a
 silently incomplete digest is worse than a missing one.
 
+Note the branch. This repository publishes from `radar-rebuild`, not `main`; `git status`
+should already show it after checkout. If you are on a different branch, switch before
+committing anything.
+
 ## 2. Triage
 
 `work/$WEEK/triage/` now holds numbered batch files, each with ~25 abstracts and complete
@@ -31,6 +35,17 @@ instructions.
 
 For each `batch_NN.md`: read it, follow its instructions exactly, and write the JSON array
 to `work/$WEEK/triage_out/batch_NN.json`.
+
+**Work through them in numerical order, and start with `batch_00.md`.** The prefilter sorts
+the shortlist by signal before batching, so `batch_00` holds the watchlist authors and the
+strongest keyword matches and the numbering decays from there. If you run out of room, the
+papers you did read are the ones that mattered most.
+
+**Handle one batch at a time and do not carry earlier ones.** Each batch file is
+self-contained and its answer goes straight to disk, so nothing is lost when earlier
+context is compacted away — that is the whole reason this stage is a file contract rather
+than one long conversation. There can be thirty or more batches; do not try to hold them
+all at once, and do not summarise several batches into one answer file.
 
 - Every paper in a batch gets a row. A missing row silently downgrades that paper to
   keyword scoring.
