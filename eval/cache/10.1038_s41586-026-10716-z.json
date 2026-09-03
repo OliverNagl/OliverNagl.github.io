@@ -1,0 +1,18 @@
+{
+  "id": "10.1038/s41586-026-10716-z",
+  "title": "Targeted enzyme discovery using metal-coordination mining",
+  "abstract": "The recent revolution in genome sequencing and protein structure prediction has opened new frontiers in understanding, predicting and designing enzyme function1,2. Central to these efforts is the discovery and functional annotation of novel enzymes, which is essential for elucidating the connection between genotype and phenotype and for developing biocatalysts for industrial applications. However, accurately predicting enzymatic function remains a major challenge, and the discovery of new enzymes often relies on serendipity. Here we present a metal-coordination-guided strategy that uses atomic-level mechanistic principles to mine protein structure databases for the targeted discovery of metalloenzymes. We apply this framework to the AlphaFold2 Protein Structure Database to identify new members of the FeII/α-ketoglutarate-dependent halogenase family, which selectively functionalize unactivated C(sp3)-H-bonds, a crucial transformation in the production of pharmaceuticals and other high-value compounds3,4. These radical halogenases constitute a low-abundance class within the large and diverse cupin superfamily5. Owing to low sequence conservation, they have been especially challenging to find against the complex background of related family members, such as hydroxylases, desaturases and epimerases. Our metal-coordination mining methodology reveals several previously unrecognized radical halogenase families spanning diverse phylogenetic space, at minimal computational cost. Our predictions are validated by the experimental characterization of two new radical halogenases, AspX and BtnX. Notably, BtnX shows a substrate promiscuity that is unprecedented in radical halogenases, opening the way for a broad range of biocatalytic applications. A methodology for mining protein structure databases on the basis of the distinct intrinsic structures of metal-binding active sites in enzymes enables the discovery of new families of radical halogenases.",
+  "authors": [
+    "Ioannis Kipouros",
+    "Michelle C. Y. Chang"
+  ],
+  "date": "2026-07-01",
+  "source": "openalex",
+  "venue": "Nature",
+  "subject": "Metal-Catalyzed Oxygenation Mechanisms",
+  "doi": "10.1038/s41586-026-10716-z",
+  "url": "https://doi.org/10.1038/s41586-026-10716-z",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,20 @@
+{
+  "id": "10.64898/2026.04.06.716810",
+  "title": "A permeable protein nanocage enables facile cargo loading and cytosolic protein delivery",
+  "abstract": "Abstract The cytosolic delivery of therapeutic proteins remains one of the most persistent challenges in modern drug delivery. Here, we report the discovery and characterization of an encapsulin-based protein nanocage, QtEnc, with unexpected permeability properties and the ability to internalize cargo proteins in vitro , fundamentally departing from existing protein nanocage cargo loading paradigms. This permeability enables simple, rapid, and single-step post-assembly cargo loading, accommodating cargos as large as 482 kDa, and allowing multiplexed cargo co-encapsulation with tunable ratios. Leveraging this property, we develop a modular QtEnc-based NanoCarrier (QtEncNC) with a pH-responsive cargo detachment module and an endosomal escape module, enabling low pH-triggered cargo release from assembled shells and subsequent endosomal escape for cytosolic delivery. Using a cytotoxic protein, BLF1, as a proof-of-concept QtEncNC payload, we demonstrate efficient cytosolic protein delivery in HeLa cells. These findings establish QtEncNC as a versatile and modular platform for cytosolic protein delivery with broad biomedical potential.",
+  "authors": [
+    "Kwon Seokmu",
+    "Andreas Michael P.",
+    "Jones Jesse A.",
+    "Giessen Tobias W."
+  ],
+  "date": "2026-04-09",
+  "source": "crossref",
+  "venue": "",
+  "subject": "",
+  "doi": "10.64898/2026.04.06.716810",
+  "url": "https://doi.org/10.64898/2026.04.06.716810",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

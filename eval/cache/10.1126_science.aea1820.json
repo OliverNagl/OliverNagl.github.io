@@ -1,0 +1,25 @@
+{
+  "id": "10.1126/science.aea1820",
+  "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+  "abstract": "Protein engineering is limited by the inefficient search through a high-dimensional sequence space to find combinations of synergistic mutations. Traditional approaches use stepwise mutation stacking, whereas machine learning methods require extensive datasets or multiple experimental rounds and are bottlenecked by costly, length-limited gene synthesis. We present MULTI-evolve (where MULTI stands for model-guided, universal, targeted installation of multimutants), a rapid evolution framework that systematically engineers multimutants. Our approach combines protein language models or existing functional data with epistatic modeling to predict synergistic combinations. Proposed multimutants are built through MULTI-assembly, a mutagenesis method enabling high-efficiency assembly across multikilobase sequences. Applying MULTI-evolve to three proteins achieved up to 10-fold improvements with a single round of machine learning-guided directed evolution. MULTI-evolve provides a streamlined approach for end-to-end, multimutant engineering for a broad range of protein types and functions.",
+  "authors": [
+    "Vincent Q. Tran",
+    "Matthew Nemeth",
+    "Liam J. Bartie",
+    "Sita S. Chandrasekaran",
+    "Alison Fanton",
+    "Hyungseok C. Moon",
+    "Brian Hie",
+    "Silvana Konermann",
+    "Patrick D. Hsu"
+  ],
+  "date": "2026-02-19",
+  "source": "openalex",
+  "venue": "Science",
+  "subject": "Genomics and Phylogenetic Studies",
+  "doi": "10.1126/science.aea1820",
+  "url": "https://doi.org/10.1126/science.aea1820",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

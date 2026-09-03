@@ -1,0 +1,23 @@
+{
+  "id": "10.1021/acsmaterialslett.6c00172",
+  "title": "Enzymatic Nylon Deconstruction: Enzyme Discovery, Engineering, and Opportunities",
+  "abstract": "Nylons are widely used synthetic polyamides valued for their strength, versatility, and durability across diverse applications. However, their petrochemical origin and energy-intensive production underscore the need for efficient, circular solutions. Conventional recycling methods remain limited by incomplete recovery, material degradation, and costly sorting requirements. Enzymatic depolymerization offers a selective, low-energy alternative capable of processing mixed waste streams under mild conditions. While significant progress has been achieved for polyesters, enzymatic degradation of polyamides is still at an early stage. The discovery of nylon hydrolases demonstrated the potential of biological systems to evolve catalysts for synthetic polyamides, yet reported depolymerization yields remain low. These limitations reflect both the structural complexity of nylons and the need for improved enzyme discovery and engineering. This review highlights recent advances, key challenges, and future directions for enzymatic nylon recycling, outlining its potential role enabling mixed polymer waste to be used as a green feedstock for remanufacturing.",
+  "authors": [
+    "Célestin Bourgery",
+    "Dai‐ichiro Kato",
+    "Nikolas Capra",
+    "Matthew Korey",
+    "Liangyu Qian",
+    "Seiji Negoro",
+    "Joshua K. Michener"
+  ],
+  "date": "2026-05-04",
+  "source": "openalex",
+  "venue": "ACS Materials Letters",
+  "subject": "biodegradable polymer synthesis and properties",
+  "doi": "10.1021/acsmaterialslett.6c00172",
+  "url": "https://doi.org/10.1021/acsmaterialslett.6c00172",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,31 @@
+{
+  "id": "10.1038/s42256-026-01250-8",
+  "title": "Bridging three-dimensional molecular structures and artificial intelligence with a conformation description language",
+  "abstract": "",
+  "authors": [
+    "Jiacheng Xiong",
+    "Yuqi Shi",
+    "M T Wu",
+    "P.G. Shao",
+    "Zhaokun Wang",
+    "Wei Zhang",
+    "R Zhang",
+    "Zhiyi Chen",
+    "Chuanlong Zeng",
+    "Xun Jiang",
+    "Duanhua Cao",
+    "Zhaoping Xiong",
+    "Zunyun Fu",
+    "Sulin Zhang",
+    "Mingyue Zheng"
+  ],
+  "date": "2026-06-11",
+  "source": "openalex",
+  "venue": "Nature Machine Intelligence",
+  "subject": "Computational Drug Discovery Methods",
+  "doi": "10.1038/s42256-026-01250-8",
+  "url": "https://doi.org/10.1038/s42256-026-01250-8",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

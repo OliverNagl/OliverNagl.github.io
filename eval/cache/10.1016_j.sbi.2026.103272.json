@@ -1,0 +1,20 @@
+{
+  "id": "10.1016/j.sbi.2026.103272",
+  "title": "Closing the loop: Experimentally validated methods in artificial intelligence–driven protein design",
+  "abstract": "Artificial intelligence (AI) has reshaped protein design by enabling models trained on large-scale sequence and structure data to generate proteins with specified functions. These models are best understood in the context of an end-to-end pipeline that includes data curation, model development, candidate generation and filtering, and experimental validation. Here, we review AI-driven protein design methods that span this full pipeline. We begin with a primer on AI-driven protein design and then outline the key components of the pipeline and assess performance across three major application areas: binders, antibodies, and enzymes. By consolidating experimental outcomes across diverse approaches, we provide a practical reference for methods that currently succeed in the lab and highlight the ongoing importance of experimental feedback in advancing AI-driven protein design.",
+  "authors": [
+    "Clayton W. Kosonocky",
+    "Sarah Alamdari",
+    "Kevin K. Yang",
+    "Ava P. Amini"
+  ],
+  "date": "2026-04-19",
+  "source": "openalex",
+  "venue": "Current Opinion in Structural Biology",
+  "subject": "vaccines and immunoinformatics approaches",
+  "doi": "10.1016/j.sbi.2026.103272",
+  "url": "https://doi.org/10.1016/j.sbi.2026.103272",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

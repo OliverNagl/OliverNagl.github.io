@@ -1,0 +1,22 @@
+{
+  "id": "10.1038/s41557-026-02184-9",
+  "title": "Discovery and characterization of a nickel enzyme family that catalyses intermolecular hydride shuttling",
+  "abstract": "Nickel-dependent enzymes catalyse incredible transformations. However, few have been discovered so far, limiting our understanding of the role of nickel in nature. Here we develop a bioinformatic pipeline to discover a family of nickel pincer mononucleotide (NPMN)-dependent enzymes with structures that are completely distinct from previously reported NPMN-dependent enzymes. We characterize one family member, NPMN-dependent hydride transferase (NphT), and find that it catalyses intermolecular hydride transfer, which we elucidate through its promiscuous disproportionation of sugars. We solve a 1.3-Å resolution crystal structure of NphT bound to NPMN and interrogate its mechanism through mutagenesis. We discover that NphT is one of many unexplored nickel enzymes within the large aldo-keto reductase superfamily, which catalyses reactions on a wide range of molecules, including secondary metabolites, sugars and drugs. This work reveals a unique enzymatic scaffold that can harness nickel, expands the known NPMN-catalysed transformations to intermolecular hydride transfer and establishes a pipeline for the discovery of distinct families of nickel-dependent enzymes.",
+  "authors": [
+    "Zoë Semersky",
+    "Conor G. Raymond",
+    "John M. Rossi",
+    "Heike Hofstetter",
+    "Pranav Rao",
+    "Monica E. Neugebauer"
+  ],
+  "date": "2026-06-17",
+  "source": "openalex",
+  "venue": "Nature Chemistry",
+  "subject": "Aldose Reductase and Taurine",
+  "doi": "10.1038/s41557-026-02184-9",
+  "url": "https://doi.org/10.1038/s41557-026-02184-9",
+  "pdf_url": "https://www.nature.com/articles/s41557-026-02184-9.pdf",
+  "code_url": null,
+  "published_doi": null
+}

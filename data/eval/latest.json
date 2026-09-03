@@ -1,75 +1,188 @@
 {
-  "generated_at": "2026-09-03T21:28:59.348994+00:00",
-  "checked": 3,
-  "passed": 3,
-  "recall": 1.0,
+  "generated_at": "2026-09-03T22:12:14.715576+00:00",
+  "checked": 50,
+  "passed": 49,
+  "recall": 0.98,
   "unresolved": [],
+  "shortlist_pressure": {
+    "cap": 800,
+    "weeks_sampled": 2,
+    "passing_per_week": 928.5,
+    "binding": true,
+    "lexical_cutoff": 1.0
+  },
   "raw_weeks_available": [
     "2026-W35",
     "2026-W36"
   ],
   "papers": [
     {
-      "id": "10.1038/s41586-023-06415-8",
-      "doi": "10.1038/s41586-023-06415-8",
-      "title": "De novo design of protein structure and function with RFdiffusion",
-      "note": "RFdiffusion. If the filter cannot surface this, something is badly wrong.",
-      "expect": "front_page",
-      "date": "2023-07-11",
-      "week": "2023-W28",
-      "venue": "Nature",
-      "passed_prefilter": true,
-      "failed_rule": null,
-      "matched_exclude": null,
-      "lexical_score": 19.2,
-      "category_scores": {
-        "ml-method": 1.2,
-        "struct-pred": 2.0,
-        "design-method": 13.5,
-        "enzyme": 2.5
-      },
-      "watchlist_hit": "Watson JL",
-      "ranking": null,
-      "status": "pass",
-      "chain": [
-        "passed prefilter (hard_include): watchlist author: Watson JL",
-        "no raw archive for 2023-W28, so rank is unknown"
-      ]
-    },
-    {
-      "id": "10.1126/science.add2187",
-      "doi": "10.1126/science.add2187",
-      "title": "Robust deep learning\u2013based protein sequence design using ProteinMPNN",
-      "note": "ProteinMPNN. Same reasoning \u2014 a canary, not a real miss.",
-      "expect": "front_page",
-      "date": "2022-09-15",
-      "week": "2022-W37",
-      "venue": "Science",
-      "passed_prefilter": true,
-      "failed_rule": null,
-      "matched_exclude": null,
-      "lexical_score": 10.5,
-      "category_scores": {
-        "struct-pred": 5.0,
-        "design-method": 5.5
-      },
-      "watchlist_hit": "Dauparas J",
-      "ranking": null,
-      "status": "pass",
-      "chain": [
-        "passed prefilter (hard_include): watchlist author: Dauparas J",
-        "no raw archive for 2022-W37, so rank is unknown"
-      ]
-    },
-    {
-      "id": "10.1038/s41586-024-07601-y",
-      "doi": "10.1038/s41586-024-07601-y",
-      "title": "Computational design of soluble and functional membrane protein analogues",
-      "note": "Designed soluble analogues of membrane proteins; King/Baker adjacent.",
+      "id": "10.64898/2026.08.26.747373",
+      "doi": "10.64898/2026.08.26.747373",
+      "title": "WaterFlow: Prediction of Ordered Water Molecule Positions on Protein Structures",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
       "expect": "shortlist",
-      "date": "2024-06-19",
-      "week": "2024-W25",
+      "date": "2026-08-27",
+      "week": "2026-W35",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 6.0,
+      "category_scores": {
+        "struct-pred": 2.0,
+        "enzyme": 2.0,
+        "wetlab-method": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": {
+        "in_shortlist": true,
+        "shortlist_size": 1172,
+        "rank": 149,
+        "score": 1.165,
+        "front_page_cutoff": 1.725,
+        "on_front_page": false,
+        "breakdown": {
+          "relevance": 0.4,
+          "novelty": 0.175,
+          "category": 0.55,
+          "watchlist_author": 0.0,
+          "code_released": 0.0,
+          "venue_tier": 0.04,
+          "similar_seen_recently": -0.0
+        },
+        "category": "struct-pred"
+      },
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'protein design'",
+        "ranked #149 of 1172 (score 1.165, front page needs 1.725)"
+      ]
+    },
+    {
+      "id": "10.1126/sciadv.aec8271",
+      "doi": "10.1126/sciadv.aec8271",
+      "title": "Programmable protein degraders enable selective knockdown of pathogenic \u03b2-catenin subpopulations in vitro and in vivo",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-08-28",
+      "week": "2026-W35",
+      "venue": "Science Advances",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 9.0,
+      "category_scores": {
+        "struct-pred": 3.0,
+        "function-design": 2.0,
+        "delivery": 4.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": {
+        "in_shortlist": true,
+        "shortlist_size": 1171,
+        "rank": 38,
+        "score": 1.395,
+        "front_page_cutoff": 1.725,
+        "on_front_page": false,
+        "breakdown": {
+          "relevance": 0.6,
+          "novelty": 0.175,
+          "category": 0.5,
+          "watchlist_author": 0.0,
+          "code_released": 0.0,
+          "venue_tier": 0.12,
+          "similar_seen_recently": -0.0
+        },
+        "category": "delivery"
+      },
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 9.0",
+        "ranked #38 of 1171 (score 1.395, front page needs 1.725)"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10952-3",
+      "doi": "10.1038/s41586-026-10952-3",
+      "title": "Creating bottom-up RNA transfer vehicles from synthetic protein assemblies",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-09-02",
+      "week": "2026-W36",
       "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 7.5,
+      "category_scores": {
+        "ml-method": 1.5,
+        "function-design": 2.0,
+        "assembly": 2.5,
+        "delivery": 1.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": {
+        "in_shortlist": true,
+        "shortlist_size": 685,
+        "rank": 11,
+        "score": 1.525,
+        "front_page_cutoff": 1.525,
+        "on_front_page": true,
+        "breakdown": {
+          "relevance": 0.5,
+          "novelty": 0.175,
+          "category": 0.65,
+          "watchlist_author": 0.0,
+          "code_released": 0.0,
+          "venue_tier": 0.2,
+          "similar_seen_recently": -0.0
+        },
+        "category": "assembly"
+      },
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'protein design'",
+        "ranked #11 of 685 (score 1.525, front page needs 1.525)"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10794-z",
+      "doi": "10.1038/s41586-026-10794-z",
+      "title": "Precise DNA base editing using AlphaFold3-based contact modelling",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-22",
+      "week": "2026-W30",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.0,
+      "category_scores": {
+        "struct-pred": 3.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'alphafold3'",
+        "no raw archive for 2026-W30, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.aeb0822",
+      "doi": "10.1126/science.aeb0822",
+      "title": "De novo design of orthogonal far-red, orange, and green fluorophore-binding proteins for multiplexed imaging",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-16",
+      "week": "2026-W29",
+      "venue": "Science",
       "passed_prefilter": true,
       "failed_rule": null,
       "matched_exclude": null,
@@ -77,14 +190,1281 @@
       "category_scores": {
         "design-method": 3.0
       },
-      "watchlist_hit": "Dauparas J",
+      "watchlist_hit": "Baker D",
+      "lexical_cutoff": 1.0,
       "ranking": null,
       "status": "pass",
       "chain": [
-        "passed prefilter (hard_include): watchlist author: Dauparas J",
-        "no raw archive for 2024-W25, so rank is unknown"
+        "passed prefilter (hard_include): watchlist author: Baker D",
+        "no raw archive for 2026-W29, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1021/jacs.6c07615",
+      "doi": "10.1021/jacs.6c07615",
+      "title": "A De Novo CO 2 Reductase Featuring a Cysteine-Ligated Cobalt Porphyrin Cofactor",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-09",
+      "week": "2026-W28",
+      "venue": "Journal of the American Chemical Society",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 1.5,
+      "category_scores": {
+        "enzyme": 1.5
+      },
+      "watchlist_hit": "Baker D",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Baker D",
+        "no raw archive for 2026-W28, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s43587-026-01150-x",
+      "doi": "10.1038/s43587-026-01150-x",
+      "title": "Delayed molecular aging, preservation of energy metabolism and enhanced exercise response in exercise-trained human muscle",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-03",
+      "week": "2026-W27",
+      "venue": "Nature Aging",
+      "passed_prefilter": false,
+      "failed_rule": "no_boost",
+      "matched_exclude": null,
+      "lexical_score": 0.0,
+      "category_scores": {},
+      "watchlist_hit": null,
+      "rescue_hint": "matched domain vocabulary but no category boost term",
+      "ranking": null,
+      "status": "fail",
+      "chain": [
+        "REJECTED by no_boost: must_any hit 'metabol' but no category boost term matched",
+        "no raw archive for 2026-W27, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41538-026-00953-x",
+      "doi": "10.1038/s41538-026-00953-x",
+      "title": "Generative artificial intelligence creates delicious, sustainable, and nutritious burgers",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-26",
+      "week": "2026-W26",
+      "venue": "npj Science of Food",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 1.5,
+      "category_scores": {
+        "ml-method": 1.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'generative', lexical score 1.5",
+        "no raw archive for 2026-W26, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41565-026-02211-3",
+      "doi": "10.1038/s41565-026-02211-3",
+      "title": "Clocked stepping of an artificial protein walker along a DNA track",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-01",
+      "week": "2026-W27",
+      "venue": "Nature Nanotechnology",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.5,
+      "category_scores": {
+        "design-method": 1.5,
+        "function-design": 2.0
+      },
+      "watchlist_hit": "Woolfson DN",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Woolfson DN",
+        "no raw archive for 2026-W27, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1101/2025.09.29.677966",
+      "doi": "10.1101/2025.09.29.677966",
+      "title": "De-novo design of a random protein walker",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2025-10-01",
+      "week": "2025-W40",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "wetlab-method": 2.0
+      },
+      "watchlist_hit": "Watson JL",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Watson JL",
+        "no raw archive for 2025-W40, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.adr3817",
+      "doi": "10.1126/science.adr3817",
+      "title": "Membrane protein solubilization and structure determination using de novo\u2013designed proteins",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-02",
+      "week": "2026-W27",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 0.0,
+      "category_scores": {},
+      "watchlist_hit": "King NP",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: King NP",
+        "no raw archive for 2026-W27, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10716-z",
+      "doi": "10.1038/s41586-026-10716-z",
+      "title": "Targeted enzyme discovery using metal-coordination mining",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-07-01",
+      "week": "2026-W27",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 14.5,
+      "category_scores": {
+        "struct-pred": 5.0,
+        "enzyme": 9.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 14.5",
+        "no raw archive for 2026-W27, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41573-026-01459-7",
+      "doi": "10.1038/s41573-026-01459-7",
+      "title": "Towards mRNA therapeutics 2.0",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-03",
+      "week": "2026-W23",
+      "venue": "Nature Reviews Drug Discovery",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 4.0,
+      "category_scores": {
+        "delivery": 4.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'mrna', lexical score 4.0",
+        "no raw archive for 2026-W23, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.20526590",
+      "doi": "10.5281/zenodo.20526590",
+      "title": "Practical De Novo Nanobody Discovery with Tens of Experimental Candidates",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-03",
+      "week": "2026-W23",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 8.5,
+      "category_scores": {
+        "ml-method": 1.5,
+        "struct-pred": 5.0,
+        "function-design": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 8.5",
+        "no raw archive for 2026-W23, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10678-2",
+      "doi": "10.1038/s41586-026-10678-2",
+      "title": "Alternate RNA decoding results in stable and abundant proteins in mammals",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-24",
+      "week": "2026-W26",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "struct-pred": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 2.0",
+        "no raw archive for 2026-W26, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.06.22.733870",
+      "doi": "10.64898/2026.06.22.733870",
+      "title": "A high-level programming language for generative biology with Proto",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-23",
+      "week": "2026-W26",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 6.5,
+      "category_scores": {
+        "ml-method": 6.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 6.5",
+        "no raw archive for 2026-W26, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1021/jacs.6c04368",
+      "doi": "10.1021/jacs.6c04368",
+      "title": "Asymmetric Hydroamination Using Oxidative Radical Initiation in Flavin Enzymes",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-12",
+      "week": "2026-W24",
+      "venue": "Journal of the American Chemical Society",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.5,
+      "category_scores": {
+        "enzyme": 3.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'enzyme', lexical score 3.5",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41557-026-02184-9",
+      "doi": "10.1038/s41557-026-02184-9",
+      "title": "Discovery and characterization of a nickel enzyme family that catalyses intermolecular hydride shuttling",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-17",
+      "week": "2026-W25",
+      "venue": "Nature Chemistry",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "enzyme": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'enzyme', lexical score 2.0",
+        "no raw archive for 2026-W25, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41564-026-02408-1",
+      "doi": "10.1038/s41564-026-02408-1",
+      "title": "Deep learning reveals antimicrobial peptides within prions",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-19",
+      "week": "2026-W25",
+      "venue": "Nature Microbiology",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 4.5,
+      "category_scores": {
+        "function-design": 4.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 4.5",
+        "no raw archive for 2026-W25, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s42256-026-01250-8",
+      "doi": "10.1038/s42256-026-01250-8",
+      "title": "Bridging three-dimensional molecular structures and artificial intelligence with a conformation description language",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-11",
+      "week": "2026-W24",
+      "venue": "Nature Machine Intelligence",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.5,
+      "category_scores": {
+        "struct-pred": 3.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'molecular structure', lexical score 3.5",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.06.10.730767",
+      "doi": "10.64898/2026.06.10.730767",
+      "title": "HalluDesign-NA: Extending HalluDesign for De Novo Nucleic Acid Design",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-11",
+      "week": "2026-W24",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 11.0,
+      "category_scores": {
+        "struct-pred": 6.0,
+        "design-method": 3.0,
+        "function-design": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'de novo design'",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.06.08.730848",
+      "doi": "10.64898/2026.06.08.730848",
+      "title": "Deep learning based design of buried hydrogen bond networks with HBDesigner",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-11",
+      "week": "2026-W24",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 0.0,
+      "category_scores": {},
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'protein design'",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.aeh0665",
+      "doi": "10.1126/science.aeh0665",
+      "title": "Laser phase plate improves structure determination of small proteins by cryo-EM",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-11",
+      "week": "2026-W24",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "wetlab-method": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 2.0",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1021/acssynbio.6c00143",
+      "doi": "10.1021/acssynbio.6c00143",
+      "title": "Characterization of a Two-Sided Orthogonal Translation System and Its Application to Violacein Biosynthesis",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-28",
+      "week": "2026-W22",
+      "venue": "ACS Synthetic Biology",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 4.0,
+      "category_scores": {
+        "enzyme": 2.5,
+        "delivery": 1.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'fold', lexical score 4.0",
+        "no raw archive for 2026-W22, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/sciadv.aee6916",
+      "doi": "10.1126/sciadv.aee6916",
+      "title": "PlasmidGPT: A generative framework for plasmid analysis and generation",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-27",
+      "week": "2026-W22",
+      "venue": "Science Advances",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.0,
+      "category_scores": {
+        "ml-method": 1.5,
+        "design-method": 1.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'generative', lexical score 3.0",
+        "no raw archive for 2026-W22, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.05.28.728566",
+      "doi": "10.64898/2026.05.28.728566",
+      "title": "Amplicon/Protein Bead Display enables quantitative in vitro biochemistry at scale",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-30",
+      "week": "2026-W22",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 5.7,
+      "category_scores": {
+        "ml-method": 1.2,
+        "wetlab-method": 4.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 5.7",
+        "no raw archive for 2026-W22, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.04.06.716810",
+      "doi": "10.64898/2026.04.06.716810",
+      "title": "A permeable protein nanocage enables facile cargo loading and cytosolic protein delivery",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-04-09",
+      "week": "2026-W15",
+      "venue": "",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 8.0,
+      "category_scores": {
+        "assembly": 5.0,
+        "delivery": 3.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'nanocage'",
+        "no raw archive for 2026-W15, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.05.20.726468",
+      "doi": "10.64898/2026.05.20.726468",
+      "title": "MolCodon: A Codon-Based Molecular Language for Interpretable Structural Representation and Similarity Search",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-21",
+      "week": "2026-W21",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "struct-pred": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'codon', lexical score 2.0",
+        "no raw archive for 2026-W21, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41557-018-0008-9",
+      "doi": "10.1038/s41557-018-0008-9",
+      "title": "Evolution of sequence-defined highly functionalized nucleic acid polymers",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2018-03-02",
+      "week": "2018-W09",
+      "venue": "Nature Chemistry",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "function-design": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'nucleic acid', lexical score 2.0",
+        "no raw archive for 2018-W09, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1021/jacs.6c00732",
+      "doi": "10.1021/jacs.6c00732",
+      "title": "De Novo Design of Miniature and Efficient Metallo-Ketoreductases",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-20",
+      "week": "2026-W21",
+      "venue": "Journal of the American Chemical Society",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 12.0,
+      "category_scores": {
+        "design-method": 3.0,
+        "enzyme": 9.0
+      },
+      "watchlist_hit": "Baker D",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Baker D",
+        "no raw archive for 2026-W21, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.05.19.726285",
+      "doi": "10.64898/2026.05.19.726285",
+      "title": "Accurate protein stability prediction for small domains using mega-scale experiments",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-20",
+      "week": "2026-W21",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.0,
+      "category_scores": {
+        "wetlab-method": 2.0
+      },
+      "watchlist_hit": "Ovchinnikov S",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Ovchinnikov S",
+        "no raw archive for 2026-W21, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10554-z",
+      "doi": "10.1038/s41586-026-10554-z",
+      "title": "Design of one-component quasisymmetric protein nanocages",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-20",
+      "week": "2026-W21",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.5,
+      "category_scores": {
+        "assembly": 2.5
+      },
+      "watchlist_hit": "Veesler D",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Veesler D",
+        "no raw archive for 2026-W21, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10464-0",
+      "doi": "10.1038/s41586-026-10464-0",
+      "title": "De novo design of quasisymmetric two-component protein cages",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-20",
+      "week": "2026-W21",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 7.5,
+      "category_scores": {
+        "design-method": 3.0,
+        "assembly": 4.5
+      },
+      "watchlist_hit": "DiMaio F",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: DiMaio F",
+        "no raw archive for 2026-W21, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s42256-026-01232-w",
+      "doi": "10.1038/s42256-026-01232-w",
+      "title": "Towards the explainability of protein language models",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-11",
+      "week": "2026-W20",
+      "venue": "Nature Machine Intelligence",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.0,
+      "category_scores": {
+        "struct-pred": 3.0
+      },
+      "watchlist_hit": "Ferruz N",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Ferruz N",
+        "no raw archive for 2026-W20, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.aea1820",
+      "doi": "10.1126/science.aea1820",
+      "title": "Rapid directed evolution guided by protein language models and epistatic interactions",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-02-19",
+      "week": "2026-W08",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 5.5,
+      "category_scores": {
+        "struct-pred": 3.0,
+        "enzyme": 2.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 5.5",
+        "no raw archive for 2026-W08, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10459-x",
+      "doi": "10.1038/s41586-026-10459-x",
+      "title": "Expanding the human proteome with microproteins and peptideins",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-06",
+      "week": "2026-W19",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 4.0,
+      "category_scores": {
+        "struct-pred": 4.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 4.0",
+        "no raw archive for 2026-W19, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.aed8713",
+      "doi": "10.1126/science.aed8713",
+      "title": "Biocatalytic cascades enable manufacture of the macrocyclic peptide enlicitide",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-07",
+      "week": "2026-W19",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 4.0,
+      "category_scores": {
+        "function-design": 4.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'peptide', lexical score 4.0",
+        "no raw archive for 2026-W19, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1021/acsmaterialslett.6c00172",
+      "doi": "10.1021/acsmaterialslett.6c00172",
+      "title": "Enzymatic Nylon Deconstruction: Enzyme Discovery, Engineering, and Opportunities",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-04",
+      "week": "2026-W19",
+      "venue": "ACS Materials Letters",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 6.5,
+      "category_scores": {
+        "enzyme": 6.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'enzyme', lexical score 6.5",
+        "no raw archive for 2026-W19, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.aeb5171",
+      "doi": "10.1126/science.aeb5171",
+      "title": "Toward life with a 19\u2013amino acid alphabet through generative artificial intelligence design",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-04-30",
+      "week": "2026-W18",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 6.0,
+      "category_scores": {
+        "ml-method": 1.5,
+        "struct-pred": 3.0,
+        "design-method": 1.5
+      },
+      "watchlist_hit": "Ovchinnikov S",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Ovchinnikov S",
+        "no raw archive for 2026-W18, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-026-10328-7",
+      "doi": "10.1038/s41586-026-10328-7",
+      "title": "The past, present and future of de novo protein design",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-04-29",
+      "week": "2026-W18",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 0.0,
+      "category_scores": {},
+      "watchlist_hit": "Bhardwaj G",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Bhardwaj G",
+        "no raw archive for 2026-W18, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.04.21.719857",
+      "doi": "10.64898/2026.04.21.719857",
+      "title": "Landscape-scale navigation unlocks antibody CDR structural logic for AI-guided rescue and therapeutic optimization",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-04-23",
+      "week": "2026-W17",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 11.0,
+      "category_scores": {
+        "struct-pred": 3.0,
+        "design-method": 3.0,
+        "wetlab-method": 5.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'proteinmpnn'",
+        "no raw archive for 2026-W17, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.64898/2026.04.23.720277",
+      "doi": "10.64898/2026.04.23.720277",
+      "title": "Zero-shot design of a de novo metalloenzyme",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-04-24",
+      "week": "2026-W17",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 5.5,
+      "category_scores": {
+        "design-method": 3.0,
+        "enzyme": 2.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'de novo design'",
+        "no raw archive for 2026-W17, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2606.19377",
+      "doi": "2606.19377",
+      "title": "Emyx: Fast and efficient all-atom protein generation",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-12",
+      "week": "2026-W24",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 13.5,
+      "category_scores": {
+        "ml-method": 4.5,
+        "struct-pred": 3.0,
+        "design-method": 3.0,
+        "enzyme": 3.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'rfdiffusion'",
+        "no raw archive for 2026-W24, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2512.14982",
+      "doi": "2512.14982",
+      "title": "Prompt Repetition Improves Non-Reasoning LLMs",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2025-12-17",
+      "week": "2025-W51",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 2.7,
+      "category_scores": {
+        "ml-method": 2.7
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'llm', lexical score 2.7",
+        "no raw archive for 2025-W51, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2605.28960",
+      "doi": "2605.28960",
+      "title": "How Atoms Interact Within Molecules",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-27",
+      "week": "2026-W22",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 1.0,
+      "category_scores": {
+        "struct-pred": 1.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'fold', lexical score 1.0",
+        "no raw archive for 2026-W22, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2606.05474",
+      "doi": "2606.05474",
+      "title": "AlloGen: Conformation-Selective Binder Generation with Differential State Scoring",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-06-03",
+      "week": "2026-W23",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 12.5,
+      "category_scores": {
+        "ml-method": 2.5,
+        "struct-pred": 2.5,
+        "design-method": 5.5,
+        "function-design": 2.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 12.5",
+        "no raw archive for 2026-W23, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2602.04883",
+      "doi": "2602.04883",
+      "title": "Protein Autoregressive Modeling via Multiscale Structure Generation",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-02-04",
+      "week": "2026-W06",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 10.2,
+      "category_scores": {
+        "ml-method": 1.2,
+        "struct-pred": 1.0,
+        "design-method": 8.0
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 10.2",
+        "no raw archive for 2026-W06, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2605.15564",
+      "doi": "2605.15564",
+      "title": "CrystalBoltz: End-to-End Protein Structure Determination via Experiment-Guided Diffusion for X-Ray Crystallography",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2026-05-15",
+      "week": "2026-W20",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 5.0,
+      "category_scores": {
+        "ml-method": 1.5,
+        "struct-pred": 2.0,
+        "assembly": 1.5
+      },
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (must_any): must_any hit 'protein', lexical score 5.0",
+        "no raw archive for 2026-W20, so rank is unknown"
+      ]
+    },
+    {
+      "id": "arxiv:2506.04490",
+      "doi": "2506.04490",
+      "title": "Multiscale guidance of protein structure prediction with heterogeneous cryo-EM data",
+      "note": "from Test_publications.csv \u2014 exemplary, must reach the initial screen",
+      "expect": "shortlist",
+      "date": "2025-06-04",
+      "week": "2025-W23",
+      "venue": "arXiv",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 7.5,
+      "category_scores": {
+        "ml-method": 2.0,
+        "struct-pred": 3.5,
+        "wetlab-method": 2.0
+      },
+      "watchlist_hit": "Zhong ED",
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Zhong ED",
+        "no raw archive for 2025-W23, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1016/j.sbi.2026.103272",
+      "doi": "10.1016/j.sbi.2026.103272",
+      "title": "Closing the loop: Experimentally validated methods in artificial intelligence\u2013driven protein design",
+      "note": "from Test_publications.csv (Curr Opin Struct Biol) \u2014 exemplary",
+      "expect": "shortlist",
+      "date": "2026-04-19",
+      "week": "2026-W16",
+      "venue": "Current Opinion in Structural Biology",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 0.0,
+      "category_scores": {},
+      "watchlist_hit": null,
+      "lexical_cutoff": 1.0,
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): hard-include phrase: 'protein design'",
+        "no raw archive for 2026-W16, so rank is unknown"
       ]
     }
   ],
-  "suggestions": []
+  "suggestions": [
+    {
+      "term": "exercise-trained human",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "delayed molecular",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "exercise-trained",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "exercise response",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "enhanced exercise",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "molecular aging",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 0,
+      "admits_per_week": 0.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "human muscle",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 1,
+      "admits_per_week": 0.5,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "exercise",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 10,
+      "admits_per_week": 5.0,
+      "weeks_sampled": 2,
+      "verdict": "cheap \u2014 add it"
+    },
+    {
+      "term": "energy metabolism",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 17,
+      "admits_per_week": 8.5,
+      "weeks_sampled": 2,
+      "verdict": "moderate \u2014 worth it if the miss mattered"
+    },
+    {
+      "term": "delayed",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 42,
+      "admits_per_week": 21.0,
+      "weeks_sampled": 2,
+      "verdict": "moderate \u2014 worth it if the miss mattered"
+    },
+    {
+      "term": "preservation",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 45,
+      "admits_per_week": 22.5,
+      "weeks_sampled": 2,
+      "verdict": "moderate \u2014 worth it if the miss mattered"
+    },
+    {
+      "term": "muscle",
+      "category": "ml-method",
+      "weight": 2.0,
+      "recovers": 1,
+      "admits": 56,
+      "admits_per_week": 28.0,
+      "weeks_sampled": 2,
+      "verdict": "expensive \u2014 prefer a more specific phrase"
+    }
+  ]
 }

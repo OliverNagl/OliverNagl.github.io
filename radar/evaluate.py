@@ -63,6 +63,16 @@ def load_goldset(root: Path) -> list[dict]:
         ident = e.get("doi") or e.get("arxiv") or e.get("id")
         if not ident:
             continue
+        # An unquoted arXiv id in YAML parses as a float, and 2605.28960 silently becomes
+        # 2605.2896 — data loss that then shows up as an unresolvable entry rather than as
+        # a syntax error. Catch it here and say exactly what to fix.
+        if isinstance(ident, float):
+            log.error(
+                "gold entry %r was parsed as a number: quote it in eval/goldset.yaml "
+                '(write `arxiv: "%s"`). Any trailing zero is already lost.',
+                ident, e.get("arxiv") or ident,
+            )
+            continue
         expect = e.get("expect", "shortlist")
         if expect not in EXPECT_LEVELS:
             log.warning("gold entry %s: unknown expect %r, using 'shortlist'", ident, expect)
@@ -72,6 +82,45 @@ def load_goldset(root: Path) -> list[dict]:
 
 
 # --------------------------------------------------------------------- verdicts ----
+
+
+def _shortlist_pressure(cfg: Config) -> dict[str, Any] | None:
+    """How hard the shortlist cap is binding, measured over the archived weeks.
+
+    Passing the prefilter is not the same as being screened. The shortlist is capped and
+    ordered by lexical score, so a paper with little category vocabulary can clear every
+    rule and still never reach triage. Reporting that as a pass would be a lie, and it is
+    exactly the kind of silent loss this harness exists to expose.
+    """
+    weeks = available_raw_weeks(cfg.root)[-4:]
+    if not weeks:
+        return None
+    cap = int(cfg.profile.get("front_page", {}).get("shortlist_max", 300))
+
+    passing_counts: list[int] = []
+    cutoffs: list[float] = []
+    for w in weeks:
+        try:
+            papers = read_raw(cfg.root, w)
+        except Exception:                                 # noqa: BLE001
+            continue
+        scores = sorted(
+            (v.lexical_score for v in (judge(p, cfg) for p in papers) if v.passed),
+            reverse=True,
+        )
+        passing_counts.append(len(scores))
+        # The score a paper must beat to be screened at all this week.
+        cutoffs.append(scores[cap - 1] if len(scores) >= cap else 0.0)
+
+    if not passing_counts:
+        return None
+    return {
+        "cap": cap,
+        "weeks_sampled": len(passing_counts),
+        "passing_per_week": round(sum(passing_counts) / len(passing_counts), 1),
+        "binding": any(n > cap for n in passing_counts),
+        "lexical_cutoff": round(sum(cutoffs) / len(cutoffs), 2),
+    }
 
 
 def _rank_against_week(paper: Paper, cfg: Config, week: str) -> dict[str, Any] | None:
@@ -126,7 +175,9 @@ def _rank_against_week(paper: Paper, cfg: Config, week: str) -> dict[str, Any] |
     }
 
 
-def evaluate_paper(paper: Paper, entry: dict, cfg: Config) -> dict[str, Any]:
+def evaluate_paper(
+    paper: Paper, entry: dict, cfg: Config, pressure: dict[str, Any] | None = None
+) -> dict[str, Any]:
     """Run one gold paper through the live filter and explain the outcome."""
     verdict = judge(paper, cfg)
     chain: list[str] = []
@@ -172,6 +223,22 @@ def evaluate_paper(paper: Paper, entry: dict, cfg: Config) -> dict[str, Any]:
     elif verdict.failed_rule == "no_boost":
         result["rescue_hint"] = "matched domain vocabulary but no category boost term"
 
+    # Would it survive the shortlist cap? Only meaningful when the cap actually binds.
+    below_cutoff = False
+    if verdict.passed and pressure and pressure["binding"]:
+        cutoff = pressure["lexical_cutoff"]
+        result["lexical_cutoff"] = cutoff
+        if verdict.tier != "hard_include" and verdict.lexical_score < cutoff:
+            below_cutoff = True
+            chain.append(
+                f"passed the rules but scores {verdict.lexical_score} against a shortlist "
+                f"cutoff of ~{cutoff}: it would be cut before triage ever saw it"
+            )
+            result["rescue_hint"] = (
+                "needs category vocabulary to rank, not just domain vocabulary to pass — "
+                "or a larger front_page.shortlist_max"
+            )
+
     ranking = _rank_against_week(paper, cfg, week)
     if ranking is None:
         chain.append(f"no raw archive for {week}, so rank is unknown")
@@ -189,6 +256,8 @@ def evaluate_paper(paper: Paper, entry: dict, cfg: Config) -> dict[str, Any]:
     # Did it meet the bar the gold set asked for?
     if not verdict.passed:
         status = "fail"
+    elif below_cutoff:
+        status = "weak"
     elif entry["expect"] == "front_page":
         if ranking and ranking.get("on_front_page"):
             status = "pass"
@@ -322,6 +391,8 @@ def run_eval(cfg: Config, *, offline: bool = False) -> dict[str, Any]:
     misses: list[tuple[Paper, dict]] = []
     unresolved: list[str] = []
 
+    pressure = _shortlist_pressure(cfg)
+
     for entry in entries:
         paper = resolver.resolve(entry["id"], offline=offline)
         if paper is None:
@@ -336,7 +407,7 @@ def run_eval(cfg: Config, *, offline: bool = False) -> dict[str, Any]:
                 }
             )
             continue
-        r = evaluate_paper(paper, entry, cfg)
+        r = evaluate_paper(paper, entry, cfg, pressure)
         papers.append(r)
         if r["status"] != "pass":
             misses.append((paper, r))
@@ -352,6 +423,7 @@ def run_eval(cfg: Config, *, offline: bool = False) -> dict[str, Any]:
         "passed": passed,
         "recall": round(passed / checked, 3) if checked else None,
         "unresolved": unresolved,
+        "shortlist_pressure": pressure,
         "raw_weeks_available": available_raw_weeks(cfg.root),
         "papers": papers,
         "suggestions": suggestions,

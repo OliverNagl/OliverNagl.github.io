@@ -1,0 +1,19 @@
+{
+  "id": "10.1038/s41538-026-00953-x",
+  "title": "Generative artificial intelligence creates delicious, sustainable, and nutritious burgers",
+  "abstract": "Food choices shape both human and planetary health; yet, designing foods that are delicious, nutritious, and sustainable remains challenging. Here we show that generative artificial intelligence can learn the structure of the human palate directly from large-scale, human-generated recipe data to create novel foods within a structured design space. Using burgers as a model system, the generative AI rediscovers the classic Big Mac without explicit supervision and generates novel burgers optimized for deliciousness, sustainability, or nutrition. Compared to the Big Mac, its delicious burgers score the same or better in overall liking, flavor, and texture in a blinded sensory evaluation conducted in a restaurant setting with 101 participants; its mushroom burger achieves an environmental impact score more than an order of magnitude lower; and its bean burger attains nearly twice the nutritional score. Together, these results establish generative AI as a quantitative framework for learning human taste and navigating complex trade-offs in principled food design.",
+  "authors": [
+    "Vahidullah Taç",
+    "Christopher D. Gardner",
+    "Ellen Kuhl"
+  ],
+  "date": "2026-06-26",
+  "source": "openalex",
+  "venue": "npj Science of Food",
+  "subject": "Multisensory perception and integration",
+  "doi": "10.1038/s41538-026-00953-x",
+  "url": "https://doi.org/10.1038/s41538-026-00953-x",
+  "pdf_url": "https://www.nature.com/articles/s41538-026-00953-x.pdf",
+  "code_url": null,
+  "published_doi": null
+}

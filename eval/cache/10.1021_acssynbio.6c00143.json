@@ -1,0 +1,24 @@
+{
+  "id": "10.1021/acssynbio.6c00143",
+  "title": "Characterization of a Two-Sided Orthogonal Translation System and Its Application to Violacein Biosynthesis",
+  "abstract": "A major challenge in the microbial production of valuable compounds is the trade-off between cell growth and biosynthesis. Orthogonal translation systems, which utilize orthogonal ribosomes derived from engineered rRNAs to translate specific mRNAs, offer a means to reallocate translational resources from cellular growth to biosynthesis. However, the in vivo orthogonality and quantitative effectiveness of orthogonal translation systems have not been fully evaluated. Here, we systematically tested orthogonal rRNA–mRNA pairs in Escherichia coli using sfGFP as a reporter and identified a pair that exhibits robust two-sided orthogonality and high translation efficiency. We then applied this orthogonal translation system to the violacein biosynthetic pathway. The orthogonal translation system increased violacein production by 6.30- to 7.77-fold compared with the endogenous translation system and sustained production after entry into the stationary phase. These results demonstrate that a well-characterized two-sided orthogonal translation system successfully improved the productivity of a multienzyme pathway by reallocating translational capacity in vivo .",
+  "authors": [
+    "Riko Kusumi",
+    "Yuishin Kosaka",
+    "Takashi Sugita",
+    "Keisuke Kobayashi",
+    "Keisuke Motone",
+    "Kentaro Miyazaki",
+    "Kohsuke Honda",
+    "Wataru Aoki"
+  ],
+  "date": "2026-05-28",
+  "source": "openalex",
+  "venue": "ACS Synthetic Biology",
+  "subject": "Microbial Metabolism and Applications",
+  "doi": "10.1021/acssynbio.6c00143",
+  "url": "https://doi.org/10.1021/acssynbio.6c00143",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

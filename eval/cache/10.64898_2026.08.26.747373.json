@@ -1,0 +1,22 @@
+{
+  "id": "10.64898/2026.08.26.747373",
+  "title": "WaterFlow: Prediction of Ordered Water Molecule Positions on Protein Structures",
+  "abstract": "Abstract Ordered water molecules mediate many protein functions including stability, ligand binding, and catalysis. Predicting their positions with sub-angstrom accuracy would support protein design, binding affinity prediction, and automated model building in X-ray crystallography and cryo-EM. However, water molecule prediction lags behind protein and other molecule structure predictions. We introduce WaterFlow, a flow-matching-based generator model and confidence model for predicting the positions of ordered water molecules in protein structures. WaterFlow outperforms the existing state of the art at every precision level. We demonstrate that this model not only predicts ground truth modeled water molecules, including those around ligands, but also fits the underlying experimental data well, and therefore proposes that it may be used for both prediction and modeling water molecules. We demonstrate that WaterFlow’s novel predictions are often associated with positive electron difference density, meaning the model places water molecules at sites the original structure depositions omitted. We use this improved model to address the data constraint. By mapping the Pareto front of achievable accuracy of water molecule prediction, alongside analysis of different training data schemas, we quantified the tradeoff between data quantity and data quality, demonstrating the diversity of high quality structures is limiting the results possible. Overall, WaterFlow predicts ordered water to serve as a solvent module for structure-based drug design, and predicted structures, as well as for water molecule placement during crystallographic refinement. Abstract Figure",
+  "authors": [
+    "Vratin Srivastava",
+    "Huanghao Mai",
+    "Marcus D. Collins",
+    "James M. Holton",
+    "Michael E. Wall",
+    "Stephanie A. Wankowicz"
+  ],
+  "date": "2026-08-27",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Machine Learning in Materials Science",
+  "doi": "10.64898/2026.08.26.747373",
+  "url": "https://doi.org/10.64898/2026.08.26.747373",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

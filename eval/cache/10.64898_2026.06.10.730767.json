@@ -1,0 +1,19 @@
+{
+  "id": "10.64898/2026.06.10.730767",
+  "title": "HalluDesign-NA: Extending HalluDesign for De Novo Nucleic Acid Design",
+  "abstract": "Abstract AlphaFold3 has revolutionized the prediction of biomolecular structures and interactions, including atomic-level modeling of nucleic acids. However, the de novo design of structured and functional nucleic acids remains a significant challenge. Here, we extend our HalluDesign framework to nucleic acid design by integrating NA-MPNN for nucleic acid sequence optimization and design. This new framework, HalluDesign-NA, enables iterative sequence-structure co-optimization, facilitating the de novo design of nucleic acids. Computational benchmarking across ssDNA, ssRNA, and aptamer design tasks demonstrates consistent improvements in confidence scores (pLDDT, ipTM), supporting the feasibility of de novo nucleic acid design under various constraints, such as sequence length, symmetry, and protein structure context. We anticipate that HalluDesign-NA will accelerate the de novo design of functional nucleic acids for applications in biotechnology and medicine. The source code for HalluDesign-NA is available at https://github.com/MinchaoFang/HalluDesign_NA .",
+  "authors": [
+    "Minchao Fang",
+    "Zhe Wang",
+    "Longxing Cao"
+  ],
+  "date": "2026-06-11",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "DNA and Nucleic Acid Chemistry",
+  "doi": "10.64898/2026.06.10.730767",
+  "url": "https://doi.org/10.64898/2026.06.10.730767",
+  "pdf_url": null,
+  "code_url": "https://github.com/MinchaoFang/HalluDesign_NA",
+  "published_doi": null
+}

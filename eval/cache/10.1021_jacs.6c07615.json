@@ -1,0 +1,30 @@
+{
+  "id": "10.1021/jacs.6c07615",
+  "title": "A De Novo CO 2 Reductase Featuring a Cysteine-Ligated Cobalt Porphyrin Cofactor",
+  "abstract": "Modern protein design methods based on deep learning allow generation of customized protein scaffolds with diverse geometries and functionalities. Here we capitalize on these recent advances to develop hyper-thermostable de novo CO 2 reductases featuring a cobalt porphyrin IX (CoPPIX) cofactor. CoPPIX-containing enzymes were assembled in vivo through media supplementation with cobalt salts and assessed for photocatalytic CO 2 reductase activity. We identified two cysteine-ligated designs that exhibit high activity (>1000 turnovers at rates of up to 25 min –1 ) while suppressing competing hydrogen evolution pathways. A 2.1 Å crystal structure shows close agreement to the design model with the Co–Cys bond programmed as intended. This study showcases the power of computational protein design in developing artificial enzymes to activate challenging molecules such as CO 2 .",
+  "authors": [
+    "Emily J. Radley",
+    "Alessia C. Andrews",
+    "Indrek Kalvet",
+    "Yunling Deng",
+    "Elizabeth L. Bell",
+    "Colin Levy",
+    "Mary Ortmayer",
+    "Derren J. Heyes",
+    "Clare F. Megarity",
+    "Reyes Núñez‐Franco",
+    "Amy E. Hutton",
+    "Yi Lu",
+    "David Baker",
+    "Anthony P. Green"
+  ],
+  "date": "2026-07-09",
+  "source": "openalex",
+  "venue": "Journal of the American Chemical Society",
+  "subject": "Metal-Catalyzed Oxygenation Mechanisms",
+  "doi": "10.1021/jacs.6c07615",
+  "url": "https://doi.org/10.1021/jacs.6c07615",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,21 @@
+{
+  "id": "10.1021/jacs.6c04368",
+  "title": "Asymmetric Hydroamination Using Oxidative Radical Initiation in Flavin Enzymes",
+  "abstract": "heterocycles, but these reactions have proved challenging to render stereoselective. Here, we report an engineered flavin enzyme that catalyzes the formation of chiral pyrrolidines with high yield and enantioselectivity. Development of this transformation addresses a long-standing limitation in flavin photobiocatalysis: the short lifetime of the photoexcited flavin quinone has previously made it challenging to leverage this species as a photooxidant. We report that the photophysical properties of a flavin enzyme can be tuned via rational mutagenesis to obtain a variant with a long-lived excited state, and that this enzyme can be further engineered to create an efficient catalyst for asymmetric radical hydroaminations. Moreover, this work introduces two mechanistic discoveries that can be applied broadly in photobiocatalysis: (1) an exogeneous cophotocatalyst can serve as a photoprotectant for the enzymatic cofactor and (2) enantiospecific termination of chiral radical intermediates provides a mechanism to achieve stereocontrol over previously challenging classes of transformations.",
+  "authors": [
+    "Alexandra C. Brown",
+    "Carlos E. Del Angel Aguilar",
+    "Felix C. Raps",
+    "Paul S. Riehl",
+    "Todd K. Hyster"
+  ],
+  "date": "2026-06-12",
+  "source": "openalex",
+  "venue": "Journal of the American Chemical Society",
+  "subject": "Metal-Catalyzed Oxygenation Mechanisms",
+  "doi": "10.1021/jacs.6c04368",
+  "url": "https://doi.org/10.1021/jacs.6c04368",
+  "pdf_url": "https://pubs.acs.org/doi/pdf/10.1021/jacs.6c04368?ref=article_openPDF",
+  "code_url": null,
+  "published_doi": null
+}

@@ -37,6 +37,22 @@ must_any:
   - antigen
   - immunogen
   - vaccine
+  - rna
+  - mrna
+  - dna
+  - nucleic acid
+  - codon
+  - translation
+  - proteome
+  - catalys
+  - biosynthe
+  - metabol
+  - generative
+  - molecular structure
+  - display
+  - aging
+  - decoding
+  - llm
   - structure prediction
   - cryo-em
   - crystal structure
@@ -155,6 +171,13 @@ categories:
       score-based: 1.5
       normalizing flow: 1.2
       graph neural network: 1.2
+      large language model: 2.0
+      llm: 1.5
+      generative: 1.5
+      programming language: 2.0
+      generative biology: 3.0
+      foundation model: 2.0
+      prompt: 1.2
 
   - id: struct-pred
     name: Structure prediction & biomolecular representation
@@ -178,6 +201,13 @@ categories:
       docking: 1.5
       confidence metric: 1.5
       benchmark: 1.0
+      proteome: 1.5
+      microprotein: 2.5
+      conformation: 1.5
+      molecular structure: 1.5
+      codon: 2.0
+      decoding: 2.0
+      molecular structure: 2.0
 
   - id: design-method
     name: De novo design methodology
@@ -202,6 +232,8 @@ categories:
       scaffolding: 2.0
       symmetric design: 2.5
       protein generator: 2.0
+      plasmid: 1.5
+      synthetic biology: 1.5
 
   - id: function-design
     name: "Functional design: binders, therapeutics, sensors"
@@ -221,6 +253,10 @@ categories:
       peptide therapeutic: 2.0
       DNA-binding: 2.0
       neutralizing antibody: 1.5
+      antimicrobial peptide: 2.5
+      prion: 2.0
+      macrocycl: 2.0
+      nucleic acid: 2.0
 
   - id: enzyme
     name: Enzyme design & catalysis
@@ -234,10 +270,18 @@ categories:
       enzyme design: 3.0
       directed evolution: 2.5
       metalloenzyme: 2.5
-      catalytic: 2.0
+      catalys: 2.0
       cofactor: 1.5
       turnover number: 1.5
-      biocatalysis: 2.0
+      biocatalys: 2.0
+      enzyme discovery: 2.5
+      enzyme engineering: 2.5
+      orthogonal translation: 2.5
+      noncanonical amino acid: 2.5
+      non-canonical amino acid: 2.5
+      plastic degradation: 2.0
+      depolymeris: 2.0
+      depolymeriz: 2.0
 
   - id: assembly
     name: Self-assembly & nanomaterials
@@ -304,6 +348,8 @@ categories:
       budding: 1.5
       cell entry: 2.0
       tropism: 1.5
+      mrna therapeutic: 2.5
+      mrna: 1.5
 
   - id: wetlab-method
     name: Experimental methods & validation
@@ -322,3 +368,5 @@ categories:
       lab automation: 2.0
       SEC-MALS: 2.0
       nsEM: 2.0
+      display: 2.0
+      bead display: 2.5

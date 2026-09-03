@@ -2,37 +2,187 @@
 #
 # This file is the steering wheel. Whenever you find something late — a colleague forwarded
 # it, you hit it three weeks after it mattered — add it here and run `radar eval`. The
-# report tells you the exact rule that dropped it and what recovering it would cost in
+# report names the exact rule that dropped it and prices what recovering it would cost in
 # extra noise.
 #
 # Fields:
-#   doi     the DOI, or an arXiv id like 2401.12345 (use `arxiv:` or a bare id)
+#   doi     the DOI, or an arXiv id like 2401.12345
 #   expect  front_page  it should have been one of the week's top picks
-#           shortlist   it should at least have been screened and appear in the backlog
+#           shortlist   it should at least be screened and reach the backlog
 #           surfaced    it should have got past the prefilter at all
-#   note    why it mattered, and how you actually found it. Shown in the report; this is
-#           the field you will thank yourself for in six months.
+#   note    why it mattered, and how you actually found it
 #
-# Add entries freely — a gold set of five is already useful, and one of thirty is enough to
-# tune against with confidence. Judge changes by this file and by the monthly recall audit,
-# never by whether this week's front page happens to look good.
+# Judge changes by this file and by `radar audit`, never by whether this week's front page
+# happens to look good — a front page that looks good is what an overfitted filter produces.
 
 papers:
-  # --- seeds, so the harness is testable before your own list arrives -----------------
-  # These are known-relevant papers in the target problem space. Replace them with real
-  # misses as you accumulate them; they are here to prove the machinery works, not to
-  # define what "good" means.
-
-  - doi: 10.1038/s41586-023-06415-8
-    expect: front_page
-    note: "RFdiffusion. If the filter cannot surface this, something is badly wrong."
-
-  - doi: 10.1126/science.add2187
-    expect: front_page
-    note: "ProteinMPNN. Same reasoning — a canary, not a real miss."
-
-  - doi: 10.1038/s41586-024-07601-y
+  - doi: 10.64898/2026.08.26.747373
     expect: shortlist
-    note: "Designed soluble analogues of membrane proteins; King/Baker adjacent."
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/sciadv.aec8271
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10952-3
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10794-z
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.aeb0822
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1021/jacs.6c07615
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41538-026-00953-x
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41565-026-02211-3
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1101/2025.09.29.677966
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.adr3817
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10716-z
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41573-026-01459-7
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.5281/zenodo.20526590
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10678-2
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.06.22.733870
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1021/jacs.6c04368
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41557-026-02184-9
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41564-026-02408-1
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s42256-026-01250-8
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.06.10.730767
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.06.08.730848
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.aeh0665
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1021/acssynbio.6c00143
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/sciadv.aee6916
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.05.28.728566
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.04.06.716810
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.05.20.726468
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41557-018-0008-9
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1021/jacs.6c00732
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.05.19.726285
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10554-z
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10464-0
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s42256-026-01232-w
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.aea1820
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10459-x
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.aed8713
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1021/acsmaterialslett.6c00172
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1126/science.aeb5171
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1038/s41586-026-10328-7
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.04.21.719857
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.64898/2026.04.23.720277
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2606.19377"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2512.14982"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2605.28960"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2606.05474"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2602.04883"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2605.15564"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - arxiv: "2506.04490"
+    expect: shortlist
+    note: "from Test_publications.csv — exemplary, must reach the initial screen"
+  - doi: 10.1016/j.sbi.2026.103272
+    expect: shortlist
+    note: "from Test_publications.csv (Curr Opin Struct Biol) — exemplary"
 
-  # --- your real misses go below here ------------------------------------------------
+# --- deliberately excluded ----------------------------------------------------------
+#   10.1038/s43587-026-01150-x  "Delayed molecular aging ... in exercise-trained human
+#   muscle" (Nature Aging). Exercise physiology sits outside all nine categories, and
+#   OpenAlex carries no abstract for it, so the filter would be judging a title alone.
+#   Dropped by hand rather than distorting the taxonomy to catch one outlier.
+#
+# --- in the CSV but not reachable by this radar -------------------------------------
+# Left here as documentation of a real coverage gap, not as failing entries.
+#
+#   https://www.science.org/content/blog-post/benchmarking-benchmarks   (In the Pipeline blog)
+#   https://openbind.uk/news/blog-openbinds-first-release-...           (company blog)
+#   https://openreview.net/forum?id=kIe6nCvXzA                          (OpenReview only)
+#   https://biohub.ai/esm/protein/about                                 (product page)
+#
+# None of these are indexed by bioRxiv, arXiv, PubMed or OpenAlex, so no amount of filter
+# tuning will surface them. See README, "What the radar cannot reach".
+#
+# Two Cell-family PIIs could not be resolved to DOIs automatically (cell.com blocks
+# scripted access and neither Crossref nor Europe PMC indexes the PII):
+#   https://www.cell.com/cell/fulltext/S0092-8674(26)00932-3
+#   https://www.cell.com/structure/fulltext/S0969-2126(26)00104-8
+# Add them by DOI and they will be checked like the rest.

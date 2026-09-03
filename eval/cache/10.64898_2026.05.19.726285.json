@@ -1,0 +1,26 @@
+{
+  "id": "10.64898/2026.05.19.726285",
+  "title": "Accurate protein stability prediction for small domains using mega-scale experiments",
+  "abstract": "Predicting absolute protein folding stability is a long-standing challenge in biophysics, with broad applications in protein design and in understanding genetic variation and evolution. Physics-based simulations have shown limited success at predicting stability and are often computationally intractable, and machine learning methods have been constrained by the lack of sufficiently large experimental datasets. We recently introduced cDNA display proteolysis, a cell-free approach that can measure folding stability for nearly one million protein domains in parallel. Here, we applied this method to measure stability for 1.8 million diverse protein domains 60-80 amino acids in length primarily taken from the MGnify metagenomic database and spanning over 200,000 sequence families. Using this new \"MGnify Stability dataset\", we developed the predictive models SaProtΔG and ESM3ΔG, which accurately predict absolute folding stability for small domains with root mean squared error of 0.8 kcal/mol over a 6 kcal/mol range (Spearman rank correlation of 0.88). These predictors show high accuracy at predicting effects of substitutions, insertions, and deletions, successfully identify global trends toward higher stability in thermophilic organisms, and improve discrimination of stable and unstable computationally designed proteins. Our results illustrate how megascale biophysical measurements can complement existing evolutionary and structural data to enable accurate absolute stability prediction for small domains.",
+  "authors": [
+    "Yehlin Cho",
+    "Kotaro Tsuboyama",
+    "Theodore J. Litberg",
+    "Michelle D. Jung",
+    "Adunoluwa Obisesan",
+    "Wang, Qian, 1972-",
+    "Claire M. Phoumyvong",
+    "Jane Thibeault",
+    "S Ovchinnikov",
+    "Gabriel Jacob Rocklin"
+  ],
+  "date": "2026-05-20",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Protein Structure and Dynamics",
+  "doi": "10.64898/2026.05.19.726285",
+  "url": "https://doi.org/10.64898/2026.05.19.726285",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

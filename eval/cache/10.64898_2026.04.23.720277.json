@@ -1,0 +1,25 @@
+{
+  "id": "10.64898/2026.04.23.720277",
+  "title": "Zero-shot design of a de novo metalloenzyme",
+  "abstract": "Abstract The de novo design of enzymes remains a central challenge, requiring consideration of catalytic mechanism and optimization across biochemical and biophysical criteria. Here we present dEVA (design by EVolutionary Algorithm), a multi-objective protein design framework built on principles drawn from evolutionary biology. We apply dEVA to the zero-shot, de novo design of metalloenzymes by optimizing the coordination sphere of catalytic metals. We characterize a bizinc metalloenzyme that exhibits promiscuous hydrolytic activity towards both phosphomonoesters and phosphodiesters. This design achieves a rate enhancement ((k cat /K M )/k w ) up to 3 × 10 13 , comparable to characterized natural phosphatases. dEVA offers a general and modular strategy for the programmable design of protein function without dependence on natural templates or evolutionary information.",
+  "authors": [
+    "Gina El Nesr",
+    "Simon Dürr",
+    "Irimpan I. Mathews",
+    "Qi Wen",
+    "Kewei Zhao",
+    "Ritimukta Sarangi",
+    "Ursula Roethlisberger",
+    "Fanny Sunden",
+    "Po‐Ssu Huang"
+  ],
+  "date": "2026-04-24",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Metalloenzymes and iron-sulfur proteins",
+  "doi": "10.64898/2026.04.23.720277",
+  "url": "https://doi.org/10.64898/2026.04.23.720277",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

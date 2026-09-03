@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="issue-head">
-  <div class="kicker">Tuning</div>
+  <div class="label">Tuning</div>
   <h1>What the radar missed, and why</h1>
   <p class="lede">
     Two things live here. The gold set is a list of papers that <em>should</em> have
@@ -29,7 +29,7 @@
 <section class="section">
   <div class="section-head">
     <h2>Suggested changes</h2>
-    <span class="count">never applied automatically</span>
+    <span class="count label">never applied automatically</span>
   </div>
   <div id="suggestions">
     <div class="empty">Run <code>radar eval</code> to generate suggestions.</div>
@@ -43,16 +43,16 @@
   </div>
 
   <div class="tune-grid">
-    <div class="panel">
+    <div>
       <div id="sliders"></div>
-      <div style="display:flex; gap:8px; margin-top:18px; flex-wrap:wrap">
+      <div style="display:flex; gap:20px; margin-top:22px; flex-wrap:wrap">
         <button class="btn" id="copy-yaml">Copy as YAML</button>
         <button class="btn ghost" id="reset-weights">Reset</button>
       </div>
       <pre class="yaml" id="yaml-out" style="margin-top:16px"></pre>
     </div>
 
-    <div class="panel">
+    <div>
       <p class="lede" style="margin-top:0">
         Front page for the selected week under the current sliders. Green means a paper
         moved up or entered the top&nbsp;5; faded means it dropped out.

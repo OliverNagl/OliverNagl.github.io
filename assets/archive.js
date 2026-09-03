@@ -79,8 +79,8 @@
           '<div class="row-head">' +
             '<a class="row-title" href="' + esc(d.url) + '" rel="noopener">' + highlight(d.title, terms) + "</a>" +
             '<span class="row-meta">' +
-              (d.action ? '<span class="pill action-' + esc(d.action) + '">' + esc(d.action) + "</span>" : "") +
-              '<span class="cat-chip">' + esc(state.cats[d.category] || d.category) + "</span>" +
+              (d.action ? '<span class="action action-' + esc(d.action) + '">' + esc(d.action) + "</span>" : "") +
+              '<span class="cat">' + esc(state.cats[d.category] || d.category) + "</span>" +
               '<span class="row-week">' + esc(d.week) + "</span>" +
             "</span>" +
           "</div>" +
@@ -89,8 +89,8 @@
             '<span>' + esc(d.authors) + "</span>" +
             '<span class="sep">·</span><span>' + esc(d.venue) + "</span>" +
             '<span class="sep">·</span><span>' + esc(d.date) + "</span>" +
-            (d.code ? '<span class="signal has-code">◆ code</span>' : "") +
-            (d.watchlist ? '<span class="signal watchlist">★ ' + esc(d.watchlist) + "</span>" : "") +
+            (d.code ? '<span class="has-code">code</span>' : "") +
+            (d.watchlist ? '<span class="watchlist">' + esc(d.watchlist) + "</span>" : "") +
           "</div>" +
         "</article>"
       );

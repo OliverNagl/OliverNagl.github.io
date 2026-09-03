@@ -1,0 +1,17 @@
+{
+  "id": "10.5281/zenodo.20526590",
+  "title": "Practical De Novo Nanobody Discovery with Tens of Experimental Candidates",
+  "abstract": "Conventional antibody discovery relies on animal immunization or large-scale library screening,requiring experimental interrogation of millions to billions of candidates with limited programmabilityover epitope specificity and molecular properties. Recent advances in generativemodeling have demonstrated the possibility of de novo antibody design, yet achieving experimentallypractical biologics discovery at low experimental throughput across therapeuticallyrelevant targets remains challenging. Here we present MMDesign, a de novo VHH discovery platform combining generativesequence–structure optimization with multi-tier computational filtering. Starting from onlya target protein and specified epitope residues, MMDesign generates tens of thousands ofnanobody candidates through optimization over the confidence landscape of MMFold, a proprietaryantibody–antigen structure prediction model, together with a protein language model.Successive filtering stages incorporating structural reliability, sequence naturalness, and physicsbasedinterface evaluation compress the candidate pool to only tens of experimental testabledesigns per target. We evaluated MMDesign across 11 therapeutically relevant targets spanningcytokines, immune checkpoints, receptors, a viral protein, and a surface antigen. Experimentaltesting of only 14–50 candidates per target yielded confirmed binders for 10 of 11 targets (90.9%),with best measured affinities ranging from picomolar to nanomolar levels, demonstrating broadtarget-level success at experimentally tractable scale. Notably, MMDesign achieved a 50% hit rateon TNFα, a shallow trimeric cytokine target that has proven difficult for prior low-throughput denovo VHH discovery campaigns. Together, these results suggest that biologics discovery may increasingly transition from largescalestochastic screening toward programmable molecular engineering, in which computationalgeneration and prioritization substantially reduce experimental burden while enabling rapidepitope-targeted therapeutic binder discovery.",
+  "authors": [
+    "The MoleculeMind Team"
+  ],
+  "date": "2026-06-03",
+  "source": "openalex",
+  "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+  "subject": "",
+  "doi": "10.5281/zenodo.20526590",
+  "url": "https://doi.org/10.5281/zenodo.20526590",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

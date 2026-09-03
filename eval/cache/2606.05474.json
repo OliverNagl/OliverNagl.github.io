@@ -1,0 +1,23 @@
+{
+  "id": "arxiv:2606.05474",
+  "title": "AlloGen: Conformation-Selective Binder Generation with Differential State Scoring",
+  "abstract": "Protein binder design has largely optimized for affinity alone, leaving conformational selectivity unaddressed: for allosteric targets such as kinases, nuclear receptors, and GPCRs, a binder that engages both active and inactive states provides no functional specificity regardless of how tightly it binds. We introduce AlloGen, a modular framework that decouples backbone generation from a learned state-selectivity scorer $Q_θ$, an SE(3)-invariant interface graph transformer trained via a two-phase curriculum that first learns interface geometry before imposing conformational discrimination. Because $Q_θ$ is fully differentiable and generator-agnostic, it integrates with any backbone generator as a passive reranker or an active gradient-based guide without retraining. Across a diverse benchmark of proteins spanning multiple families and conformational mechanisms, AlloGen consistently identifies binders that preferentially recognize desired structural states while rejecting alternative conformations. Experimental validation on calmodulin further demonstrates that these computational selectivity signals translate to physical molecules, yielding de novo peptides that bind the desired holo conformation while exhibiting no detectable binding to the apo state. Together, these results establish conformational selectivity as a learnable property and provide a general framework for state-selective protein binder design.",
+  "authors": [
+    "Hanqun Cao",
+    "Zachary Quinn",
+    "Aastha Pal",
+    "Sumi Kimura",
+    "Jingjie Zhang",
+    "Pheng Ann Heng",
+    "Pranam Chatterjee"
+  ],
+  "date": "2026-06-03",
+  "source": "arxiv",
+  "venue": "arXiv",
+  "subject": "",
+  "doi": null,
+  "url": "https://arxiv.org/abs/2606.05474",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,27 @@
+{
+  "id": "10.1126/science.aeh0665",
+  "title": "Laser phase plate improves structure determination of small proteins by cryo-EM",
+  "abstract": "Phase plates can, in principle, overcome the poor image contrast in cryo-electron microscopy (cryo-EM) and the resulting limits on the structural reconstruction of small proteins. However, previous designs have been unstable and compromised the high-resolution signal and have thus been unable to surpass results achieved by standard cryo-EM. Here, we show that the laser phase plate (LPP), installed in a modern, custom Titan Krios microscope, enhances the resolution in single-particle reconstruction of small proteins by improving specimen-motion correction and recovery of information from the early frames, as well as particle visualization, three-dimensional classification, and alignment. These advances use standard defocus ranges and reconstruction procedures but open the door to LPP-tailored protocols, offering further improvements by leveraging the LPP demonstrated here.",
+  "authors": [
+    "Petar N. Petrov",
+    "Jessie T. Zhang",
+    "Jonathan Remis",
+    "Jeremy J. Axelrod",
+    "Hang Cheng",
+    "Eric S. Cooper",
+    "Ian K. Hicklin",
+    "Shahar Sandhaus",
+    "Cooper Schnurr",
+    "Robert M. Glaeser",
+    "Holger Mueller"
+  ],
+  "date": "2026-06-11",
+  "source": "openalex",
+  "venue": "Science",
+  "subject": "Advanced Electron Microscopy Techniques and Applications",
+  "doi": "10.1126/science.aeh0665",
+  "url": "https://doi.org/10.1126/science.aeh0665",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,19 @@
+{
+  "id": "10.1038/s41564-026-02408-1",
+  "title": "Deep learning reveals antimicrobial peptides within prions",
+  "abstract": "Prion and prion-like proteins are classically associated with protein misfolding, but amyloidogenic sequences can also participate in host defence. Here, using deep learning, we screened 19.3 million fragments from 2,897 curated prion-related proteins and identified 1,179 candidate antimicrobial peptides, which we term prionins. Among 75 synthesized prionins, 59 inhibited bacterial pathogens, 53 perturbed membranes and 2 reduced Acinetobacter baumannii infection burden in mice.",
+  "authors": [
+    "Marcelo D. T. Torres",
+    "Fangping Wan",
+    "César de la Fuente‐Núñez"
+  ],
+  "date": "2026-06-19",
+  "source": "openalex",
+  "venue": "Nature Microbiology",
+  "subject": "Antimicrobial Peptides and Activities",
+  "doi": "10.1038/s41564-026-02408-1",
+  "url": "https://doi.org/10.1038/s41564-026-02408-1",
+  "pdf_url": "https://www.nature.com/articles/s41564-026-02408-1.pdf",
+  "code_url": null,
+  "published_doi": null
+}

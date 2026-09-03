@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% from "_card.html" import card %}
+{% from "_entry.html" import entry %}
 
 {% block content %}
 
 <div class="issue-head">
-  <div class="kicker">{{ profile_name }}</div>
-  <h1>{{ issue.week.replace('-W', ' · week ') if issue else 'No issue yet' }}</h1>
+  <div class="label">{{ profile_name }}</div>
+  <h1>{% if issue %}Week {{ issue.week.split('-W')[1]|int }}{% else %}No issue yet{% endif %}</h1>
   {% if issue %}
     <div class="issue-dates">
       {{ issue.window.from_.strftime('%-d %B') }} – {{ issue.window.to.strftime('%-d %B %Y') }}
@@ -23,13 +23,10 @@
    to rely on, so staleness has to be visible on the surface you actually read. #}
 {% if banner %}
 <div class="banner {{ banner.level }}">
-  <span aria-hidden="true">{{ '✓' if banner.level == 'ok' else '!' }}</span>
-  <div>
-    {{ banner.message }}
-    {% if banner.details %}
-      <ul>{% for d in banner.details %}<li>{{ d }}</li>{% endfor %}</ul>
-    {% endif %}
-  </div>
+  {{ banner.message }}
+  {% if banner.details %}
+    <ul>{% for d in banner.details %}<li>{{ d }}</li>{% endfor %}</ul>
+  {% endif %}
 </div>
 {% endif %}
 
@@ -43,11 +40,9 @@
 <section class="section">
   <div class="section-head">
     <h2>Top {{ issue.front_page|length }}</h2>
-    <span class="count">max {{ max_per_category }} per category</span>
+    <span class="count label">max {{ max_per_category }} per category</span>
   </div>
-  <div class="cards">
-    {% for s in issue.front_page %}{{ card(s, cat_names) }}{% endfor %}
-  </div>
+  {% for s in issue.front_page %}{{ entry(s, cat_names) }}{% endfor %}
 </section>
 {% endif %}
 
@@ -55,9 +50,9 @@
 <section class="section blindspot">
   <div class="section-head">
     <h2>Blindspot</h2>
-    <span class="count">from the rejected pool</span>
+    <span class="count label">from the rejected pool</span>
   </div>
-  <div class="cards">{{ card(issue.blindspot, cat_names, blindspot=true) }}</div>
+  {{ entry(issue.blindspot, cat_names, blindspot=true) }}
 </section>
 {% endif %}
 
@@ -65,7 +60,7 @@
 <section class="section">
   <div class="section-head">
     <h2>Now published</h2>
-    <span class="count">{{ issue.now_published|length }}</span>
+    <span class="count label">{{ issue.now_published|length }}</span>
   </div>
   <ul class="strip">
     {% for n in issue.now_published %}

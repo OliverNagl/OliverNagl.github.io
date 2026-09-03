@@ -1,0 +1,30 @@
+{
+  "id": "10.1126/science.aeb5171",
+  "title": "Toward life with a 19–amino acid alphabet through generative artificial intelligence design",
+  "abstract": "Because all known living organisms are made from at least 20 canonical amino acids, the feasibility of life using a more simplified alphabet remains unclear. In this work, we leveraged computational design and synthetic biology to explore building a cell from a 19–amino acid alphabet. Initial analyses suggested that isoleucine (Ile) may be dispensable, which we confirmed by directly replacing Ile residues in essential proteins in Escherichia coli . Critically, protein language models and structure-based models were necessary to redesign functional Ile-less proteins in most cases. We systematically replaced all 382 Ile residues from the ribosome and combined 21 redesigned subunits at a native genomic locus to produce a viable, evolutionarily stable cell. This work provides a roadmap to create the first 19–amino acid organism since early evolution.",
+  "authors": [
+    "Liyuan Liu",
+    "Charlotte Rochereau",
+    "Simon Kozlov",
+    "Guillaume Urtecho",
+    "X.Y. Liu",
+    "Jiahui Zhao",
+    "Jasmine Wang",
+    "Yiming Huang",
+    "Yiming Qu",
+    "Zetian Zhang",
+    "Tomasz Blazejewski",
+    "Avi Swartz",
+    "S Ovchinnikov",
+    "Harris H. Wang"
+  ],
+  "date": "2026-04-30",
+  "source": "openalex",
+  "venue": "Science",
+  "subject": "RNA and protein synthesis mechanisms",
+  "doi": "10.1126/science.aeb5171",
+  "url": "https://doi.org/10.1126/science.aeb5171",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

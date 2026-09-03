@@ -1,0 +1,28 @@
+{
+  "id": "10.1101/2025.09.29.677966",
+  "title": "De-novo design of a random protein walker",
+  "abstract": "Abstract Molecular machines hold great potential. Design of static monomeric and oligomeric protein structures has advanced tremendously, but few dynamic protein systems have been designed. Here we present the design and characterization of a random protein walker that diffuses along a designed protein track. For the track, we designed micro-meter long fibres and developed a method to rigidly decorate them with arbitrary proteins. The walkers consist of homo-oligomers that reversibly bind the track using heterodimeric feet; we tested multiple heterodimer interfaces for reversibility and designed six walkers with different numbers of feet. Cryo-EM experiments confirmed the structure of the track and walkers. We performed detailed single molecule tracking and kinetics characterisation and found that the walkers with more feet diffuse along the track faster. The system represents a tuneable starting point for future powered protein molecular robots.",
+  "authors": [
+    "Liza Ulčakar",
+    "Hao Shen",
+    "Eva Rajh",
+    "Tadej Satler",
+    "Federico Olivieri",
+    "Joseph L. Watson",
+    "Yang Hsia",
+    "Justin Decarreau",
+    "Eric M. Lynch",
+    "Justin M. Kollman",
+    "David Baker",
+    "Ajasja Ljubetič"
+  ],
+  "date": "2025-10-01",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Bacteriophages and microbial interactions",
+  "doi": "10.1101/2025.09.29.677966",
+  "url": "https://doi.org/10.1101/2025.09.29.677966",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -6,7 +6,7 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 21:39:52 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 22:17:31 +0000</lastBuildDate>
     <item>
       <title>Design of peptides with non-canonical amino acids using flow matching.</title>
       <link>https://doi.org/10.1093/bioinformatics/btag654</link>
@@ -18,14 +18,24 @@
 Lee JS, Kim PM · Bioinformatics (Oxford, England) · 31 Aug · struct-pred</description>
     </item>
     <item>
-      <title>Efficient matching of predicted protein structures into high to intermediate resolution CryoEM maps with Slice’N’Dice and ABCFold</title>
-      <link>https://doi.org/10.17638/03199430</link>
-      <guid isPermaLink="false">2026-W36:10.17638/03199430</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <title>Bridging linguistic reasoning and biophysical reality toward peptide engineering via instruction-tuned language modeling.</title>
+      <link>https://doi.org/10.1093/bioinformatics/btag618</link>
+      <guid isPermaLink="false">2026-W36:10.1093/bioinformatics/btag618</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
       <category>struct-pred</category>
-      <description>must_any hit 'protein', lexical score 14.5
+      <description>must_any hit 'protein', lexical score 12.5
 
-Luc Elliott · University of Liverpool · 1 Sep · struct-pred</description>
+Yang K, …, Li P · Bioinformatics (Oxford, England) · 31 Aug · struct-pred</description>
+    </item>
+    <item>
+      <title>CoMPASS: Collaborative Molecular Property Prediction via Adaptive Small-Large Model Synergy</title>
+      <link>https://arxiv.org/abs/2608.30674v1</link>
+      <guid isPermaLink="false">2026-W36:arxiv:2608.30674v1</guid>
+      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>general-CS cs.LG: 'graph neural network' together with domain term 'molecul'
+
+Wentao Li, …, Xiaonan Wang · arXiv · 31 Aug · ml-method</description>
     </item>
     <item>
       <title>Lenacapavir allosterically remodels the HIV-1 capsid.</title>
@@ -38,24 +48,14 @@ Luc Elliott · University of Liverpool · 1 Sep · struct-pred</description>
 Dos Santos NFB, …, Pornillos O · Science advances · 2 Sep · assembly</description>
     </item>
     <item>
-      <title>Advances and Challenges in Nanodelivery Systems for RNA Vaccines.</title>
-      <link>https://doi.org/10.1021/acsnano.6c10327</link>
-      <guid isPermaLink="false">2026-W36:10.1021/acsnano.6c10327</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
+      <title>Creating bottom-up RNA transfer vehicles from synthetic protein assemblies.</title>
+      <link>https://doi.org/10.1038/s41586-026-10952-3</link>
+      <guid isPermaLink="false">2026-W36:10.1038/s41586-026-10952-3</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
       <category>assembly</category>
-      <description>must_any hit 'virus', lexical score 7.5
+      <description>hard-include phrase: 'protein design'
 
-Li H, …, Tong A · ACS nano · 1 Sep · assembly</description>
-    </item>
-    <item>
-      <title>De novo pan-rhodamine binders for fluorescence microscopy from mammalian cells to extremophiles.</title>
-      <link>https://doi.org/10.1016/j.cell.2026.08.007</link>
-      <guid isPermaLink="false">2026-W36:10.1016/j.cell.2026.08.007</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>hard-include phrase: 'de novo design'
-
-Chen Y, …, Huang B · Cell · 1 Sep · design-method</description>
+Schuhmacher MK, …, Wurst W · Nature · 2 Sep · assembly</description>
     </item>
     <item>
       <title>De Novo Design of a Protein Binder to Probe Gas Channel and Enhance the Oxygen Tolerance of [NiFe]‐Hydrogenase</title>
@@ -68,6 +68,16 @@ Chen Y, …, Huang B · Cell · 1 Sep · design-method</description>
 Xuan Sun, …, Liyun Zhang · Angewandte Chemie International Edition · 26 Aug · design-method</description>
     </item>
     <item>
+      <title>De novo design of RNA pseudoknots with deep learning.</title>
+      <link>https://doi.org/10.1126/science.aeg6829</link>
+      <guid isPermaLink="false">2026-W35:10.1126/science.aeg6829</guid>
+      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>watchlist author: Baker D
+
+Townley J, …, Das R · Science (New York, N.Y.) · 27 Aug · ml-method</description>
+    </item>
+    <item>
       <title>Programmable De Novo Design of Mesoporous Protein Crystal Frameworks</title>
       <link>https://doi.org/10.64898/2026.08.25.747085</link>
       <guid isPermaLink="false">2026-W35:10.64898/2026.08.25.747085</guid>
@@ -78,6 +88,16 @@ Xuan Sun, …, Liyun Zhang · Angewandte Chemie International Edition · 26 Aug 
 Li, Z., …, Baker, D. · bioRxiv · 26 Aug · design-method</description>
     </item>
     <item>
+      <title>LNP-CpG: deploy the self-adjuvant role of mRNA vaccines</title>
+      <link>https://doi.org/10.64898/2026.08.19.745633</link>
+      <guid isPermaLink="false">2026-W35:10.64898/2026.08.19.745633</guid>
+      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
+      <category>immunogen</category>
+      <description>must_any hit 'virus', lexical score 14.5
+
+Luan, N., …, Liu, C. · bioRxiv · 23 Aug · immunogen</description>
+    </item>
+    <item>
       <title>Assessment of generative de novo peptide design methods for G protein-coupled receptors</title>
       <link>https://doi.org/10.1371/journal.pone.0355549</link>
       <guid isPermaLink="false">2026-W35:10.1371/journal.pone.0355549</guid>
@@ -86,26 +106,6 @@ Li, Z., …, Baker, D. · bioRxiv · 26 Aug · design-method</description>
       <description>hard-include phrase: 'rfdiffusion'
 
 Hannes Junker, Clara T. Schoeder · PLoS ONE · 27 Aug · struct-pred</description>
-    </item>
-    <item>
-      <title>Why viruses build icosahedra: a quantitative framework for capsid architecture and nanocage design</title>
-      <link>https://doi.org/10.64336/001c.168714</link>
-      <guid isPermaLink="false">2026-W35:10.64336/001c.168714</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>hard-include phrase: 'nanocage'
-
-Ethan Chang · Journal of High School Science · 27 Aug · assembly</description>
-    </item>
-    <item>
-      <title>FoldKit: A Python library for efficient storage and retrieval of co-folding predictions</title>
-      <link>https://arxiv.org/abs/2608.28788v1</link>
-      <guid isPermaLink="false">2026-W35:arxiv:2608.28788v1</guid>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>hard-include phrase: 'de novo protein'
-
-Jonathan A. Levine, …, Benjamin D. Greenbaum · arXiv · 28 Aug · struct-pred</description>
     </item>
   </channel>
 </rss>

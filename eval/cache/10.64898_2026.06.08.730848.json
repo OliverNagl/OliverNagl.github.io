@@ -1,0 +1,23 @@
+{
+  "id": "10.64898/2026.06.08.730848",
+  "title": "Deep learning based design of buried hydrogen bond networks with HBDesigner",
+  "abstract": "Accurate design of hydrogen-bonding (H-bonding) interactions is a longstanding goal in protein design, as they can facilitate specific protein-protein interactions while improving the solubility of the proteins in the unbound state. Despite this, computational design of H-bond networks remains underexplored in the deep learning era. Here, we present HBDesigner, a novel algorithm for H-bond network design. Through a combination of deep learning-based sampling and atomistic energy scoring, HBDesigner outperforms existing tools in designing connected H-bond networks onto protein scaffolds. We demonstrate the usefulness of HBDesigner by creating monomeric proteins with buried polar interactions and homodimers with extended interface H-bond networks, and by installing specificity into a family of homologous heterodimers where prior design tools fail to do so. The ability to design H-bond networks into arbitrary protein scaffolds should be broadly useful for a wide range of design applications.",
+  "authors": [
+    "Henry Dieckhaus",
+    "Brock T. Harvey",
+    "Tomiris Mulikova",
+    "Jessica T Horenstein",
+    "Nathan I. Nicely",
+    "Nicholas Z. Randolph",
+    "Brian Kuhlman"
+  ],
+  "date": "2026-06-11",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Protein Structure and Dynamics",
+  "doi": "10.64898/2026.06.08.730848",
+  "url": "https://doi.org/10.64898/2026.06.08.730848",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

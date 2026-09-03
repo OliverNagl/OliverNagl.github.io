@@ -1,0 +1,22 @@
+{
+  "id": "arxiv:2605.15564",
+  "title": "CrystalBoltz: End-to-End Protein Structure Determination via Experiment-Guided Diffusion for X-Ray Crystallography",
+  "abstract": "Generative models trained on public databases of protein structures, most of which have been determined by X-ray crystallography, now provide powerful priors for structure prediction. However, they are not readily conditioned on the measurements from a new crystallographic experiment, limiting their use for X-ray structure determination. In crystallography, the measured structure-factor amplitudes do not by themselves determine an electron density map or atomic structure because the associated phases are unobserved and must be inferred. Structure determination therefore remains an inverse problem in which candidate models must be both structurally plausible and consistent with measured diffraction data, often requiring substantial manual refinement by human experts. Emerging methods aim to incorporate experimental information more directly into predictive and refinement workflows. We present CrystalBoltz, a generative framework that casts crystallographic refinement as Bayesian inference over atomic structures and operates directly on structure-factor amplitudes. CrystalBoltz moves from unguided generation with a pre-trained prior over protein structures to experiment-guided posterior sampling, followed by atomic coordinate and B-factor refinement. Across multiple protein crystallography datasets, CrystalBoltz attains lower coordinate RMSD and lower R-factors than the strongest baselines considered, while reducing runtime by a factor of 33 relative to existing experimentally guided refinement.",
+  "authors": [
+    "Minseo Kim",
+    "Huanghao Mai",
+    "Jay Shenoy",
+    "Alec Follmer",
+    "Gordon Wetzstein",
+    "Frederic Poitevin"
+  ],
+  "date": "2026-05-15",
+  "source": "arxiv",
+  "venue": "arXiv",
+  "subject": "",
+  "doi": null,
+  "url": "https://arxiv.org/abs/2605.15564",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

@@ -1,0 +1,52 @@
+{#- One entry in the reading column. No container: a rule below it and nothing else.
+    Reading order is fixed — what to do with it, the title, who and where, then why. -#}
+{% macro entry(s, cat_names, blindspot=false) %}
+<article class="entry" style="--cat: var(--c-{{ s.category }}, var(--muted));">
+  <div class="entry-top">
+    {% if s.action %}<span class="action action-{{ s.action }}">{{ s.action }}</span>{% endif %}
+    <span class="cat">{{ cat_names.get(s.category, s.category) }}</span>
+    <span class="right">
+      {% if s.watchlist_hit %}<span class="watchlist">{{ s.watchlist_hit }}</span>{% endif %}
+      {% if s.links.code %}<span class="has-code">code</span>{% endif %}
+      <span class="score" title="Ranking score">{{ '%.2f'|format(s.score) }}</span>
+    </span>
+  </div>
+
+  <h3><a href="{{ s.links.doi or s.links.url }}" rel="noopener">{{ s.title }}</a></h3>
+
+  <p class="byline">
+    {% if s.authors_short %}{{ s.authors_short }}<span class="sep">·</span>{% endif %}
+    {{ s.venue }}<span class="sep">·</span>{{ s.date.strftime('%-d %b') }}
+  </p>
+
+  {% if s.why %}
+    <p class="why">{{ s.why }}</p>
+  {% elif s.reason %}
+    <p class="why lexical">{{ s.reason }}</p>
+  {% endif %}
+
+  {% if blindspot and s.connection %}
+    <p class="connection">{{ s.connection }}</p>
+  {% endif %}
+
+  {% if s.touches %}
+    <p class="touches">
+      <span class="label">touches</span>
+      {% for t in s.touches %}
+        <a href="archive.html?q={{ t|urlencode }}">{{ t }}</a>{% if not loop.last %}<span class="sep">·</span>{% endif %}
+      {% endfor %}
+    </p>
+  {% endif %}
+
+  <div class="links">
+    {% if s.links.doi %}<a href="{{ s.links.doi }}" rel="noopener">doi</a>{% endif %}
+    {% if s.links.pdf %}<a href="{{ s.links.pdf }}" rel="noopener">pdf</a>{% endif %}
+    {% if s.links.code %}<a href="{{ s.links.code }}" rel="noopener">code</a>{% endif %}
+    {% if blindspot and s.confidence %}<span class="label">confidence {{ s.confidence }}</span>{% endif %}
+    <span class="spacer"></span>
+    {% if s.abstract %}
+      <details class="abstract"><summary>abstract</summary><p>{{ s.abstract }}</p></details>
+    {% endif %}
+  </div>
+</article>
+{% endmacro %}

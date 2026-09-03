@@ -1,0 +1,20 @@
+{
+  "id": "10.1126/sciadv.aee6916",
+  "title": "PlasmidGPT: A generative framework for plasmid analysis and generation",
+  "abstract": "We introduce PlasmidGPT, a generative language model pretrained on 153,208 engineered plasmid sequences from Addgene. PlasmidGPT learns informative sequence embeddings that enable visualization of research topics across laboratories and analysis of plasmid diversity across vector types. Leveraging these embeddings, PlasmidGPT accurately predicts features of engineered plasmids and achieves state-of-the-art performance in lab-of-origin prediction. The learned representations also generalize to natural plasmids, enabling host taxonomy prediction at both the phylum and genus level. Moreover, PlasmidGPT enables controlled generation of functional plasmid sequences by using either a predefined input sequence or specified design constraints, producing outputs that recapitulate the part co-occurrence and synteny of real plasmids.",
+  "authors": [
+    "Bin Shao",
+    "Zequan Han",
+    "Zeyu Liang",
+    "Yi‐Xin Huo"
+  ],
+  "date": "2026-05-27",
+  "source": "openalex",
+  "venue": "Science Advances",
+  "subject": "Genomics and Phylogenetic Studies",
+  "doi": "10.1126/sciadv.aee6916",
+  "url": "https://doi.org/10.1126/sciadv.aee6916",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

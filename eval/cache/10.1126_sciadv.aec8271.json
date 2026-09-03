@@ -1,0 +1,32 @@
+{
+  "id": "10.1126/sciadv.aec8271",
+  "title": "Programmable protein degraders enable selective knockdown of pathogenic β-catenin subpopulations in vitro and in vivo",
+  "abstract": "Aberrant activation of Wnt signaling results in unregulated accumulation of cytosolic β-catenin, which subsequently enters the nucleus and promotes transcription of genes that contribute to cellular proliferation and malignancy. Here, we sought to eliminate pathogenic β-catenin from the cytosol using designer ubiquibodies (uAbs), chimeric proteins composed of an E3 ubiquitin ligase and a target-binding domain that redirect intracellular proteins to the proteasome for degradation. To accelerate uAb development, we leveraged a protein language model-driven algorithm called SaLT&PepPr to computationally design \"guide\" peptides with affinity for β-catenin, which were subsequently fused to the catalytic domain of a human E3 called carboxyl terminus of Hsp70-interacting protein. Expression of the resulting peptide-guided uAbs in colorectal cancer cells led to the identification of several designs that greatly reduced the abnormally stable pool of free β-catenin in the cytosol and nucleus while preserving the normal membrane-associated subpopulation. This selective knockdown of pathogenic β-catenin suppressed Wnt/β-catenin signaling and impaired tumor cell survival and proliferation. Furthermore, one of the best degraders selectively decreased cytosolic but not membrane-associated β-catenin levels in livers of BALB/c mice following delivery as a lipid nanoparticle-encapsulated mRNA. Collectively, these findings reveal the unique ability of uAbs to selectively deplete abnormal proteins in vitro and in vivo and open the door to peptide-programmable biologic modulators of other disease-causing proteins.",
+  "authors": [
+    "Tianzheng Ye",
+    "Azmain Alamgir",
+    "Cara M. Robertus",
+    "Darianna Colina",
+    "Connor Monticello",
+    "Thomas Connor Donahue",
+    "Chandra Kanth Bandi",
+    "Lauren Hong",
+    "Sophia Vincoff",
+    "Shrey Goel",
+    "Kieu Lam",
+    "James Heyes",
+    "David Putnam",
+    "Christopher A. Alabi",
+    "Pranam Chatterjee",
+    "Matthew P. DeLisa"
+  ],
+  "date": "2026-08-28",
+  "source": "openalex",
+  "venue": "Science Advances",
+  "subject": "Wnt/β-catenin signaling in development and cancer",
+  "doi": "10.1126/sciadv.aec8271",
+  "url": "https://doi.org/10.1126/sciadv.aec8271",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}

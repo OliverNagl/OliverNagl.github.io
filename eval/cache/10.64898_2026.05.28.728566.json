@@ -1,0 +1,21 @@
+{
+  "id": "10.64898/2026.05.28.728566",
+  "title": "Amplicon/Protein Bead Display enables quantitative in vitro biochemistry at scale",
+  "abstract": "Abstract Scalable methods for producing and characterizing protein libraries are essential for generating standardized datasets needed to train models linking sequence to function. Here, we present Amplicon/Protein Bead Display (APB-Display), which expresses and purifies >100,000 protein variants in vitro in 1 day. APB-Display uses particle-templated emulsification to generate libraries of hydrogel beads that covalently display many copies of a given protein variant and its encoding DNA. By incubating beads with fluorescently-labeled ligands, sorting, and sequencing to generate titration curves (APB-TiteSeq), we simultaneously quantified expression levels and binding affinities ( K d s) for >18,000 FLAG epitope variants interacting with M2 anti-FLAG antibody in 3 days, revealing chemistry-dependent epistasis between positions 4 and 5. Single-concentration binding measurements (APB-SortSeq) paired with neural network denoising further returned quantitative affinities for >88,000 variants. APB-Display requires only standard laboratory equipment and access to a FACS sorter, providing an accessible platform for quantitative in vitro biochemistry at scale.",
+  "authors": [
+    "Daria R Passow",
+    "Anvita Gupta",
+    "Samuel Thompson",
+    "Anshul Kundaje",
+    "Polly M. Fordyce"
+  ],
+  "date": "2026-05-30",
+  "source": "openalex",
+  "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+  "subject": "Advanced Biosensing Techniques and Applications",
+  "doi": "10.64898/2026.05.28.728566",
+  "url": "https://doi.org/10.64898/2026.05.28.728566",
+  "pdf_url": null,
+  "code_url": null,
+  "published_doi": null
+}
