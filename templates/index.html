@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% from "_card.html" import card %}
+
+{% block content %}
+
+<div class="issue-head">
+  <div class="kicker">{{ profile_name }}</div>
+  <h1>{{ issue.week.replace('-W', ' · week ') if issue else 'No issue yet' }}</h1>
+  {% if issue %}
+    <div class="issue-dates">
+      {{ issue.window.from_.strftime('%-d %B') }} – {{ issue.window.to.strftime('%-d %B %Y') }}
+    </div>
+    <div class="funnel">
+      <span><b>{{ '{:,}'.format(issue.stats.fetched) }}</b> fetched</span><span class="sep">→</span>
+      <span><b>{{ '{:,}'.format(issue.stats.new) }}</b> new</span><span class="sep">→</span>
+      <span><b>{{ issue.stats.shortlisted }}</b> screened</span><span class="sep">→</span>
+      <span><b>{{ issue.front_page|length }}</b> picks</span>
+    </div>
+  {% endif %}
+</div>
+
+{# The health beacon. Under a scheduled Routine there is no failed-workflow notification
+   to rely on, so staleness has to be visible on the surface you actually read. #}
+{% if banner %}
+<div class="banner {{ banner.level }}">
+  <span aria-hidden="true">{{ '✓' if banner.level == 'ok' else '!' }}</span>
+  <div>
+    {{ banner.message }}
+    {% if banner.details %}
+      <ul>{% for d in banner.details %}<li>{{ d }}</li>{% endfor %}</ul>
+    {% endif %}
+  </div>
+</div>
+{% endif %}
+
+{% if not issue %}
+  <div class="empty" style="margin-top:32px">
+    No issue has been generated yet. Run <code>radar run --no-llm</code> to produce one.
+  </div>
+{% else %}
+
+{% if issue.front_page %}
+<section class="section">
+  <div class="section-head">
+    <h2>Top {{ issue.front_page|length }}</h2>
+    <span class="count">max {{ max_per_category }} per category</span>
+  </div>
+  <div class="cards">
+    {% for s in issue.front_page %}{{ card(s, cat_names) }}{% endfor %}
+  </div>
+</section>
+{% endif %}
+
+{% if issue.blindspot %}
+<section class="section blindspot">
+  <div class="section-head">
+    <h2>Blindspot</h2>
+    <span class="count">from the rejected pool</span>
+  </div>
+  <div class="cards">{{ card(issue.blindspot, cat_names, blindspot=true) }}</div>
+</section>
+{% endif %}
+
+{% if issue.now_published %}
+<section class="section">
+  <div class="section-head">
+    <h2>Now published</h2>
+    <span class="count">{{ issue.now_published|length }}</span>
+  </div>
+  <ul class="strip">
+    {% for n in issue.now_published %}
+      <li>
+        <a href="https://doi.org/{{ n.journal_doi }}" rel="noopener">{{ n.title }}</a>
+        {% if n.first_seen_week %} — first seen {{ n.first_seen_week }}{% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
+
+{% if issue.backlog %}
+<section class="section">
+  <details class="backlog">
+    <summary>Backlog · {{ issue.backlog_count }} papers by category</summary>
+    {% for cat, items in issue.backlog.items() %}
+      <div class="backlog-cat" style="--cat: var(--c-{{ cat }}, var(--muted));">
+        <h4>{{ cat_names.get(cat, cat) }} ({{ items|length }})</h4>
+        {% for s in items %}
+          <div class="backlog-row">
+            <a href="{{ s.links.doi or s.links.url }}" rel="noopener">{{ s.title }}</a>
+            <span class="r">{{ s.reason }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </details>
+</section>
+{% endif %}
+
+{% endif %}
+
+{% endblock %}

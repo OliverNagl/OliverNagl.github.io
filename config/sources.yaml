@@ -1,0 +1,101 @@
+# Feeds and per-source coverage floors.
+# expected_min is a WEEKLY floor: falling below it flags the run as degraded and puts a
+# banner on the front page. Silent under-coverage is the real danger, not a crash (spec §9).
+
+biorxiv:
+  enabled: true
+  server: biorxiv
+  # Verified live against api.biorxiv.org. Page size is 30 records, not 100.
+  categories: [bioengineering, biochemistry, biophysics, synthetic_biology,
+               molecular_biology, microbiology, immunology, bioinformatics]
+  expected_min: 300
+
+medrxiv:
+  enabled: true
+  server: medrxiv
+  categories: [infectious_diseases, allergy_and_immunology, public_and_global_health]
+  expected_min: 20
+
+arxiv:
+  enabled: true
+  full_categories:  [q-bio.BM, q-bio.QM, cond-mat.soft, physics.bio-ph]
+  gated_categories: [cs.LG, cs.AI, stat.ML]     # require an ml-method boost hit to survive
+  max_results_per_category: 2000   # the gate keeps real volume far below this
+  expected_min: 80
+
+pubmed:
+  enabled: false          # phase 2
+  journals:
+    - Nature
+    - Science
+    - Cell
+    - PNAS
+    - Science Advances
+    - eLife
+    - Nature Methods
+    - Nature Biotechnology
+    - Nature Chemical Biology
+    - Nature Structural & Molecular Biology
+    - Nature Nanotechnology
+    - Nature Communications
+    - Journal of the American Chemical Society
+    - ACS Nano
+    - ACS Synthetic Biology
+    - Angewandte Chemie
+    - Protein Science
+    - Structure
+    - Nucleic Acids Research
+    - Bioinformatics
+    - npj Vaccines
+    - Cell Host & Microbe
+    - Immunity
+    - Molecular Therapy
+    - Journal of Virology
+  expected_min: 150
+
+chemrxiv:
+  enabled: false          # phase 2
+  expected_min: 20
+
+openalex:
+  enabled: false          # phase 2 — supplement + citation counts for the recall audit
+  mailto: olnagl@ethz.ch
+
+# Papers by these people bypass the prefilter entirely. Single best precision/effort
+# ratio in the system (spec §2). Matched on normalised surname + first initial.
+watchlist_authors:
+  - Baker D
+  - King NP
+  - Veesler D
+  - Ovchinnikov S
+  - Bhardwaj G
+  - DiMaio F
+  - Kortemme T
+  - Correia BE
+  - Ferruz N
+  - AlQuraishi M
+  - Zhong ED
+  - Hilvert D
+  - Praetorius F
+  - Woolfson DN
+  - Yeates TO
+  - Hsia Y
+  - Wicky BIM
+  - Watson JL
+  - Dauparas J
+  - Anishchenko I
+  - Twarock R
+  - Hagan MF
+  - Zandi R
+  - Sundquist WI
+  - Schief WR
+  - Ward AB
+
+# Guaranteed representation in the blindspot sample (spec §4.2). Soft-matter
+# self-assembly physics is a standing blindspot for anyone working on capsids.
+blindspot_quota:
+  arxiv:cond-mat.soft: 25
+  arxiv:physics.bio-ph: 20
+  arxiv:q-bio.QM: 10
+  biorxiv_other: 40
+blindspot_sample_size: 150

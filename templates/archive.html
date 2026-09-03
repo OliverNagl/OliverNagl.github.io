@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="issue-head">
+  <div class="kicker">Full archive</div>
+  <h1>Search everything the radar has seen</h1>
+  <div class="issue-dates">
+    Every pick, blindspot and backlog entry across every week. Press <kbd>/</kbd> to search.
+  </div>
+</div>
+
+<div class="search-bar">
+  <input id="q" type="search" placeholder="e.g. pseudosymmetric two-component assembly"
+         autocomplete="off" spellcheck="false" aria-label="Search the archive">
+  <span class="search-count" id="count"></span>
+</div>
+
+<div class="filters" id="filters">
+  <div class="filter-row" id="cat-filters" role="group" aria-label="Filter by category"></div>
+  <div class="filter-row">
+    <button class="chip" data-flag="front">front page only</button>
+    <button class="chip" data-flag="code">has code</button>
+    <button class="chip" data-flag="watchlist">watchlist author</button>
+    <select class="chip select" id="week-filter" aria-label="Filter by week">
+      <option value="">all weeks</option>
+    </select>
+    <button class="chip reset" id="reset">reset</button>
+  </div>
+</div>
+
+<div id="results" class="results" aria-live="polite"></div>
+
+<noscript>
+  <div class="empty" style="margin-top:32px">
+    Archive search needs JavaScript. The weekly digests are also committed as plain
+    markdown under <code>digests/</code>, which is greppable and readable without it.
+  </div>
+</noscript>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="assets/search.js"></script>
+<script src="assets/archive.js"></script>
+{% endblock %}

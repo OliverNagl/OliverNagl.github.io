@@ -1,0 +1,324 @@
+# The taxonomy and every lexical rule. Retargeting the radar = editing this file.
+# All matching is case-insensitive substring matching on "title + abstract".
+# Substrings are deliberate: "self-assembl" catches assembly/assembling/assembled.
+
+# Tier 1 — skips the prefilter entirely. Keep this list short and specific.
+hard_include_phrases:
+  - de novo design
+  - de novo protein
+  - protein nanoparticle
+  - nanocage
+  - nanoparticle immunogen
+  - designed protein assembly
+  - RFdiffusion
+  - ProteinMPNN
+  - AlphaFold3
+  - AlphaProteo
+  - protein design
+
+# Tier 2 — a record needs at least one hit here to survive. Broad on purpose:
+# recall first, precision second (spec §0.1).
+must_any:
+  - protein
+  - peptide
+  - enzyme
+  - antibody
+  - nanobody
+  - capsid
+  - virus
+  - viral
+  - nanoparticle
+  - self-assembl
+  - assembly
+  - oligomer
+  - fold
+  - binder
+  - epitope
+  - antigen
+  - immunogen
+  - vaccine
+  - structure prediction
+  - cryo-em
+  - crystal structure
+  - molecular dynamics
+  - diffusion model
+  - generative model
+  - flow matching
+  - representation learning
+  - equivariant
+  - language model
+  - deep learning
+  - machine learning
+
+# Tier 4 — excluded from the shortlist, KEPT in the blindspot pool (spec §4).
+hard_exclude:
+  - randomized controlled trial
+  - randomised controlled trial
+  - epidemiological surveillance
+  - seroprevalence survey
+  - crop yield
+  - agronomic
+  - soil microbiome
+  - dietary intervention
+  - questionnaire study
+  - retrospective cohort
+  - meta-analysis of trials
+
+# Journal tiers feed the venue_tier ranking term (0.0 - 1.0).
+venue_tiers:
+  1.0: [Nature, Science, Cell]
+  0.8: [Nature Methods, Nature Biotechnology, Nature Chemical Biology, Nature Nanotechnology,
+        Nature Structural & Molecular Biology, Nature Materials, Immunity, Molecular Cell]
+  0.6: [Nature Communications, Science Advances, PNAS, eLife, JACS,
+        Journal of the American Chemical Society, ACS Nano, Angewandte Chemie]
+  0.4: [Protein Science, Structure, Nucleic Acids Research, Bioinformatics, ACS Synthetic Biology,
+        npj Vaccines, Cell Host & Microbe, Molecular Therapy, Journal of Virology, PLoS Computational Biology]
+  0.2: [bioRxiv, medRxiv, arXiv, ChemRxiv]
+
+# The general-CS gate (cs.LG / cs.AI / stat.ML / cs.CV cross-lists). Volume there is ~16x
+# the rest of arXiv combined and most of it is not about molecules at all. Measured: with a
+# single flat term list, 177 of 221 general-CS records cleared — useless as a filter.
+#
+# So a term alone is not enough unless it is decisive:
+#   strong            transferable generative-modelling vocabulary; sufficient on its own
+#   weak_needs_domain generic ML vocabulary; needs a domain term in the same abstract
+#   domain            what makes an ML paper reach a protein-design radar at all
+general_cs_gate:
+  strong:
+    - flow matching
+    - discrete diffusion
+    - latent diffusion
+    - equivariant
+    - SE(3)
+    - classifier-free guidance
+    - normalizing flow
+    - score-based generative
+    - diffusion model
+  weak_needs_domain:
+    - test-time
+    - inference-time
+    - denoising
+    - graph neural network
+    - active learning
+    - uncertainty quantification
+    - scaling law
+    - preference optimization
+    - preference optimisation
+    - representation learning
+    - transformer
+    - attention
+  domain:
+    - protein
+    - peptide
+    - amino acid
+    - molecul
+    - chemistr
+    - drug
+    - ligand
+    - biolog
+    - biomolecul
+    - crystal
+    - conformation
+    - docking
+    - rna
+    - mrna
+    - dna
+    - antibod
+    - enzyme
+    - material
+
+categories:
+  - id: ml-method
+    name: ML methodology (transferable)
+    weight: 1.0
+    gate_general_cs: true        # cs.LG / cs.AI / stat.ML need a boost hit to survive
+    description: >
+      Domain-agnostic ML advances that transfer to structural biology: diffusion and flow
+      matching, discrete and latent diffusion, guidance and inference-time steering, RL and
+      preference optimisation, equivariant architectures, sampling, active learning,
+      uncertainty, scaling behaviour.
+    boost:
+      flow matching: 3.0
+      discrete diffusion: 3.0
+      latent diffusion: 2.5
+      equivariant: 2.5
+      SE(3): 2.5
+      classifier-free guidance: 2.0
+      inference-time: 2.0
+      test-time: 1.5
+      preference optimization: 1.5
+      preference optimisation: 1.5
+      active learning: 1.5
+      uncertainty quantification: 1.5
+      scaling law: 1.5
+      denoising: 1.2
+      score-based: 1.5
+      normalizing flow: 1.2
+      graph neural network: 1.2
+
+  - id: struct-pred
+    name: Structure prediction & biomolecular representation
+    weight: 1.1
+    description: >
+      AF3-class co-folding, protein language models, inverse folding, MSA-free prediction,
+      conformational ensembles, docking, confidence metrics and oracles, benchmarks.
+    boost:
+      alphafold: 3.0
+      co-folding: 3.0
+      cofolding: 3.0
+      inverse folding: 3.0
+      protein language model: 3.0
+      MSA-free: 2.5
+      conformational ensemble: 2.5
+      boltz: 2.5
+      chai-1: 2.5
+      ESMFold: 2.5
+      structure prediction: 2.0
+      pLDDT: 2.0
+      docking: 1.5
+      confidence metric: 1.5
+      benchmark: 1.0
+
+  - id: design-method
+    name: De novo design methodology
+    weight: 1.3
+    description: >
+      RFdiffusion-class backbone generation, motif scaffolding, hallucination, sequence
+      design, symmetry handling, binder design pipelines, in-silico filters, success-rate
+      and benchmark papers.
+    boost:
+      RFdiffusion: 3.0
+      motif scaffolding: 3.0
+      backbone generation: 3.0
+      protein hallucination: 3.0
+      hallucination-based design: 3.0
+      hallucinated protein: 3.0
+      ProteinMPNN: 3.0
+      sequence design: 2.5
+      de novo design: 3.0
+      binder design: 2.5
+      in silico filter: 2.0
+      design success rate: 2.5
+      scaffolding: 2.0
+      symmetric design: 2.5
+      protein generator: 2.0
+
+  - id: function-design
+    name: "Functional design: binders, therapeutics, sensors"
+    weight: 1.0
+    description: >
+      Minibinders, receptor/GPCR modulators, antibodies and nanobodies, peptide
+      therapeutics, degraders, biosensors, nanopores, DNA/RNA binders, switches and logic.
+    boost:
+      minibinder: 3.0
+      nanopore: 2.5
+      biosensor: 2.5
+      GPCR: 2.0
+      degrader: 2.0
+      nanobody: 2.0
+      protein switch: 2.5
+      logic gate: 2.0
+      peptide therapeutic: 2.0
+      DNA-binding: 2.0
+      neutralizing antibody: 1.5
+
+  - id: enzyme
+    name: Enzyme design & catalysis
+    weight: 1.0
+    description: >
+      Theozymes, active-site scaffolding, ML for enzymes, ML-guided directed evolution,
+      mechanism, metalloenzymes and cofactors.
+    boost:
+      theozyme: 3.0
+      active site: 2.5
+      enzyme design: 3.0
+      directed evolution: 2.5
+      metalloenzyme: 2.5
+      catalytic: 2.0
+      cofactor: 1.5
+      turnover number: 1.5
+      biocatalysis: 2.0
+
+  - id: assembly
+    name: Self-assembly & nanomaterials
+    weight: 1.3
+    description: >
+      Designed and natural self-assembling protein systems: cages, capsids, symmetric,
+      pseudosymmetric and asymmetric oligomers, filaments, 2D arrays, protein crystals.
+      Assembly thermodynamics and kinetics. Tiling theory, Caspar-Klug, quasi-equivalence.
+      Hybrid protein-lipid and protein-nucleic-acid materials. Cryo-EM of assemblies.
+    boost:
+      icosahedral: 3.0
+      quasi-equivalen: 3.0
+      Caspar-Klug: 3.0
+      T=3: 3.0
+      T=4: 3.0
+      capsid: 2.5
+      nanocage: 2.5
+      protein cage: 2.5
+      encapsulin: 2.5
+      two-component: 2.0
+      symmetry-breaking: 2.0
+      pseudosymmetric: 3.0
+      self-assembl: 2.0
+      protein crystal: 1.5
+      2D array: 2.0
+      filament: 1.5
+      tiling: 2.0
+      polyhedra: 2.0
+      virus-like particle: 2.5
+
+  - id: immunogen
+    name: Immunogen engineering & vaccines
+    weight: 1.1
+    description: >
+      Nanoparticle immunogens, epitope scaffolding, germline targeting, adjuvants, glycan
+      engineering, mRNA-launched platforms, antigen stabilisation, immune trafficking.
+    boost:
+      nanoparticle immunogen: 3.0
+      germline targeting: 3.0
+      epitope scaffold: 3.0
+      immunogen: 2.5
+      adjuvant: 2.0
+      antigen stabili: 2.5
+      glycan engineering: 2.5
+      mRNA vaccine: 2.0
+      broadly neutralizing: 2.0
+      germinal center: 2.0
+      immune trafficking: 2.5
+
+  - id: delivery
+    name: Delivery, virology & cell entry
+    weight: 1.0
+    description: >
+      LNPs, AAV and capsid engineering, endosomal escape, VLPs, targeted intracellular
+      delivery, viral assembly and maturation, budding and ESCRT biology.
+    boost:
+      lipid nanoparticle: 2.5
+      endosomal escape: 3.0
+      AAV: 2.5
+      ESCRT: 2.5
+      capsid engineering: 3.0
+      intracellular delivery: 2.5
+      viral maturation: 2.0
+      budding: 1.5
+      cell entry: 2.0
+      tropism: 1.5
+
+  - id: wetlab-method
+    name: Experimental methods & validation
+    weight: 0.8
+    description: >
+      High-throughput characterisation, cryo-EM/nsEM pipelines, deep mutational scanning,
+      display methods, native MS, structural dynamics (HDX, smFRET), lab automation.
+    boost:
+      deep mutational scanning: 3.0
+      yeast display: 2.5
+      native mass spectrometry: 2.5
+      cryo-EM: 2.0
+      HDX: 2.5
+      smFRET: 2.5
+      high-throughput: 2.0
+      lab automation: 2.0
+      SEC-MALS: 2.0
+      nsEM: 2.0

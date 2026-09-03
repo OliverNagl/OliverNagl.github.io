@@ -1,0 +1,36 @@
+{
+  "week": "2026-W36",
+  "ran_at": "2026-09-03T21:28:50.093676+00:00",
+  "ok": true,
+  "degraded": true,
+  "stale_after_days": 11,
+  "message": "All sources healthy.",
+  "failed_sources": [],
+  "under_covered_sources": [],
+  "source_health": [
+    {
+      "source": "arxiv",
+      "ok": true,
+      "fetched": 266,
+      "expected_min": 80,
+      "error": null
+    },
+    {
+      "source": "biorxiv",
+      "ok": true,
+      "fetched": 495,
+      "expected_min": 300,
+      "error": null
+    },
+    {
+      "source": "medrxiv",
+      "ok": true,
+      "fetched": 55,
+      "expected_min": 20,
+      "error": null
+    }
+  ],
+  "notes": [
+    "run made without LLM judgement: ranking is lexical only"
+  ]
+}

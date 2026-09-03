@@ -1,0 +1,92 @@
+{
+  "_comment": "Shared contract between radar/rank.py and assets/rank.js. Regenerate with tests/fixtures/regenerate.py after any deliberate change to the arithmetic.",
+  "weights": {
+    "relevance": 1.0,
+    "novelty": 0.35,
+    "category": 0.5,
+    "watchlist_author": 0.4,
+    "code_released": 0.25,
+    "venue_tier": 0.2,
+    "similar_seen_recently": -0.3
+  },
+  "cases": [
+    {
+      "name": "all zeros",
+      "input": {
+        "relevance": 0,
+        "novelty": 0,
+        "category_weight": 0.0,
+        "watchlist_author": false,
+        "code_released": false,
+        "venue_tier": 0.0,
+        "similar_seen_recently": false
+      },
+      "expected_total": 0.0
+    },
+    {
+      "name": "typical front page pick",
+      "input": {
+        "relevance": 9,
+        "novelty": 8,
+        "category_weight": 1.3,
+        "watchlist_author": true,
+        "code_released": true,
+        "venue_tier": 0.2,
+        "similar_seen_recently": false
+      },
+      "expected_total": 2.52
+    },
+    {
+      "name": "journal paper, no code",
+      "input": {
+        "relevance": 7,
+        "novelty": 4,
+        "category_weight": 1.0,
+        "watchlist_author": false,
+        "code_released": false,
+        "venue_tier": 1.0,
+        "similar_seen_recently": false
+      },
+      "expected_total": 1.54
+    },
+    {
+      "name": "penalised near-duplicate",
+      "input": {
+        "relevance": 8,
+        "novelty": 7,
+        "category_weight": 1.1,
+        "watchlist_author": false,
+        "code_released": true,
+        "venue_tier": 0.6,
+        "similar_seen_recently": true
+      },
+      "expected_total": 1.665
+    },
+    {
+      "name": "low relevance backlog entry",
+      "input": {
+        "relevance": 3,
+        "novelty": 5,
+        "category_weight": 0.8,
+        "watchlist_author": false,
+        "code_released": false,
+        "venue_tier": 0.2,
+        "similar_seen_recently": false
+      },
+      "expected_total": 0.915
+    },
+    {
+      "name": "maxed out",
+      "input": {
+        "relevance": 10,
+        "novelty": 10,
+        "category_weight": 1.3,
+        "watchlist_author": true,
+        "code_released": true,
+        "venue_tier": 1.0,
+        "similar_seen_recently": false
+      },
+      "expected_total": 2.85
+    }
+  ]
+}

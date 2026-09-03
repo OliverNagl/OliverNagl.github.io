@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="issue-head">
+  <div class="kicker">Oliver Nagl · ETH Zürich</div>
+  <h1>Projects</h1>
+  <p class="lede">
+    A few things I have built. Code and write-ups live in the linked repositories —
+    these are summaries, not papers.
+  </p>
+</div>
+
+<div class="projects">
+
+  <article class="project">
+    {# The source GIF is 25 MB. Same clip as H.264 is 2.4 MB, with a 21 KB poster frame
+       so nothing moves until the video has actually loaded. #}
+    <video class="project-media" autoplay loop muted playsinline preload="none"
+           poster="Images/mitral_valve_poster.jpg"
+           aria-label="Mitral valve segmentation over an ultrasound sequence">
+      <source src="Images/mitral_valve_segmentation.mp4" type="video/mp4">
+      <img src="Images/mitral_valve_poster.jpg" alt="Mitral valve segmentation over an ultrasound sequence">
+    </video>
+    <div>
+      <h3>Mitral valve segmentation</h3>
+      <p>
+        A U-Net that segments the mitral valve in echocardiogram video, built for the
+        Advanced Machine Learning course at ETH Zürich. The interesting part was temporal
+        consistency: frame-independent predictions flicker badly, so the model conditions
+        on neighbouring frames.
+      </p>
+      <div class="tags">
+        <span class="tag">PyTorch</span><span class="tag">U-Net</span><span class="tag">Segmentation</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/OliverNagl" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <img src="Images/Part2_PDE1_dudx.png" alt="Learned derivative field from PDE identification" loading="lazy">
+    <div>
+      <h3>Neural operators for PDEs</h3>
+      <p>
+        Fourier neural operators for solving PDEs, a sparse-regression approach to
+        recovering the governing equation from data, and Allen–Cahn phase-field dynamics.
+        Final project for AI in the Sciences and Engineering. The recurring lesson was how
+        quickly operator learning degrades out of distribution.
+      </p>
+      <div class="tags">
+        <span class="tag">PyTorch</span><span class="tag">Neural operators</span><span class="tag">PDEs</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/OliverNagl" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </article>
+
+  <article class="project">
+    <img src="Images/jigsaw_puzzle_14.svg" alt="A jigsaw tiling with exactly two solutions" loading="lazy">
+    <div>
+      <h3>Double-solution jigsaw puzzles</h3>
+      <p>
+        Searching for jigsaw puzzles that admit exactly two non-trivial solutions, inspired
+        by Matt Parker's "Parker puzzles". Encoded as SAT and solved with pySAT; the work is
+        mostly in ruling out the trivial symmetry-related solutions, which is a group theory
+        problem rather than a search problem.
+      </p>
+      <div class="tags">
+        <span class="tag">pySAT</span><span class="tag">SAT</span><span class="tag">Group theory</span>
+      </div>
+      <div class="links">
+        <a href="https://github.com/OliverNagl/DoubleSolutionPuzzle" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </article>
+
+</div>
+
+{% endblock %}

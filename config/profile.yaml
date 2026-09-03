@@ -1,0 +1,46 @@
+# Who this radar is for. Everything here is tunable without touching Python.
+name: "IPD radar — capsid & nanomaterial design"
+owner: "Oliver Nagl"
+timezone: Europe/Zurich
+
+front_page:
+  top_n: 5
+  max_per_category: 2
+  blindspot: 1
+  backlog_max_per_category: 10
+  deep_dive_n: 15
+
+# Hand-maintained. Drives the "touches" field in the deep-dive pass.
+# Keeping this current is the highest-leverage 5 minutes you will spend on the system.
+open_threads:
+  - "symmetry-native / tied-ASU diffusion for icosahedral assemblies"
+  - "oracles predicting whether a designed subunit assembles, without experimental positives"
+  - "quasi-equivalence: one sequence, multiple backbone conformations by assembly slot"
+  - "negative-example construction for design-quality regression"
+  - "operator-conditioned sparse attention over symmetry images"
+
+models:
+  triage: claude-haiku-4-5
+  deep: claude-sonnet-5
+  blindspot: claude-sonnet-5
+
+budget:
+  max_input_tokens: 400000
+  max_output_tokens: 60000
+
+# The §3 ranking arithmetic. Mirrored in assets/rank.js — tests/test_rank_parity.py
+# asserts the two agree, so change them together.
+weights:
+  relevance: 1.00
+  novelty: 0.35
+  category: 0.50
+  watchlist_author: 0.40
+  code_released: 0.25
+  venue_tier: 0.20
+  similar_seen_recently: -0.30
+
+window:
+  lookback_days: 10
+
+retention:
+  raw_months: 6          # data/raw is needed by the recall audit's 2-6 month lookback

@@ -1,0 +1,90 @@
+{
+  "generated_at": "2026-09-03T21:28:59.348994+00:00",
+  "checked": 3,
+  "passed": 3,
+  "recall": 1.0,
+  "unresolved": [],
+  "raw_weeks_available": [
+    "2026-W35",
+    "2026-W36"
+  ],
+  "papers": [
+    {
+      "id": "10.1038/s41586-023-06415-8",
+      "doi": "10.1038/s41586-023-06415-8",
+      "title": "De novo design of protein structure and function with RFdiffusion",
+      "note": "RFdiffusion. If the filter cannot surface this, something is badly wrong.",
+      "expect": "front_page",
+      "date": "2023-07-11",
+      "week": "2023-W28",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 19.2,
+      "category_scores": {
+        "ml-method": 1.2,
+        "struct-pred": 2.0,
+        "design-method": 13.5,
+        "enzyme": 2.5
+      },
+      "watchlist_hit": "Watson JL",
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Watson JL",
+        "no raw archive for 2023-W28, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1126/science.add2187",
+      "doi": "10.1126/science.add2187",
+      "title": "Robust deep learning\u2013based protein sequence design using ProteinMPNN",
+      "note": "ProteinMPNN. Same reasoning \u2014 a canary, not a real miss.",
+      "expect": "front_page",
+      "date": "2022-09-15",
+      "week": "2022-W37",
+      "venue": "Science",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 10.5,
+      "category_scores": {
+        "struct-pred": 5.0,
+        "design-method": 5.5
+      },
+      "watchlist_hit": "Dauparas J",
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Dauparas J",
+        "no raw archive for 2022-W37, so rank is unknown"
+      ]
+    },
+    {
+      "id": "10.1038/s41586-024-07601-y",
+      "doi": "10.1038/s41586-024-07601-y",
+      "title": "Computational design of soluble and functional membrane protein analogues",
+      "note": "Designed soluble analogues of membrane proteins; King/Baker adjacent.",
+      "expect": "shortlist",
+      "date": "2024-06-19",
+      "week": "2024-W25",
+      "venue": "Nature",
+      "passed_prefilter": true,
+      "failed_rule": null,
+      "matched_exclude": null,
+      "lexical_score": 3.0,
+      "category_scores": {
+        "design-method": 3.0
+      },
+      "watchlist_hit": "Dauparas J",
+      "ranking": null,
+      "status": "pass",
+      "chain": [
+        "passed prefilter (hard_include): watchlist author: Dauparas J",
+        "no raw archive for 2024-W25, so rank is unknown"
+      ]
+    }
+  ],
+  "suggestions": []
+}
