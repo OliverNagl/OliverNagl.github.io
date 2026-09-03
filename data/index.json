@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-09-03T22:30:14.604632+00:00",
+  "generated_at": "2026-09-03T22:31:07.445707+00:00",
   "latest": "2026-W36",
   "weeks": [
     {
       "week": "2026-W36",
       "from": "2026-08-28",
       "to": "2026-09-06",
-      "generated_at": "2026-09-03T22:13:09.263419+00:00",
+      "generated_at": "2026-09-03T22:31:07.421391+00:00",
       "degraded": true,
       "stats": {
         "fetched": 2187,
@@ -15,7 +15,7 @@
         "scored": 439,
         "rejected": 1008
       },
-      "front_page": 5,
+      "front_page": 10,
       "backlog": 90,
       "categories": [
         "assembly",
@@ -33,7 +33,7 @@
       "week": "2026-W35",
       "from": "2026-08-21",
       "to": "2026-08-30",
-      "generated_at": "2026-09-03T22:12:59.569889+00:00",
+      "generated_at": "2026-09-03T22:30:57.634484+00:00",
       "degraded": true,
       "stats": {
         "fetched": 3473,
@@ -42,7 +42,7 @@
         "scored": 800,
         "rejected": 2574
       },
-      "front_page": 5,
+      "front_page": 10,
       "backlog": 90,
       "categories": [
         "assembly",
