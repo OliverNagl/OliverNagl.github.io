@@ -14,8 +14,10 @@ dependencies = [
 [project.scripts]
 radar = "radar.cli:cli"
 
-[project.optional-dependencies]
-dev = ["pytest>=8.0", "dukpy>=0.3"]   # dukpy runs the front-end JS in the test suite
+[dependency-groups]
+# Installed by a bare `uv sync`, unlike optional-dependencies. dukpy embeds a JS engine so
+# the front-end code is exercised by the test suite rather than assumed to work.
+dev = ["pytest>=8.0", "dukpy>=0.3"]
 
 [build-system]
 requires = ["hatchling"]
