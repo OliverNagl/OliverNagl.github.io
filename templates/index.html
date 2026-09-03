@@ -4,24 +4,19 @@
 {% block content %}
 
 <div class="issue-head">
-  <div class="label">{{ profile_name }}</div>
   <h1>{% if issue %}Week {{ issue.week.split('-W')[1]|int }}{% else %}No issue yet{% endif %}</h1>
   {% if issue %}
     <div class="issue-dates">
       {{ issue.window.from_.strftime('%-d %B') }} – {{ issue.window.to.strftime('%-d %B %Y') }}
-    </div>
-    <div class="funnel">
-      <span><b>{{ '{:,}'.format(issue.stats.fetched) }}</b> fetched</span><span class="sep">→</span>
-      <span><b>{{ '{:,}'.format(issue.stats.new) }}</b> new</span><span class="sep">→</span>
-      <span><b>{{ issue.stats.shortlisted }}</b> screened</span><span class="sep">→</span>
-      <span><b>{{ issue.front_page|length }}</b> picks</span>
+      <span class="sep">·</span>{{ '{:,}'.format(issue.stats.shortlisted) }} papers screened
     </div>
   {% endif %}
 </div>
 
 {# The health beacon. Under a scheduled Routine there is no failed-workflow notification
-   to rely on, so staleness has to be visible on the surface you actually read. #}
-{% if banner %}
+   to rely on, so staleness has to stay visible on the surface you actually read — but a
+   healthy run says nothing here, it says it in the run record at the foot of the page. #}
+{% if banner and banner.level != 'ok' %}
 <div class="banner {{ banner.level }}">
   {{ banner.message }}
   {% if banner.details %}
@@ -31,7 +26,7 @@
 {% endif %}
 
 {% if not issue %}
-  <div class="empty" style="margin-top:32px">
+  <div class="empty">
     No issue has been generated yet. Run <code>radar run --no-llm</code> to produce one.
   </div>
 {% else %}
@@ -42,7 +37,9 @@
     <h2>Top {{ issue.front_page|length }}</h2>
     <span class="count label">max {{ max_per_category }} per category</span>
   </div>
-  {% for s in issue.front_page %}{{ entry(s, cat_names) }}{% endfor %}
+  <div class="entries">
+    {% for s in issue.front_page %}{{ entry(s, cat_names) }}{% endfor %}
+  </div>
 </section>
 {% endif %}
 
@@ -52,7 +49,7 @@
     <h2>Blindspot</h2>
     <span class="count label">from the rejected pool</span>
   </div>
-  {{ entry(issue.blindspot, cat_names, blindspot=true) }}
+  <div class="entries single">{{ entry(issue.blindspot, cat_names, blindspot=true) }}</div>
 </section>
 {% endif %}
 
@@ -77,20 +74,35 @@
 <section class="section">
   <details class="backlog">
     <summary>Backlog · {{ issue.backlog_count }} papers by category</summary>
-    {% for cat, items in issue.backlog.items() %}
-      <div class="backlog-cat" style="--cat: var(--c-{{ cat }}, var(--muted));">
-        <h4>{{ cat_names.get(cat, cat) }} ({{ items|length }})</h4>
-        {% for s in items %}
-          <div class="backlog-row">
-            <a href="{{ s.links.doi or s.links.url }}" rel="noopener">{{ s.title }}</a>
-            <span class="r">{{ s.reason }}</span>
-          </div>
-        {% endfor %}
-      </div>
-    {% endfor %}
+    <div class="backlog-cats">
+      {% for cat, items in issue.backlog.items() %}
+        <div class="backlog-cat" style="--cat: var(--c-{{ cat }}, var(--muted));">
+          <h4>{{ cat_names.get(cat, cat) }} ({{ items|length }})</h4>
+          {% for s in items %}
+            <div class="backlog-row">
+              <a href="{{ s.links.doi or s.links.url }}" rel="noopener">{{ s.title }}</a>
+              <span class="r">{{ s.reason }}</span>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
   </details>
 </section>
 {% endif %}
+
+{# What the run actually did: out of the way, never hidden. #}
+<div class="run-record">
+  <span><b>{{ '{:,}'.format(issue.stats.fetched) }}</b> fetched</span><span class="sep">→</span>
+  <span><b>{{ '{:,}'.format(issue.stats.new) }}</b> new</span><span class="sep">→</span>
+  <span><b>{{ issue.stats.shortlisted }}</b> screened</span><span class="sep">→</span>
+  <span><b>{{ issue.front_page|length }}</b> picks</span>
+  {% for h in issue.source_health %}
+    <span{% if not h.ok %} class="bad"{% elif h.under_covered %} class="warn"{% endif %}>{{ h.source }}
+      {{- ' ' }}{{ '{:,}'.format(h.fetched) }}{% if not h.ok %} failed{% elif h.under_covered %} low{% endif %}</span>
+  {% endfor %}
+  <span>{{ issue.generated_at.strftime('%-d %b %H:%M') }} UTC</span>
+</div>
 
 {% endif %}
 
