@@ -51,7 +51,7 @@ def gather(
 
     with SeenStore(cfg.root / "data" / "seen.sqlite") as store:
         now_pub_raw = find_now_published(papers, store)
-        fresh, dropped = dedupe(papers, store)
+        fresh, dropped = dedupe(papers, store, week)
         store.record(fresh, week)
 
     log.info("dedupe: %d fetched -> %d new (%d already seen)", fetched, len(fresh), dropped)
