@@ -50,18 +50,44 @@ class SeenStore:
         self.conn.close()
 
     # --- reads --------------------------------------------------------------------
+    #
+    # `exclude_week` is what makes re-running a week idempotent (spec §9). Records first
+    # seen in the week being rebuilt must not count as duplicates of themselves, or the
+    # second run of any week finds nothing new and silently produces an empty digest.
 
-    def known_ids(self) -> set[str]:
-        return {r[0] for r in self.conn.execute("SELECT id FROM seen")}
+    def known_ids(self, exclude_week: str | None = None) -> set[str]:
+        if exclude_week:
+            rows = self.conn.execute(
+                "SELECT id FROM seen WHERE first_week != ?", (exclude_week,)
+            )
+        else:
+            rows = self.conn.execute("SELECT id FROM seen")
+        return {r[0] for r in rows}
 
-    def known_titles(self) -> set[str]:
-        return {r[0] for r in self.conn.execute("SELECT norm_title FROM seen")}
+    def known_titles(self, exclude_week: str | None = None) -> set[str]:
+        if exclude_week:
+            rows = self.conn.execute(
+                "SELECT norm_title FROM seen WHERE first_week != ?", (exclude_week,)
+            )
+        else:
+            rows = self.conn.execute("SELECT norm_title FROM seen")
+        return {r[0] for r in rows}
 
-    def known_dois(self) -> set[str]:
-        return {
-            r[0].lower()
-            for r in self.conn.execute("SELECT doi FROM seen WHERE doi IS NOT NULL")
-        }
+    def known_dois(self, exclude_week: str | None = None) -> set[str]:
+        if exclude_week:
+            rows = self.conn.execute(
+                "SELECT doi FROM seen WHERE doi IS NOT NULL AND first_week != ?",
+                (exclude_week,),
+            )
+        else:
+            rows = self.conn.execute("SELECT doi FROM seen WHERE doi IS NOT NULL")
+        return {r[0].lower() for r in rows}
+
+    def forget_week(self, week: str) -> int:
+        """Drop a week's records so it can be rebuilt from scratch."""
+        cur = self.conn.execute("DELETE FROM seen WHERE first_week = ?", (week,))
+        self.conn.commit()
+        return cur.rowcount
 
     def week_of(self, paper_id: str) -> str | None:
         row = self.conn.execute(
@@ -103,15 +129,20 @@ class SeenStore:
         self.conn.commit()
 
 
-def dedupe(papers: list[Paper], store: SeenStore | None = None) -> tuple[list[Paper], int]:
+def dedupe(
+    papers: list[Paper], store: SeenStore | None = None, week: str | None = None
+) -> tuple[list[Paper], int]:
     """Return (new papers, number dropped).
 
     Within-batch duplicates are collapsed first (the same work often arrives from two
     sources in one run), then anything already in the store is dropped.
+
+    Passing `week` excludes that week's own records from the comparison, which is what
+    makes re-running a week reproduce it rather than emptying it.
     """
-    seen_ids = store.known_ids() if store else set()
-    seen_titles = store.known_titles() if store else set()
-    seen_dois = store.known_dois() if store else set()
+    seen_ids = store.known_ids(week) if store else set()
+    seen_titles = store.known_titles(week) if store else set()
+    seen_dois = store.known_dois(week) if store else set()
 
     batch_ids: set[str] = set()
     batch_titles: set[str] = set()

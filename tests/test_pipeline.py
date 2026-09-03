@@ -38,6 +38,38 @@ class TestDedupe:
             again, dropped = dedupe([p], store)
         assert again == [] and dropped == 1
 
+    def test_rerunning_a_week_is_idempotent_not_empty(self, tmp_path):
+        """Re-running a week must reproduce it, not wipe it.
+
+        The spec requires idempotency on the ISO week key. Without excluding the week
+        being rebuilt from the seen-set, every record counts as a duplicate of itself,
+        the run finds nothing new, and it silently overwrites a good digest with an
+        empty one.
+        """
+        papers = [
+            make_paper(id=f"10.1101/{i}", title=f"A designed protein nanocage number {i}")
+            for i in range(5)
+        ]
+        with SeenStore(tmp_path / "seen.sqlite") as store:
+            first, _ = dedupe(papers, store, "2026-W36")
+            store.record(first, "2026-W36")
+            assert len(first) == 5
+
+            # Same week again: all five must come back.
+            again, dropped = dedupe(papers, store, "2026-W36")
+            assert len(again) == 5 and dropped == 0
+
+            # A *later* week must still see them as duplicates.
+            later, dropped_later = dedupe(papers, store, "2026-W37")
+            assert later == [] and dropped_later == 5
+
+    def test_forget_week_clears_only_that_week(self, tmp_path):
+        with SeenStore(tmp_path / "seen.sqlite") as store:
+            store.record([make_paper(id="10.1101/a", title="Cage one design study")], "2026-W35")
+            store.record([make_paper(id="10.1101/b", title="Cage two design study")], "2026-W36")
+            assert store.forget_week("2026-W35") == 1
+            assert store.known_ids() == {"10.1101/b"}
+
     def test_normalise_title_ignores_case_punctuation_and_accents(self):
         assert normalise_title("Designed Protein Cages!") == normalise_title(
             "designed  protein   cages"
