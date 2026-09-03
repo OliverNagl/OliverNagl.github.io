@@ -1,8 +1,8 @@
 {
   "week": "2026-W36",
-  "ran_at": "2026-09-03T22:31:07.435397+00:00",
+  "ran_at": "2026-09-03T23:06:54.401278+00:00",
   "ok": true,
-  "degraded": true,
+  "degraded": false,
   "stale_after_days": 11,
   "message": "All sources healthy.",
   "failed_sources": [],
@@ -44,7 +44,5 @@
       "error": null
     }
   ],
-  "notes": [
-    "run made without LLM judgement: ranking is lexical only"
-  ]
+  "notes": []
 }
