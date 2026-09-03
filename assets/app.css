@@ -478,3 +478,32 @@ pre.yaml {
 }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* A four-panel figure needs more room than a single image, or each panel lands at ~95px. */
+.project:has(.quad) { grid-template-columns: 300px 1fr; }
+@media (max-width: 620px) { .project:has(.quad) { grid-template-columns: 1fr; } }
+
+/* The jigsaw project is a pair of pairs — one tiling solved two ways, and those two
+   solutions rendered as a diffusion illusion — so its figure is a 2x2 rather than a
+   single image. Panels stay square so the four read as one object. */
+.quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.quad figure { margin: 0; }
+.quad img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  display: block;
+  background: var(--rule);
+}
+.quad figcaption {
+  font-family: var(--mono);
+  font-size: .64rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--faint);
+  margin-top: 4px;
+}

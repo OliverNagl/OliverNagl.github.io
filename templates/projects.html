@@ -55,14 +55,41 @@
   </article>
 
   <article class="project">
-    <img src="Images/jigsaw_puzzle_14.svg" alt="A jigsaw tiling with exactly two solutions" loading="lazy">
+    {# Four panels, because the project is a pair of pairs: one set of pieces that tiles
+       two different ways, and those same two arrangements rendered as a diffusion illusion
+       so each resolves into a different painting. One image shows none of that.
+       The source SVGs are 1.2 MB each; these are 600px rasters, with the vector linked. #}
+    <div class="quad">
+      <figure>
+        <a href="Images/jigsaw_puzzle_14.svg">
+          <img src="Images/jigsaw_puzzle_14_thumb.png" alt="The pieces tiled into a smooth colour gradient" loading="lazy">
+        </a>
+        <figcaption>Arrangement 1</figcaption>
+      </figure>
+      <figure>
+        <a href="Images/jigsaw_puzzle_mapped_14.svg">
+          <img src="Images/jigsaw_puzzle_mapped_14_thumb.png" alt="The same pieces tiled a second, scrambled way" loading="lazy">
+        </a>
+        <figcaption>Arrangement 2</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/VanGogh61.png" alt="Arrangement 1 resolving into Van Gogh's Starry Night" loading="lazy">
+        <figcaption>1 → Starry Night</figcaption>
+      </figure>
+      <figure>
+        <img src="Images/VanGogh62.png" alt="Arrangement 2 resolving into Van Gogh's straw-hat self-portrait" loading="lazy">
+        <figcaption>2 → Self-portrait</figcaption>
+      </figure>
+    </div>
     <div>
       <h3>Double-solution jigsaw puzzles</h3>
       <p>
         Searching for jigsaw puzzles that admit exactly two non-trivial solutions, inspired
         by Matt Parker's "Parker puzzles". Encoded as SAT and solved with pySAT; the work is
         mostly in ruling out the trivial symmetry-related solutions, which is a group theory
-        problem rather than a search problem.
+        problem rather than a search problem. The pay-off is the diffusion illusion below: one
+        set of pieces, two valid arrangements, and each one resolves into a different
+        Van Gogh.
       </p>
       <div class="tags">pySAT<span class="sep">·</span>SAT<span class="sep">·</span>Group theory</div>
       <div class="links">
