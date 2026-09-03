@@ -148,7 +148,7 @@ class TestJudgementFiles:
         d = tmp_path / "work" / "2026-W01" / "deep_out"
         d.mkdir(parents=True)
         (d / "x.json").write_text(json.dumps(
-            {"id": "10.1101/a", "why": "Three sentences.", "action": "devour",
+            {"id": "10.1101/a", "why": "One intuitive line.", "action": "devour",
              "touches": ["a", "b", "c", "d", "e"]}
         ))
         got = load_deep(tmp_path, "2026-W01")

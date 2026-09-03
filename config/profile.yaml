@@ -33,6 +33,13 @@ models:
 budget:
   max_input_tokens: 400000
   max_output_tokens: 60000
+  # How much of each abstract reaches the model. The prefilter always matches on the FULL
+  # abstract, so these never affect what is screened — only how much the model reads to
+  # rate it. Measured over a real week: 1800 -> 372k tokens of triage prompt, 1000 -> 253k,
+  # for a judgement that is a coarse 0-10 rating. Trimming here is far cheaper than
+  # trimming front_page.shortlist_max, which costs real recall.
+  triage_abstract_chars: 1000
+  blindspot_abstract_chars: 900
 
 # The §3 ranking arithmetic. Mirrored in assets/rank.js — tests/test_rank_parity.py
 # asserts the two agree, so change them together.

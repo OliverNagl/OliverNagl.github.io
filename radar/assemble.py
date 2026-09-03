@@ -110,7 +110,7 @@ def assemble(
     )
 
     # Deep-dive output only decorates; it never changes the ordering, so a missing deep
-    # dive costs you the three-sentence "why" and nothing else.
+    # dive costs you the one-line "why" and nothing else.
     for s in front:
         d = deep.get(s.id)
         if not d:

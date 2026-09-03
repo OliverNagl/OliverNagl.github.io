@@ -48,16 +48,29 @@ def safe_name(paper_id: str) -> str:
 # --------------------------------------------------------------------- prompts ----
 
 
-def _paper_block(p: Paper, n: int) -> str:
+def _paper_block(p: Paper, n: int, max_abstract: int = 1000) -> str:
+    """One paper as the model sees it.
+
+    `max_abstract` is the single biggest lever on run cost. The prefilter always matches
+    on the full abstract, so trimming here changes only how much the model reads to make
+    a coarse 0-10 call — never what gets screened.
+    """
     authors = ", ".join(p.authors[:8]) + (" et al." if len(p.authors) > 8 else "")
+    abstract = p.abstract[:max_abstract]
+    if len(p.abstract) > max_abstract:
+        abstract += " […]"
     return (
         f"### [{n}] id: {p.id}\n"
         f"- title: {p.title}\n"
         f"- authors: {authors}\n"
         f"- venue: {p.venue} ({p.source}) · {p.date.isoformat()} · subject: {p.subject or '—'}\n"
         f"- code released: {'yes' if p.code_url else 'no'}\n"
-        f"- abstract: {p.abstract[:1800] or '(no abstract available)'}\n"
+        f"- abstract: {abstract or '(no abstract available)'}\n"
     )
+
+
+def _abstract_budget(cfg: Config, key: str, default: int) -> int:
+    return int((cfg.profile.get("budget") or {}).get(key, default))
 
 
 def prepare_triage(cfg: Config, week: str, shortlist: list[Paper]) -> list[Path]:
@@ -72,13 +85,14 @@ def prepare_triage(cfg: Config, week: str, shortlist: list[Paper]) -> list[Path]
         f"- `{c.id}` — {c.name}: {' '.join(c.description.split())}" for c in cfg.categories
     )
 
+    max_abs = _abstract_budget(cfg, "triage_abstract_chars", 1000)
     written = []
     batches = [
         shortlist[i : i + TRIAGE_BATCH_SIZE]
         for i in range(0, len(shortlist), TRIAGE_BATCH_SIZE)
     ]
     for i, batch in enumerate(batches):
-        body = "\n".join(_paper_block(p, n) for n, p in enumerate(batch, 1))
+        body = "\n".join(_paper_block(p, n, max_abs) for n, p in enumerate(batch, 1))
         text = (
             f"{instructions}\n\n"
             f"## Categories\n\n{taxonomy}\n\n"
@@ -118,7 +132,7 @@ def prepare_deep(cfg: Config, week: str, papers: list[Paper]) -> list[Path]:
             f"{instructions}\n\n"
             f"## The reader's open threads\n\n{threads}\n\n"
             f"## Write your answer to\n\n`work/{week}/deep_out/{name}.json`\n\n"
-            f"## Paper\n\n{_paper_block(p, 1)}"
+            # Only ~15 of these, and this is the pass whose output people read.\n            f"## Paper\n\n{_paper_block(p, 1, max_abstract=4000)}"
         )
         f = out_dir / f"{name}.md"
         f.write_text(text)
@@ -136,7 +150,8 @@ def prepare_blindspot(cfg: Config, week: str, sample: list[Paper]) -> Path:
     wd.mkdir(parents=True, exist_ok=True)
     instructions = (cfg.root / "config" / "prompts" / "blindspot.md").read_text()
     threads = "\n".join(f"- {t}" for t in cfg.open_threads)
-    body = "\n".join(_paper_block(p, n) for n, p in enumerate(sample, 1))
+    max_abs = _abstract_budget(cfg, "blindspot_abstract_chars", 900)
+    body = "\n".join(_paper_block(p, n, max_abs) for n, p in enumerate(sample, 1))
     text = (
         f"{instructions}\n\n"
         f"## The reader's current problems\n\n{threads}\n\n"
@@ -203,7 +218,7 @@ def load_deep(root: Path, week: str) -> dict[str, dict]:
     """Read deep-dive answers, keyed by paper id.
 
     Deep-dive output only decorates a card; it never changes the ordering. A missing file
-    costs the three-sentence "why" and nothing else.
+    costs the one-line "why" and nothing else.
     """
     out: dict[str, dict] = {}
     for f, payload in _iter_json(work_dir(root, week) / "deep_out"):

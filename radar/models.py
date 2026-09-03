@@ -117,7 +117,7 @@ class Scored(BaseModel):
     degraded: bool = False
 
     # Filled by the deep-dive pass; absent for backlog entries.
-    why: str | None = None               # three sentences
+    why: str | None = None               # one sentence, two at most
     touches: list[str] = Field(default_factory=list)
     action: Action | None = None
 

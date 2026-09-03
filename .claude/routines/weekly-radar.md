@@ -73,8 +73,10 @@ For each `work/$WEEK/deep/<name>.md`: read it and write `work/$WEEK/deep_out/<na
 (same stem, `.json` instead of `.md`).
 
 The `why` field is the single most valuable text this system produces — it is what the
-reader actually reads, and it decides whether they open the paper. Three sentences, plainly
-written, no throat-clearing. Follow the prompt's structure exactly.
+reader actually reads, and it decides whether they open the paper. **One sentence, two at
+most**, giving the intuition rather than a summary: the abstract is one click away for
+detail, so spend the line on the shape of the idea. Plain words, no throat-clearing.
+Follow the prompt's structure exactly.
 
 On `touches`: only list an open thread the paper genuinely bears on. An empty list is the
 right answer more often than not. A forced connection costs the reader more than a missing
