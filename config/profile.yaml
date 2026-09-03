@@ -10,7 +10,7 @@ front_page:
   # number, and the budget allows it: 800 is ~32 triage batches, ~270k input tokens,
   # inside the 400k guard below. Lower it only if the funnel genuinely grows.
   shortlist_max: 800
-  top_n: 5
+  top_n: 10
   max_per_category: 2
   blindspot: 1
   backlog_max_per_category: 10

@@ -282,14 +282,15 @@ details.abstract p {
 .strip li a { color: var(--ink-soft); }
 
 .backlog > summary {
-  cursor: pointer; list-style: none; font-family: var(--mono); font-size: .78rem;
-  letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
-  padding: 14px 0; border-top: 2px solid var(--ink);
+  cursor: pointer; list-style: none;
+  font-family: var(--serif); font-size: 1.12rem; font-weight: 600;
+  letter-spacing: -.01em; color: var(--ink);
+  padding: 16px 0; border-top: 2px solid var(--ink);
 }
 .backlog > summary::-webkit-details-marker { display: none; }
 .backlog > summary::before { content: "+ "; }
 .backlog[open] > summary::before { content: "\2013 "; }
-.backlog > summary:hover { color: var(--ink); }
+.backlog > summary:hover { color: var(--accent); }
 
 .backlog-cats {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 60px;
