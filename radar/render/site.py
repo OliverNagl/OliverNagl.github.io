@@ -94,12 +94,12 @@ def render_index(cfg: Config, issue: Issue | None) -> str:
     return env.get_template("index.html").render(
         page_id="week",
         base="",
-        title=(f"{issue.week} · Research radar" if issue else "Research radar"),
+        title=(f"{issue.week} · Assembling concepts" if issue else "Assembling concepts"),
         description=(
             "Weekly automated literature radar for protein design, self-assembly and "
             "structural machine learning."
         ),
-        profile_name=cfg.profile.get("name", "Research radar"),
+        profile_name=cfg.profile.get("name", "Assembling concepts"),
         issue=issue,
         banner=build_banner(issue, status),
         cat_names=category_names(cfg),
@@ -182,9 +182,9 @@ def build_site(cfg: Config, week: str | None = None) -> list[Path]:
     written.append(p)
 
     for name, page_id, title, desc in (
-        ("archive.html", "archive", "Archive · Research radar",
+        ("archive.html", "archive", "Archive · Assembling concepts",
          "Search every paper the radar has surfaced."),
-        ("tuning.html", "tuning", "Tuning · Research radar",
+        ("tuning.html", "tuning", "Tuning · Assembling concepts",
          "Tune the ranking weights and check the radar against papers it should have found."),
         ("projects.html", "projects", "Projects · Oliver Nagl", "Selected projects."),
     ):
