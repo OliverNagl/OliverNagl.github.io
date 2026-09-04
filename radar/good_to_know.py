@@ -44,6 +44,7 @@ WIKI_FEATURED = "https://api.wikimedia.org/feed/v1/wikipedia/en/featured/{y}/{m:
 
 KINDS = ("xkcd", "motm", "wikipedia", "ignobel")
 LEDGER = "data/good_to_know_seen.json"
+POOL = "data/good_to_know_pool.json"
 
 # xkcd 404 is a joke: the comic does not exist and the endpoint returns 404.
 XKCD_MISSING = {404}
@@ -76,6 +77,68 @@ def record(root: Path, week: str, pick: GoodToKnow) -> None:
 
 def _used(ledger: dict) -> set[str]:
     return {p.get("url", "") for p in ledger.get("picks", [])}
+
+
+# --------------------------------------------------------------------------- pool ----
+# The shuffle button on the front page draws from a pool of alternates, seeded ahead of
+# time rather than fetched live in the browser: xkcd and Wikipedia's APIs don't send the
+# CORS headers a static site would need, and this way a dead source costs nothing at read
+# time either. Pool items never appear as the week's featured pick — `seed_pool` treats
+# the weekly ledger as already-used so the two never collide.
+
+
+def read_pool(root: Path) -> list[GoodToKnow]:
+    p = root / POOL
+    if not p.exists():
+        return []
+    try:
+        data = json.loads(p.read_text())
+    except json.JSONDecodeError:
+        log.warning("corrupt good-to-know pool; starting a new one")
+        return []
+    items = data.get("items") if isinstance(data, dict) else None
+    return [GoodToKnow(**d) for d in (items or []) if isinstance(d, dict)]
+
+
+def write_pool(root: Path, items: list[GoodToKnow]) -> None:
+    p = root / POOL
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps({"items": [i.model_dump() for i in items]}, indent=2))
+
+
+def seed_pool(cfg: Config, per_kind: int, *, fetcher: Fetcher | None = None) -> list[GoodToKnow]:
+    """Fetch up to `per_kind` extra picks from each enabled source and add them to the
+    pool. Safe to call repeatedly — it only ever appends unused items, and a source that
+    fails or runs dry simply contributes fewer than `per_kind`.
+    """
+    configured = (cfg.profile.get("good_to_know") or {}).get("kinds")
+    enabled = [k for k in (list(KINDS) if configured is None else list(configured)) if k in FETCHERS]
+
+    existing = read_pool(cfg.root)
+    used = _used(read_ledger(cfg.root)) | {i.url for i in existing}
+    rng = random.Random()
+
+    own_fetcher = fetcher is None
+    fetcher = fetcher or Fetcher(min_interval=0.3, retries=2)
+    added: list[GoodToKnow] = []
+    try:
+        for kind in enabled:
+            for _ in range(per_kind):
+                try:
+                    got = FETCHERS[kind](cfg, rng, fetcher, used)
+                except Exception as exc:                     # noqa: BLE001
+                    log.warning("good-to-know seed source %s failed: %s", kind, exc)
+                    break
+                if got is None:
+                    break
+                used.add(got.url)
+                added.append(got)
+    finally:
+        if own_fetcher:
+            fetcher.close()
+
+    write_pool(cfg.root, existing + added)
+    return added
 
 
 def _last_kind(ledger: dict) -> str | None:

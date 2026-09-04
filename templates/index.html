@@ -61,12 +61,13 @@
 
   {% if issue.good_to_know %}
   {% set g = issue.good_to_know %}
-  <section class="section good-to-know">
+  <section class="section good-to-know" id="gtk-section" data-url="{{ g.url }}">
     <div class="section-head">
       <h2>Good to know</h2>
-      <span class="count label">{{ g.note }}</span>
+      <span class="count label" id="gtk-note">{{ g.note }}</span>
+      <button type="button" class="gtk-shuffle" id="gtk-shuffle" title="Show another pick from the archive">Shuffle ⟳</button>
     </div>
-    <article class="gtk gtk-{{ g.kind }}">
+    <article class="gtk gtk-{{ g.kind }}" id="gtk-article">
       <h3><a href="{{ g.url }}" rel="noopener">{{ g.title }}</a></h3>
       {% if g.image %}
         <a href="{{ g.url }}" rel="noopener" class="gtk-figure">
@@ -136,4 +137,10 @@
 
 {% endif %}
 
+{% endblock %}
+
+{% block scripts %}
+{% if issue and issue.good_to_know %}
+<script src="{{ base }}assets/gtk-shuffle.js"></script>
+{% endif %}
 {% endblock %}

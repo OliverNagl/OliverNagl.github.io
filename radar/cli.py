@@ -395,6 +395,27 @@ def harvest(cfg) -> None:
         click.echo(f"  wrote {p_.relative_to(cfg.root)}")
 
 
+@cli.command(name="gtk-seed")
+@click.option("--count", default=5, show_default=True,
+              help="How many extra picks to fetch per source.")
+@click.pass_obj
+def gtk_seed(cfg, count: int) -> None:
+    """Seed the front page's shuffle pool with extra good-to-know picks.
+
+    These never appear as a week's featured pick, only as alternates the "Shuffle"
+    button on the front page draws from. Safe to re-run any time to add more variety.
+    """
+    from .good_to_know import seed_pool
+
+    added = seed_pool(cfg, count)
+    by_kind: dict[str, int] = {}
+    for g in added:
+        by_kind[g.kind] = by_kind.get(g.kind, 0) + 1
+    click.echo(f"added {len(added)} picks to the shuffle pool:")
+    for k, n in by_kind.items():
+        click.echo(f"  {k}: {n}")
+
+
 @cli.command()
 @click.option("--week", default=None, help="Week to feature on the front page.")
 @click.pass_obj

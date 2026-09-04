@@ -297,6 +297,14 @@ details.abstract p {
   /* Notes run long — a full Ig Nobel reference — so let this one wrap and stay quiet. */
   text-align: right; max-width: 55%; color: var(--faint);
 }
+.gtk-shuffle {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--muted); background: none;
+  border: 1px solid var(--rule-firm); padding: 4px 9px; cursor: pointer;
+  white-space: nowrap;
+}
+.gtk-shuffle:hover { color: var(--ink); border-color: var(--ink); }
+.gtk-shuffle:disabled { opacity: .6; cursor: default; }
 .gtk h3 {
   font-size: 1.22rem; font-weight: 600; letter-spacing: -.011em;
   margin-bottom: 12px; max-width: var(--measure); text-wrap: balance;

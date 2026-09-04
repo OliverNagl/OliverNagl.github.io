@@ -159,7 +159,9 @@ def build_search_index(cfg: Config, issues: list[Issue]) -> dict:
             )
         # The good-to-know pick is not a paper the radar surfaced, so it carries none of
         # the funnel's fields. It is indexed anyway — finding that one comic again months
-        # later is exactly what search is for — under a category of its own.
+        # later is exactly what search is for — under a category of its own. This is also
+        # the only archive of picks the front page's shuffle button has to draw on, so it
+        # carries the image and kind too, not just enough to satisfy the search UI.
         g = issue.good_to_know
         if g:
             docs.append(
@@ -181,6 +183,10 @@ def build_search_index(cfg: Config, issues: list[Issue]) -> dict:
                     "watchlist": "",
                     "front": True,
                     "url": g.url,
+                    "kind": g.kind,
+                    "image": g.image or "",
+                    "image_alt": g.image_alt,
+                    "detail": g.detail,
                 }
             )
 

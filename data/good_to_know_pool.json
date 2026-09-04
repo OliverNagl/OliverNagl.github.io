@@ -1,0 +1,224 @@
+{
+  "items": [
+    {
+      "kind": "xkcd",
+      "title": "Date Line",
+      "url": "https://xkcd.com/2854/",
+      "blurb": "They estimate the rocket should be free by approximately ... uh ... well, in about two hours.",
+      "image": "https://imgs.xkcd.com/comics/date_line.png",
+      "image_alt": "Date Line",
+      "credit": "xkcd.com \u00b7 CC BY-NC 2.5",
+      "note": "xkcd #2854 \u00b7 2023",
+      "detail": ""
+    },
+    {
+      "kind": "xkcd",
+      "title": "File Extensions",
+      "url": "https://xkcd.com/1301/",
+      "blurb": "I have never been lied to by data in a .txt file which has been hand-aligned.",
+      "image": "https://imgs.xkcd.com/comics/file_extensions.png",
+      "image_alt": "File Extensions",
+      "credit": "xkcd.com \u00b7 CC BY-NC 2.5",
+      "note": "xkcd #1301 \u00b7 2013",
+      "detail": ""
+    },
+    {
+      "kind": "xkcd",
+      "title": "XKeyboarCD",
+      "url": "https://xkcd.com/2150/",
+      "blurb": "The key caps use LCD displays for all the vowels, so they can automatically adjust over the years to reflect ongoing vowel shifts while allowing you to keep typing phonetically.",
+      "image": "https://imgs.xkcd.com/comics/xkeyboarcd.png",
+      "image_alt": "XKeyboarCD",
+      "credit": "xkcd.com \u00b7 CC BY-NC 2.5",
+      "note": "xkcd #2150 \u00b7 2019",
+      "detail": ""
+    },
+    {
+      "kind": "xkcd",
+      "title": "Laser Products",
+      "url": "https://xkcd.com/1681/",
+      "blurb": "ERRORS: HAIR JAM. COLOR-SAFE CONDITIONER CARTRIDGE RUNNING LOW. LEGAL-SIZE HAIR TRAY EMPTY, USING LETTER-SIZE HAIR ONLY.",
+      "image": "https://imgs.xkcd.com/comics/laser_products.png",
+      "image_alt": "Laser Products",
+      "credit": "xkcd.com \u00b7 CC BY-NC 2.5",
+      "note": "xkcd #1681 \u00b7 2016",
+      "detail": ""
+    },
+    {
+      "kind": "xkcd",
+      "title": "Old Days",
+      "url": "https://xkcd.com/1755/",
+      "blurb": "Lot of drama in those days, including constant efforts to force the \"Reflections on Trusting Trust\" guy into retirement so we could stop being so paranoid about compilers.",
+      "image": "https://imgs.xkcd.com/comics/old_days.png",
+      "image_alt": "Old Days",
+      "credit": "xkcd.com \u00b7 CC BY-NC 2.5",
+      "note": "xkcd #1755 \u00b7 2016",
+      "detail": ""
+    },
+    {
+      "kind": "motm",
+      "title": "Nuclear Pore Complex",
+      "url": "https://pdb101.rcsb.org/motm/205",
+      "blurb": "The nuclear pore complex is the gateway between the nucleus and cytoplasm.",
+      "image": "https://cdn.rcsb.org/pdb101/motm/205/205-Nuclear_Pore_Complex-5a9q_5ijn.jpg",
+      "image_alt": "Nuclear Pore Complex",
+      "credit": "RCSB PDB-101 \u00b7 illustration by David S. Goodsell",
+      "note": "Molecule of the Month #205",
+      "detail": ""
+    },
+    {
+      "kind": "motm",
+      "title": "Non-Homologous End Joining Supercomplexes",
+      "url": "https://pdb101.rcsb.org/motm/271",
+      "blurb": "Lethal double-strand breaks in the DNA genome are repaired by NHEJ",
+      "image": "https://cdn.rcsb.org/pdb101/motm/271/1jey.jpg",
+      "image_alt": "Non-Homologous End Joining Supercomplexes",
+      "credit": "RCSB PDB-101 \u00b7 illustration by David S. Goodsell",
+      "note": "Molecule of the Month #271",
+      "detail": ""
+    },
+    {
+      "kind": "motm",
+      "title": "Alcohol Dehydrogenase",
+      "url": "https://pdb101.rcsb.org/motm/13",
+      "blurb": "Alcohol dehydrogenase detoxifies the ethanol we drink",
+      "image": "https://cdn.rcsb.org/pdb101/motm/13/1htb.gif",
+      "image_alt": "Alcohol Dehydrogenase",
+      "credit": "RCSB PDB-101 \u00b7 illustration by David S. Goodsell",
+      "note": "Molecule of the Month #13",
+      "detail": ""
+    },
+    {
+      "kind": "motm",
+      "title": "Myoglobin",
+      "url": "https://pdb101.rcsb.org/motm/1",
+      "blurb": "Myoglobin was the first protein to have its atomic structure determined, revealing how it stores oxygen in muscle cells.",
+      "image": "https://cdn.rcsb.org/pdb101/motm/1/1-Myoglobin-geis-0218-myoglobin.png",
+      "image_alt": "Myoglobin",
+      "credit": "RCSB PDB-101 \u00b7 illustration by David S. Goodsell",
+      "note": "Molecule of the Month #1",
+      "detail": ""
+    },
+    {
+      "kind": "motm",
+      "title": "Directed Evolution of Enzymes",
+      "url": "https://pdb101.rcsb.org/motm/228",
+      "blurb": "Biological evolution is being harnessed in the lab to create new enzymes.",
+      "image": "https://cdn.rcsb.org/pdb101/motm/228/228-Directed_Evolution_of_Enzymes-5ucw.jpg",
+      "image_alt": "Directed Evolution of Enzymes",
+      "credit": "RCSB PDB-101 \u00b7 illustration by David S. Goodsell",
+      "note": "Molecule of the Month #228",
+      "detail": ""
+    },
+    {
+      "kind": "wikipedia",
+      "title": "Manchester United F.C. 9\u20130 Ipswich Town F.C.",
+      "url": "https://en.wikipedia.org/wiki/Manchester_United_F.C._9%E2%80%930_Ipswich_Town_F.C.",
+      "blurb": "The football match between Manchester United and Ipswich Town played at Old Trafford, Greater Manchester, on 4 March 1995 as part of the 1994\u201395 FA Premier League finished in a 9\u20130 victory for the home team. The result is the biggest winning margin in the Premier League, which was later matched when Southampton subsequently lost by the same scoreline at home to Leicester City in 2019 and away at Manchester United in 2021, while Bournemouth also lost 9\u20130 to Liverpool in 2022. The two teams went into the match at opposite ends of the table; Manchester United were second, while Ipswich Town were second-last. In the corresponding fixture at Ipswich's Portman Road ground earlier in the season, they had beaten United 3\u20132. Manchester United were missing Eric Cantona, their French international forward who was serving a nine-month suspension, and their attacking partnership of Andy Cole and Mark Hughes was not well regarded by pundits.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Manchester_United_Panorama_%288051523746%29.jpg/960px-Manchester_United_Panorama_%288051523746%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "image_alt": "Manchester United F.C. 9\u20130 Ipswich Town F.C.",
+      "credit": "Wikipedia \u00b7 CC BY-SA 4.0",
+      "note": "Featured article \u00b7 21 October 2025",
+      "detail": ""
+    },
+    {
+      "kind": "wikipedia",
+      "title": "Yan Ruisheng",
+      "url": "https://en.wikipedia.org/wiki/Yan_Ruisheng",
+      "blurb": "Yan Ruisheng is a 1921 Chinese silent film directed by Ren Pengnian and starring Chen Shouzi and Wang Caiyun. A docudrama based on the murder of Wang Lianying the previous year, it follows a young man named Yan Ruisheng who kills a courtesan to steal her jewellery. When the crime is discovered, he and his accomplices flee. Yan is captured in Xuzhou and returned to Shanghai, where he is executed.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Yan_Ruisheng_-_Newspaper_advertisement_%281921%29.jpg/960px-Yan_Ruisheng_-_Newspaper_advertisement_%281921%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "image_alt": "Yan Ruisheng",
+      "credit": "Wikipedia \u00b7 CC BY-SA 4.0",
+      "note": "Featured article \u00b7 16 March 2026",
+      "detail": ""
+    },
+    {
+      "kind": "wikipedia",
+      "title": "NBC",
+      "url": "https://en.wikipedia.org/wiki/NBC",
+      "blurb": "NBC controversially cut away from an American football game between the Oakland Raiders and New York Jets to broadcast Heidi, causing viewers in the Eastern United States to miss the game's dramatic ending.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/NBC_logo_2022_%28vertical%29.svg/330px-NBC_logo_2022_%28vertical%29.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "image_alt": "NBC",
+      "credit": "Wikipedia \u00b7 CC BY-SA 4.0",
+      "note": "On this day \u00b7 1968",
+      "detail": ""
+    },
+    {
+      "kind": "wikipedia",
+      "title": "John Bullock Clark",
+      "url": "https://en.wikipedia.org/wiki/John_Bullock_Clark",
+      "blurb": "John Bullock Clark Sr. was an American militia officer and politician who served as a member of the United States Congress and Confederate Congress. Born in Kentucky, Clark moved with his family to the Missouri Territory in 1818 and studied law. After Missouri's statehood in 1821, he opened a legal practice in Fayette, Missouri, in 1824, and held several positions in the local government in the 1820s and 1830s. Clark was also involved in the state militia, serving as a colonel in the Black Hawk War in 1832 and eventually rising to the rank of major general. In 1838, during the Missouri Mormon War, Clark was the recipient of Governor Lilburn Boggs's infamous Mormon Extermination Order, and was involved in the ending stages of the conflict. He was the Whig candidate in the 1840 Missouri gubernatorial election. Clark was accused of conspiring to commit electoral fraud in the election and as a result almost fought a duel with Claiborne Fox Jackson, later a Governor of Missouri.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/John_B._Clark%2C_Representative_from_Missouri%2C_Thirty-fifth_Congress%2C_half-length_portrait_LCCN2010649406_%28cropped%29.jpg/960px-John_B._Clark%2C_Representative_from_Missouri%2C_Thirty-fifth_Congress%2C_half-length_portrait_LCCN2010649406_%28cropped%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "image_alt": "John Bullock Clark",
+      "credit": "Wikipedia \u00b7 CC BY-SA 4.0",
+      "note": "Featured article \u00b7 29 October 2025",
+      "detail": ""
+    },
+    {
+      "kind": "wikipedia",
+      "title": "Apollo 5",
+      "url": "https://en.wikipedia.org/wiki/Apollo_5",
+      "blurb": "Apollo\u00a05 (pictured), the first flight of NASA's Lunar Module, lifted off from Cape Kennedy Air Force Station.",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Lunar_Module-1_and_Spacecraft_Lunar_Module_Adapter_%28SLA%29-7_in_the_Kennedy_Space_Center%27s_Manned_Spacecraft_Operations_Building.jpg/330px-Lunar_Module-1_and_Spacecraft_Lunar_Module_Adapter_%28SLA%29-7_in_the_Kennedy_Space_Center%27s_Manned_Spacecraft_Operations_Building.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+      "image_alt": "Apollo 5",
+      "credit": "Wikipedia \u00b7 CC BY-SA 4.0",
+      "note": "On this day \u00b7 1968",
+      "detail": ""
+    },
+    {
+      "kind": "ignobel",
+      "title": "Ig Nobel Literature Prize, 2018",
+      "url": "https://improbable.com/ig/winners/#2018-literature",
+      "blurb": "Documenting that most people who use complicated products do not read the instruction manual.",
+      "image": null,
+      "image_alt": "",
+      "credit": "Ig Nobel Prizes \u00b7 Annals of Improbable Research",
+      "note": "Ig Nobel \u00b7 2018",
+      "detail": "\u201cLife Is Too Short to RTFM: How Users Relate to Documentation and Excess Features in Consumer Products,\u201d Alethea L. Blackler, Rafael Gomez, Vesna Popovic and M. Helen Thompson, Interacting With Computers, vol. 28, no. 1, 2014, pp. 27-46."
+    },
+    {
+      "kind": "ignobel",
+      "title": "Ig Nobel Biodiversity Prize, 1996",
+      "url": "https://improbable.com/ig/winners/#1996-biodiversity",
+      "blurb": "Discovering the fossils of dinosaurs, horses, dragons, princesses, and more than 1000 other extinct \u201cmini-species,\u201d each of which is less than 1/100 of an inch in length.",
+      "image": null,
+      "image_alt": "",
+      "credit": "Ig Nobel Prizes \u00b7 Annals of Improbable Research",
+      "note": "Ig Nobel \u00b7 1996",
+      "detail": "the series \u201cReports of the Okamura Fossil Laboratory,\u201d published by the Okamura Fossil Laboratory in Nagoya, Japan during the 1970\u2019s and 1980\u2019s."
+    },
+    {
+      "kind": "ignobel",
+      "title": "Ig Nobel Reproductive Medicine Prize, 2018",
+      "url": "https://improbable.com/ig/winners/#2018-reproductive-medicine",
+      "blurb": "Using postage stamps to test whether the male sexual organ is functioning properly\u2014as described in their study \u201cNocturnal Penile Tumescence Monitoring With Stamps.\u201d",
+      "image": null,
+      "image_alt": "",
+      "credit": "Ig Nobel Prizes \u00b7 Annals of Improbable Research",
+      "note": "Ig Nobel \u00b7 2018",
+      "detail": "\u201cNocturnal Penile Tumescence Monitoring With Stamps,\u201d John M. Barry, Bruce Blank, Michael Boileau, Urology, vol. 15, 1980, pp. 171-172."
+    },
+    {
+      "kind": "ignobel",
+      "title": "Ig Nobel Attending The Ceremony Prize, 2011",
+      "url": "https://improbable.com/ig/winners/#2011-attending-the-ceremony",
+      "blurb": "Makoto Imai, Hideki Tanemura, Yukinobu Tajima, Hideaki Goto, Koichiro Mizoguchi and Junichi Murakami",
+      "image": null,
+      "image_alt": "",
+      "credit": "Ig Nobel Prizes \u00b7 Annals of Improbable Research",
+      "note": "Ig Nobel \u00b7 2011",
+      "detail": ""
+    },
+    {
+      "kind": "ignobel",
+      "title": "Ig Nobel Mathematics Prize, 2011",
+      "url": "https://improbable.com/ig/winners/#2011-mathematics",
+      "blurb": "Teaching the world to be careful when making mathematical assumptions and calculations.",
+      "image": null,
+      "image_alt": "",
+      "credit": "Ig Nobel Prizes \u00b7 Annals of Improbable Research",
+      "note": "Ig Nobel \u00b7 2011",
+      "detail": ""
+    }
+  ]
+}
