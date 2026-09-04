@@ -25,6 +25,14 @@ open_threads:
   - "negative-example construction for design-quality regression"
   - "operator-conditioned sparse attention over symmetry images"
 
+# The one section on the page that is not justified: a weekly rotation through sources
+# that have nothing to do with protein design. `motm` and `ignobel` read the seed files
+# harvested by `radar harvest`; `xkcd` and `wikipedia` are one live request each.
+# Drop a kind from this list to switch it off.
+good_to_know:
+  kinds: [xkcd, motm, wikipedia, ignobel]
+  wikipedia_years_back: 8
+
 models:
   triage: claude-haiku-4-5
   deep: claude-sonnet-5

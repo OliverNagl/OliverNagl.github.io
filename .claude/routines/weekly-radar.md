@@ -53,6 +53,12 @@ all at once, and do not summarise several batches into one answer file.
 - Work through the batches steadily. Do not skip any, and do not summarise several batches
   into one file.
 
+Nothing is asked of you for the **good to know** pick. `collect` already chose it — a
+random xkcd, a Molecule of the Month, a Wikipedia featured article or an Ig Nobel prize —
+and it is sitting in `work/$WEEK/state.json`. Do not write, rewrite or "improve" it: every
+field is fetched or read from a harvested file, and that is precisely what makes it
+trustworthy. If `collect` reported no pick, the section simply does not render this week.
+
 Also answer the blindspot prompt at `work/$WEEK/blindspot.md`, writing
 `work/$WEEK/blindspot_out.json`. Read that prompt carefully: it asks a *different* question
 from triage, and answering it like triage defeats its purpose. `"id": null` is a legitimate
@@ -122,3 +128,5 @@ burying it.
   `assemble`**. Papers without a triage row degrade to keyword scoring, the digest says so,
   and a partial week beats no week. Report how far you got.
 - Do not delete `data/raw/` — it is what makes the radar tunable after the fact.
+- Do not delete `data/good_to_know_seen.json` — it is the only thing stopping the
+  good-to-know section repeating itself.

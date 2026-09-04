@@ -275,6 +275,55 @@ details.abstract p {
 .blindspot .entry { border-left: 2px solid var(--rule-firm); padding-left: 18px; }
 .connection { color: var(--ink-soft); max-width: var(--measure); margin: 0 0 12px; font-size: .95rem; }
 
+/* --------------------------------------------------- outside the funnel ------- */
+/* Blindspot and good-to-know sit side by side: both come from outside the weekly
+   harvest, and the pairing is the argument. They stack below the two-column breakpoint,
+   the same width at which .entries collapses. */
+.outside {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 60px;
+  align-items: start;
+}
+@media (max-width: 900px) { .outside { grid-template-columns: minmax(0, 1fr); } }
+
+/* The one item on the page carrying no score, no action and no relevance. A dotted
+   rule rather than the blindspot's solid one: the same family, lighter weight. */
+.good-to-know .gtk {
+  padding: calc(4 * var(--step)) 0;
+  border-left: 2px dotted var(--rule-firm); padding-left: 18px;
+}
+.good-to-know .section-head .count {
+  /* Notes run long — a full Ig Nobel reference — so let this one wrap and stay quiet. */
+  text-align: right; max-width: 55%; color: var(--faint);
+}
+.gtk h3 {
+  font-size: 1.22rem; font-weight: 600; letter-spacing: -.011em;
+  margin-bottom: 12px; max-width: var(--measure); text-wrap: balance;
+}
+.gtk h3 a { color: var(--ink); }
+.gtk h3 a:hover { color: var(--accent); text-decoration: none; }
+
+/* The only images on the site. Capped so a Goodsell watercolour cannot outweigh the
+   week's actual reading, and given the ground colour so a transparent PNG stays legible
+   in dark mode. */
+.gtk-figure { display: block; margin: 0 0 14px; }
+.gtk-figure img {
+  display: block; width: 100%; max-width: 420px; height: auto;
+  border: 1px solid var(--rule); background: #fff;
+}
+.gtk-blurb { color: var(--ink-soft); max-width: var(--measure); margin: 0 0 10px; font-size: .95rem; }
+.gtk-detail {
+  font-family: var(--mono); font-size: .78rem; line-height: 1.55;
+  color: var(--muted); max-width: var(--measure); margin: 0 0 10px;
+}
+.gtk-credit {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .06em;
+  color: var(--faint); margin: 0;
+}
+/* xkcd's hover text is the punchline, so it is set as speech rather than as a caption. */
+.gtk-xkcd .gtk-blurb { font-style: italic; }
+
 /* --------------------------------------------------------------- lists --------- */
 
 .strip { list-style: none; padding: 0; margin: 0; }

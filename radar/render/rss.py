@@ -38,6 +38,19 @@ def _item(issue: Issue, s, kind: str = "") -> str:
     </item>"""
 
 
+def _gtk_item(issue: Issue, g) -> str:
+    """The good-to-know pick has no authors, venue or category, so it gets its own shape
+    rather than being forced through `_item`."""
+    desc = escape(f"{g.blurb}\n\nGOOD TO KNOW · {g.note} · {g.credit}")
+    return f"""    <item>
+      <title>Good to know: {escape(g.title)}</title>
+      <link>{escape(g.url)}</link>
+      <guid isPermaLink="false">{escape(issue.week)}:gtk:{escape(g.url)}</guid>
+      <pubDate>{format_datetime(datetime.combine(issue.window.to, datetime.min.time(), timezone.utc))}</pubDate>
+      <description>{desc}</description>
+    </item>"""
+
+
 def render_feed(cfg: Config, issues: list[Issue]) -> str:
     items: list[str] = []
     for issue in issues:
@@ -45,6 +58,8 @@ def render_feed(cfg: Config, issues: list[Issue]) -> str:
             items.append(_item(issue, s))
         if issue.blindspot:
             items.append(_item(issue, issue.blindspot, kind="BLINDSPOT"))
+        if issue.good_to_know:
+            items.append(_gtk_item(issue, issue.good_to_know))
         if len(items) >= MAX_ITEMS:
             break
 

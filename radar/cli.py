@@ -58,7 +58,8 @@ def _print_funnel(stats, health) -> None:
         click.echo(f"    {mark} {h.source:<10} {h.fetched:>6,}{flag}{detail}")
 
 
-def _save_state(cfg, week: str, shortlist, health, stats, now_published, extras) -> None:
+def _save_state(cfg, week: str, shortlist, health, stats, now_published, extras,
+                good_to_know=None) -> None:
     """Persist what `collect` learned so `select` and `assemble` need no refetch."""
     p = cfg.root / STATE.format(week=week)
     p.parent.mkdir(parents=True, exist_ok=True)
@@ -72,6 +73,9 @@ def _save_state(cfg, week: str, shortlist, health, stats, now_published, extras)
                 "stats": stats.model_dump(),
                 "now_published": [n.model_dump() for n in now_published],
                 "window": [extras["window"][0].isoformat(), extras["window"][1].isoformat()],
+                # Fetched here because `collect` is the only networked stage; `assemble`
+                # and `render` stay offline and read it back from this file.
+                "good_to_know": good_to_know.model_dump(mode="json") if good_to_know else None,
             },
             indent=2,
         )
@@ -80,6 +84,10 @@ def _save_state(cfg, week: str, shortlist, health, stats, now_published, extras)
 
 def _finalise(cfg, week: str, issue) -> None:
     write_issue(cfg.root, issue)
+    if issue.good_to_know:
+        from .good_to_know import record
+
+        record(cfg.root, week, issue.good_to_know)
     write_markdown(cfg.root, issue)
     write_status(cfg.root, issue)
     issues = read_all_issues(cfg.root)
@@ -141,6 +149,7 @@ def run(cfg, week: str | None, no_llm: bool, cached: bool, dry_run: bool) -> Non
     issue = assemble(
         cfg, week, shortlist, health, stats, now_published, extras,
         triage=triage, deep=deep, blindspot=blindspot,
+        good_to_know=_good_to_know(cfg, week),
     )
     _finalise(cfg, week, issue)
 
@@ -162,7 +171,8 @@ def collect(cfg, week: str | None, cached: bool) -> None:
 
     shortlist, health, stats, now_published, extras = gather(cfg, week, use_cache=cached)
     _print_funnel(stats, health)
-    _save_state(cfg, week, shortlist, health, stats, now_published, extras)
+    gtk = _good_to_know(cfg, week)
+    _save_state(cfg, week, shortlist, health, stats, now_published, extras, gtk)
 
     batches = prepare_triage(cfg, week, shortlist)
     pool = sample(extras["rejected"], extras["verdicts"], cfg, seed=hash(week) & 0xFFFF)
@@ -170,6 +180,8 @@ def collect(cfg, week: str | None, cached: bool) -> None:
 
     click.echo(f"\nwrote {len(batches)} triage batches to work/{week}/triage/")
     click.echo(f"wrote the blindspot prompt over {len(pool)} rejected records")
+    if gtk:
+        click.echo(f"good to know: [{gtk.kind}] {gtk.title}")
     click.echo(f"\nnext: answer each batch into work/{week}/triage_out/, then `radar select`")
 
 
@@ -209,7 +221,7 @@ def select(cfg, week: str | None) -> None:
 def assemble_cmd(cfg, week: str | None, keep_work: bool) -> None:
     """Validate the judgement files, rank, and write everything."""
     from .collect import read_raw
-    from .models import NowPublished, SourceHealth, Stats
+    from .models import GoodToKnow, NowPublished, SourceHealth, Stats
     from .prefilter import judge
     from .work import clear, load_deep, load_triage
 
@@ -235,11 +247,23 @@ def assemble_cmd(cfg, week: str | None, keep_work: bool) -> None:
         triage=load_triage(cfg.root, week, shortlist),
         deep=load_deep(cfg.root, week),
         blindspot=_blindspot_from_answers(cfg, week, extras),
+        good_to_know=(GoodToKnow(**state["good_to_know"]) if state.get("good_to_know") else None),
     )
     _finalise(cfg, week, issue)
 
     if not keep_work:
         clear(cfg.root, week)
+
+
+def _good_to_know(cfg, week: str):
+    """The weekly unjustified pick. Never fails a run — a dead source just means no pick."""
+    from .good_to_know import pick
+
+    try:
+        return pick(cfg, week)
+    except Exception as exc:                              # noqa: BLE001
+        click.secho(f"good-to-know pick unavailable: {exc}", fg="yellow")
+        return None
 
 
 def _blindspot_from_answers(cfg, week: str, extras: dict):
@@ -345,6 +369,30 @@ def audit(cfg, min_age_days: int, max_age_days: int, citation_threshold: int) ->
 
 
 # --------------------------------------------------------------------- utility ----
+
+
+@cli.command()
+@click.pass_obj
+def harvest(cfg) -> None:
+    """Re-scrape the two seeded good-to-know sources into config/good_to_know/.
+
+    Only worth running after an Ig Nobel ceremony or when the Molecule of the Month index
+    has moved on — roughly once a year. Never runs on the weekly path.
+    """
+    from .harvest import harvest_ignobel, harvest_motm, write_seeds
+    from .sources.base import Fetcher
+
+    with Fetcher(min_interval=0.12) as f:
+        click.echo("harvesting Molecule of the Month (one request per entry) …")
+        motm = harvest_motm(f)
+        click.echo("harvesting Ig Nobel winners …")
+        ig = harvest_ignobel(f)
+
+    written = write_seeds(cfg.root, motm, ig)
+    click.echo(f"\n  {len(motm):>4} molecules")
+    click.echo(f"  {len(ig):>4} prizes ({sum(1 for r in ig if r['doi'])} with a DOI)")
+    for p_ in written:
+        click.echo(f"  wrote {p_.relative_to(cfg.root)}")
 
 
 @cli.command()

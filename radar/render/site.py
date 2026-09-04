@@ -19,6 +19,10 @@ from ..models import Issue
 from ..store import all_weeks, is_stale, read_all_issues, read_issue, read_status
 from ..util import truncate
 
+# Its own bucket in the archive's category filter: it is not one of the nine research
+# categories, and forcing it into one would corrupt the counts.
+GTK_CATEGORY = "good-to-know"
+
 SITE_META = {
     "owner": "Oliver Nagl",
     "email": "olnagl@ethz.ch",
@@ -153,9 +157,36 @@ def build_search_index(cfg: Config, issues: list[Issue]) -> dict:
                     "url": s.links.get("doi") or s.links.get("url", ""),
                 }
             )
+        # The good-to-know pick is not a paper the radar surfaced, so it carries none of
+        # the funnel's fields. It is indexed anyway — finding that one comic again months
+        # later is exactly what search is for — under a category of its own.
+        g = issue.good_to_know
+        if g:
+            docs.append(
+                {
+                    "id": f"{issue.week}::gtk::{g.url}",
+                    "week": issue.week,
+                    "title": g.title,
+                    "authors": "",
+                    "venue": g.credit,
+                    "date": issue.window.to.isoformat(),
+                    "category": GTK_CATEGORY,
+                    "action": "",
+                    "score": 0,
+                    "why": g.blurb,
+                    "reason": g.note,
+                    "touches": [],
+                    "abstract": "",
+                    "code": False,
+                    "watchlist": "",
+                    "front": True,
+                    "url": g.url,
+                }
+            )
+
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "categories": category_names(cfg),
+        "categories": {**category_names(cfg), GTK_CATEGORY: "Good to know"},
         "count": len(docs),
         "docs": docs,
     }

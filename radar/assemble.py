@@ -15,7 +15,9 @@ from pathlib import Path
 from .collect import collect, write_raw
 from .config import Config
 from .dedupe import SeenStore, dedupe, find_now_published
-from .models import Issue, NowPublished, Paper, Scored, SourceHealth, Stats, Triage, Window
+from .models import (
+    GoodToKnow, Issue, NowPublished, Paper, Scored, SourceHealth, Stats, Triage, Window,
+)
 from .prefilter import prefilter
 from .rank import build_backlog, build_scored, select_front_page
 from .util import week_window
@@ -91,6 +93,7 @@ def assemble(
     triage: dict[str, Triage] | None = None,
     deep: dict[str, dict] | None = None,
     blindspot: Scored | None = None,
+    good_to_know: GoodToKnow | None = None,
 ) -> Issue:
     fp_cfg = cfg.profile["front_page"]
     verdicts = extras["verdicts"]
@@ -150,6 +153,7 @@ def assemble(
         stats=stats,
         front_page=front,
         blindspot=blindspot,
+        good_to_know=good_to_know,
         backlog=backlog,
         now_published=now_published,
         weights=cfg.weights,

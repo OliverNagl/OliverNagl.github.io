@@ -43,14 +43,44 @@
 </section>
 {% endif %}
 
-{% if issue.blindspot %}
-<section class="section blindspot">
-  <div class="section-head">
-    <h2>Blindspot</h2>
-    <span class="count label">from the rejected pool</span>
-  </div>
-  <div class="entries single">{{ entry(issue.blindspot, cat_names, blindspot=true) }}</div>
-</section>
+{# The two sections that come from outside the funnel, set side by side because that is
+   what they have in common. The blindspot is oblique but useful; the good-to-know pick is
+   the one thing on the page with no justification at all. #}
+{% if issue.blindspot or issue.good_to_know %}
+<div class="outside">
+
+  {% if issue.blindspot %}
+  <section class="section blindspot">
+    <div class="section-head">
+      <h2>Blindspot</h2>
+      <span class="count label">from the rejected pool</span>
+    </div>
+    <div class="entries single">{{ entry(issue.blindspot, cat_names, blindspot=true) }}</div>
+  </section>
+  {% endif %}
+
+  {% if issue.good_to_know %}
+  {% set g = issue.good_to_know %}
+  <section class="section good-to-know">
+    <div class="section-head">
+      <h2>Good to know</h2>
+      <span class="count label">{{ g.note }}</span>
+    </div>
+    <article class="gtk gtk-{{ g.kind }}">
+      <h3><a href="{{ g.url }}" rel="noopener">{{ g.title }}</a></h3>
+      {% if g.image %}
+        <a href="{{ g.url }}" rel="noopener" class="gtk-figure">
+          <img src="{{ g.image }}" alt="{{ g.image_alt }}" loading="lazy" decoding="async">
+        </a>
+      {% endif %}
+      {% if g.blurb %}<p class="gtk-blurb">{{ g.blurb }}</p>{% endif %}
+      {% if g.detail %}<p class="gtk-detail">{{ g.detail }}</p>{% endif %}
+      {% if g.credit %}<p class="gtk-credit">{{ g.credit }}</p>{% endif %}
+    </article>
+  </section>
+  {% endif %}
+
+</div>
 {% endif %}
 
 {% if issue.now_published %}
