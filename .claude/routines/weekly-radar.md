@@ -24,9 +24,8 @@ note it — it will already be on the front page banner, but say so in your fina
 If `collect` fails outright, **stop and report it**. Do not publish a partial week: a
 silently incomplete digest is worse than a missing one.
 
-Note the branch. This repository publishes from `radar-rebuild`, not `main`; `git status`
-should already show it after checkout. If you are on a different branch, switch before
-committing anything.
+Note the branch. This repository publishes from `main`; `git status` should already show
+it after checkout. If you are on a different branch, switch before committing anything.
 
 ## 2. Triage
 
