@@ -6,7 +6,117 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 03 Sep 2026 23:24:10 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 17:07:12 +0000</lastBuildDate>
+    <item>
+      <title>RFOptimization: Guiding Design Optimization with All-Atom Structure Prediction</title>
+      <link>https://doi.org/10.64898/2026.09.04.749184</link>
+      <guid isPermaLink="false">2026-W37:10.64898/2026.09.04.749184</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Alternates gradient-guided mutation with an orthogonal structure predictor and MPNN redesign, so a binder has to survive a model it wasn't optimized against before it counts as improved.
+
+Zhang, O., …, Baker, D. · bioRxiv · 7 Sep · design-method · action: read</description>
+    </item>
+    <item>
+      <title>Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching</title>
+      <link>https://doi.org/10.64898/2026.09.06.749733</link>
+      <guid isPermaLink="false">2026-W37:10.64898/2026.09.06.749733</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Runs inverse folding as Dirichlet flow matching directly over the amino-acid simplex, so fixed-residue inpainting and soft biochemical preferences fall out of the same denoising process instead of needing separate machinery.
+
+TARTICI, A., …, Wittmann, B. J. · bioRxiv · 7 Sep · design-method · action: read</description>
+    </item>
+    <item>
+      <title>A rugged binding landscape unifies static and dynamic paradigms in protein-protein interactions</title>
+      <link>https://doi.org/10.64898/2026.03.29.715155</link>
+      <guid isPermaLink="false">2026-W37:10.64898/2026.03.29.715155</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Two nanobody series bind their antigens the same way but for different reasons: one obeys Rosetta scoring of the crystal structure, the other only ranks correctly once the interface is allowed to move in MD.
+
+Liu, T., …, Sun, B. · bioRxiv · 4 Sep · struct-pred · action: read · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
+    </item>
+    <item>
+      <title>ABAG-Rank: Improving Model Selection of AlphaFold Antibody-Antigen Complexes by Learning to Rank.</title>
+      <link>https://doi.org/10.1093/bioinformatics/btag663</link>
+      <guid isPermaLink="false">2026-W37:10.1093/bioinformatics/btag663</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>A permutation-invariant DeepSets ranker picks the right antibody-antigen decoy out of an AF ensemble, indifferent to how many candidates you hand it.
+
+Tadiello M, …, Elofsson A · Bioinformatics (Oxford, England) · 4 Sep · struct-pred · action: skim</description>
+    </item>
+    <item>
+      <title>Ensemble tests mask missing dynamics in protein conformational generators</title>
+      <link>https://doi.org/10.64898/2026.09.02.748111</link>
+      <guid isPermaLink="false">2026-W37:10.64898/2026.09.02.748111</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Randomly shuffle the frames of a real MD trajectory and it still passes the field's standard ensemble-fidelity test — the metric can't distinguish learned dynamics from a slideshow.
+
+Liu, K., …, Chi, Y. · bioRxiv · 4 Sep · ml-method · action: read</description>
+    </item>
+    <item>
+      <title>The fitness landscape of a form II rubisco in a photosynthetic bacterium guides engineering of oxygen tolerance.</title>
+      <link>https://doi.org/10.1126/sciadv.aee9222</link>
+      <guid isPermaLink="false">2026-W37:10.1126/sciadv.aee9222</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>A 15,000-variant fitness screen plus a trained transformer turns rubisco's oxygen-tolerance problem into a recombination search over real fitness data, not a hand-picked hotspot list.
+
+Hoffmann UA, …, Hudson EP · Science advances · 4 Sep · enzyme · action: skim · touches: negative-example construction for design-quality regression</description>
+    </item>
+    <item>
+      <title>Squidly harnesses enzyme functional hierarchy and contrastive learning to efficiently predict catalytic residues from sequence.</title>
+      <link>https://doi.org/10.7554/eLife.108186</link>
+      <guid isPermaLink="false">2026-W37:10.7554/eLife.108186</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Contrastive learning on protein language model embeddings finds catalytic residues from sequence alone, beating methods that require a crystal structure.
+
+Rieger WJF, …, Mora A · eLife · 4 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>BAGEL-CAR: Reflections on the Bits to Binders Competition</title>
+      <link>https://doi.org/10.64898/2026.09.02.748856</link>
+      <guid isPermaLink="false">2026-W37:10.64898/2026.09.02.748856</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Their winning CAR binders were never refolded before submission — apply the standard ESMFold refiltering step after the fact and every experimentally enriched hit would have been thrown out.
+
+Lala, J., Angioletti-Uberti, S. · bioRxiv · 4 Sep · function-design · action: read · touches: negative-example construction for design-quality regression</description>
+    </item>
+    <item>
+      <title>ProRB: a structure-free unified framework for joint prediction and design of protein-RNA interactions.</title>
+      <link>https://doi.org/10.1093/nar/gkag870</link>
+      <guid isPermaLink="false">2026-W37:10.1093/nar/gkag870</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>One sequence-only model both scores protein-RNA affinity and generates the RNA that binds your protein, with cross-attention maps that read out the motif it learned.
+
+Xue Y, …, Pan X · Nucleic acids research · 7 Sep · function-design · action: read</description>
+    </item>
+    <item>
+      <title>Learning Universal Representations of Intermolecular Interactions with ATOMICA</title>
+      <link>https://doi.org/10.1101/2025.04.02.646906</link>
+      <guid isPermaLink="false">2026-W37:10.1101/2025.04.02.646906</guid>
+      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Pretrains one geometric model on two million interaction complexes so the same embeddings zero-shot-prioritize binding residues across proteins, ligands, metals and nucleic acids.
+
+Fang, A., …, Zitnik, M. · bioRxiv · 7 Sep · ml-method · action: read · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
+    </item>
+    <item>
+      <title>The elasticity of semiflexible polymers with reversible spontaneous curvature in two dimensions</title>
+      <link>https://doi.org/10.1063/5.0349713</link>
+      <guid isPermaLink="false">2026-W37:arxiv:2609.04856v1</guid>
+      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Models a semiflexible polymer as a two-state system where an uncurved and a curved conformation compete, with the state populated according to an activation-energy-controlled equilibrium rather than being fixed by chain identity.
+
+BLINDSPOT · Donghyeon Kim, Panayotis Benetatos · arXiv · 4 Sep · struct-pred · action: track</description>
+    </item>
     <item>
       <title>Creating bottom-up RNA transfer vehicles from synthetic protein assemblies.</title>
       <link>https://doi.org/10.1038/s41586-026-10952-3</link>

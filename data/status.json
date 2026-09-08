@@ -1,48 +1,55 @@
 {
-  "week": "2026-W36",
-  "ran_at": "2026-09-03T23:06:54.401278+00:00",
-  "ok": true,
-  "degraded": false,
+  "week": "2026-W37",
+  "ran_at": "2026-09-08T17:07:12.602188+00:00",
+  "ok": false,
+  "degraded": true,
   "stale_after_days": 11,
-  "message": "All sources healthy.",
-  "failed_sources": [],
-  "under_covered_sources": [],
+  "message": "Sources failed: openalex. Coverage for this week is incomplete.",
+  "failed_sources": [
+    "openalex"
+  ],
+  "under_covered_sources": [
+    "biorxiv"
+  ],
   "source_health": [
     {
       "source": "arxiv",
       "ok": true,
-      "fetched": 266,
-      "expected_min": 0,
+      "fetched": 153,
+      "expected_min": 80,
       "error": null
     },
     {
       "source": "biorxiv",
       "ok": true,
-      "fetched": 495,
-      "expected_min": 0,
+      "fetched": 238,
+      "expected_min": 300,
       "error": null
     },
     {
       "source": "medrxiv",
       "ok": true,
-      "fetched": 55,
-      "expected_min": 0,
+      "fetched": 42,
+      "expected_min": 20,
       "error": null
     },
     {
       "source": "openalex",
-      "ok": true,
-      "fetched": 874,
-      "expected_min": 0,
-      "error": null
+      "ok": false,
+      "fetched": 0,
+      "expected_min": 100,
+      "error": "all openalex queries failed: ['ChemRxiv', 'search:de novo protein design', 'search:protein nanoparticle assembly', 'search:designed protein nanomaterial']"
     },
     {
       "source": "pubmed",
       "ok": true,
-      "fetched": 497,
-      "expected_min": 0,
+      "fetched": 187,
+      "expected_min": 150,
       "error": null
     }
   ],
-  "notes": []
+  "notes": [
+    "source openalex failed: all openalex queries failed: ['ChemRxiv', 'search:de novo protein design', 'search:protein nanoparticle assembly', 'search:designed protein nanomaterial']",
+    "source biorxiv returned 238, below its expected minimum of 300"
+  ]
 }
