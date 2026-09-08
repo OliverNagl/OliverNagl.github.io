@@ -53,7 +53,7 @@
     {
       "id": "10.1038/s41586-026-10952-3",
       "title": "Creating bottom-up RNA transfer vehicles from synthetic protein assemblies.",
-      "authors_short": "Schuhmacher MK, \u2026, Wurst W",
+      "authors_short": "Schuhmacher MK, …, Wurst W",
       "authors": [
         "Schuhmacher MK",
         "Gruber C",
@@ -78,7 +78,7 @@
         "Ganea K",
         "Wieser N",
         "Emrich A",
-        "Ya\u011fmur E",
+        "Yağmur E",
         "Rager K",
         "Sagindykova G",
         "Armbrust N",
@@ -92,8 +92,8 @@
         "Theis FJ",
         "Ebert G",
         "Moretti A",
-        "Ert\u00fcrk A",
-        "B\u00e4hr A",
+        "Ertürk A",
+        "Bähr A",
         "Kupatt C",
         "Jasnin M",
         "Klymiuk N",
@@ -125,7 +125,7 @@
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "Over a hundred designed protein shells that move RNA orders of magnitude better than lipid nanoparticles, retargeted by grafting on a different designed peptide binder \u2014 and carried all the way to a pig gene-editing model.",
+      "why": "Over a hundred designed protein shells that move RNA orders of magnitude better than lipid nanoparticles, retargeted by grafting on a different designed peptide binder — and carried all the way to a pig gene-editing model.",
       "touches": [
         "symmetry-native / tied-ASU diffusion for icosahedral assemblies"
       ],
@@ -168,7 +168,7 @@
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "Describes a non-canonical amino acid by its atoms and bonds instead of as a fixed token, so it can place residues it never saw in training \u2014 and beats AlphaFold3-based methods at predicting them.",
+      "why": "Describes a non-canonical amino acid by its atoms and bonds instead of as a fixed token, so it can place residues it never saw in training — and beats AlphaFold3-based methods at predicting them.",
       "touches": [],
       "action": "read",
       "connection": null,
@@ -177,7 +177,7 @@
     {
       "id": "10.1126/science.aee1792",
       "title": "Programmable design of synthetic plant immune receptors for pathogen protein recognition.",
-      "authors_short": "Zhu H, \u2026, Gao C",
+      "authors_short": "Zhu H, …, Gao C",
       "authors": [
         "Zhu H",
         "Jiang D",
@@ -221,7 +221,7 @@
     {
       "id": "10.1126/sciadv.aed8384",
       "title": "Lenacapavir allosterically remodels the HIV-1 capsid.",
-      "authors_short": "Dos Santos NFB, \u2026, Pornillos O",
+      "authors_short": "Dos Santos NFB, …, Pornillos O",
       "authors": [
         "Dos Santos NFB",
         "Lewis JA",
@@ -257,7 +257,7 @@
       },
       "watchlist_hit": "Sundquist WI",
       "degraded": false,
-      "why": "Destabilises the capsid's high-curvature pentameric vertices first and lets failure cascade from there \u2014 the opposite of the lattice-hyperstabiliser story, and a map of where a small interface change gets amplified into whole-shell collapse.",
+      "why": "Destabilises the capsid's high-curvature pentameric vertices first and lets failure cascade from there — the opposite of the lattice-hyperstabiliser story, and a map of where a small interface change gets amplified into whole-shell collapse.",
       "touches": [
         "symmetry-native / tied-ASU diffusion for icosahedral assemblies"
       ],
@@ -268,7 +268,7 @@
     {
       "id": "10.1016/j.cell.2026.08.007",
       "title": "De novo pan-rhodamine binders for fluorescence microscopy from mammalian cells to extremophiles",
-      "authors_short": "Yuda Chen, \u2026, Bo Huang",
+      "authors_short": "Yuda Chen, …, Bo Huang",
       "authors": [
         "Yuda Chen",
         "Klaus Yserentant",
@@ -308,14 +308,14 @@
       "relevance": 9,
       "novelty": 8,
       "reason": "de novo pan-rhodamine binder tag, brighter than existing fluorescent tags",
-      "abstract": "Fluorescent imaging in live cells is a cornerstone of life sciences. While natural fluorescent proteins have been engineered to enhance individual features, no existing tag combines ideal properties into a single system: high brightness, reversible binding, compact size, and stability across diverse conditions. Here, we achieve this through de novo design of rhodamine binders (Rhobin). To harness the broad repertoire of rhodamine fluorophores, we developed a generalizable design strategy for a pan-rhodamine binder compatible with diverse wavelengths and applications. Rhobin enables live- and fixed-cell imaging of various subcellular targets in mammalian cells, showing brightness surpassing existing tags. Its reversible fluorophore binding supports super-resolution stimulated emission depletion (STED) and live-cell single-molecule imaging for extended durations compared with HaloTag. Beyond conventional systems, Rhobin enables live imaging of the extremophile Sulfolobus acidocaldarius at 75\u00b0C, previously inaccessible with current tags. Together, these results establish Rhobin as a versatile platform for next-generation imaging and biosensor design.",
+      "abstract": "Fluorescent imaging in live cells is a cornerstone of life sciences. While natural fluorescent proteins have been engineered to enhance individual features, no existing tag combines ideal properties into a single system: high brightness, reversible binding, compact size, and stability across diverse conditions. Here, we achieve this through de novo design of rhodamine binders (Rhobin). To harness the broad repertoire of rhodamine fluorophores, we developed a generalizable design strategy for a pan-rhodamine binder compatible with diverse wavelengths and applications. Rhobin enables live- and fixed-cell imaging of various subcellular targets in mammalian cells, showing brightness surpassing existing tags. Its reversible fluorophore binding supports super-resolution stimulated emission depletion (STED) and live-cell single-molecule imaging for extended durations compared with HaloTag. Beyond conventional systems, Rhobin enables live imaging of the extremophile Sulfolobus acidocaldarius at 75°C, previously inaccessible with current tags. Together, these results establish Rhobin as a versatile platform for next-generation imaging and biosensor design.",
       "links": {
         "url": "https://doi.org/10.1016/j.cell.2026.08.007",
         "doi": "https://doi.org/10.1016/j.cell.2026.08.007"
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "One designed pocket that reversibly binds a whole family of rhodamines rather than a bespoke pocket per dye, which is what buys it brighter STED than HaloTag \u2014 and it still works at 75 \u00b0C.",
+      "why": "One designed pocket that reversibly binds a whole family of rhodamines rather than a bespoke pocket per dye, which is what buys it brighter STED than HaloTag — and it still works at 75 °C.",
       "touches": [],
       "action": "read",
       "connection": null,
@@ -324,7 +324,7 @@
     {
       "id": "10.1101/2024.08.01.606258",
       "title": "Toward De Novo Protein Design from Natural Language",
-      "authors_short": "Dai, F., \u2026, Yuan, F.",
+      "authors_short": "Dai, F., …, Yuan, F.",
       "authors": [
         "Dai, F.",
         "You, S.",
@@ -388,7 +388,7 @@
     {
       "id": "10.1093/bioinformatics/btag611",
       "title": "Hierarchical discrete representations for coarse-to-fine protein conformation generation.",
-      "authors_short": "On S, \u2026, Kim ES",
+      "authors_short": "On S, …, Kim ES",
       "authors": [
         "On S",
         "Jeong Y",
@@ -422,7 +422,7 @@
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "Fixes global topology in a coarse code and refines local geometry conditioned on it, keeping conformational diversity without losing validity \u2014 the coarse/fine split is worth stealing for quasi-equivalence, one fold code with per-slot refinements.",
+      "why": "Fixes global topology in a coarse code and refines local geometry conditioned on it, keeping conformational diversity without losing validity — the coarse/fine split is worth stealing for quasi-equivalence, one fold code with per-slot refinements.",
       "touches": [
         "quasi-equivalence: one sequence, multiple backbone conformations by assembly slot"
       ],
@@ -433,7 +433,7 @@
     {
       "id": "10.64898/2026.08.26.747087",
       "title": "Design and characterization of broadly protective influenza A(H3N2) vaccine candidates using protein language models",
-      "authors_short": "Howard, V. R., \u2026, Georgiev, I. S.",
+      "authors_short": "Howard, V. R., …, Georgiev, I. S.",
       "authors": [
         "Howard, V. R.",
         "Allen, J. D.",
@@ -468,7 +468,7 @@
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "A language model proposes HA variants and a learned antigenic-distance model picks which to build; two of seven protected against strains that did not yet exist when they were designed \u2014 a generate-and-score loop that worked with no wet-lab positives.",
+      "why": "A language model proposes HA variants and a learned antigenic-distance model picks which to build; two of seven protected against strains that did not yet exist when they were designed — a generate-and-score loop that worked with no wet-lab positives.",
       "touches": [
         "oracles predicting whether a designed subunit assembles, without experimental positives"
       ],
@@ -479,7 +479,7 @@
     {
       "id": "10.64898/2026.08.28.747755",
       "title": "De novo design of CR2 binder as vaccine scaffold",
-      "authors_short": "Liu, Y.-T., \u2026, Sun, C.",
+      "authors_short": "Liu, Y.-T., …, Sun, C.",
       "authors": [
         "Liu, Y.-T.",
         "Yin, Y.-N.",
@@ -522,7 +522,7 @@
       },
       "watchlist_hit": null,
       "degraded": false,
-      "why": "A designed, stable, high-affinity binder to the B-cell co-receptor CR2 in place of native C3d \u2014 the adjuvant becomes the designed protein itself rather than something added to the formulation.",
+      "why": "A designed, stable, high-affinity binder to the B-cell co-receptor CR2 in place of native C3d — the adjuvant becomes the designed protein itself rather than something added to the formulation.",
       "touches": [],
       "action": "read",
       "connection": null,
@@ -531,7 +531,7 @@
     {
       "id": "10.1038/s41586-026-10930-9",
       "title": "Pyridoxal photoenzymes for asymmetric radical-radical cross-couplings.",
-      "authors_short": "Sorensen CC, \u2026, Hyster TK",
+      "authors_short": "Sorensen CC, …, Hyster TK",
       "authors": [
         "Sorensen CC",
         "Wang S",
@@ -560,7 +560,7 @@
       "relevance": 6,
       "novelty": 8,
       "reason": "PLP established as a new photoenzymatic cofactor enabling radical cross-couplings",
-      "abstract": "Non-native photoenzymes have enabled myriad asymmetric bond-forming events that are otherwise challenging or at present impossible with small-molecule catalysis1,2. These reactions require enzymes with cofactors that are strong absorbers in the visible region with reasonably long-lived excited states, such as flavin and nicotinamide. However, there exists a substantial chromophoric cofactor 'dark space' in which no known photoenzymatic activity has been characterized1. Increased knowledge of the photophysics of the cofactors in the 'dark space' would increase the types of bonds that photoenzymes can form by accessing new excited-state intermediates in enzyme classes with divergent reactivities and selectivities. Here, we establish pyridoxal 5'-phosphate (PLP) as a photoenzymatic cofactor by leveraging the excited-state quinonoid intermediate as a potent single-electron reductant. We overcome the poor photophysical properties of the native quinonoid intermediate by using non-native benzylamine substrates and exploiting F\u00f6rster resonance energy transfer mechanism from an exogenous photosensitizer to access the quinonoid excited state. This redox neutral approach enables an asymmetric radical-radical cross-coupling between benzylamines and reductive radical precursors through concomitant generation and localization of a radical pair in an enzyme active site-overcoming the typical challenges associated with this reaction by removing the necessity for radical sorting and the persistent radical effect3. The emergent photoexcited intermediates of PLP identified in this work greatly expand the potential avenues for valuable bond-forming events by PLP-dependent enzymes.",
+      "abstract": "Non-native photoenzymes have enabled myriad asymmetric bond-forming events that are otherwise challenging or at present impossible with small-molecule catalysis1,2. These reactions require enzymes with cofactors that are strong absorbers in the visible region with reasonably long-lived excited states, such as flavin and nicotinamide. However, there exists a substantial chromophoric cofactor 'dark space' in which no known photoenzymatic activity has been characterized1. Increased knowledge of the photophysics of the cofactors in the 'dark space' would increase the types of bonds that photoenzymes can form by accessing new excited-state intermediates in enzyme classes with divergent reactivities and selectivities. Here, we establish pyridoxal 5'-phosphate (PLP) as a photoenzymatic cofactor by leveraging the excited-state quinonoid intermediate as a potent single-electron reductant. We overcome the poor photophysical properties of the native quinonoid intermediate by using non-native benzylamine substrates and exploiting Förster resonance energy transfer mechanism from an exogenous photosensitizer to access the quinonoid excited state. This redox neutral approach enables an asymmetric radical-radical cross-coupling between benzylamines and reductive radical precursors through concomitant generation and localization of a radical pair in an enzyme active site-overcoming the typical challenges associated with this reaction by removing the necessity for radical sorting and the persistent radical effect3. The emergent photoexcited intermediates of PLP identified in this work greatly expand the potential avenues for valuable bond-forming events by PLP-dependent enzymes.",
       "links": {
         "url": "https://pubmed.ncbi.nlm.nih.gov/42649284/",
         "doi": "https://doi.org/10.1038/s41586-026-10930-9"
@@ -577,7 +577,7 @@
   "blindspot": {
     "id": "arxiv:2608.30918v1",
     "title": "Anomalous temperature dependence in phase transitions via ballistic coalescence",
-    "authors_short": "Nalina Vadakkayil, \u2026, Subir K. Das",
+    "authors_short": "Nalina Vadakkayil, …, Subir K. Das",
     "authors": [
       "Nalina Vadakkayil",
       "Sutapa Roy",
@@ -609,18 +609,29 @@
     },
     "watchlist_hit": null,
     "degraded": true,
-    "why": "Clusters that move ballistically rather than diffusively switch from algebraic to explosively fast growth, and the temperature at which they cross over is non-monotonic \u2014 the growth law itself changes class.",
+    "why": "Clusters that move ballistically rather than diffusively switch from algebraic to explosively fast growth, and the temperature at which they cross over is non-monotonic — the growth law itself changes class.",
     "touches": [],
     "action": "track",
-    "connection": "An assembly oracle scores static thermodynamics \u2014 interface energy, geometric fit \u2014 and is blind to whether growth falls into a different kinetic class before it ever reaches a closed shell. If subunit encounters are ballistic rather than diffusive in the relevant regime, the same interface can succeed or run away depending only on temperature.",
+    "connection": "An assembly oracle scores static thermodynamics — interface energy, geometric fit — and is blind to whether growth falls into a different kinetic class before it ever reaches a closed shell. If subunit encounters are ballistic rather than diffusive in the relevant regime, the same interface can succeed or run away depending only on temperature.",
     "confidence": "medium"
+  },
+  "good_to_know": {
+    "kind": "ignobel",
+    "title": "Ig Nobel Biomechanics Prize, 2026",
+    "url": "https://doi.org/10.1016/j.evolhumbehav.2025.106788",
+    "blurb": "Devising a more precise definition of kissing — “non-agonistic interactions involving directed, intraspecific, oral-oral contact with some movement of the lips/mouthparts and no food transfer” — in ants, birds, polar bears, and humans.",
+    "image": null,
+    "image_alt": "",
+    "credit": "Ig Nobel Prizes · Annals of Improbable Research",
+    "note": "Ig Nobel · 2026",
+    "detail": "“A Comparative Approach to Kissing,” Matilda Brindle, Catherine F. Talbot, and Stuart West, Evolution and Human Behavior, vol. 47, no. 6, 2026, article 106788."
   },
   "backlog": {
     "function-design": [
       {
         "id": "10.64898/2026.09.01.747572",
         "title": "Designing antimicrobials with programmable mechanism and safety",
-        "authors_short": "Szymczak, P., \u2026, Szczurek, E.",
+        "authors_short": "Szymczak, P., …, Szczurek, E.",
         "authors": [
           "Szymczak, P.",
           "Torres, M. D. T.",
@@ -628,7 +639,7 @@
           "Hetzel, L.",
           "Puczko-Szymanski, B.",
           "Jegelka, S.",
-          "Gu\u0308nnemann, S.",
+          "Günnemann, S.",
           "Theis, F. J.",
           "de la Fuente-Nunez, C.",
           "Szczurek, E."
@@ -668,11 +679,11 @@
       {
         "id": "10.1038/s41586-026-10962-1",
         "title": "Rewiring the ribosome to translate proteins encoded in its own RNA.",
-        "authors_short": "Alizadeh K, \u2026, Mankin AS",
+        "authors_short": "Alizadeh K, …, Mankin AS",
         "authors": [
           "Alizadeh K",
           "Klepacki D",
-          "V\u00e1zquez-Laslop N",
+          "Vázquez-Laslop N",
           "Mankin AS"
         ],
         "venue": "Nature",
@@ -709,11 +720,11 @@
       {
         "id": "10.64898/2026.09.01.748349",
         "title": "De novo designed single-domain antibodies protect against lethal cobra venom neurotoxicity in vivo",
-        "authors_short": "Overath, M. D., \u2026, Jenkins, T. P.",
+        "authors_short": "Overath, M. D., …, Jenkins, T. P.",
         "authors": [
           "Overath, M. D.",
           "Lundquist, E. V. S.",
-          "Bjo\u0308rnsson, K. H.",
+          "Björnsson, K. H.",
           "Kerwin, S.",
           "Jacobsen, C. P.",
           "Moiniche, M. v. B.",
@@ -759,7 +770,7 @@
       {
         "id": "10.1038/s41589-026-02141-0",
         "title": "A pharmacological modality to sequester homomeric proteins.",
-        "authors_short": "Livnah E, \u2026, London N",
+        "authors_short": "Livnah E, …, London N",
         "authors": [
           "Livnah E",
           "Suss O",
@@ -818,7 +829,7 @@
       {
         "id": "10.1038/s41589-025-02128-3",
         "title": "Directed evolution of functional intrinsically disordered proteins.",
-        "authors_short": "Ma Y, \u2026, Dai Y",
+        "authors_short": "Ma Y, …, Dai Y",
         "authors": [
           "Ma Y",
           "Yang L",
@@ -861,7 +872,7 @@
       {
         "id": "10.1016/j.cell.2026.08.009",
         "title": "Ratiometric transcriptional activation by protein degradation.",
-        "authors_short": "Gray MA, \u2026, Banik SM",
+        "authors_short": "Gray MA, …, Banik SM",
         "authors": [
           "Gray MA",
           "Randal KL",
@@ -913,7 +924,7 @@
       {
         "id": "10.1038/s41587-026-03302-1",
         "title": "Macropinocytosis-mediated recyclable LYTACs (McR-TACs) for receptor-independent protein degradation.",
-        "authors_short": "Liu P, \u2026, Hu Q",
+        "authors_short": "Liu P, …, Hu Q",
         "authors": [
           "Liu P",
           "Li Y",
@@ -957,7 +968,7 @@
       {
         "id": "10.1126/sciadv.aef9406",
         "title": "Fluorescent protein ticker tape (FPTT): Multiplexed recording of transcriptional dynamics in living cells and in vivo.",
-        "authors_short": "Wang R, \u2026, Piatkevich KD",
+        "authors_short": "Wang R, …, Piatkevich KD",
         "authors": [
           "Wang R",
           "Jiang J",
@@ -985,7 +996,7 @@
         "relevance": 6,
         "novelty": 7,
         "reason": "self-assembling fluorescent-protein fibers multiplex-record transcriptional signaling histories",
-        "abstract": "Recording and real-time imaging of promoter activities are critical for deciphering signaling cross-talk, but technologies for simultaneously capturing multiple transient events in living cells are lacking. Here, we design fluorescent protein-based ticker tapes (FPTT) for multiplexed, scalable, longitudinal recording of single-cell physiological activities by integrating multispectral monomeric fluorescent proteins with self-assembling protein fibers. FPTT logged dose-dependent, reversible endogenous cFos transcriptional histories in hippocampal neurons at 3-hour resolution over 8 days. We engineered FPTT variants for human nuclear factor \u03baB (NF-\u03baB), Janus kinase/signal transducer and activator of transcription 3 (STAT3), mechanistic target of rapamycin (mTOR), nuclear factor of activated T cells (NFAT), and adenosine 3',5'-monophosphate (cAMP) signaling. This expanded toolset enabled quantification of cFos and NF-\u03baB cross-talk in neurons, tracking of STAT3/cAMP dynamics during mouse liver injury, discovery of unexpected NFAT/STAT3 cross-talk, and characterization of cell cycle-dependent oscillating mTOR dynamics. Last, we achieved simultaneous analysis of four major pathways during T cell activation. FPTT provides a versatile platform to investigate transcriptional histories and signaling interplay, with broad applications in developmental biology and disease modeling.",
+        "abstract": "Recording and real-time imaging of promoter activities are critical for deciphering signaling cross-talk, but technologies for simultaneously capturing multiple transient events in living cells are lacking. Here, we design fluorescent protein-based ticker tapes (FPTT) for multiplexed, scalable, longitudinal recording of single-cell physiological activities by integrating multispectral monomeric fluorescent proteins with self-assembling protein fibers. FPTT logged dose-dependent, reversible endogenous cFos transcriptional histories in hippocampal neurons at 3-hour resolution over 8 days. We engineered FPTT variants for human nuclear factor κB (NF-κB), Janus kinase/signal transducer and activator of transcription 3 (STAT3), mechanistic target of rapamycin (mTOR), nuclear factor of activated T cells (NFAT), and adenosine 3',5'-monophosphate (cAMP) signaling. This expanded toolset enabled quantification of cFos and NF-κB cross-talk in neurons, tracking of STAT3/cAMP dynamics during mouse liver injury, discovery of unexpected NFAT/STAT3 cross-talk, and characterization of cell cycle-dependent oscillating mTOR dynamics. Last, we achieved simultaneous analysis of four major pathways during T cell activation. FPTT provides a versatile platform to investigate transcriptional histories and signaling interplay, with broad applications in developmental biology and disease modeling.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42685187/",
           "doi": "https://doi.org/10.1126/sciadv.aef9406"
@@ -1001,7 +1012,7 @@
       {
         "id": "10.1038/s41467-026-76668-0",
         "title": "Structural basis of transcription of the hachimoji eight-letter alphabet by E. coli RNA polymerase.",
-        "authors_short": "Li Q, \u2026, Wang D",
+        "authors_short": "Li Q, …, Wang D",
         "authors": [
           "Li Q",
           "Kim HJ",
@@ -1034,7 +1045,7 @@
         "relevance": 6,
         "novelty": 7,
         "reason": "cryoEM shows E. coli RNA polymerase efficiently transcribes an eight-letter genetic alphabet",
-        "abstract": "Expanded genetic alphabets with synthetic nucleotides can greatly increase the chemical diversity of nucleic acids, enabling new molecular functions. Because cellular transcription is executed by multi-subunit RNA polymerases, the compatibility of unnatural base pairs with this machinery is essential for engineering expanded genetic systems. Here we demonstrate that Escherichia coli RNA polymerase efficiently transcribes an eight-letter genetic alphabet with two orthogonal unnatural base pairs: P:Z and B:S pairs. To overcome G:Z misincorporation, we synthesize a higher-fidelity analogue, termed Z*, in which the C5 nitro group is replaced with a carboxamide. To elucidate substrate-recognition mechanisms, we determine four cryo-electron microscopy structures of RNA polymerase incorporating dZ:PTP or dP:Z*TP at 2.42-2.75 \u00c5 resolution. These structures, together with our early work on S:B pair, show that E. coli RNA polymerase is able to efficiently recognize these unnatural base pairs in the same manner as natural base pairs. Collectively, these results establish the feasibility of an eight-letter genetic alphabet for transcription.",
+        "abstract": "Expanded genetic alphabets with synthetic nucleotides can greatly increase the chemical diversity of nucleic acids, enabling new molecular functions. Because cellular transcription is executed by multi-subunit RNA polymerases, the compatibility of unnatural base pairs with this machinery is essential for engineering expanded genetic systems. Here we demonstrate that Escherichia coli RNA polymerase efficiently transcribes an eight-letter genetic alphabet with two orthogonal unnatural base pairs: P:Z and B:S pairs. To overcome G:Z misincorporation, we synthesize a higher-fidelity analogue, termed Z*, in which the C5 nitro group is replaced with a carboxamide. To elucidate substrate-recognition mechanisms, we determine four cryo-electron microscopy structures of RNA polymerase incorporating dZ:PTP or dP:Z*TP at 2.42-2.75 Å resolution. These structures, together with our early work on S:B pair, show that E. coli RNA polymerase is able to efficiently recognize these unnatural base pairs in the same manner as natural base pairs. Collectively, these results establish the feasibility of an eight-letter genetic alphabet for transcription.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42686745/",
           "doi": "https://doi.org/10.1038/s41467-026-76668-0"
@@ -1050,7 +1061,7 @@
       {
         "id": "10.64898/2026.05.25.727761",
         "title": "Engineering Stapled Peptide Inhibitors Reveals Design Principles for Targeting Talin-Induced Integrin Activation",
-        "authors_short": "Gao, T., \u2026, Wang, K.",
+        "authors_short": "Gao, T., …, Wang, K.",
         "authors": [
           "Gao, T.",
           "Belova, E.",
@@ -1098,7 +1109,7 @@
       {
         "id": "10.64898/2026.08.27.747600",
         "title": "The first OpenBind release: An open experimental structure-affinity dataset and benchmark for structure-based AI",
-        "authors_short": "Nelen, J., \u2026, Imrie, F.",
+        "authors_short": "Nelen, J., …, Imrie, F.",
         "authors": [
           "Nelen, J.",
           "Khan, O.",
@@ -1152,7 +1163,7 @@
       {
         "id": "10.64898/2026.08.26.747321",
         "title": "PathFold: Predicting the Entire Protein Folding Pathway from Protein Sequence Alone",
-        "authors_short": "Zhang, Z., \u2026, Kihara, D.",
+        "authors_short": "Zhang, Z., …, Kihara, D.",
         "authors": [
           "Zhang, Z.",
           "Ibtehaz, N.",
@@ -1196,7 +1207,7 @@
       {
         "id": "10.26599/tst.2026.9010082",
         "title": "MixInfoFold: A Method For Iteratively Generating Better Sequences",
-        "authors_short": "An Zeng, \u2026, Dan Pan",
+        "authors_short": "An Zeng, …, Dan Pan",
         "authors": [
           "An Zeng",
           "CanHui Chen",
@@ -1222,7 +1233,7 @@
         "relevance": 6,
         "novelty": 5,
         "reason": "graph-based inverse folding method improves sequence recovery on CATH",
-        "abstract": "Abstract Current AlphaFold3-based protein structure prediction has reached remarkable levels, but sequences that can be applied in practice are mostly generated using physics-based methods. Here, we introduce a graph representation-based protein sequence generation method: MixInfoFold which incorporates new noise addition and feature extraction methods, as well as our designed encoder-decoder called MixInfo. The noise addition method adds Gaussian noise positively correlated with the sequence length at the end of the main-chain, which enhances the model\u2019s ability to understand the dynamic changes in protein structure. The feature extraction method includes a new feature calculated by assessing the area and distance of the main-chain atoms. The MixInfo iteratively computes the relationships between edge and node features, enabling a deeper exploration of the implicit sequence information within protein structures. Compared to the best model, our model achieves an improvement of 0.80%, 0.89%, and 3.28%in sequence recovery rates on the CATH4.2, CATH4.3, and Modelfinal datasets, respectively. Additionally, our model generates sequences faster than other methods, and generates sequences closely resemble natural proteins, indicating the model\u2019s feasibility and potential value in practical applications.",
+        "abstract": "Abstract Current AlphaFold3-based protein structure prediction has reached remarkable levels, but sequences that can be applied in practice are mostly generated using physics-based methods. Here, we introduce a graph representation-based protein sequence generation method: MixInfoFold which incorporates new noise addition and feature extraction methods, as well as our designed encoder-decoder called MixInfo. The noise addition method adds Gaussian noise positively correlated with the sequence length at the end of the main-chain, which enhances the model’s ability to understand the dynamic changes in protein structure. The feature extraction method includes a new feature calculated by assessing the area and distance of the main-chain atoms. The MixInfo iteratively computes the relationships between edge and node features, enabling a deeper exploration of the implicit sequence information within protein structures. Compared to the best model, our model achieves an improvement of 0.80%, 0.89%, and 3.28%in sequence recovery rates on the CATH4.2, CATH4.3, and Modelfinal datasets, respectively. Additionally, our model generates sequences faster than other methods, and generates sequences closely resemble natural proteins, indicating the model’s feasibility and potential value in practical applications.",
         "links": {
           "url": "https://doi.org/10.26599/tst.2026.9010082",
           "doi": "https://doi.org/10.26599/tst.2026.9010082",
@@ -1239,7 +1250,7 @@
       {
         "id": "10.64898/2026.08.28.747824",
         "title": "Accurate and efficient prediction of protein conformations with ProtMonomer",
-        "authors_short": "Yyunda Si, \u2026, Luonan Chen",
+        "authors_short": "Yyunda Si, …, Luonan Chen",
         "authors": [
           "Yyunda Si",
           "Suqi Zhang",
@@ -1280,7 +1291,7 @@
       {
         "id": "10.1093/bioinformatics/btag642",
         "title": "Semi-supervised Retrieval of Functional Residues Through the Integration of Protein Language Models and Gene Ontology Data.",
-        "authors_short": "Dickson A, \u2026, Mofrad MRK",
+        "authors_short": "Dickson A, …, Mofrad MRK",
         "authors": [
           "Dickson A",
           "Mouline S",
@@ -1321,7 +1332,7 @@
       {
         "id": "10.64898/2026.02.20.706798",
         "title": "Universal physical principles of protein structural genesis emerge in language-model representation space",
-        "authors_short": "Chuanyang, L., \u2026, Zhu, L.",
+        "authors_short": "Chuanyang, L., …, Zhu, L.",
         "authors": [
           "Chuanyang, L.",
           "Liu, J.",
@@ -1368,14 +1379,14 @@
       {
         "id": "10.1073/pnas.2609639123",
         "title": "Rapidly evolving aphid gall effector proteins exhibit saposin-like folds",
-        "authors_short": "Fatema Bhinderwala, \u2026, David L. Stern",
+        "authors_short": "Fatema Bhinderwala, …, David L. Stern",
         "authors": [
           "Fatema Bhinderwala",
           "Aishwarya Korgaonkar",
           "Kota N. Gopalakrishna",
           "Thomas C. Mathers",
           "Shuji Shigenobu",
-          "J. Fernando Baz\u00e1n",
+          "J. Fernando Bazán",
           "Saskia A. Hogenhout",
           "Guillermo Calero",
           "Angela M. Gronenborn",
@@ -1399,7 +1410,7 @@
         "relevance": 4,
         "novelty": 5,
         "reason": "custom-MSA AlphaFold2 recovers structures of rapidly evolving effector protein family",
-        "abstract": "Abstract Many insects manipulate plants by injecting effector proteins. In one extreme example of this molecular \u201chijacking\u201d, Hormaphis cornu aphids inject bicycle proteins into Hamamelis virginiana , contributing to the development of novel organs called galls. Bicycle proteins share no amino acid sequence similarity with proteins of known function. Here, we report the crystal structures of two divergent bicycle proteins. Both proteins contain saposin-like folds: one with multiple disulfide bonds exhibits a swapped domain topology; the other has no disulfide bonds and possesses two distinct, tandem domains. To explore the structural evolution of bicycle proteins, we attempted to predict bicycle protein structures with Alphafold2 (AF2) and other deep learning programs. While AF2 did not recover the two experimental structures using existing databases, it succeeded when provided with multiple sequence alignments (MSAs) of protein sequences from newly sequenced closely related species. Using this approach, we generated 2400 high-confidence bicycle protein predictions from seven aphid species. While all aphid bicycle proteins contain predicted saposin-like folds, they display a vast diversity of structural and physicochemical properties. While this diversity thwarts prediction of conserved functions encoded in structure, it suggests that bicycle proteins have evolved to target diverse plant processes and/or to evade plant immune surveillance. Our extension of AF2 with custom MSAs of proteins from closely related species provides a generalizable, powerful approach for predicting structures of rapidly evolving protein families. Significance statement Parasites introduce specialized \u201ceffector\u201d proteins into hosts to suppress host immunity and to release nutrients. The molecular functions and structures of most effector proteins are unknown. Effector proteins often evolve rapidly and share no similarity with proteins of known function. Here, we demonstrate that machine learning algorithms can predict the structures of aphid \u201cbicycle\u201d effector proteins when supplemented with data from closely related species. We exploit this finding to generate predictions of 2400 bicycle protein structures. Aphid bicycle proteins exploit a common folding motif, yet exhibit topologically distinct structures that form separate structural clusters. Despite the clustering of these proteins in structure space, they occupy a nearly uniformly physicochemical space, suggesting that they encode a large diversity of molecular functions.",
+        "abstract": "Abstract Many insects manipulate plants by injecting effector proteins. In one extreme example of this molecular “hijacking”, Hormaphis cornu aphids inject bicycle proteins into Hamamelis virginiana , contributing to the development of novel organs called galls. Bicycle proteins share no amino acid sequence similarity with proteins of known function. Here, we report the crystal structures of two divergent bicycle proteins. Both proteins contain saposin-like folds: one with multiple disulfide bonds exhibits a swapped domain topology; the other has no disulfide bonds and possesses two distinct, tandem domains. To explore the structural evolution of bicycle proteins, we attempted to predict bicycle protein structures with Alphafold2 (AF2) and other deep learning programs. While AF2 did not recover the two experimental structures using existing databases, it succeeded when provided with multiple sequence alignments (MSAs) of protein sequences from newly sequenced closely related species. Using this approach, we generated 2400 high-confidence bicycle protein predictions from seven aphid species. While all aphid bicycle proteins contain predicted saposin-like folds, they display a vast diversity of structural and physicochemical properties. While this diversity thwarts prediction of conserved functions encoded in structure, it suggests that bicycle proteins have evolved to target diverse plant processes and/or to evade plant immune surveillance. Our extension of AF2 with custom MSAs of proteins from closely related species provides a generalizable, powerful approach for predicting structures of rapidly evolving protein families. Significance statement Parasites introduce specialized “effector” proteins into hosts to suppress host immunity and to release nutrients. The molecular functions and structures of most effector proteins are unknown. Effector proteins often evolve rapidly and share no similarity with proteins of known function. Here, we demonstrate that machine learning algorithms can predict the structures of aphid “bicycle” effector proteins when supplemented with data from closely related species. We exploit this finding to generate predictions of 2400 bicycle protein structures. Aphid bicycle proteins exploit a common folding motif, yet exhibit topologically distinct structures that form separate structural clusters. Despite the clustering of these proteins in structure space, they occupy a nearly uniformly physicochemical space, suggesting that they encode a large diversity of molecular functions.",
         "links": {
           "url": "https://doi.org/10.1073/pnas.2609639123",
           "doi": "https://doi.org/10.1073/pnas.2609639123"
@@ -1415,7 +1426,7 @@
       {
         "id": "10.64898/2026.09.01.748708",
         "title": "Beyond Equilibrium Ensembles: Time Rescaling in Coarse-Grained Simulations across Single-Molecule and Condensate Regimes",
-        "authors_short": "Gopi, S., \u2026, Schuler, B.",
+        "authors_short": "Gopi, S., …, Schuler, B.",
         "authors": [
           "Gopi, S.",
           "Qin, H.",
@@ -1539,7 +1550,7 @@
       {
         "id": "10.1016/j.cell.2026.08.005",
         "title": "Live-cell transcriptomics with engineered virus-like particles.",
-        "authors_short": "Najia MA, \u2026, Blainey PC",
+        "authors_short": "Najia MA, …, Blainey PC",
         "authors": [
           "Najia MA",
           "Le A",
@@ -1586,7 +1597,7 @@
       {
         "id": "10.64898/2026.08.26.747429",
         "title": "Tc17-driven antibody-independent mucosal immunity is critical for protection against extracellular bacterial pneumonia",
-        "authors_short": "Liu, Y., \u2026, Guan, S.",
+        "authors_short": "Liu, Y., …, Guan, S.",
         "authors": [
           "Liu, Y.",
           "Zhang, J.",
@@ -1631,7 +1642,7 @@
       {
         "id": "10.1021/acsnano.6c08403",
         "title": "2-arm-PEG-Oligocations Transiently Shield the Liver Sinusoids to Mitigate Off-Target Hepatic Expression of mRNA Lipid Nanoparticles.",
-        "authors_short": "Dirisala A, \u2026, Uchida S",
+        "authors_short": "Dirisala A, …, Uchida S",
         "authors": [
           "Dirisala A",
           "Chatterjee B",
@@ -1684,7 +1695,7 @@
       {
         "id": "10.1021/acsnano.6c09358",
         "title": "Layered Lipid Nanoparticle Adjuvants Coordinate Toll-Like Receptor 4 and Toll-Like Receptor 9 Activation with Enhanced Immunity and Improved Tolerability.",
-        "authors_short": "Chen H, \u2026, Chen Y",
+        "authors_short": "Chen H, …, Chen Y",
         "authors": [
           "Chen H",
           "Wang R",
@@ -1734,7 +1745,7 @@
       {
         "id": "10.64898/2026.05.29.728600",
         "title": "Atomic layer deposition for core-shell microparticle vaccines enabling programmable antigen delivery and enhanced humoral immune responses",
-        "authors_short": "Chaudhary, N., \u2026, Irvine, D. J.",
+        "authors_short": "Chaudhary, N., …, Irvine, D. J.",
         "authors": [
           "Chaudhary, N.",
           "Coleman, H. J.",
@@ -1793,7 +1804,7 @@
       {
         "id": "10.1002/adma.74852",
         "title": "Iterative Selection of DNA Nanostructures for Cellular Uptake",
-        "authors_short": "Anjali Rajwar, \u2026, Erik Benson",
+        "authors_short": "Anjali Rajwar, …, Erik Benson",
         "authors": [
           "Anjali Rajwar",
           "Lisa Eichhorn",
@@ -1819,7 +1830,7 @@
         "relevance": 5,
         "novelty": 6,
         "reason": "iterative selection screens sequenceable DNA nanostructure libraries for cell-specific uptake",
-        "abstract": "DNA nanotechnology offers precise, biocompatible structures with strong potential for targeted drug delivery, yet current discovery approaches rely on testing individual designs, limiting exploration of structural diversity. In this study, we introduce an iterative selection strategy that screens large libraries of DNA nanostructures, each folded from a single\u2011stranded \"structure genome\" compatible with amplification and sequencing. Cellular internalization is used as the selection pressure: libraries are incubated with mammalian cells, internalized structures are recovered from lysates, and the process is iterated across multiple rounds in HEK293T and RAW264.7 cells. High\u2011throughput sequencing of recovered structure genomes reveals cell\u2011type-specific enrichment patterns, enabling the identification of individual nanostructures with preferential uptake. Selected candidates were synthesized and evaluated as purified structures, confirming differential internalization by quantitative flow cytometry and microscopy. Turning DNA nanostructure discovery into a selection\u2011based process could enable high-throughput exploration of structural diversity and provide an alternative route to identify nanostructures with cell\u2011specific uptake properties for biomedical applications.",
+        "abstract": "DNA nanotechnology offers precise, biocompatible structures with strong potential for targeted drug delivery, yet current discovery approaches rely on testing individual designs, limiting exploration of structural diversity. In this study, we introduce an iterative selection strategy that screens large libraries of DNA nanostructures, each folded from a single‑stranded \"structure genome\" compatible with amplification and sequencing. Cellular internalization is used as the selection pressure: libraries are incubated with mammalian cells, internalized structures are recovered from lysates, and the process is iterated across multiple rounds in HEK293T and RAW264.7 cells. High‑throughput sequencing of recovered structure genomes reveals cell‑type-specific enrichment patterns, enabling the identification of individual nanostructures with preferential uptake. Selected candidates were synthesized and evaluated as purified structures, confirming differential internalization by quantitative flow cytometry and microscopy. Turning DNA nanostructure discovery into a selection‑based process could enable high-throughput exploration of structural diversity and provide an alternative route to identify nanostructures with cell‑specific uptake properties for biomedical applications.",
         "links": {
           "url": "https://doi.org/10.1002/adma.74852",
           "doi": "https://doi.org/10.1002/adma.74852",
@@ -1836,7 +1847,7 @@
       {
         "id": "10.26434/chemrxiv.15008134/v1",
         "title": "Peptide-Based Coacervates for Stimuli-Responsive Drug Delivery: Design, Mechanisms, and Applications",
-        "authors_short": "Krishna S Bharadwaj, \u2026, Mrinmoy De",
+        "authors_short": "Krishna S Bharadwaj, …, Mrinmoy De",
         "authors": [
           "Krishna S Bharadwaj",
           "Sharat Sarmah",
@@ -1877,7 +1888,7 @@
       {
         "id": "10.64898/2026.08.31.748348",
         "title": "DNA Sequence-Programmed Protein Coronas Determine Intracellular Fate and Proteostatic Stress of Carbon Nanotubes",
-        "authors_short": "Aceer Nadeem, \u2026, Mijin Kim",
+        "authors_short": "Aceer Nadeem, …, Mijin Kim",
         "authors": [
           "Aceer Nadeem",
           "Tianyu Xu",
@@ -1920,17 +1931,17 @@
       {
         "id": "10.1038/s41467-026-77251-3",
         "title": "Mutation-agnostic base editing of the progerin farnesylation site rescues Hutchinson-Gilford progeria syndrome phenotypes in neuromuscular organoids",
-        "authors_short": "Dong-Woo Kim, \u2026, Hyuk\u2010Jin Cha",
+        "authors_short": "Dong-Woo Kim, …, Hyuk‐Jin Cha",
         "authors": [
           "Dong-Woo Kim",
-          "Eun\u2010Ji Kwon",
+          "Eun‐Ji Kwon",
           "Beom-Jin Jeon",
           "Dong-Hyeok Kwon",
           "Goo Jang",
           "Y. C. Yoon",
           "Yuna Hwang",
           "Hyukjin Lee",
-          "Hyuk\u2010Jin Cha"
+          "Hyuk‐Jin Cha"
         ],
         "venue": "Nature Communications",
         "source": "openalex",
@@ -1967,7 +1978,7 @@
       {
         "id": "10.1126/sciadv.aef9739",
         "title": "Restoring pre-osteoarthritis cartilage matrix integrity via Col9 mRNA halts osteoarthritis progression.",
-        "authors_short": "Zhou J, \u2026, Itaka K",
+        "authors_short": "Zhou J, …, Itaka K",
         "authors": [
           "Zhou J",
           "Hu J",
@@ -2015,11 +2026,11 @@
       {
         "id": "10.1038/s41467-026-77359-6",
         "title": "The physicochemical design, structure and permeability of the JCVI-syn3A minimal cell membrane",
-        "authors_short": "Caterina Presutti, \u2026, B. Poolman",
+        "authors_short": "Caterina Presutti, …, B. Poolman",
         "authors": [
           "Caterina Presutti",
           "Mert Bozoflu",
-          "Joanna Juhaniewicz-D\u0119bi\u0144ska",
+          "Joanna Juhaniewicz-Dębińska",
           "Lauren A. Lowe",
           "Naomi Woltinge",
           "Arathi Das",
@@ -2045,7 +2056,7 @@
         "relevance": 5,
         "novelty": 6,
         "reason": "combined biophysical methods define lipid design rules for a minimal synthetic cell membrane",
-        "abstract": "Abstract Minimal cells offer a platform to uncover the fundamental physicochemical principles of cellular life. While genomes, proteomes and metabolic networks of cells have been elucidated, the lipidome, which determines the physicochemical identity of the membrane, remains largely unexplored. Yet, the membrane is a central determinant of cellular viability, regulating solute permeability, mechanical stability, and environmental cues. Here, we investigate membranes that recapitulate the lipid composition of the minimal cell JCVI-syn3A, which is distinguished by an unusually high cholesterol content and simple composition. Combining cryo-electron microscopy, Langmuir monolayer experiments, permeability assays, and coarse-grained molecular dynamics simulations, we demonstrate that cholesterol and sphingomyelin act as dominant condensing agents that stabilize the membrane while preserving an ordered yet fluid state. These lipids enhance lipid packing and acyl-chain order, whereas cardiolipin, POPC, and DOPG counterbalance condensation by promoting fluidity and compressibility. Cholesterol\u2013sphingomyelin interactions emerge as a key thermodynamic driver that fine-tunes membrane order, fluidity, and permeability. Remarkably, membranes containing up to 60 mol% of cholesterol remain permeable to water and physiologically relevant osmolytes at rates compatible with growth of JCVI-syn3A. Together, our results define the physicochemical principles underlying minimal cell membranes and reveal how lipid composition enables passive permeation while maintaining membrane integrity.",
+        "abstract": "Abstract Minimal cells offer a platform to uncover the fundamental physicochemical principles of cellular life. While genomes, proteomes and metabolic networks of cells have been elucidated, the lipidome, which determines the physicochemical identity of the membrane, remains largely unexplored. Yet, the membrane is a central determinant of cellular viability, regulating solute permeability, mechanical stability, and environmental cues. Here, we investigate membranes that recapitulate the lipid composition of the minimal cell JCVI-syn3A, which is distinguished by an unusually high cholesterol content and simple composition. Combining cryo-electron microscopy, Langmuir monolayer experiments, permeability assays, and coarse-grained molecular dynamics simulations, we demonstrate that cholesterol and sphingomyelin act as dominant condensing agents that stabilize the membrane while preserving an ordered yet fluid state. These lipids enhance lipid packing and acyl-chain order, whereas cardiolipin, POPC, and DOPG counterbalance condensation by promoting fluidity and compressibility. Cholesterol–sphingomyelin interactions emerge as a key thermodynamic driver that fine-tunes membrane order, fluidity, and permeability. Remarkably, membranes containing up to 60 mol% of cholesterol remain permeable to water and physiologically relevant osmolytes at rates compatible with growth of JCVI-syn3A. Together, our results define the physicochemical principles underlying minimal cell membranes and reveal how lipid composition enables passive permeation while maintaining membrane integrity.",
         "links": {
           "url": "https://doi.org/10.1038/s41467-026-77359-6",
           "doi": "https://doi.org/10.1038/s41467-026-77359-6"
@@ -2060,8 +2071,8 @@
       },
       {
         "id": "10.1002/anie.4984465",
-        "title": "Spacer Length as a Molecular Cue for Self\u2010Sorting, Living Growth, and Piezoresponse in Peptide Assemblies",
-        "authors_short": "Jahanvi Ralhan, \u2026, Asish Pal",
+        "title": "Spacer Length as a Molecular Cue for Self‐Sorting, Living Growth, and Piezoresponse in Peptide Assemblies",
+        "authors_short": "Jahanvi Ralhan, …, Asish Pal",
         "authors": [
           "Jahanvi Ralhan",
           "Deepika Gupta",
@@ -2110,8 +2121,8 @@
       },
       {
         "id": "10.1002/anie.4575346",
-        "title": "Co\u2010Assembled Mirror\u2010Image DNA Nanostructure for Effective Alleviation of Acute Kidney Injury",
-        "authors_short": "Yiming Xie, \u2026, Baoquan Ding",
+        "title": "Co‐Assembled Mirror‐Image DNA Nanostructure for Effective Alleviation of Acute Kidney Injury",
+        "authors_short": "Yiming Xie, …, Baoquan Ding",
         "authors": [
           "Yiming Xie",
           "Shuhui Yu",
@@ -2154,12 +2165,12 @@
       {
         "id": "10.64898/2026.08.24.746745",
         "title": "PhageTAILor leverages machine learning for phage tail-like elements detection and classification in plant-associated bacteria",
-        "authors_short": "Heejung Cho, \u2026, Jonelle T. R. Basso",
+        "authors_short": "Heejung Cho, …, Jonelle T. R. Basso",
         "authors": [
           "Heejung Cho",
           "Socheata Hour",
           "Simon Roux",
-          "Cl\u00e9ment Coclet",
+          "Clément Coclet",
           "Oluwamayowa Amusat",
           "Vivek K. Mutalik",
           "Alexey E. Kazakov",
@@ -2189,7 +2200,7 @@
         "relevance": 4,
         "novelty": 4,
         "reason": "ML classifier detects and classifies contractile phage tail-like nanomachines across bacterial genomes",
-        "abstract": "Phage tail-like elements (PTEs) \u2014 tailocins, bacterial type VI secretion systems (T6SS), and extracellular contractile injection systems (eCIS) \u2014 are contractile nanomachines that bacteria use to kill their neighbors and compete within their micro-ecosystems. PTEs help shape microbial community composition. Most PTE detection tools only detect a single PTE class. Moreover, most tailocin detection methods are largely restricted to Pseudomonas , leaving a key part of tailocin diversity uncharacterized. In this work, we present PhageTAILor (https://github.com/hjcho-bio/PhageTAILor), an integrative and fully automated pipeline that detects and classifies prophages and 3 PTE classes from bacterial genomes. PhageTAILor combines a 6-detector homology-based candidate search (geNomad, tail-gene, PHROGs-tail, SecReT6, eCIStem, and a divergence-tolerant tail-HMM detector) with a LightGBM classifier comprising 1 multiclass and 3 binary heads, trained on 6,501 bacterial genomes carrying 13,082 prophages and PTEs. A phylogeny-free feature matrix used in our model keeps predictions reproducible between model construction and user inference. PhageTAILor performs strongly at the genome level and generalizes beyond its Pseudomonas -rich training set. On a 76-strain cross-clade benchmark, PhageTAILor detected tailocins at F1 = 0.955. Furthermore, it identified 12 of 13 experimentally validated tailocins spanning five genera versus 2 of 13 for a Pseudomonas -restricted tool TattleTail. PhageTAILor also demonstrated sensitivity equivalent to viral detection tool geNomad while avoiding its higher false-positive rate. Applied to 7,925 plant- and soil-associated bacterial isolates, PhageTAILor showed that prophages in the phyllosphere and tailocins in plant-associated bacteria, whereas eCIS are enriched in soil. PhageTAILor is distributed as an open-source, modular pipeline with a command-line interface.",
+        "abstract": "Phage tail-like elements (PTEs) — tailocins, bacterial type VI secretion systems (T6SS), and extracellular contractile injection systems (eCIS) — are contractile nanomachines that bacteria use to kill their neighbors and compete within their micro-ecosystems. PTEs help shape microbial community composition. Most PTE detection tools only detect a single PTE class. Moreover, most tailocin detection methods are largely restricted to Pseudomonas , leaving a key part of tailocin diversity uncharacterized. In this work, we present PhageTAILor (https://github.com/hjcho-bio/PhageTAILor), an integrative and fully automated pipeline that detects and classifies prophages and 3 PTE classes from bacterial genomes. PhageTAILor combines a 6-detector homology-based candidate search (geNomad, tail-gene, PHROGs-tail, SecReT6, eCIStem, and a divergence-tolerant tail-HMM detector) with a LightGBM classifier comprising 1 multiclass and 3 binary heads, trained on 6,501 bacterial genomes carrying 13,082 prophages and PTEs. A phylogeny-free feature matrix used in our model keeps predictions reproducible between model construction and user inference. PhageTAILor performs strongly at the genome level and generalizes beyond its Pseudomonas -rich training set. On a 76-strain cross-clade benchmark, PhageTAILor detected tailocins at F1 = 0.955. Furthermore, it identified 12 of 13 experimentally validated tailocins spanning five genera versus 2 of 13 for a Pseudomonas -restricted tool TattleTail. PhageTAILor also demonstrated sensitivity equivalent to viral detection tool geNomad while avoiding its higher false-positive rate. Applied to 7,925 plant- and soil-associated bacterial isolates, PhageTAILor showed that prophages in the phyllosphere and tailocins in plant-associated bacteria, whereas eCIS are enriched in soil. PhageTAILor is distributed as an open-source, modular pipeline with a command-line interface.",
         "links": {
           "url": "https://doi.org/10.64898/2026.08.24.746745",
           "doi": "https://doi.org/10.64898/2026.08.24.746745",
@@ -2207,7 +2218,7 @@
       {
         "id": "10.1021/acsnano.6c07948",
         "title": "Molecular Design Principles for Photosystem I-Based Biohybrid Solar Fuel Catalysts.",
-        "authors_short": "Emerson MD, \u2026, Gisriel CJ",
+        "authors_short": "Emerson MD, …, Gisriel CJ",
         "authors": [
           "Emerson MD",
           "Damaraju SNS",
@@ -2254,11 +2265,11 @@
       {
         "id": "10.1128/jvi.00795-26",
         "title": "Cryo-EM structure of bacteriophage Nocturne116: insights into the architecture of c2-like Lactococcus viruses.",
-        "authors_short": "R\u016bmnieks J, \u2026, T\u0101rs K",
+        "authors_short": "Rūmnieks J, …, Tārs K",
         "authors": [
-          "R\u016bmnieks J",
-          "Di\u0161lers A",
-          "T\u0101rs K"
+          "Rūmnieks J",
+          "Dišlers A",
+          "Tārs K"
         ],
         "venue": "Journal of virology",
         "source": "pubmed",
@@ -2294,7 +2305,7 @@
       {
         "id": "10.64898/2026.04.10.717662",
         "title": "Cryo-EM structures of a neofunctionalized tardigrade peroxiredoxin specialized for nucleic acid binding",
-        "authors_short": "Yamato, H., \u2026, Inoue, T.",
+        "authors_short": "Yamato, H., …, Inoue, T.",
         "authors": [
           "Yamato, H.",
           "Fukuda, Y.",
@@ -2337,7 +2348,7 @@
       {
         "id": "10.64898/2026.09.01.748678",
         "title": "Structural mechanism of nuclear membrane sealing by LEM2-ESCRT-III",
-        "authors_short": "Jordan, M. A., \u2026, Von Appen, A.",
+        "authors_short": "Jordan, M. A., …, Von Appen, A.",
         "authors": [
           "Jordan, M. A.",
           "Palacio-Rodriguez, K.",
@@ -2388,7 +2399,7 @@
       {
         "id": "10.64898/2026.09.01.748624",
         "title": "Structural mechanism governing radiationless energy transfer in Renilla bioluminescence",
-        "authors_short": "Pluskal, D., \u2026, Marek, M.",
+        "authors_short": "Pluskal, D., …, Marek, M.",
         "authors": [
           "Pluskal, D.",
           "Toul, M.",
@@ -2446,7 +2457,7 @@
       {
         "id": "10.64898/2026.08.30.748053",
         "title": "Hierarchical cysteine oxidation controls reversible amyloid formation in an ankyrin repeat protein",
-        "authors_short": "Sethi, A., \u2026, Goebl, C.",
+        "authors_short": "Sethi, A., …, Goebl, C.",
         "authors": [
           "Sethi, A.",
           "Darroch, H.",
@@ -2498,7 +2509,7 @@
       {
         "id": "arxiv:2609.00831v1",
         "title": "FLaG: Frequency-Domain Latent-attention Gated Pooling for Token Aggregation",
-        "authors_short": "Kewei Li, \u2026, Fengfeng Zhou",
+        "authors_short": "Kewei Li, …, Fengfeng Zhou",
         "authors": [
           "Kewei Li",
           "Rongying Zhang",
@@ -2545,7 +2556,7 @@
       {
         "id": "arxiv:2608.31009v1",
         "title": "Language-Informed Flow Matching for Trend-Guided Structure-Based 3D Molecular Generation",
-        "authors_short": "Tianyu Gao, \u2026, Ye Wei",
+        "authors_short": "Tianyu Gao, …, Ye Wei",
         "authors": [
           "Tianyu Gao",
           "Zhikai Su",
@@ -2591,7 +2602,7 @@
       {
         "id": "10.64898/2026.08.28.747907",
         "title": "Towards Sparse Causal Features for Zero-shot Mutation Effect Prediction in a Protein Language Model",
-        "authors_short": "Mohanty, S., \u2026, Green, A. G.",
+        "authors_short": "Mohanty, S., …, Green, A. G.",
         "authors": [
           "Mohanty, S.",
           "Phutela, M.",
@@ -2632,7 +2643,7 @@
       {
         "id": "arxiv:2608.30674v1",
         "title": "CoMPASS: Collaborative Molecular Property Prediction via Adaptive Small-Large Model Synergy",
-        "authors_short": "Wentao Li, \u2026, Xiaonan Wang",
+        "authors_short": "Wentao Li, …, Xiaonan Wang",
         "authors": [
           "Wentao Li",
           "Jiangjie Qiu",
@@ -2675,7 +2686,7 @@
       {
         "id": "arxiv:2609.01746v1",
         "title": "CAT-Flow: Curvature-Adaptive sTeps for Flow Matching",
-        "authors_short": "Qinchan Li, \u2026, Hao Zhang",
+        "authors_short": "Qinchan Li, …, Hao Zhang",
         "authors": [
           "Qinchan Li",
           "Pedro Cisneros-Velarde",
@@ -2718,7 +2729,7 @@
       {
         "id": "10.1093/bioinformatics/btag621",
         "title": "A Token-Pruning Framework Enables Efficient Representation of the Human Genome for RNA Modification Analysis.",
-        "authors_short": "Gao W, \u2026, Wei L",
+        "authors_short": "Gao W, …, Wei L",
         "authors": [
           "Gao W",
           "Yu J",
@@ -2764,7 +2775,7 @@
       {
         "id": "10.1038/s41587-026-03217-x",
         "title": "AI-enhanced adaptive virtual screening of large libraries for ligand discovery.",
-        "authors_short": "Cecchini D, \u2026, Gorgulla C",
+        "authors_short": "Cecchini D, …, Gorgulla C",
         "authors": [
           "Cecchini D",
           "Nigam A",
@@ -2775,8 +2786,8 @@
           "Nicoll CR",
           "Wang Y",
           "Jayaraj A",
-          "\u00c7\u0131naroglu SS",
-          "T\u00f6rner R",
+          "Çınaroglu SS",
+          "Törner R",
           "Malets Y",
           "Gehev M",
           "Padmanabha Das KM",
@@ -2849,7 +2860,7 @@
       {
         "id": "10.1093/bioinformatics/btag607",
         "title": "A data-driven evaluation of optimization techniques in cell culture media.",
-        "authors_short": "Parsaee A, \u2026, Staszak D",
+        "authors_short": "Parsaee A, …, Staszak D",
         "authors": [
           "Parsaee A",
           "Stahn M",
@@ -2892,9 +2903,9 @@
       {
         "id": "arxiv:2608.30417v1",
         "title": "No Equivariant Architecture Covers All Equivariant Attention",
-        "authors_short": "T\u012bkun \u00d4ng",
+        "authors_short": "Tīkun Ông",
         "authors": [
-          "T\u012bkun \u00d4ng"
+          "Tīkun Ông"
         ],
         "venue": "arXiv",
         "source": "arxiv",
@@ -2914,7 +2925,7 @@
         "relevance": 4,
         "novelty": 5,
         "reason": "characterizes fundamental expressivity limits of equivariant self-attention architectures",
-        "abstract": "We give a complete characterization of equivariant multi-head self-attention (MHSA): if an MHSA layer is equivariant to a symmetry group $G$, then $G$ can only act by permuting head-clusters, with QK and OV matrices satisfying an equivariance constraint tied to the group action. As a consequence, we prove that any fixed MHSA architecture that achieves exact equivariance by polynomially parameterizing unconstrained MHSA parameters inevitably leads to expressivity loss within the class of equivariant maps: the equivariance locus of unconstrained MHSA forms a union of extremely many Zariski-irreducible components in a reduced parameter space, and any single architecture covers at most one. For $G=D_4$ acting on $C$ copies of the regular representation as the token feature space, we show that there are $\u03a9(C^{64})$ components for eight attention heads.",
+        "abstract": "We give a complete characterization of equivariant multi-head self-attention (MHSA): if an MHSA layer is equivariant to a symmetry group $G$, then $G$ can only act by permuting head-clusters, with QK and OV matrices satisfying an equivariance constraint tied to the group action. As a consequence, we prove that any fixed MHSA architecture that achieves exact equivariance by polynomially parameterizing unconstrained MHSA parameters inevitably leads to expressivity loss within the class of equivariant maps: the equivariance locus of unconstrained MHSA forms a union of extremely many Zariski-irreducible components in a reduced parameter space, and any single architecture covers at most one. For $G=D_4$ acting on $C$ copies of the regular representation as the token feature space, we show that there are $Ω(C^{64})$ components for eight attention heads.",
         "links": {
           "url": "https://arxiv.org/abs/2608.30417v1",
           "pdf": "https://arxiv.org/pdf/2608.30417v1"
@@ -2970,7 +2981,7 @@
       {
         "id": "10.1038/s41541-026-01571-0",
         "title": "Rationally designed FimH variants with enhanced functional immunogenicity as vaccine candidates for ExPEC urinary tract infections",
-        "authors_short": "Eveline Weerdenburg, \u2026, Jan Poolman",
+        "authors_short": "Eveline Weerdenburg, …, Jan Poolman",
         "authors": [
           "Eveline Weerdenburg",
           "Jan Grijpstra",
@@ -3006,7 +3017,7 @@
         "relevance": 6,
         "novelty": 5,
         "reason": "conformation-stabilized FimH antigen variants improve UTI vaccine immunogenicity",
-        "abstract": "Abstract Extraintestinal pathogenic Escherichia coli (ExPEC) is a major cause of urinary tract infections (UTIs) and invasive disease. Rising antimicrobial resistance highlights the need for preventive strategies such as vaccination. The conserved D-mannose-specific adhesin FimH is essential during early UTI pathogenesis, making it an attractive vaccine target. We rationally designed a FimH lectin domain antigen stabilized in a low-affinity, tense conformation by two amino-acid substitutions ( LA FimH LD ), thereby exposing epitopes within the mannose-binding pocket relevant for functional immunity. Multiple vaccine formats incorporating LA FimH LD were generated, including fimbrial tip constructs, carrier protein fusions or conjugates and a nanoparticle. In rats, monomeric LA FimH LD induced functional antibody responses comparable to a clinically tested FimCH reference, while four LA FimH LD variants elicited superior inhibition of ExPEC binding to human bladder cells. A multimeric LA FimH LD \u2013CRM 197 conjugate further demonstrated robust functional immunogenicity in minipigs. These data show enhanced FimH vaccine potency and identify candidates for UTI prevention.",
+        "abstract": "Abstract Extraintestinal pathogenic Escherichia coli (ExPEC) is a major cause of urinary tract infections (UTIs) and invasive disease. Rising antimicrobial resistance highlights the need for preventive strategies such as vaccination. The conserved D-mannose-specific adhesin FimH is essential during early UTI pathogenesis, making it an attractive vaccine target. We rationally designed a FimH lectin domain antigen stabilized in a low-affinity, tense conformation by two amino-acid substitutions ( LA FimH LD ), thereby exposing epitopes within the mannose-binding pocket relevant for functional immunity. Multiple vaccine formats incorporating LA FimH LD were generated, including fimbrial tip constructs, carrier protein fusions or conjugates and a nanoparticle. In rats, monomeric LA FimH LD induced functional antibody responses comparable to a clinically tested FimCH reference, while four LA FimH LD variants elicited superior inhibition of ExPEC binding to human bladder cells. A multimeric LA FimH LD –CRM 197 conjugate further demonstrated robust functional immunogenicity in minipigs. These data show enhanced FimH vaccine potency and identify candidates for UTI prevention.",
         "links": {
           "url": "https://doi.org/10.1038/s41541-026-01571-0",
           "doi": "https://doi.org/10.1038/s41541-026-01571-0",
@@ -3023,7 +3034,7 @@
       {
         "id": "10.64898/2025.12.19.695559",
         "title": "Dysfunctional memory B cell responses to the protective repeat region of the Plasmodium circumsporozoite protein are associated with waning humoral immunity",
-        "authors_short": "McDougal, C. E., \u2026, Pepper, M.",
+        "authors_short": "McDougal, C. E., …, Pepper, M.",
         "authors": [
           "McDougal, C. E.",
           "Mkindi, C. G.",
@@ -3070,7 +3081,7 @@
       {
         "id": "10.1128/msphere.00317-26",
         "title": "Evaluating an anti-idiotype derived germline-targeting immunogen designed to elicit VRC01-class precursors in human antibody transgenic mice",
-        "authors_short": "Crystal B. Chhan, \u2026, Andrew T. McGuire",
+        "authors_short": "Crystal B. Chhan, …, Andrew T. McGuire",
         "authors": [
           "Crystal B. Chhan",
           "Yu-Hsin Wan",
@@ -3116,7 +3127,7 @@
       {
         "id": "10.64898/2026.08.30.748174",
         "title": "Receptor-binding domain 2 of Clostridioides difficile binary toxin as a promising vaccine component against C. difficile infection",
-        "authors_short": "Wang, S., \u2026, Sun, X.",
+        "authors_short": "Wang, S., …, Sun, X.",
         "authors": [
           "Wang, S.",
           "Heuler, J. S.",
@@ -3159,21 +3170,21 @@
       {
         "id": "10.1186/s12929-026-01286-3",
         "title": "Artificial intelligence for translational personalized neoantigen cancer vaccine development",
-        "authors_short": "Chun-Yu Wei, \u2026, Wei\u2010Chiao Chang",
+        "authors_short": "Chun-Yu Wei, …, Wei‐Chiao Chang",
         "authors": [
           "Chun-Yu Wei",
           "Hsuan-Chao Lin",
-          "Chang\u2010Jiun Wu",
+          "Chang‐Jiun Wu",
           "Chun-Nan Kuo",
-          "Che\u2010Mai Chang",
-          "Wan\u2010Hsuan Chou",
+          "Che‐Mai Chang",
+          "Wan‐Hsuan Chou",
           "Sheng-Po Chou",
           "Sheng-Hsiang Feng",
-          "Wan\u2010Chen Huang",
+          "Wan‐Chen Huang",
           "Shisong Jiang",
           "Benjamin P. Fairfax",
           "Kang-Yun Lee",
-          "Wei\u2010Chiao Chang"
+          "Wei‐Chiao Chang"
         ],
         "venue": "Journal of Biomedical Science",
         "source": "openalex",
@@ -3210,7 +3221,7 @@
       {
         "id": "10.64898/2026.09.01.748495",
         "title": "Immunogen selection and prior immunity shape antibody breadth following immunisation with avian H5 hemagglutinin",
-        "authors_short": "Liu, Y.-C., \u2026, Wheatley, A. K.",
+        "authors_short": "Liu, Y.-C., …, Wheatley, A. K.",
         "authors": [
           "Liu, Y.-C.",
           "Kelly, A.",
@@ -3255,7 +3266,7 @@
       {
         "id": "10.64898/2026.03.03.709130",
         "title": "Modified OspA Delivered Via Distinct Vehicles and Routes Confers Equivalent Protection Against Tick-Transmitted Borrelia burgdorferi",
-        "authors_short": "Kundu, S., \u2026, Gomes-Solecki, M.",
+        "authors_short": "Kundu, S., …, Gomes-Solecki, M.",
         "authors": [
           "Kundu, S.",
           "Joyner, G.",
@@ -3302,7 +3313,7 @@
       {
         "id": "10.1186/s13045-026-01829-z",
         "title": "Mucosal immunity: mechanism and application in cancer immunotherapy",
-        "authors_short": "Maosen Xu, \u2026, Xiawei Wei",
+        "authors_short": "Maosen Xu, …, Xiawei Wei",
         "authors": [
           "Maosen Xu",
           "Ruolan Xia",
@@ -3345,7 +3356,7 @@
       {
         "id": "10.64898/2026.08.21.26360138",
         "title": "Decoding Humoral Immunity During Acute MPXV Infection via Comprehensive Serological Analysis and Antigen-agnostic Monoclonal Antibody Profiling",
-        "authors_short": "Zhang, Y., \u2026, Zhu, Z.",
+        "authors_short": "Zhang, Y., …, Zhu, Z.",
         "authors": [
           "Zhang, Y.",
           "Fan, J.",
@@ -3399,7 +3410,7 @@
       {
         "id": "10.1128/jvi.00853-26",
         "title": "H2-O deficiency in B cells or dendritic cells drives retrovirus-neutralizing antibody responses.",
-        "authors_short": "Dobkin J, \u2026, Denzin LK",
+        "authors_short": "Dobkin J, …, Denzin LK",
         "authors": [
           "Dobkin J",
           "Fink R",
@@ -3425,7 +3436,7 @@
         "relevance": 1,
         "novelty": 2,
         "reason": "H2-O regulation of MHC II antigen presentation shapes retrovirus antibody responses",
-        "abstract": "Major histocompatibility complex class II (MHC II)-restricted antigen presentation is central to CD4+ T-cell activation and the generation of high-affinity, class-switched antibody (Ab) responses. Peptide loading of MHC II in endosomal compartments is modulated by the functional interplay of two nonclassical MHC II molecules, H2-M and H2-O. H2-M binds to MHC II and facilitates loading of MHC II with high-affinity peptides. H2-O, a structural mimic of MHC II, modulates the MHC II pathway by binding to H2-M and inhibiting its peptide-loading catalytic activity. Although H2-O has a modest effect on the overall cell-surface MHC II peptide repertoire, these changes are sufficient to drive significant immunological consequences. H2-O plays a protective role against infection with ubiquitous \u03b3-herpesviruses, while H2-O deficiency enables the development of protective, pathogen-specific Ab responses to mouse retroviruses and Staphylococcus aureus. Here, we further investigate the role of H2-O in regulating humoral immunity to a mouse retrovirus, mouse mammary tumor virus (MMTV). Using mosaic and conditional genetic approaches, we demonstrate that H2-O deficiency, and thus enhanced H2-M-mediated peptide loading, in either B cells or dendritic cells, is sufficient to drive a robust neutralizing Ab response against MMTV. Additionally, we show that the pronounced reduction of H2-O protein in germinal center B cells is governed by a post-transcriptional mechanism, revealing a previously unappreciated mechanism of H2-O regulation during the germinal center reaction. Collectively, these findings further establish H2-O as a tunable checkpoint in the MHC II antigen presentation pathway that shapes the quality of humoral immune responses.IMPORTANCEProtective antibody responses depend on the presentation of pathogen-derived peptides by major histocompatibility complex (MHC) class II molecules to activate CD4+ helper T cells. This process is tightly regulated. H2-O functions as a negative regulator of antigen presentation by limiting the repertoire of peptides displayed by MHC class II molecules, thereby shaping the antibody response. In this study, we show that the loss of H2-O in either of two key antigen-presenting cell types-B cells or dendritic cells-is sufficient to elicit a robust protective antibody response against a mouse retrovirus. We further demonstrate that germinal center B cells downregulate H2-O through protein degradation during the immune response. Together, these findings identify H2-O as a tunable checkpoint that regulates the magnitude and quality of antibody responses and provide additional evidence that B cells are key antigen-presenting cells.",
+        "abstract": "Major histocompatibility complex class II (MHC II)-restricted antigen presentation is central to CD4+ T-cell activation and the generation of high-affinity, class-switched antibody (Ab) responses. Peptide loading of MHC II in endosomal compartments is modulated by the functional interplay of two nonclassical MHC II molecules, H2-M and H2-O. H2-M binds to MHC II and facilitates loading of MHC II with high-affinity peptides. H2-O, a structural mimic of MHC II, modulates the MHC II pathway by binding to H2-M and inhibiting its peptide-loading catalytic activity. Although H2-O has a modest effect on the overall cell-surface MHC II peptide repertoire, these changes are sufficient to drive significant immunological consequences. H2-O plays a protective role against infection with ubiquitous γ-herpesviruses, while H2-O deficiency enables the development of protective, pathogen-specific Ab responses to mouse retroviruses and Staphylococcus aureus. Here, we further investigate the role of H2-O in regulating humoral immunity to a mouse retrovirus, mouse mammary tumor virus (MMTV). Using mosaic and conditional genetic approaches, we demonstrate that H2-O deficiency, and thus enhanced H2-M-mediated peptide loading, in either B cells or dendritic cells, is sufficient to drive a robust neutralizing Ab response against MMTV. Additionally, we show that the pronounced reduction of H2-O protein in germinal center B cells is governed by a post-transcriptional mechanism, revealing a previously unappreciated mechanism of H2-O regulation during the germinal center reaction. Collectively, these findings further establish H2-O as a tunable checkpoint in the MHC II antigen presentation pathway that shapes the quality of humoral immune responses.IMPORTANCEProtective antibody responses depend on the presentation of pathogen-derived peptides by major histocompatibility complex (MHC) class II molecules to activate CD4+ helper T cells. This process is tightly regulated. H2-O functions as a negative regulator of antigen presentation by limiting the repertoire of peptides displayed by MHC class II molecules, thereby shaping the antibody response. In this study, we show that the loss of H2-O in either of two key antigen-presenting cell types-B cells or dendritic cells-is sufficient to elicit a robust protective antibody response against a mouse retrovirus. We further demonstrate that germinal center B cells downregulate H2-O through protein degradation during the immune response. Together, these findings identify H2-O as a tunable checkpoint that regulates the magnitude and quality of antibody responses and provide additional evidence that B cells are key antigen-presenting cells.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42671555/",
           "doi": "https://doi.org/10.1128/jvi.00853-26"
@@ -3443,7 +3454,7 @@
       {
         "id": "10.64898/2026.09.01.748362",
         "title": "Proteome-wide crosslinking mass spectrometry reveals novel components of essential complexes in Toxoplasma",
-        "authors_short": "Butterworth, S., \u2026, Lourido, S.",
+        "authors_short": "Butterworth, S., …, Lourido, S.",
         "authors": [
           "Butterworth, S.",
           "Gin, A. L.",
@@ -3494,13 +3505,13 @@
       {
         "id": "10.1126/sciadv.aej0987",
         "title": "Functional mapping and engineering of the Sec translocon unlocked by a cell-free system.",
-        "authors_short": "Meier M, \u2026, Erb TJ",
+        "authors_short": "Meier M, …, Erb TJ",
         "authors": [
           "Meier M",
           "Scholz SA",
           "von Bank L",
           "Levandoski JE",
-          "L\u00fcckhof M",
+          "Lückhof M",
           "Schaaf M",
           "Safronova N",
           "Greenwood NF",
@@ -3545,7 +3556,7 @@
       {
         "id": "10.7554/eLife.110114",
         "title": "In extracto cryo-EM reveals eEF2 as a major hibernation factor on 60S and 80S particles.",
-        "authors_short": "Seraj Z, \u2026, Korostelev AA",
+        "authors_short": "Seraj Z, …, Korostelev AA",
         "authors": [
           "Seraj Z",
           "Zottig X",
@@ -3574,7 +3585,7 @@
         "relevance": 4,
         "novelty": 6,
         "reason": "in extracto cryoEM resolves eEF2 as major ribosome hibernation factor at near-atomic resolution",
-        "abstract": "Cryogenic electron microscopy (cryo-EM) made impressive progress in resolving cellular macromolecules and their detailed interactions. Single-particle cryo-EM traditionally relies on purified macromolecules and lacks the complexity of cellular environments, whereas in situ cryo-EM and cryogenic electron tomography (cryo-ET) require extensive sample preparation and data acquisition, presenting challenges in achieving high resolution. We describe cryo-EM of cellular lysates-in extracto cryo-EM-allowing the flexibility and high-resolution of cryo-EM in the context of cellular components. High-resolution 2D template matching (2DTM) yields ~2.2 \u00c5 maps of the mammalian translational apparatus. Elongating ribosome abundances in primate cell lines (MCF-7 and BSC-1) and rabbit reticulocyte lysates range from ~70% to ~10%, reflecting translational stress responses. Non-translating (hibernating) ribosomes carrying no mRNA feature numerous proteins shielding ribosomal functional centers. Elongation factor 2 (eEF2) is the most abundant hibernation factor bound to >95% of 80S ribosomes and, unexpectedly, to 60S subunits. eEF2\u2022GDP is stabilized by interactions with the sarcin-ricin loop and protein uL14. Hibernating ribosomes also feature La-related protein 1 (LARP1) involved in initiation and mTOR signaling, eIF5A implicated in elongation and termination, and other factors, exposing the variety of hibernation scenarios. Our work underscores the efficiency and potential of in extracto cryo-EM to discover native cellular complexes and mechanisms at near-atomic resolution.",
+        "abstract": "Cryogenic electron microscopy (cryo-EM) made impressive progress in resolving cellular macromolecules and their detailed interactions. Single-particle cryo-EM traditionally relies on purified macromolecules and lacks the complexity of cellular environments, whereas in situ cryo-EM and cryogenic electron tomography (cryo-ET) require extensive sample preparation and data acquisition, presenting challenges in achieving high resolution. We describe cryo-EM of cellular lysates-in extracto cryo-EM-allowing the flexibility and high-resolution of cryo-EM in the context of cellular components. High-resolution 2D template matching (2DTM) yields ~2.2 Å maps of the mammalian translational apparatus. Elongating ribosome abundances in primate cell lines (MCF-7 and BSC-1) and rabbit reticulocyte lysates range from ~70% to ~10%, reflecting translational stress responses. Non-translating (hibernating) ribosomes carrying no mRNA feature numerous proteins shielding ribosomal functional centers. Elongation factor 2 (eEF2) is the most abundant hibernation factor bound to >95% of 80S ribosomes and, unexpectedly, to 60S subunits. eEF2•GDP is stabilized by interactions with the sarcin-ricin loop and protein uL14. Hibernating ribosomes also feature La-related protein 1 (LARP1) involved in initiation and mTOR signaling, eIF5A implicated in elongation and termination, and other factors, exposing the variety of hibernation scenarios. Our work underscores the efficiency and potential of in extracto cryo-EM to discover native cellular complexes and mechanisms at near-atomic resolution.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42689549/",
           "doi": "https://doi.org/10.7554/eLife.110114"
@@ -3590,7 +3601,7 @@
       {
         "id": "10.64898/2026.06.11.731735",
         "title": "DAQplugin: Interactive Deep Learning-Based Validation of Cryo-EM Protein Models in ChimeraX",
-        "authors_short": "Terashi, G., \u2026, Kihara, D.",
+        "authors_short": "Terashi, G., …, Kihara, D.",
         "authors": [
           "Terashi, G.",
           "Zhu, H.",
@@ -3631,7 +3642,7 @@
       {
         "id": "10.1038/s41586-026-10982-x",
         "title": "Functional chimeric mRNAs encode proteins in mammalian immunity.",
-        "authors_short": "Venezia O, \u2026, Jackson R",
+        "authors_short": "Venezia O, …, Jackson R",
         "authors": [
           "Venezia O",
           "Kane H",
@@ -3688,7 +3699,7 @@
         "relevance": 3,
         "novelty": 6,
         "reason": "trans-splicing generates a functional GSDMD-TMEM106A chimeric protein in inflammation",
-        "abstract": "Individual mammalian mRNAs and proteins are typically believed to originate from single genomic loci, with isoform diversity arising through cis-splicing of pre-mRNA. Whether mRNA from distant genes can undergo trans-splicing to generate functionally relevant chimeric transcripts has remained unclear. Here we develop a pipeline combining long-read direct RNA sequencing with non-targeted and targeted validation to identify chimeric transcripts in macrophages. Chromatin conformation capture studies reveal that inflammation induces interchromosomal DNA interactions, positioning parent genes proximally to facilitate the formation of chimeric mRNA. Notably, we identify a protein-coding chimeric mRNA representing a fusion between the pore-forming protein gasdermin D (GSDMD)1,2 and a C-terminal domain translated out of frame from Tmem106a (Gsdmd-Tmem106a) in mice. We show that inflammasome priming upregulates Gsdmd-Tmem106a, with the protein localizing to the plasma membrane. After activation of the inflammasome, GSDMD-TMEM106A directly interacts with canonical GSDMD N termini to accelerate and enhance pore formation and IL-1\u03b2 release. Finally, we show that GSDMD-TMEM106A balances host defence and immunopathology in vivo: its loss protects against lethal sepsis but compromises antibacterial defence, whereas overexpression enhances host protection while increasing sepsis lethality. We establish that protein-coding chimeric mRNAs formed by regulated transcript fusion events are operative during inflammation and immunity.",
+        "abstract": "Individual mammalian mRNAs and proteins are typically believed to originate from single genomic loci, with isoform diversity arising through cis-splicing of pre-mRNA. Whether mRNA from distant genes can undergo trans-splicing to generate functionally relevant chimeric transcripts has remained unclear. Here we develop a pipeline combining long-read direct RNA sequencing with non-targeted and targeted validation to identify chimeric transcripts in macrophages. Chromatin conformation capture studies reveal that inflammation induces interchromosomal DNA interactions, positioning parent genes proximally to facilitate the formation of chimeric mRNA. Notably, we identify a protein-coding chimeric mRNA representing a fusion between the pore-forming protein gasdermin D (GSDMD)1,2 and a C-terminal domain translated out of frame from Tmem106a (Gsdmd-Tmem106a) in mice. We show that inflammasome priming upregulates Gsdmd-Tmem106a, with the protein localizing to the plasma membrane. After activation of the inflammasome, GSDMD-TMEM106A directly interacts with canonical GSDMD N termini to accelerate and enhance pore formation and IL-1β release. Finally, we show that GSDMD-TMEM106A balances host defence and immunopathology in vivo: its loss protects against lethal sepsis but compromises antibacterial defence, whereas overexpression enhances host protection while increasing sepsis lethality. We establish that protein-coding chimeric mRNAs formed by regulated transcript fusion events are operative during inflammation and immunity.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42686912/",
           "doi": "https://doi.org/10.1038/s41586-026-10982-x"
@@ -3703,8 +3714,8 @@
       },
       {
         "id": "10.1126/sciadv.adx9868",
-        "title": "Critical role for the TGF-\u03b21/mTORC1 signaling axis in defining the transcriptional identity of CTHRC1+ pathologic fibroblasts.",
-        "authors_short": "Wilson JA, \u2026, Chambers RC",
+        "title": "Critical role for the TGF-β1/mTORC1 signaling axis in defining the transcriptional identity of CTHRC1+ pathologic fibroblasts.",
+        "authors_short": "Wilson JA, …, Chambers RC",
         "authors": [
           "Wilson JA",
           "Walters R",
@@ -3716,7 +3727,7 @@
           "Jamal-Hanjani M",
           "Kaminski N",
           "Parolo S",
-          "Plat\u00e9 M",
+          "Platé M",
           "Chambers RC"
         ],
         "venue": "Science advances",
@@ -3737,7 +3748,7 @@
         "relevance": 1,
         "novelty": 2,
         "reason": "TGF-b1/mTORC1 fibroblast signaling, unrelated to design",
-        "abstract": "Fibrosis, marked by excess extracellular matrix (ECM) deposition, is the end stage of many diseases. Single-cell studies have highlighted the emergence of disease-specific fibroblast populations, including a high collagen-synthesizing CTHRC1+ subpopulation. The profibrotic cytokine TGF-\u03b21 promotes fibrogenesis via cooperation between Smad and mTORC1/4E-BP1 signaling axes. Using CRISPR-Cas9 gene editing, we report that more than one-third of TGF-\u03b21-regulated matrisome genes are under mTORC1 control. Mapping the transcriptome of TGF-\u03b21-stimulated fibroblasts revealed similarity to CTHRC1+ fibroblasts identified in idiopathic pulmonary fibrosis (IPF). This overlap is lost when mTORC1 is disabled. Using the selective mTORC1 inhibitor RMC-5552, we confirm a causal role for mTORC1 in promoting the acquisition of the collagen-high, CTHRC1+ phenotype in response to TGF-\u03b21 stimulation in fibroblasts derived from patients with either IPF or lung adenocarcinoma. We conclude that mTORC1 plays a key role in shaping the transcriptional identity of these fibroblasts, with implications for therapeutic inhibition of mTORC1 in fibrosis and cancer.",
+        "abstract": "Fibrosis, marked by excess extracellular matrix (ECM) deposition, is the end stage of many diseases. Single-cell studies have highlighted the emergence of disease-specific fibroblast populations, including a high collagen-synthesizing CTHRC1+ subpopulation. The profibrotic cytokine TGF-β1 promotes fibrogenesis via cooperation between Smad and mTORC1/4E-BP1 signaling axes. Using CRISPR-Cas9 gene editing, we report that more than one-third of TGF-β1-regulated matrisome genes are under mTORC1 control. Mapping the transcriptome of TGF-β1-stimulated fibroblasts revealed similarity to CTHRC1+ fibroblasts identified in idiopathic pulmonary fibrosis (IPF). This overlap is lost when mTORC1 is disabled. Using the selective mTORC1 inhibitor RMC-5552, we confirm a causal role for mTORC1 in promoting the acquisition of the collagen-high, CTHRC1+ phenotype in response to TGF-β1 stimulation in fibroblasts derived from patients with either IPF or lung adenocarcinoma. We conclude that mTORC1 plays a key role in shaping the transcriptional identity of these fibroblasts, with implications for therapeutic inhibition of mTORC1 in fibrosis and cancer.",
         "links": {
           "url": "https://pubmed.ncbi.nlm.nih.gov/42685210/",
           "doi": "https://doi.org/10.1126/sciadv.adx9868"
@@ -3752,7 +3763,7 @@
       },
       {
         "id": "10.17638/03199430",
-        "title": "Efficient matching of predicted protein structures into high to intermediate resolution CryoEM maps with Slice\u2019N\u2019Dice and ABCFold",
+        "title": "Efficient matching of predicted protein structures into high to intermediate resolution CryoEM maps with Slice’N’Dice and ABCFold",
         "authors_short": "Luc Elliott",
         "authors": [
           "Luc Elliott"
@@ -3775,7 +3786,7 @@
         "relevance": 5,
         "novelty": 5,
         "reason": "slices predicted models into domains, fits them into cryoEM maps",
-        "abstract": "Protein structures are essential for understanding biological function because the three-dimensional arrangement of amino acid residues determines molecular interactions, specificity, and activity at the atomic level. Cryogenic Electron Microscopy (CryoEM) has become a powerful method for structural determination, as high-resolution maps can support de novo model building, whereas intermediate-resolution maps often require map-fitting approaches in which atomic models are guided by experimental CryoEM densities (maps). While AlphaFold (AF)2 and newer diffusion-based predictors (AF3 and similar) can accurately model individual domains, their predictions become untrustworthy when multiple conformations are possible, leading to uncertain inter-domain orientations. As a result, global domain arrangements may be unreliable even when local confidence metrics indicate high structural accuracy. This creates a clear need for methods that address uncertainties in inter-domain orientations and reliably place predicted models into CryoEM maps. This work primarily presents the software Slice\u2019N\u2019Dice (SnD), a pipeline designed to address these issues by first slicing a predicted model into structural units then using map-fitting tools of MOLREP and PowerFit to place them into the CryoEM map. Data was collected to assess the feasibility of the tool prior to development. The data was sourced from CASP15, a community-wide benchmark evaluating state-of-the-art structure prediction methods. For the CASP15 competition, a cross-correlation (CC)-based ranking of CryoEM map-model placements showed a strong correlation with SCASP15 scores, demonstrating that high-quality predicted models have intrinsic value for map fitting. Model confidence, measured by pLDDT, was shown to act as a reliable pre-fitting indicator of success, and slicing full-chain predictions into domain-like units consistently improved placement quality. A binary classifier was developed to automatically assess atomic model placements in CryoEM maps by integrating multiple map-model fitting scores. Through systematic model selection, feature ablation and hyperparameter tuning, the final model achieved high predictive performance and generalisability, making it suitable for automated use within the SnD pipeline. This work also presents ABCFold, a complementary pipeline designed to facilitate local use of next-generation diffusion-based atomic model predictors: AF3, Boltz-1, and Chai-1. Thus, complementing the SnD workflow by providing accessible means to both model generation and map-model fitting.",
+        "abstract": "Protein structures are essential for understanding biological function because the three-dimensional arrangement of amino acid residues determines molecular interactions, specificity, and activity at the atomic level. Cryogenic Electron Microscopy (CryoEM) has become a powerful method for structural determination, as high-resolution maps can support de novo model building, whereas intermediate-resolution maps often require map-fitting approaches in which atomic models are guided by experimental CryoEM densities (maps). While AlphaFold (AF)2 and newer diffusion-based predictors (AF3 and similar) can accurately model individual domains, their predictions become untrustworthy when multiple conformations are possible, leading to uncertain inter-domain orientations. As a result, global domain arrangements may be unreliable even when local confidence metrics indicate high structural accuracy. This creates a clear need for methods that address uncertainties in inter-domain orientations and reliably place predicted models into CryoEM maps. This work primarily presents the software Slice’N’Dice (SnD), a pipeline designed to address these issues by first slicing a predicted model into structural units then using map-fitting tools of MOLREP and PowerFit to place them into the CryoEM map. Data was collected to assess the feasibility of the tool prior to development. The data was sourced from CASP15, a community-wide benchmark evaluating state-of-the-art structure prediction methods. For the CASP15 competition, a cross-correlation (CC)-based ranking of CryoEM map-model placements showed a strong correlation with SCASP15 scores, demonstrating that high-quality predicted models have intrinsic value for map fitting. Model confidence, measured by pLDDT, was shown to act as a reliable pre-fitting indicator of success, and slicing full-chain predictions into domain-like units consistently improved placement quality. A binary classifier was developed to automatically assess atomic model placements in CryoEM maps by integrating multiple map-model fitting scores. Through systematic model selection, feature ablation and hyperparameter tuning, the final model achieved high predictive performance and generalisability, making it suitable for automated use within the SnD pipeline. This work also presents ABCFold, a complementary pipeline designed to facilitate local use of next-generation diffusion-based atomic model predictors: AF3, Boltz-1, and Chai-1. Thus, complementing the SnD workflow by providing accessible means to both model generation and map-model fitting.",
         "links": {
           "url": "https://doi.org/10.17638/03199430",
           "doi": "https://doi.org/10.17638/03199430"
@@ -3791,7 +3802,7 @@
       {
         "id": "10.1016/j.chom.2026.08.006",
         "title": "Dual sensing activates antiviral reverse transcriptase for membrane targeting.",
-        "authors_short": "Xia Y, \u2026, Jia N",
+        "authors_short": "Xia Y, …, Jia N",
         "authors": [
           "Xia Y",
           "Qi H",
@@ -3838,7 +3849,7 @@
       {
         "id": "10.64898/2026.08.30.747940",
         "title": "A Metabolic Labeling Strategy for Tracking Protein Synthesis in Complex Biological Systems",
-        "authors_short": "Bu, Y. J., \u2026, Cui, H.",
+        "authors_short": "Bu, Y. J., …, Cui, H.",
         "authors": [
           "Bu, Y. J.",
           "Nyandwi, S. P.",
@@ -3891,7 +3902,7 @@
       {
         "id": "10.64898/2026.08.31.748281",
         "title": "Molecular basis of AMPA receptor labeling by ligand-directed acyl imidazole chemistry in living neurons",
-        "authors_short": "Guzman-Ocampo, D. C., \u2026, Lopez, X.",
+        "authors_short": "Guzman-Ocampo, D. C., …, Lopez, X.",
         "authors": [
           "Guzman-Ocampo, D. C.",
           "De Sancho, D.",
@@ -3933,8 +3944,8 @@
     "enzyme": [
       {
         "id": "10.1073/pnas.2616452123",
-        "title": "A multispecies toolkit of TOP2 hypercleavage mutants for studying topoisomerase II\u2013mediated DNA damage",
-        "authors_short": "David Ontoso, \u2026, Scott Keeney",
+        "title": "A multispecies toolkit of TOP2 hypercleavage mutants for studying topoisomerase II–mediated DNA damage",
+        "authors_short": "David Ontoso, …, Scott Keeney",
         "authors": [
           "David Ontoso",
           "Monika Mehta",
@@ -3963,7 +3974,7 @@
         "relevance": 4,
         "novelty": 4,
         "reason": "engineered TOP2 hypercleavage mutants provide a multispecies toolkit for studying topoisomerase DNA damage",
-        "abstract": "Abstract DNA topoisomerase II (TOP2) generates transient DNA double-strand breaks that are trapped as TOP2-DNA covalent complexes (TOP2cc) by antibiotic and chemotherapy drugs. Here, we characterize tools for study of cellular responses to TOP2cc, exploiting a Saccharomyces cerevisiae TOP2 mutant ( TOP2-F1025Y,R1128G ) that generates spontaneous and inhibitor-induced covalent complexes at elevated frequencies. This Top2-hc (for \u201chypercleavage\u201d) mutant protein inhibits yeast cell growth when expressed alone or with endogenous Top2, and growth defects are exacerbated in DNA-repair-deficient genetic backgrounds and/or in the presence of low doses of the Top2 poison mAMSA. We generated analogous mutations in human and mouse TOP2A and TOP2B that gave increased TOP2cc, hypersensitization to topoisomerase poisons, increased DNA damage, and decreased cell survival in cultured cells. We further established knock-in mouse models with inducible, tissue-specific expression of each TOP2-hc isoform, demonstrating overt organismal toxicity and cellular markers of DNA damage responses. To illustrate the potential of these genetic tools, we carried out proof-of-principle screens in yeast and cultured human cells for sensitivity to TOP2-hc. The yeast screen revealed strong requirements for homologous recombination, moderate roles for sister chromatid cohesion and kinetochore function, and dependencies on vesicle and vacuolar functions. The pilot shRNA screen in human cells revealed shared requirements for resistance to expression of either TOP2A-hc or TOP2B-hc as well as examples of isoform specificity. These findings establish hypercleavage mutant proteins as effective tools for studying topoisomerase isoform-specific DNA damage and offer a foundation for exploring TOP2cc toxicity and tolerance in vivo . Significance statement DNA topoisomerase II enzymes untangle chromosomes by cutting DNA, but incomplete resealing creates toxic damage that is the basis of antibacterial and chemotherapy drugs. Here we describe toolkits in yeast, mammalian cells, and mice that take advantage of mutant topoisomerase II enzymes that trap on DNA without drugs, creating powerful genetic systems to better study how cells deal with this type of DNA damage. We provide benchmarking data to validate these tools and to illustrate how they can be used for screens in cultured cells or tissue-specific experiments in vivo . These toolkits overcome longstanding technical barriers and enable new ways to study topoisomerase II-mediated DNA damage.",
+        "abstract": "Abstract DNA topoisomerase II (TOP2) generates transient DNA double-strand breaks that are trapped as TOP2-DNA covalent complexes (TOP2cc) by antibiotic and chemotherapy drugs. Here, we characterize tools for study of cellular responses to TOP2cc, exploiting a Saccharomyces cerevisiae TOP2 mutant ( TOP2-F1025Y,R1128G ) that generates spontaneous and inhibitor-induced covalent complexes at elevated frequencies. This Top2-hc (for “hypercleavage”) mutant protein inhibits yeast cell growth when expressed alone or with endogenous Top2, and growth defects are exacerbated in DNA-repair-deficient genetic backgrounds and/or in the presence of low doses of the Top2 poison mAMSA. We generated analogous mutations in human and mouse TOP2A and TOP2B that gave increased TOP2cc, hypersensitization to topoisomerase poisons, increased DNA damage, and decreased cell survival in cultured cells. We further established knock-in mouse models with inducible, tissue-specific expression of each TOP2-hc isoform, demonstrating overt organismal toxicity and cellular markers of DNA damage responses. To illustrate the potential of these genetic tools, we carried out proof-of-principle screens in yeast and cultured human cells for sensitivity to TOP2-hc. The yeast screen revealed strong requirements for homologous recombination, moderate roles for sister chromatid cohesion and kinetochore function, and dependencies on vesicle and vacuolar functions. The pilot shRNA screen in human cells revealed shared requirements for resistance to expression of either TOP2A-hc or TOP2B-hc as well as examples of isoform specificity. These findings establish hypercleavage mutant proteins as effective tools for studying topoisomerase isoform-specific DNA damage and offer a foundation for exploring TOP2cc toxicity and tolerance in vivo . Significance statement DNA topoisomerase II enzymes untangle chromosomes by cutting DNA, but incomplete resealing creates toxic damage that is the basis of antibacterial and chemotherapy drugs. Here we describe toolkits in yeast, mammalian cells, and mice that take advantage of mutant topoisomerase II enzymes that trap on DNA without drugs, creating powerful genetic systems to better study how cells deal with this type of DNA damage. We provide benchmarking data to validate these tools and to illustrate how they can be used for screens in cultured cells or tissue-specific experiments in vivo . These toolkits overcome longstanding technical barriers and enable new ways to study topoisomerase II-mediated DNA damage.",
         "links": {
           "url": "https://doi.org/10.1073/pnas.2616452123",
           "doi": "https://doi.org/10.1073/pnas.2616452123"
@@ -3979,7 +3990,7 @@
       {
         "id": "10.1038/s41589-026-02164-7",
         "title": "Structures of ALG3/9/12 reveal the assembly logic of the N-glycan oligomannose core.",
-        "authors_short": "Alexander JAN, \u2026, Locher KP",
+        "authors_short": "Alexander JAN, …, Locher KP",
         "authors": [
           "Alexander JAN",
           "Chen SY",
@@ -4030,14 +4041,14 @@
       {
         "id": "10.26434/chemrxiv.15008156/v1",
         "title": "Stabilization and Functionalization of an Enzyme Complex via Modular In Situ Conjugation",
-        "authors_short": "Juan Lizandra P\u00e9rez, \u2026, Tom N. Grossmann",
+        "authors_short": "Juan Lizandra Pérez, …, Tom N. Grossmann",
         "authors": [
-          "Juan Lizandra P\u00e9rez",
+          "Juan Lizandra Pérez",
           "George H. Hutchins",
           "Rasmus Klintrot",
           "Pascal Poc",
-          "Leonardo Rom\u00e3o Soares",
-          "Ivana Drienovsk\u00e1",
+          "Leonardo Romão Soares",
+          "Ivana Drienovská",
           "Sven Hennig",
           "Saskia Neubacher",
           "Tom N. Grossmann"
@@ -4060,7 +4071,7 @@
         "relevance": 5,
         "novelty": 5,
         "reason": "tetrahedral crosslinker simultaneously stabilizes and functionalizes a tetrameric enzyme",
-        "abstract": "Enzymes are unparalleled catalysts that combine high activity and selectivity with operation under mild conditions. Despite these advantages, their broader use as industrial biocatalysts is limited by insufficient stability under process-relevant conditions and by the difficulty of achieving site-specific chemical functionalization. Simultaneously enhancing protein stability and enabling site-specific functionalization through a single chemical strategy remains a central challenge, particularly, when addressing multimeric enzymes. Here, we show that a four-armed crosslinker with tetrahedral symmetry enables simultaneous stabilization and programmable functionalization of the tetrameric enzyme borneol dehydrogenase. A twostep crosslinking\u2013modification reaction yields a well-defined and stable protein quaternary architecture with an incorporated reactive handle, enabling the installation of diverse functionalities, including bioorthogonal tags and functional groups for immobilization. The chemically engineered bicyclic enzyme exhibits remarkably enhanced thermal stability and resistance to organic cosolvents, which results in exceptional longevity supporting ten weeks of continuous flow operation. Unlike previous methods that decouple stabilization from modification, this strategy unites structural reinforcement and functionalization, thereby expanding the scope of chemical protein engineering.",
+        "abstract": "Enzymes are unparalleled catalysts that combine high activity and selectivity with operation under mild conditions. Despite these advantages, their broader use as industrial biocatalysts is limited by insufficient stability under process-relevant conditions and by the difficulty of achieving site-specific chemical functionalization. Simultaneously enhancing protein stability and enabling site-specific functionalization through a single chemical strategy remains a central challenge, particularly, when addressing multimeric enzymes. Here, we show that a four-armed crosslinker with tetrahedral symmetry enables simultaneous stabilization and programmable functionalization of the tetrameric enzyme borneol dehydrogenase. A twostep crosslinking–modification reaction yields a well-defined and stable protein quaternary architecture with an incorporated reactive handle, enabling the installation of diverse functionalities, including bioorthogonal tags and functional groups for immobilization. The chemically engineered bicyclic enzyme exhibits remarkably enhanced thermal stability and resistance to organic cosolvents, which results in exceptional longevity supporting ten weeks of continuous flow operation. Unlike previous methods that decouple stabilization from modification, this strategy unites structural reinforcement and functionalization, thereby expanding the scope of chemical protein engineering.",
         "links": {
           "url": "https://doi.org/10.26434/chemrxiv.15008156/v1",
           "doi": "https://doi.org/10.26434/chemrxiv.15008156/v1",
@@ -4077,7 +4088,7 @@
       {
         "id": "10.1038/s41589-026-02317-8",
         "title": "Mechanism of the M. tuberculosis DprE1-DprE2 epimerase complex and inhibition by anti-tubercular drugs.",
-        "authors_short": "Gao S, \u2026, Zhang L",
+        "authors_short": "Gao S, …, Zhang L",
         "authors": [
           "Gao S",
           "Wu F",
@@ -4087,7 +4098,7 @@
           "Wang Z",
           "Yang X",
           "Abrahams KA",
-          "F\u00fctterer K",
+          "Fütterer K",
           "Liu X",
           "Wang P",
           "Besra GS",
@@ -4128,7 +4139,7 @@
       {
         "id": "10.64898/2026.08.28.747816",
         "title": "Beyond benchmark accuracy: machine-learning turnover-number predictors require system-level validation",
-        "authors_short": "Rimon Martinez, M. J., \u2026, Zanghellini, J.",
+        "authors_short": "Rimon Martinez, M. J., …, Zanghellini, J.",
         "authors": [
           "Rimon Martinez, M. J.",
           "Lottermoser, J.",
@@ -4172,7 +4183,7 @@
       {
         "id": "10.64898/2026.09.01.748671",
         "title": "Cryo-EM structures reveal the mechanism of phosphatidylserine remodeling by membrane-bound glycerophospholipid O-acyltransferase 1",
-        "authors_short": "Kim, L., \u2026, Walther, T. C.",
+        "authors_short": "Kim, L., …, Walther, T. C.",
         "authors": [
           "Kim, L.",
           "Kim, S.",
@@ -4219,7 +4230,7 @@
       {
         "id": "10.64898/2026.08.31.748207",
         "title": "Structural basis for catalytic and inhibitory divergence between archaeal and bacterial ammonia monooxygenases",
-        "authors_short": "Yang, X., \u2026, Li, Z.",
+        "authors_short": "Yang, X., …, Li, Z.",
         "authors": [
           "Yang, X.",
           "Mao, T.-Q.",
@@ -4267,8 +4278,8 @@
       },
       {
         "id": "10.1002/cssc.71038",
-        "title": "Liquid\u2013Liquid Phase Separation\u2010Enhanced Multienzyme Catalysis: Mechanisms and Applications",
-        "authors_short": "Jiahui Dai, \u2026, Yunpeng Bai",
+        "title": "Liquid–Liquid Phase Separation‐Enhanced Multienzyme Catalysis: Mechanisms and Applications",
+        "authors_short": "Jiahui Dai, …, Yunpeng Bai",
         "authors": [
           "Jiahui Dai",
           "Jiaxu Liu",
@@ -4349,8 +4360,8 @@
       },
       {
         "id": "10.64898/2026.06.30.735398",
-        "title": "Rhizobial enzyme reveals pH-driven catalytic switching and \u029f-amino acid incorporation by \u029f,-transpeptidases",
-        "authors_short": "Rady, B. J., \u2026, Mesnage, S.",
+        "title": "Rhizobial enzyme reveals pH-driven catalytic switching and ʟ-amino acid incorporation by ʟ,-transpeptidases",
+        "authors_short": "Rady, B. J., …, Mesnage, S.",
         "authors": [
           "Rady, B. J.",
           "Bahadur, R.",
@@ -4394,7 +4405,7 @@
       {
         "id": "10.1093/bioinformatics/btag618",
         "title": "Bridging linguistic reasoning and biophysical reality toward peptide engineering via instruction-tuned language modeling.",
-        "authors_short": "Yang K, \u2026, Li P",
+        "authors_short": "Yang K, …, Li P",
         "authors": [
           "Yang K",
           "Wu T",
@@ -4436,7 +4447,7 @@
       {
         "id": "10.64898/2026.02.09.704872",
         "title": "Architectonic Spandrels in the Origin of Enzymatic Function",
-        "authors_short": "Poley-Gil, M., \u2026, Parra, R. G.",
+        "authors_short": "Poley-Gil, M., …, Parra, R. G.",
         "authors": [
           "Poley-Gil, M.",
           "Fernandez-Martin, M.",
@@ -4481,7 +4492,7 @@
       {
         "id": "10.64898/2026.08.30.747997",
         "title": "Structure-inspired design of Nsp8-based protein inhibitors to suppress SARS-CoV-2 replication",
-        "authors_short": "Sterbova, P., \u2026, Chang, W.-h.",
+        "authors_short": "Sterbova, P., …, Chang, W.-h.",
         "authors": [
           "Sterbova, P.",
           "Lin, H. H.",
@@ -4562,12 +4573,12 @@
       {
         "id": "10.1002/cbic.70525",
         "title": "Peptide Aptamers: Innovative Design and Applications in Pathogen Detection",
-        "authors_short": "Shengjie Wu, \u2026, Dayong Gu",
+        "authors_short": "Shengjie Wu, …, Dayong Gu",
         "authors": [
           "Shengjie Wu",
           "Xiaoyu Wu",
           "Jie Wen",
-          "\u9648\u4fca\u6587",
+          "陈俊文",
           "Tonggong Liu",
           "Dayong Gu"
         ],
@@ -4606,7 +4617,7 @@
       {
         "id": "10.5281/zenodo.22253785",
         "title": "JANUS: data and reproducibility artefacts",
-        "authors_short": "Anees Ahmed Mahaboob Ali, \u2026, Everette Jacob Remington Nelson",
+        "authors_short": "Anees Ahmed Mahaboob Ali, …, Everette Jacob Remington Nelson",
         "authors": [
           "Anees Ahmed Mahaboob Ali",
           "Radhakrishnan Delhibabu",
@@ -4646,7 +4657,7 @@
       {
         "id": "10.1016/j.cbpa.2026.102759",
         "title": "Design of programmable molecular interfaces for synthetic biology and therapeutic applications",
-        "authors_short": "Lennart Nickel, \u2026, Bruno E. Correia",
+        "authors_short": "Lennart Nickel, …, Bruno E. Correia",
         "authors": [
           "Lennart Nickel",
           "Ekaterina Pyatova",
@@ -4686,7 +4697,7 @@
       {
         "id": "10.21203/rs.3.rs-10582140/v1",
         "title": "Benchmarking unsupervised protein mutational effect predictors: practical guidelines for protein engineering and reduced accuracy at beneficial residues",
-        "authors_short": "Teppei Deguchi, \u2026, Yutaka Saito",
+        "authors_short": "Teppei Deguchi, …, Yutaka Saito",
         "authors": [
           "Teppei Deguchi",
           "Yoichi Kurumida",

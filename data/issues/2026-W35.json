@@ -558,6 +558,17 @@
     }
   ],
   "blindspot": null,
+  "good_to_know": {
+    "kind": "motm",
+    "title": "Fatty Acid Synthase",
+    "url": "https://pdb101.rcsb.org/motm/90",
+    "blurb": "Fatty acids are constructed in many sequential steps by a large protein complex",
+    "image": "https://cdn.rcsb.org/pdb101/motm/90/90_fas.jpg",
+    "image_alt": "Fatty Acid Synthase",
+    "credit": "RCSB PDB-101 · illustration by David S. Goodsell",
+    "note": "Molecule of the Month #90",
+    "detail": ""
+  },
   "backlog": {
     "design-method": [
       {

@@ -19,6 +19,10 @@ from ..models import Issue
 from ..store import all_weeks, is_stale, read_all_issues, read_issue, read_status
 from ..util import truncate
 
+# Its own bucket in the archive's category filter: it is not one of the nine research
+# categories, and forcing it into one would corrupt the counts.
+GTK_CATEGORY = "good-to-know"
+
 SITE_META = {
     "owner": "Oliver Nagl",
     "email": "olnagl@ethz.ch",
@@ -94,12 +98,12 @@ def render_index(cfg: Config, issue: Issue | None) -> str:
     return env.get_template("index.html").render(
         page_id="week",
         base="",
-        title=(f"{issue.week} · Research radar" if issue else "Research radar"),
+        title=(f"{issue.week} · Assembling concepts" if issue else "Assembling concepts"),
         description=(
             "Weekly automated literature radar for protein design, self-assembly and "
             "structural machine learning."
         ),
-        profile_name=cfg.profile.get("name", "Research radar"),
+        profile_name=cfg.profile.get("name", "Assembling concepts"),
         issue=issue,
         banner=build_banner(issue, status),
         cat_names=category_names(cfg),
@@ -153,9 +157,42 @@ def build_search_index(cfg: Config, issues: list[Issue]) -> dict:
                     "url": s.links.get("doi") or s.links.get("url", ""),
                 }
             )
+        # The good-to-know pick is not a paper the radar surfaced, so it carries none of
+        # the funnel's fields. It is indexed anyway — finding that one comic again months
+        # later is exactly what search is for — under a category of its own. This is also
+        # the only archive of picks the front page's shuffle button has to draw on, so it
+        # carries the image and kind too, not just enough to satisfy the search UI.
+        g = issue.good_to_know
+        if g:
+            docs.append(
+                {
+                    "id": f"{issue.week}::gtk::{g.url}",
+                    "week": issue.week,
+                    "title": g.title,
+                    "authors": "",
+                    "venue": g.credit,
+                    "date": issue.window.to.isoformat(),
+                    "category": GTK_CATEGORY,
+                    "action": "",
+                    "score": 0,
+                    "why": g.blurb,
+                    "reason": g.note,
+                    "touches": [],
+                    "abstract": "",
+                    "code": False,
+                    "watchlist": "",
+                    "front": True,
+                    "url": g.url,
+                    "kind": g.kind,
+                    "image": g.image or "",
+                    "image_alt": g.image_alt,
+                    "detail": g.detail,
+                }
+            )
+
     return {
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "categories": category_names(cfg),
+        "categories": {**category_names(cfg), GTK_CATEGORY: "Good to know"},
         "count": len(docs),
         "docs": docs,
     }
@@ -182,9 +219,9 @@ def build_site(cfg: Config, week: str | None = None) -> list[Path]:
     written.append(p)
 
     for name, page_id, title, desc in (
-        ("archive.html", "archive", "Archive · Research radar",
+        ("archive.html", "archive", "Archive · Assembling concepts",
          "Search every paper the radar has surfaced."),
-        ("tuning.html", "tuning", "Tuning · Research radar",
+        ("tuning.html", "tuning", "Tuning · Assembling concepts",
          "Tune the ranking weights and check the radar against papers it should have found."),
         ("projects.html", "projects", "Projects · Oliver Nagl", "Selected projects."),
     ):

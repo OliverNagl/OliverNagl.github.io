@@ -78,6 +78,21 @@ def render_markdown(issue: Issue) -> str:
         if b.confidence:
             lines += [f"Confidence: {b.confidence}", ""]
 
+    if issue.good_to_know:
+        g = issue.good_to_know
+        lines += ["## Good to know", ""]
+        lines += [f"### [{g.title}]({g.url})", ""]
+        if g.note:
+            lines += [g.note, ""]
+        if g.image:
+            lines += [f"![{g.image_alt}]({g.image})", ""]
+        if g.blurb:
+            lines += [f"> {g.blurb}", ""]
+        if g.detail:
+            lines += [g.detail, ""]
+        if g.credit:
+            lines += [f"_{g.credit}_", ""]
+
     if issue.now_published:
         lines += ["## Now published", ""]
         for np_ in issue.now_published:

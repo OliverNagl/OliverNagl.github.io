@@ -6,7 +6,7 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Sep 2026 17:07:12 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 17:39:59 +0000</lastBuildDate>
     <item>
       <title>RFOptimization: Guiding Design Optimization with All-Atom Structure Prediction</title>
       <link>https://doi.org/10.64898/2026.09.04.749184</link>
@@ -228,6 +228,15 @@ Sorensen CC, …, Hyster TK · Nature · 27 Jul · enzyme · action: skim</descr
 BLINDSPOT · Nalina Vadakkayil, …, Subir K. Das · arXiv · 31 Aug · ml-method · action: track</description>
     </item>
     <item>
+      <title>Good to know: Ig Nobel Biomechanics Prize, 2026</title>
+      <link>https://doi.org/10.1016/j.evolhumbehav.2025.106788</link>
+      <guid isPermaLink="false">2026-W36:gtk:https://doi.org/10.1016/j.evolhumbehav.2025.106788</guid>
+      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Devising a more precise definition of kissing — “non-agonistic interactions involving directed, intraspecific, oral-oral contact with some movement of the lips/mouthparts and no food transfer” — in ants, birds, polar bears, and humans.
+
+GOOD TO KNOW · Ig Nobel · 2026 · Ig Nobel Prizes · Annals of Improbable Research</description>
+    </item>
+    <item>
       <title>De Novo Design of a Protein Binder to Probe Gas Channel and Enhance the Oxygen Tolerance of [NiFe]‐Hydrogenase</title>
       <link>https://doi.org/10.1002/anie.6395554</link>
       <guid isPermaLink="false">2026-W35:10.1002/anie.6395554</guid>
@@ -326,6 +335,15 @@ Jonathan A. Levine, …, Benjamin D. Greenbaum · arXiv · 28 Aug · struct-pred
       <description>general-CS cs.CV: decisive method term 'latent diffusion'
 
 Marc Rodríguez, …, Polyxeni Gkontra · arXiv · 25 Aug · ml-method</description>
+    </item>
+    <item>
+      <title>Good to know: Fatty Acid Synthase</title>
+      <link>https://pdb101.rcsb.org/motm/90</link>
+      <guid isPermaLink="false">2026-W35:gtk:https://pdb101.rcsb.org/motm/90</guid>
+      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
+      <description>Fatty acids are constructed in many sequential steps by a large protein complex
+
+GOOD TO KNOW · Molecule of the Month #90 · RCSB PDB-101 · illustration by David S. Goodsell</description>
     </item>
   </channel>
 </rss>

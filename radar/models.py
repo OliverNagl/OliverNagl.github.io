@@ -126,6 +126,26 @@ class Scored(BaseModel):
     confidence: Confidence | None = None
 
 
+class GoodToKnow(BaseModel):
+    """The one item on the page that is not justified.
+
+    Everything else here carries a relevance score and a verdict. This does not: it is a
+    weekly rotation through four sources with nothing to do with protein design. No model
+    writes any of these fields — they are fetched or read from a harvested seed file — so
+    there is nothing in here to hallucinate.
+    """
+
+    kind: Literal["xkcd", "motm", "wikipedia", "ignobel"]
+    title: str
+    url: str
+    blurb: str = ""                      # alt text, extract, or the prize citation
+    image: str | None = None
+    image_alt: str = ""
+    credit: str = ""                     # attribution the source's licence asks for
+    note: str = ""                       # short chip: "xkcd #1319 · 2014"
+    detail: str = ""                     # optional second line, e.g. the cited paper
+
+
 class SourceHealth(BaseModel):
     source: str
     ok: bool
@@ -171,6 +191,7 @@ class Issue(BaseModel):
     stats: Stats = Field(default_factory=Stats)
     front_page: list[Scored] = Field(default_factory=list)
     blindspot: Scored | None = None
+    good_to_know: GoodToKnow | None = None
     backlog: dict[str, list[Scored]] = Field(default_factory=dict)
     now_published: list[NowPublished] = Field(default_factory=list)
     # The weights this issue was scored with. Carried in the JSON so the tuning page can

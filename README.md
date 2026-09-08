@@ -16,7 +16,7 @@ The site *is* the front end. Pipeline and site live in one repository so the pag
 
 | Page | What it is for |
 |---|---|
-| `index.html` | This week: five picks, one blindspot, "now published", collapsed backlog. **Rendered statically by Python** — it needs no JavaScript and paints on first byte. |
+| `index.html` | This week: five picks, one blindspot, one good-to-know pick, "now published", collapsed backlog. **Rendered statically by Python** — it needs no JavaScript and paints on first byte. |
 | `archive.html` | Full-archive search. The one thing the markdown digests genuinely cannot do. |
 | `tuning.html` | Gold-set verdicts, priced suggestions, and live re-ranking with the weight sliders. |
 | `projects.html` | A few things I have built. |
@@ -69,6 +69,32 @@ editing YAML, not Python:
 - `config/categories.yaml` — the nine categories, every lexical rule, the general-CS gate
 - `config/sources.yaml` — feeds, journals, the author watchlist, blindspot quotas
 - `config/prompts/` — triage, deep dive, blindspot
+- `config/good_to_know/` — the harvested Molecule of the Month and Ig Nobel seed files
+
+## Good to know
+
+The one section on the page that is not justified. Everything else answers "why should you
+read this?" with a relevance score and a verdict; the blindspot already covers *useful but
+oblique*. This covers nothing at all, rotating weekly through four sources with no bearing
+on protein design:
+
+| Source | Where it comes from |
+|---|---|
+| xkcd | A random strip of ~3200, with its hover text, which is the joke |
+| Molecule of the Month | David Goodsell's watercolours for the PDB — 321 entries |
+| Wikipedia | A featured article or "on this day" event from a random past day |
+| Ig Nobel | A real prize for a real paper, in the committee's own wording — 345 of them |
+
+**No model is involved.** Two sources are read from seed files, two are JSON APIs, so every
+field is either fetched or on disk — there is nothing here to fabricate, which is the same
+standard the rest of the radar is held to. A dead source costs you the section and nothing
+else, and `data/good_to_know_seen.json` stops a pick ever appearing twice.
+
+The seeded sources are seldom-changing, so they are scraped out of band:
+
+```bash
+radar harvest      # after an Ig Nobel ceremony, or when MotM has moved on — ~1/year
+```
 
 **When something is overlooked, add it to `eval/goldset.yaml` and run `radar eval`.** For
 each paper it reports whether the filter as configured today would surface it, the exact
