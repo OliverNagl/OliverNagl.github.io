@@ -6,7 +6,126 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 08 Sep 2026 17:39:59 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 14 Sep 2026 08:22:06 +0000</lastBuildDate>
+    <item>
+      <title>PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation</title>
+      <link>https://doi.org/10.64898/2026.09.11.750898</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.11.750898</guid>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Denoises sequence and all-atom coordinates together in one Cartesian pass, and conditions enzyme motifs on pairwise atom distances instead of fixed coordinates so the scaffold is free to move catalytic residues into place rather than being locked to them.
+
+Bai, J., Jiang, H. · bioRxiv · 13 Sep · design-method · action: read</description>
+    </item>
+    <item>
+      <title>An ultralow-background far-red light-responsive optogenetic tool based on an engineered biliverdin-binding domain.</title>
+      <link>https://doi.org/10.1038/s41592-026-03223-6</link>
+      <guid isPermaLink="false">2026-W38:10.1038/s41592-026-03223-6</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Shrinks the red-light optogenetic core from a 70-kDa obligate phytochrome dimer to a 17-kDa monomeric biliverdin photoreceptor paired with a 6-kDa binder whose affinity jumps over 1,200-fold on illumination, with almost no dark-state binding to leak signal.
+
+Le GNT, …, Woolley GA · Nature methods · 11 Sep · design-method · action: read</description>
+    </item>
+    <item>
+      <title>A cryptic symmetry switch allosterically controls how the PF4 self-protein turns into a pathogenic antigen.</title>
+      <link>https://doi.org/10.1038/s41467-026-76387-6</link>
+      <guid isPermaLink="false">2026-W38:10.1038/s41467-026-76387-6</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>cryptic conformational switch controls PF4 tetramer asymmetry driving HIT autoimmunity
+
+Ma Q, …, Melacini G · Nature communications · 11 Sep · assembly</description>
+    </item>
+    <item>
+      <title>Bridging the accuracy-speed divide in reactive molecular dynamics with QuantaMind MD.</title>
+      <link>https://doi.org/10.1126/sciadv.aeg3595</link>
+      <guid isPermaLink="false">2026-W38:10.1126/sciadv.aeg3595</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>A machine-learned force field holds DFT-level accuracy over tens of nanoseconds of reactive dynamics, reproducing the full PETase catalytic cycle -- bond breaking, proton transfer, constant-pH histidine titration -- without hand-coding any of the reaction.
+
+Xia S, …, Xu J · Science advances · 11 Sep · ml-method · action: read</description>
+    </item>
+    <item>
+      <title>Modular Surface Engineering of Feline Parvovirus Virus-Like Particles for Antigen Presentation and Receptor-Mediated Cell Targeting</title>
+      <link>https://doi.org/10.64898/2026.09.09.750088</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.09.750088</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>Feline parvovirus VLPs get a uniform, site-specific coat of fluorophores, peptides, oligos or proteins via copper-free click chemistry, and cryo-EM confirms the antigen-decorated shell still holds its native architecture.
+
+Naskalska, A., …, Nowak, J. · bioRxiv · 11 Sep · assembly · action: skim</description>
+    </item>
+    <item>
+      <title>Mechanistic Interpretability of Protein Language Models Reveals Encoded Structural and Functional Properties of Intrinsically Disordered Proteins</title>
+      <link>https://doi.org/10.64898/2026.09.10.750691</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.10.750691</guid>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>ESM-2 pays less attention to disordered regions overall, but the attention it does spend zeroes in on disease-relevant residues -- and its embeddings alone are enough to recover an IDP's radius of gyration and contact dynamics.
+
+Naworski, L. E., …, Knowles, T. P. J. · bioRxiv · 13 Sep · struct-pred · action: track</description>
+    </item>
+    <item>
+      <title>OmniTCR: a foundation model unifying T cell receptor recognition prediction and conditional sequence generation</title>
+      <link>https://doi.org/10.64898/2026.09.10.750588</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.10.750588</guid>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>One autoregressive model learns TCR recognition and TCR generation jointly by tokenizing sequence type and pairing completeness, so the vast pool of unpaired TCR sequences can inform the much smaller labeled TCR-pMHC dataset.
+
+Zeng, F., …, Guo, A.-Y. · bioRxiv · 13 Sep · struct-pred · action: track</description>
+    </item>
+    <item>
+      <title>Reframing enzyme function prediction as conditional generation</title>
+      <link>https://doi.org/10.64898/2026.09.09.750355</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.09.750355</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Instead of classifying reactions, Fluxion generates the arrow-pushing electron-flow trajectory itself -- turning enzyme function prediction into a generative modeling problem that can propose chemistry the training set never labeled.
+
+Rieger, W. J., …, Mora, A. · bioRxiv · 11 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>Antibody-mediated VWF targeting reconstitutes ADAMTS13 metalloproteinase activity and prevents thrombocytopenia in mice</title>
+      <link>https://doi.org/10.64898/2026.09.11.750821</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.11.750821</guid>
+      <pubDate>Sun, 13 Sep 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Swap ADAMTS13's autoantibody-targeted substrate-recognition domains for an anti-VWF antibody arm, and you get an enzyme mimetic that still cleaves VWF and rescues mice from thrombocytopenia -- but is invisible to the antibodies that disable the native enzyme in autoimmune TTP.
+
+Hashimoto, A., …, Sano, A. · bioRxiv · 13 Sep · function-design · action: read</description>
+    </item>
+    <item>
+      <title>Evolution promotes transition-state-like conformations with enhanced basicity and electric fields in the substrate complex of a designer enzyme</title>
+      <link>https://doi.org/10.64898/2026.09.09.750330</link>
+      <guid isPermaLink="false">2026-W38:10.64898/2026.09.09.750330</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Directed evolution closed the gap to natural enzymes not by lowering the reaction barrier directly, but by desolvating the catalytic base so its proton affinity rises and the rate-limiting proton transfer gets cheaper.
+
+Lear, A., …, Mulholland, A. J. · bioRxiv · 11 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>NEMO: A Framework for Nematic and Morphological Analysis of Curved and Multi-layered Biological Surfaces</title>
+      <link>https://arxiv.org/abs/2609.12906v1</link>
+      <guid isPermaLink="false">2026-W38:arxiv:2609.12906v1</guid>
+      <pubDate>Fri, 11 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>NEMO computes depth-resolved nematic order and topological-defect charge (accounting for Gaussian curvature) on curved, multilayer triangulated surfaces from cytoskeletal and tissue imaging data.
+
+BLINDSPOT · Konstantinos Andreadis, …, Guillaume Salbreux · arXiv · 11 Sep · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>Good to know: Crystallins</title>
+      <link>https://pdb101.rcsb.org/motm/127</link>
+      <guid isPermaLink="false">2026-W38:gtk:https://pdb101.rcsb.org/motm/127</guid>
+      <pubDate>Sun, 20 Sep 2026 00:00:00 +0000</pubDate>
+      <description>A concentrated solution of crystallins refracts light in our eye lens
+
+GOOD TO KNOW · Molecule of the Month #127 · RCSB PDB-101 · illustration by David S. Goodsell</description>
+    </item>
     <item>
       <title>RFOptimization: Guiding Design Optimization with All-Atom Structure Prediction</title>
       <link>https://doi.org/10.64898/2026.09.04.749184</link>

@@ -1,6 +1,6 @@
 {
-  "week": "2026-W37",
-  "ran_at": "2026-09-08T17:07:12.602188+00:00",
+  "week": "2026-W38",
+  "ran_at": "2026-09-14T08:22:06.164751+00:00",
   "ok": false,
   "degraded": true,
   "stale_after_days": 11,
@@ -9,27 +9,29 @@
     "openalex"
   ],
   "under_covered_sources": [
-    "biorxiv"
+    "arxiv",
+    "biorxiv",
+    "pubmed"
   ],
   "source_health": [
     {
       "source": "arxiv",
       "ok": true,
-      "fetched": 153,
+      "fetched": 12,
       "expected_min": 80,
       "error": null
     },
     {
       "source": "biorxiv",
       "ok": true,
-      "fetched": 238,
+      "fetched": 165,
       "expected_min": 300,
       "error": null
     },
     {
       "source": "medrxiv",
       "ok": true,
-      "fetched": 42,
+      "fetched": 20,
       "expected_min": 20,
       "error": null
     },
@@ -43,13 +45,15 @@
     {
       "source": "pubmed",
       "ok": true,
-      "fetched": 187,
+      "fetched": 118,
       "expected_min": 150,
       "error": null
     }
   ],
   "notes": [
     "source openalex failed: all openalex queries failed: ['ChemRxiv', 'search:de novo protein design', 'search:protein nanoparticle assembly', 'search:designed protein nanomaterial']",
-    "source biorxiv returned 238, below its expected minimum of 300"
+    "source arxiv returned 12, below its expected minimum of 80",
+    "source biorxiv returned 165, below its expected minimum of 300",
+    "source pubmed returned 118, below its expected minimum of 150"
   ]
 }
