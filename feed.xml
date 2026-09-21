@@ -6,7 +6,126 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 14 Sep 2026 08:22:06 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 21 Sep 2026 08:27:54 +0000</lastBuildDate>
+    <item>
+      <title>De novo design of cysteine proteases</title>
+      <link>https://doi.org/10.1101/2025.11.21.689808</link>
+      <guid isPermaLink="false">2026-W39:10.1101/2025.11.21.689808</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>An activated-cysteine nucleophile hydrolyzes the peptide backbone itself, not just an ester — 13 of 69 designs worked, on folds with no natural precedent (TM &lt; 0.50) and crystal structures within 1.2 A of the model.
+
+Choi, H., …, Baker, D. · bioRxiv · 21 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>Computational design of metalloproteases</title>
+      <link>https://doi.org/10.1101/2025.11.20.689622</link>
+      <guid isPermaLink="false">2026-W39:10.1101/2025.11.20.689622</guid>
+      <pubDate>Mon, 21 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>RFdiffusion2's interface mode builds zinc proteases from minimal catalytic motifs instead of grafting whole active sites, and the best hit cleaves 10^10-fold faster than the uncatalyzed reaction after four preorganization mutations.
+
+Chen, A., …, Baker, D. · bioRxiv · 21 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>Latent generative search unlocks de novo design of untapped biomolecular interactions at scale</title>
+      <link>https://doi.org/10.64898/2026.09.12.751118</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.12.751118</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Reward-guided search steers a codesigned sequence-and-structure latent model at inference time instead of redesigning sequences post-hoc, and wins a phage screen of over a million designs against every other binder method, including on polar epitopes that resist hydrophobic contacts.
+
+Didi, K., …, Kreis, K. · bioRxiv · 18 Sep · design-method · action: read</description>
+    </item>
+    <item>
+      <title>Charged residues, not aromatics, are the universal topological hubs of intrinsically disordered proteins</title>
+      <link>https://doi.org/10.64898/2026.09.13.751321</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.13.751321</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>Arginine and lysine carry identical net charge but only arginine acts as a network hub in IDP contact maps — hub character comes from charge-carrier geometry, not charge itself, and every taxon shows the same positionally-encoded pattern.
+
+Rahman, T., Uversky, V. N. · bioRxiv · 18 Sep · assembly · action: read</description>
+    </item>
+    <item>
+      <title>Virtual experiments bridge sequence and microscopy with generative models</title>
+      <link>https://doi.org/10.64898/2026.09.13.751243</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.13.751243</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Trains a generative model to translate protein sequence into fluorescence microscopy images and back, so virtual mutagenesis of an IDR reads out condensate formation without running a single real experiment.
+
+Zheng, D., …, Huang, B. · bioRxiv · 18 Sep · ml-method · action: read</description>
+    </item>
+    <item>
+      <title>Linear antibody epitope prediction using AlphaFold2.</title>
+      <link>https://doi.org/10.7554/eLife.98369</link>
+      <guid isPermaLink="false">2026-W39:10.7554/eLife.98369</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Breaks the antigen into overlapping linear peptides and folds each against the antibody chains with AlphaFold2, flagging known epitopes without ever running a binding assay.
+
+DeRoo J, …, Geiss BJ · eLife · 18 Sep · struct-pred · action: skim</description>
+    </item>
+    <item>
+      <title>VirPLM: Antigenic prediction of influenza A/H3N2 viruses with a fine-tuned protein language model.</title>
+      <link>https://doi.org/10.1093/bioinformatics/btag692</link>
+      <guid isPermaLink="false">2026-W39:10.1093/bioinformatics/btag692</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>immunogen</category>
+      <description>Fine-tunes ESM-2 on HA1 sequences to predict antigenic distance directly, replacing the labor-intensive hemagglutination-inhibition assay, and holds up under retrospective time-split evaluation.
+
+Li X, …, Kong H · Bioinformatics (Oxford, England) · 18 Sep · immunogen · action: skim</description>
+    </item>
+    <item>
+      <title>A Unified 3D Generative Model for Synthesizable Structure-Based Drug Design</title>
+      <link>https://doi.org/10.64898/2026.09.15.751537</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.15.751537</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>One generative model handles docking, fragment linking/growing, and de novo design together, then a programmable algorithm constrains output to synthesizable routes, validated against five real targets.
+
+Igashov, I., …, Correia, B. · bioRxiv · 18 Sep · ml-method · action: skim</description>
+    </item>
+    <item>
+      <title>EM3DFold: accurate de novo protein and nucleic acid model building for cryo-EM maps using language model-powered deep learning</title>
+      <link>https://doi.org/10.64898/2026.09.16.752067</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.16.752067</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>wetlab-method</category>
+      <description>A density-aware three-track network builds all-atom models straight from cryo-EM maps, hitting 94% sequence accuracy on nucleic acids where manual building has always been the bottleneck.
+
+Li, T., …, Huang, S.-Y. · bioRxiv · 18 Sep · wetlab-method · action: skim</description>
+    </item>
+    <item>
+      <title>Optimizing the connectivity of protein conformations to untangle ensemble refinement</title>
+      <link>https://doi.org/10.64898/2026.09.17.752399</link>
+      <guid isPermaLink="false">2026-W39:10.64898/2026.09.17.752399</guid>
+      <pubDate>Sat, 19 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Formulates picking low-energy conformer combinations as an integer-linear program instead of gradient refinement, and escapes the 'tangled' trap that strands every current ensemble-refinement method on a synthetic benchmark.
+
+Passmore, S. K., …, Martin, A. V. · bioRxiv · 19 Sep · struct-pred · action: read · touches: quasi-equivalence: one sequence, multiple backbone conformations by assembly slot</description>
+    </item>
+    <item>
+      <title>Repulsive normalizing flow mixtures for adaptive importance sampling: reliability analysis of complex systems</title>
+      <link>https://arxiv.org/abs/2609.21160v1</link>
+      <guid isPermaLink="false">2026-W39:arxiv:2609.21160v1</guid>
+      <pubDate>Fri, 18 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>FAMIS learns a repulsion-regularized mixture of normalizing-flow proposals that discovers multiple rare-event failure modes adaptively, with no presampled failures and no prior knowledge of how many modes exist or where they lie.
+
+BLINDSPOT · Sara Helal, Victor Elvira · arXiv · 18 Sep · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>Good to know: Ig Nobel Physics Prize, 1999</title>
+      <link>https://improbable.com/ig/winners/#1999-physics</link>
+      <guid isPermaLink="false">2026-W39:gtk:https://improbable.com/ig/winners/#1999-physics</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <description>Calculating the optimal way to dunk a biscuit, and Jean-Marc Vanden-Broeck of the [UK and Belgium], and Joseph Keller [USA] for calculating how to make a teapot spout that does not drip.
+
+GOOD TO KNOW · Ig Nobel · 1999 · Ig Nobel Prizes · Annals of Improbable Research</description>
+    </item>
     <item>
       <title>PANDA: Protein All-atom Nested-tree Denoising Architecture for End-to-End Generation</title>
       <link>https://doi.org/10.64898/2026.09.11.750898</link>
