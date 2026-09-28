@@ -6,7 +6,126 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 21 Sep 2026 08:27:54 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 28 Sep 2026 08:15:51 +0000</lastBuildDate>
+    <item>
+      <title>Drug-controlled CAR T cells through the regulation of cell-cell interactions.</title>
+      <link>https://doi.org/10.1038/s41589-026-02152-x</link>
+      <guid isPermaLink="false">2026-W40:10.1038/s41589-026-02152-x</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Library-optimized human protein-protein interaction parts, not a degron, give CAR T cells a venetoclax-gated off-switch that dials down tumor killing by releasing the targeting scFv rather than shutting the cell down.
+
+Scheller L, …, Irving M · Nature chemical biology · 19 Feb · function-design · action: skim</description>
+    </item>
+    <item>
+      <title>State-selective inhibition of alpha-synuclein aggregation by de novo oligomer-binding proteins</title>
+      <link>https://doi.org/10.64898/2026.07.13.738012</link>
+      <guid isPermaLink="false">2026-W40:10.64898/2026.07.13.738012</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>De novo binders trained against a beta-strand conformation of disordered alpha-synuclein don't just block fibril growth generically — one of them prefers oligomers over monomer and hits the intermediate most tied to toxicity.
+
+Zhang, Y., …, Knowles, T. P. J. · bioRxiv · 25 Sep · function-design · action: read</description>
+    </item>
+    <item>
+      <title>FoldMark: Safeguarding Protein Structure Generative Models with Distributional and Evolutionary Watermarking</title>
+      <link>https://doi.org/10.1101/2024.10.23.619960</link>
+      <guid isPermaLink="false">2026-W40:10.1101/2024.10.23.619960</guid>
+      <pubDate>Sat, 26 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>A watermark trained into RFdiffusion, AlphaFold3, ESMFold and RFdiffusionAA survives downstream structural-quality filtering and traces a design back to one of a million users, at a cost most designers wouldn't notice in scTM score.
+
+ZHANG, Z., …, Wang, M. · bioRxiv · 26 Sep · design-method · action: track</description>
+    </item>
+    <item>
+      <title>Targeted finetuning enables co-folding models to learn ligand-induced protein conformational states</title>
+      <link>https://doi.org/10.64898/2026.09.21.752570</link>
+      <guid isPermaLink="false">2026-W40:10.64898/2026.09.21.752570</guid>
+      <pubDate>Sun, 27 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Ten unseen X-ray structures of one helicase are enough to finetune Boltz-1 into recognizing an allosteric site and the conformational change it locks in, and that logic transfers to other RecQ-family helicases the model never saw.
+
+Gorantla, R., …, Sesterhenn, F. · bioRxiv · 27 Sep · struct-pred · action: read</description>
+    </item>
+    <item>
+      <title>SurfGraphPro: Integrating Protein Language Models with Geometric Deep Learning On Coarse Protein Surfaces for Binding Site Prediction</title>
+      <link>https://doi.org/10.64898/2026.09.17.751511</link>
+      <guid isPermaLink="false">2026-W40:10.64898/2026.09.17.751511</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Swapping hand-crafted surface features for protein language model embeddings on a coarse triangulated mesh gets binding-site prediction 18-28x faster without losing accuracy, and skips the MSA step entirely.
+
+Habib, A., …, Hu, B. · bioRxiv · 25 Sep · struct-pred · action: read</description>
+    </item>
+    <item>
+      <title>AnewDDE: An Agentic Drug Discovery Engine for Biomolecular Interaction Modelling and Closed-Loop Design</title>
+      <link>https://doi.org/10.64898/2026.09.20.752967</link>
+      <guid isPermaLink="false">2026-W40:10.64898/2026.09.20.752967</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>One pipeline chains a co-folding model, an affinity estimator and a binder generator into a closed loop and gets single-digit-nanomolar nanobodies in 10.7% of attempts, which is really a claim about how much SPR bench time the loop saves.
+
+Anew Labs Team,, Liu, K. · bioRxiv · 25 Sep · design-method · action: skim</description>
+    </item>
+    <item>
+      <title>Computational design of a thermostable α-helical barrel protein with tunable active-site positioning</title>
+      <link>https://doi.org/10.1101/2024.10.07.617055</link>
+      <guid isPermaLink="false">2026-W40:10.1101/2024.10.07.617055</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>A six-helix antiparallel barrel with a non-natural fold gives enzyme designers a thermostable scaffold whose central channel lets you slide the catalytic site to different positions without redesigning the whole protein.
+
+Elaily, W., …, Oberdorfer, G. · bioRxiv · 25 Sep · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>In-cell discovery and characterization of a non-canonical bacterial protein translocation-folding complex.</title>
+      <link>https://doi.org/10.1016/j.cell.2026.08.055</link>
+      <guid isPermaLink="false">2026-W40:10.1016/j.cell.2026.08.055</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>wetlab-method</category>
+      <description>In-cell cryo-electron tomography of a genome-reduced bacterium catches the Sec-translocon mid-secretion, and the mystery dome bolted onto its surface turns out to be three foldase-like proteins homologous to the periplasmic chaperone PrsA rather than anything previously described.
+
+Jensen RK, …, Mahamid J · Cell · 25 Sep · wetlab-method · action: read</description>
+    </item>
+    <item>
+      <title>Control of ice thickness in cryo-EM via confinement.</title>
+      <link>https://doi.org/10.1038/s41592-026-03244-1</link>
+      <guid isPermaLink="false">2026-W40:10.1038/s41592-026-03244-1</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>wetlab-method</category>
+      <description>Graphene reservoirs pin the liquid film before plunge-freezing so it stops self-thinning at an arbitrary point, turning cryo-EM ice thickness from a fight against instability into a dial you set by reservoir depth.
+
+Zheng L, …, Wang HW · Nature methods · 25 Sep · wetlab-method · action: read</description>
+    </item>
+    <item>
+      <title>Discovery of noncanonical cytochrome P450 enzymes in nature.</title>
+      <link>https://doi.org/10.1038/s41589-026-02235-9</link>
+      <guid isPermaLink="false">2026-W40:10.1038/s41589-026-02235-9</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Two decades after the proximal cysteine was called obligatory for every cytochrome P450, a genome search turns up serine- and selenocysteine-ligated variants, the latter never seen in any P450 before.
+
+Nguy AKL, …, Seyedsayamdost MR · Nature chemical biology · 22 Jun · enzyme · action: skim</description>
+    </item>
+    <item>
+      <title>A Bonded-Particle Discrete-Element Model with Self-Gravity for the Collision and Reaccumulation of Rubble-Pile Asteroids: Formulation and Numerical Protocol</title>
+      <link>https://arxiv.org/abs/2609.30903v1</link>
+      <guid isPermaLink="false">2026-W40:arxiv:2609.30903v1</guid>
+      <pubDate>Fri, 25 Sep 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>A bonded-particle discrete-element model of rubble-pile asteroids sweeps collision speed and impact parameter to map exactly where two self-gravitating bodies merge into one versus fail to reaccumulate, with merger governed by competition between short-range bond-breaking dissipation and long-range mutual gravity.
+
+BLINDSPOT · Yohann Trivino · arXiv · 25 Sep · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>Good to know: Insulin Receptor</title>
+      <link>https://pdb101.rcsb.org/motm/182</link>
+      <guid isPermaLink="false">2026-W40:gtk:https://pdb101.rcsb.org/motm/182</guid>
+      <pubDate>Sun, 04 Oct 2026 00:00:00 +0000</pubDate>
+      <description>The cellular receptor for insulin helps control the utilization of glucose by cells
+
+GOOD TO KNOW · Molecule of the Month #182 · RCSB PDB-101 · illustration by David S. Goodsell</description>
+    </item>
     <item>
       <title>De novo design of cysteine proteases</title>
       <link>https://doi.org/10.1101/2025.11.21.689808</link>
@@ -483,105 +602,6 @@ GOOD TO KNOW · Ig Nobel · 2026 · Ig Nobel Prizes · Annals of Improbable Rese
       <description>hard-include phrase: 'de novo design'
 
 Xuan Sun, …, Liyun Zhang · Angewandte Chemie International Edition · 26 Aug · design-method</description>
-    </item>
-    <item>
-      <title>De novo design of RNA pseudoknots with deep learning.</title>
-      <link>https://doi.org/10.1126/science.aeg6829</link>
-      <guid isPermaLink="false">2026-W35:10.1126/science.aeg6829</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>watchlist author: Baker D
-
-Townley J, …, Das R · Science (New York, N.Y.) · 27 Aug · ml-method</description>
-    </item>
-    <item>
-      <title>Programmable De Novo Design of Mesoporous Protein Crystal Frameworks</title>
-      <link>https://doi.org/10.64898/2026.08.25.747085</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.25.747085</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>watchlist author: Hsia Y
-
-Li, Z., …, Baker, D. · bioRxiv · 26 Aug · design-method</description>
-    </item>
-    <item>
-      <title>LNP-CpG: deploy the self-adjuvant role of mRNA vaccines</title>
-      <link>https://doi.org/10.64898/2026.08.19.745633</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.19.745633</guid>
-      <pubDate>Sun, 23 Aug 2026 00:00:00 +0000</pubDate>
-      <category>immunogen</category>
-      <description>must_any hit 'virus', lexical score 14.5
-
-Luan, N., …, Liu, C. · bioRxiv · 23 Aug · immunogen</description>
-    </item>
-    <item>
-      <title>Assessment of generative de novo peptide design methods for G protein-coupled receptors</title>
-      <link>https://doi.org/10.1371/journal.pone.0355549</link>
-      <guid isPermaLink="false">2026-W35:10.1371/journal.pone.0355549</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>hard-include phrase: 'rfdiffusion'
-
-Hannes Junker, Clara T. Schoeder · PLoS ONE · 27 Aug · struct-pred</description>
-    </item>
-    <item>
-      <title>Why viruses build icosahedra: a quantitative framework for capsid architecture and nanocage design</title>
-      <link>https://doi.org/10.64336/001c.168714</link>
-      <guid isPermaLink="false">2026-W35:10.64336/001c.168714</guid>
-      <pubDate>Thu, 27 Aug 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>hard-include phrase: 'nanocage'
-
-Ethan Chang · Journal of High School Science · 27 Aug · assembly</description>
-    </item>
-    <item>
-      <title>Consensus native-like hepatitis C virus E1E2 engages broadly neutralizing antibody precursors</title>
-      <link>https://doi.org/10.64898/2026.08.25.746952</link>
-      <guid isPermaLink="false">2026-W35:10.64898/2026.08.25.746952</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      <category>immunogen</category>
-      <description>watchlist author: Ward AB
-
-Mulder, F., …, Sliepen, K. · bioRxiv · 26 Aug · immunogen</description>
-    </item>
-    <item>
-      <title>Factors impacting protective immunity conferred by vaccination with adeno-associated virus-like particles displaying human papillomavirus L2 residues 17-36.</title>
-      <link>https://doi.org/10.1128/jvi.00448-26</link>
-      <guid isPermaLink="false">2026-W35:10.1128/jvi.00448-26</guid>
-      <pubDate>Fri, 21 Aug 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>must_any hit 'antibody', lexical score 11.0
-
-Alvarez J, …, Roden RBS · Journal of virology · 21 Aug · assembly</description>
-    </item>
-    <item>
-      <title>FoldKit: A Python library for efficient storage and retrieval of co-folding predictions</title>
-      <link>https://arxiv.org/abs/2608.28788v1</link>
-      <guid isPermaLink="false">2026-W35:arxiv:2608.28788v1</guid>
-      <pubDate>Fri, 28 Aug 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>hard-include phrase: 'de novo protein'
-
-Jonathan A. Levine, …, Benjamin D. Greenbaum · arXiv · 28 Aug · struct-pred</description>
-    </item>
-    <item>
-      <title>Metadata-Aware Adaptation of a Generative Foundation Model for Conditional CMR Synthesis</title>
-      <link>https://arxiv.org/abs/2608.24342v1</link>
-      <guid isPermaLink="false">2026-W35:arxiv:2608.24342v1</guid>
-      <pubDate>Tue, 25 Aug 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>general-CS cs.CV: decisive method term 'latent diffusion'
-
-Marc Rodríguez, …, Polyxeni Gkontra · arXiv · 25 Aug · ml-method</description>
-    </item>
-    <item>
-      <title>Good to know: Fatty Acid Synthase</title>
-      <link>https://pdb101.rcsb.org/motm/90</link>
-      <guid isPermaLink="false">2026-W35:gtk:https://pdb101.rcsb.org/motm/90</guid>
-      <pubDate>Sun, 30 Aug 2026 00:00:00 +0000</pubDate>
-      <description>Fatty acids are constructed in many sequential steps by a large protein complex
-
-GOOD TO KNOW · Molecule of the Month #90 · RCSB PDB-101 · illustration by David S. Goodsell</description>
     </item>
   </channel>
 </rss>
