@@ -6,7 +6,126 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 28 Sep 2026 08:15:51 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 05 Oct 2026 08:15:28 +0000</lastBuildDate>
+    <item>
+      <title>Multimodal reasoning for broadly neutralizing antibody discovery from label-free human B cell repertoires across virus families</title>
+      <link>https://arxiv.org/abs/2610.03160v1</link>
+      <guid isPermaLink="false">2026-W41:arxiv:2610.03160v1</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Closes the loop between multimodal reasoning and wet-lab screening to mine natural B-cell repertoires directly, turning a ~55% neutralization hit rate into broadly neutralizing antibodies without any synthetic library design.
+
+Hantao Lou, …, Xuetao Cao · arXiv · 2 Oct · function-design · action: read</description>
+    </item>
+    <item>
+      <title>IDRF: Inverse-Distilled Reward Fine-tuning of Masked Discrete Diffusion Models</title>
+      <link>https://arxiv.org/abs/2610.03641v1</link>
+      <guid isPermaLink="false">2026-W41:arxiv:2610.03641v1</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Fine-tunes a discrete diffusion model's few-step sampler with policy-gradient RL by bounding the usual intractable sequence-level KL penalty through inverse distillation, and shows it works on DNA sequences as well as text and images.
+
+Vladislav Gromadskii, …, Alexander Korotin · arXiv · 2 Oct · ml-method · action: read</description>
+    </item>
+    <item>
+      <title>Serum IgM crosslinks hepatitis B subviral particles into supramolecular immune complexes</title>
+      <link>https://doi.org/10.64898/2026.09.30.755772</link>
+      <guid isPermaLink="false">2026-W41:10.64898/2026.09.30.755772</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>Catches serum IgM in the act of stitching hepatitis B subviral particles into supramolecular complexes, resolving three distinct Fc-core crosslinking architectures at 2.8 angstroms directly from patient serum.
+
+Liu, C., …, Ke, Z. · bioRxiv · 2 Oct · assembly · action: skim</description>
+    </item>
+    <item>
+      <title>Multiobjective VHH discovery through integrated high-throughput screening and AlphaFold3-guided structural prioritization.</title>
+      <link>https://doi.org/10.1126/sciadv.aef5325</link>
+      <guid isPermaLink="false">2026-W41:10.1126/sciadv.aef5325</guid>
+      <pubDate>Wed, 30 Sep 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Uses AlphaFold3 complex predictions as a structural filter to pull the rare polyspecific VHHs that bind a conserved epitope across multiple snake toxins out of a sea of promiscuous yeast-display hits.
+
+Overath MD, …, Jenkins TP · Science advances · 30 Sep · function-design · action: skim</description>
+    </item>
+    <item>
+      <title>EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection</title>
+      <link>https://doi.org/10.64898/2026.09.26.754739</link>
+      <guid isPermaLink="false">2026-W41:10.64898/2026.09.26.754739</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Treats complex prediction as a candidate-selection problem, pooling AF-Multimer, AF3, Boltz-1 and expanded docking, then learns a DockQ-trained reranker to pick the single best model instead of trusting any one generator.
+
+Hu, B., …, He, X. · bioRxiv · 2 Oct · struct-pred · action: skim</description>
+    </item>
+    <item>
+      <title>Equivariant Flow Matching for Electron Density Prediction</title>
+      <link>https://arxiv.org/abs/2610.02651v1</link>
+      <guid isPermaLink="false">2026-W41:arxiv:2610.02651v1</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Replaces pointwise regression of electron density with SE(3)-equivariant flow matching over the full orbital-coefficient space, so the model learns a probability path instead of a single best guess.
+
+Chenxing Liang, …, Shuiwang Ji · arXiv · 2 Oct · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>Topology-enforced synthesis of atomically precise silver nanoclusters in 3D DNA lattices.</title>
+      <link>https://doi.org/10.1126/sciadv.aec2365</link>
+      <guid isPermaLink="false">2026-W41:10.1126/sciadv.aec2365</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>assembly</category>
+      <description>Encodes silver-cluster nucleation directly into DNA triangle topology inside a 3D lattice, so crystal geometry rather than solution chemistry fixes cluster size and intercluster spacing to atomic precision.
+
+Perren L, …, Vecchioni S · Science advances · 2 Oct · assembly · action: track</description>
+    </item>
+    <item>
+      <title>Auditing Protein-Protein Interaction Signals with Sparse Autoencoder Fingerprints</title>
+      <link>https://doi.org/10.64898/2026.09.27.754758</link>
+      <guid isPermaLink="false">2026-W41:10.64898/2026.09.27.754758</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Turns a protein-language-model PPI predictor's embeddings into sparse, auditable fingerprints and finds most of its apparent accuracy is a partner-independent shortcut that evaporates under topology-controlled splits.
+
+Zhu, W., …, Pan, X. · bioRxiv · 2 Oct · struct-pred · action: cite · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
+    </item>
+    <item>
+      <title>Distinct allosteric remodeling of HIV-1 Env dynamics on virions by gp41-directed antibodies reveals two modes of neutralization.</title>
+      <link>https://doi.org/10.7554/eLife.110887</link>
+      <guid isPermaLink="false">2026-W41:10.7554/eLife.110887</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>immunogen</category>
+      <description>smFRET shows gp41 bNAbs allosterically lock Env prefusion conformation
+
+Xu W, …, Lu M · eLife · 2 Oct · immunogen</description>
+    </item>
+    <item>
+      <title>Once yearly cell-based therapy for sustained and dose-tunable delivery of monoclonal antibodies.</title>
+      <link>https://doi.org/10.1126/sciadv.aej5440</link>
+      <guid isPermaLink="false">2026-W41:10.1126/sciadv.aej5440</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>delivery</category>
+      <description>encapsulated-cell alginate implant gives year-long sustained mAb delivery
+
+Fell C, …, Veiseh O · Science advances · 2 Oct · delivery</description>
+    </item>
+    <item>
+      <title>Surface Charge--Potential Relation for Spherical Particles in Electrolyte Solutions</title>
+      <link>https://arxiv.org/abs/2610.03613v1</link>
+      <guid isPermaLink="false">2026-W41:arxiv:2610.03613v1</guid>
+      <pubDate>Fri, 02 Oct 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Derives closed-form surface charge-potential relations for charged spheres across the full curvature range, replacing numerical Poisson-Boltzmann solving with an exact dual-asymptotic formula that spans weakly curved to highly curved regimes.
+
+BLINDSPOT · Olga I. Vinogradova, Elena F. Silkina · arXiv · 2 Oct · struct-pred · action: track</description>
+    </item>
+    <item>
+      <title>Good to know: Ig Nobel Economics Prize, 2005</title>
+      <link>https://improbable.com/ig/winners/#2005-economics</link>
+      <guid isPermaLink="false">2026-W41:gtk:https://improbable.com/ig/winners/#2005-economics</guid>
+      <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Inventing an alarm clock that runs away and hides, repeatedly, thus ensuring that people DO get out of bed, and thus theoretically adding many productive hours to the workday.
+
+GOOD TO KNOW · Ig Nobel · 2005 · Ig Nobel Prizes · Annals of Improbable Research</description>
+    </item>
     <item>
       <title>Drug-controlled CAR T cells through the regulation of cell-cell interactions.</title>
       <link>https://doi.org/10.1038/s41589-026-02152-x</link>
@@ -483,125 +602,6 @@ BLINDSPOT · Donghyeon Kim, Panayotis Benetatos · arXiv · 4 Sep · struct-pred
       <description>Over a hundred designed protein shells that move RNA orders of magnitude better than lipid nanoparticles, retargeted by grafting on a different designed peptide binder — and carried all the way to a pig gene-editing model.
 
 Schuhmacher MK, …, Wurst W · Nature · 2 Sep · assembly · action: read · touches: symmetry-native / tied-ASU diffusion for icosahedral assemblies</description>
-    </item>
-    <item>
-      <title>Design of peptides with non-canonical amino acids using flow matching</title>
-      <link>https://doi.org/10.1093/bioinformatics/btag654</link>
-      <guid isPermaLink="false">2026-W36:10.1093/bioinformatics/btag654</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>Describes a non-canonical amino acid by its atoms and bonds instead of as a fixed token, so it can place residues it never saw in training — and beats AlphaFold3-based methods at predicting them.
-
-Jin Sub Lee, Philip M. Kim · Bioinformatics · 31 Aug · design-method · action: read</description>
-    </item>
-    <item>
-      <title>Programmable design of synthetic plant immune receptors for pathogen protein recognition.</title>
-      <link>https://doi.org/10.1126/science.aee1792</link>
-      <guid isPermaLink="false">2026-W36:10.1126/science.aee1792</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
-      <category>function-design</category>
-      <description>Grafts a de novo binder into a plant immune receptor's decoy domain and then evolves it in planta, because binding the pathogen protein and correctly firing the receptor turn out to be two different problems.
-
-Zhu H, …, Gao C · Science (New York, N.Y.) · 3 Sep · function-design · action: read</description>
-    </item>
-    <item>
-      <title>Lenacapavir allosterically remodels the HIV-1 capsid.</title>
-      <link>https://doi.org/10.1126/sciadv.aed8384</link>
-      <guid isPermaLink="false">2026-W36:10.1126/sciadv.aed8384</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>Destabilises the capsid's high-curvature pentameric vertices first and lets failure cascade from there — the opposite of the lattice-hyperstabiliser story, and a map of where a small interface change gets amplified into whole-shell collapse.
-
-Dos Santos NFB, …, Pornillos O · Science advances · 2 Sep · assembly · action: read · touches: symmetry-native / tied-ASU diffusion for icosahedral assemblies</description>
-    </item>
-    <item>
-      <title>De novo pan-rhodamine binders for fluorescence microscopy from mammalian cells to extremophiles</title>
-      <link>https://doi.org/10.1016/j.cell.2026.08.007</link>
-      <guid isPermaLink="false">2026-W36:10.1016/j.cell.2026.08.007</guid>
-      <pubDate>Tue, 01 Sep 2026 00:00:00 +0000</pubDate>
-      <category>function-design</category>
-      <description>One designed pocket that reversibly binds a whole family of rhodamines rather than a bespoke pocket per dye, which is what buys it brighter STED than HaloTag — and it still works at 75 °C.
-
-Yuda Chen, …, Bo Huang · Cell · 1 Sep · function-design · action: read</description>
-    </item>
-    <item>
-      <title>Toward De Novo Protein Design from Natural Language</title>
-      <link>https://doi.org/10.1101/2024.08.01.606258</link>
-      <guid isPermaLink="false">2026-W36:10.1101/2024.08.01.606258</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>A 16B-parameter model that turns a free-text functional description straight into a sequence, with designed enzymes that actually turn over; everything shown is monomeric, so whether text can steer a symmetric assembly is untested.
-
-Dai, F., …, Yuan, F. · bioRxiv · 31 Aug · design-method · action: read</description>
-    </item>
-    <item>
-      <title>Hierarchical discrete representations for coarse-to-fine protein conformation generation.</title>
-      <link>https://doi.org/10.1093/bioinformatics/btag611</link>
-      <guid isPermaLink="false">2026-W36:10.1093/bioinformatics/btag611</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>Fixes global topology in a coarse code and refines local geometry conditioned on it, keeping conformational diversity without losing validity — the coarse/fine split is worth stealing for quasi-equivalence, one fold code with per-slot refinements.
-
-On S, …, Kim ES · Bioinformatics (Oxford, England) · 31 Aug · struct-pred · action: read · touches: quasi-equivalence: one sequence, multiple backbone conformations by assembly slot</description>
-    </item>
-    <item>
-      <title>Design and characterization of broadly protective influenza A(H3N2) vaccine candidates using protein language models</title>
-      <link>https://doi.org/10.64898/2026.08.26.747087</link>
-      <guid isPermaLink="false">2026-W36:10.64898/2026.08.26.747087</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>immunogen</category>
-      <description>A language model proposes HA variants and a learned antigenic-distance model picks which to build; two of seven protected against strains that did not yet exist when they were designed — a generate-and-score loop that worked with no wet-lab positives.
-
-Howard, V. R., …, Georgiev, I. S. · bioRxiv · 31 Aug · immunogen · action: read · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
-    </item>
-    <item>
-      <title>De novo design of CR2 binder as vaccine scaffold</title>
-      <link>https://doi.org/10.64898/2026.08.28.747755</link>
-      <guid isPermaLink="false">2026-W36:10.64898/2026.08.28.747755</guid>
-      <pubDate>Thu, 03 Sep 2026 00:00:00 +0000</pubDate>
-      <category>immunogen</category>
-      <description>A designed, stable, high-affinity binder to the B-cell co-receptor CR2 in place of native C3d — the adjuvant becomes the designed protein itself rather than something added to the formulation.
-
-Liu, Y.-T., …, Sun, C. · bioRxiv · 3 Sep · immunogen · action: read</description>
-    </item>
-    <item>
-      <title>Pyridoxal photoenzymes for asymmetric radical-radical cross-couplings.</title>
-      <link>https://doi.org/10.1038/s41586-026-10930-9</link>
-      <guid isPermaLink="false">2026-W36:10.1038/s41586-026-10930-9</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 +0000</pubDate>
-      <category>enzyme</category>
-      <description>Makes pyridoxal phosphate a photocatalyst by using its excited-state quinonoid as a strong single-electron reductant, opening a cofactor 'dark space' that photoenzyme design had never touched.
-
-Sorensen CC, …, Hyster TK · Nature · 27 Jul · enzyme · action: skim</description>
-    </item>
-    <item>
-      <title>Anomalous temperature dependence in phase transitions via ballistic coalescence</title>
-      <link>https://arxiv.org/abs/2608.30918v1</link>
-      <guid isPermaLink="false">2026-W36:arxiv:2608.30918v1</guid>
-      <pubDate>Mon, 31 Aug 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>Clusters that move ballistically rather than diffusively switch from algebraic to explosively fast growth, and the temperature at which they cross over is non-monotonic — the growth law itself changes class.
-
-BLINDSPOT · Nalina Vadakkayil, …, Subir K. Das · arXiv · 31 Aug · ml-method · action: track</description>
-    </item>
-    <item>
-      <title>Good to know: Ig Nobel Biomechanics Prize, 2026</title>
-      <link>https://doi.org/10.1016/j.evolhumbehav.2025.106788</link>
-      <guid isPermaLink="false">2026-W36:gtk:https://doi.org/10.1016/j.evolhumbehav.2025.106788</guid>
-      <pubDate>Sun, 06 Sep 2026 00:00:00 +0000</pubDate>
-      <description>Devising a more precise definition of kissing — “non-agonistic interactions involving directed, intraspecific, oral-oral contact with some movement of the lips/mouthparts and no food transfer” — in ants, birds, polar bears, and humans.
-
-GOOD TO KNOW · Ig Nobel · 2026 · Ig Nobel Prizes · Annals of Improbable Research</description>
-    </item>
-    <item>
-      <title>De Novo Design of a Protein Binder to Probe Gas Channel and Enhance the Oxygen Tolerance of [NiFe]‐Hydrogenase</title>
-      <link>https://doi.org/10.1002/anie.6395554</link>
-      <guid isPermaLink="false">2026-W35:10.1002/anie.6395554</guid>
-      <pubDate>Wed, 26 Aug 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>hard-include phrase: 'de novo design'
-
-Xuan Sun, …, Liyun Zhang · Angewandte Chemie International Edition · 26 Aug · design-method</description>
     </item>
   </channel>
 </rss>

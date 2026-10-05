@@ -1,7 +1,32 @@
 {
-  "generated_at": "2026-09-28T08:15:51.069705+00:00",
-  "latest": "2026-W40",
+  "generated_at": "2026-10-05T08:15:28.946957+00:00",
+  "latest": "2026-W41",
   "weeks": [
+    {
+      "week": "2026-W41",
+      "from": "2026-10-02",
+      "to": "2026-10-11",
+      "generated_at": "2026-10-05T08:15:28.898402+00:00",
+      "degraded": true,
+      "stats": {
+        "fetched": 394,
+        "new": 388,
+        "shortlisted": 74,
+        "scored": 74,
+        "rejected": 314
+      },
+      "front_page": 10,
+      "backlog": 32,
+      "categories": [
+        "assembly",
+        "delivery",
+        "enzyme",
+        "function-design",
+        "ml-method",
+        "struct-pred",
+        "wetlab-method"
+      ]
+    },
     {
       "week": "2026-W40",
       "from": "2026-09-25",
