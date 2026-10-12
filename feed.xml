@@ -6,7 +6,126 @@
     <atom:link href="https://olivernagl.github.io/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Weekly automated literature radar for protein design, self-assembly and structural machine learning.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Oct 2026 08:15:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 08:29:32 +0000</lastBuildDate>
+    <item>
+      <title>Designing Protein Structures from Natural Language</title>
+      <link>https://arxiv.org/abs/2610.13917v1</link>
+      <guid isPermaLink="false">2026-W42:arxiv:2610.13917v1</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Trains an all-atom generator on 1.8M structures paired with 50M+ residue-aligned captions, so you can write what you want a protein to look like or do and get a structure conditioned directly on that text, like text-to-image but for backbones.
+
+Joseph Lee, …, Pang Wei Koh · arXiv · 9 Oct · design-method · action: read</description>
+    </item>
+    <item>
+      <title>De novo protein design in an expanded chemical space</title>
+      <link>https://doi.org/10.64898/2026.10.08.757794</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.10.08.757794</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>design-method</category>
+      <description>Loosens the pair-representation conditioning in a pretrained all-atom structure model while keeping chemical anchors fixed, so noncanonical residues and PTMs become native building blocks the generator can place and denoise around, not post-hoc substitutions.
+
+Li, Y., …, Liu, T. · bioRxiv · 9 Oct · design-method · action: read</description>
+    </item>
+    <item>
+      <title>Design of Orthogonal Far-Red, Orange and Green Fluorophore-binding Proteins for Multiplex Imaging</title>
+      <link>https://doi.org/10.1101/2025.08.03.668343</link>
+      <guid isPermaLink="false">2026-W42:10.1101/2025.08.03.668343</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Splits a de novo dye-binding protein into two halves that only reconstitute fluorescence when both halves are present at the same subcellular location, turning a designed binder into a proximity sensor, and separately gives the binder a covalent nucleophilic-aromatic-substitution active site to lock onto its dye.
+
+Tran, L., …, Baker, D. · bioRxiv · 9 Oct · function-design · action: read</description>
+    </item>
+    <item>
+      <title>Filling the Missing Puzzle: Integrating Interaction and Evolutionary Information to Enhance Protein Fitness Prediction in Inverse Folding</title>
+      <link>https://doi.org/10.64898/2026.10.05.756918</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.10.05.756918</guid>
+      <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Builds inverse folding around a heterogeneous residue-ligand graph fused with ESM-2 embeddings, so sequence design gets scored on whether it preserves the actual physical contacts to a bound ligand rather than backbone geometry and evolutionary likelihood alone.
+
+Wang, Z., …, Li, W. · bioRxiv · 11 Oct · struct-pred · action: read</description>
+    </item>
+    <item>
+      <title>Chain of Structures: Connecting Reasoning and Generation for Protein Design</title>
+      <link>https://doi.org/10.64898/2026.10.09.758133</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.10.09.758133</guid>
+      <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Alternates a language-reasoning model and a structure-generation model round by round, catalytic core then active site then global backbone then full sequence, so each reasoning step directly conditions the next generation step and the resulting geometry feeds back into the next reasoning decision.
+
+Cai, Q., …, Zhang, Z. · bioRxiv · 11 Oct · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>kitAb: an automated framework for assay-specific antibody developability modeling and large-scale landscape analysis</title>
+      <link>https://doi.org/10.64898/2026.10.09.750540</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.10.09.750540</guid>
+      <pubDate>Sun, 11 Oct 2026 00:00:00 +0000</pubDate>
+      <category>function-design</category>
+      <description>Instead of one fixed developability score, fits a separate regression per assay from 59 interpretable descriptors, because which physicochemical property actually predicts an assay's readout turns out to depend entirely on which assay you're predicting.
+
+Trofimova, E., …, Ramensky, V. · bioRxiv · 11 Oct · function-design · action: skim</description>
+    </item>
+    <item>
+      <title>AutoHMD: Scalable and Accurate Validation of Antibody-Antigen Complexes by Heated Molecular Dynamics.</title>
+      <link>https://doi.org/10.1093/bioinformatics/btag757</link>
+      <guid isPermaLink="false">2026-W42:10.1093/bioinformatics/btag757</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>struct-pred</category>
+      <description>Reheats antibody-antigen docking poses and watches which ones hold their interface together under thermal stress, since near-native complexes stay stable while wrong poses fall apart, succeeding where static scoring functions can't tell the two apart.
+
+Souza JS, …, Silva JHM · Bioinformatics (Oxford, England) · 9 Oct · struct-pred · action: skim</description>
+    </item>
+    <item>
+      <title>The CAHRA Challenge: A Community-Wide Assessment of Cryo-EM Heterogeneous Reconstruction Algorithms</title>
+      <link>https://doi.org/10.64898/2026.09.15.751515</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.09.15.751515</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <category>wetlab-method</category>
+      <description>Builds three separate benchmark datasets that each isolate one normally-entangled failure mode of cryo-EM heterogeneity analysis, compositional mixtures, continuous conformational flexibility, and pose-conformation confound, so algorithms can finally be scored against ground truth on each one independently.
+
+Feathers, J. R., …, Zhong, E. · bioRxiv · 10 Oct · wetlab-method · action: skim</description>
+    </item>
+    <item>
+      <title>Masked Diffusion Language Agents for Tool-Integrated Chemical Reasoning</title>
+      <link>https://arxiv.org/abs/2610.13330v1</link>
+      <guid isPermaLink="false">2026-W42:arxiv:2610.13330v1</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>Instead of generating a reasoning-plus-tool-call trajectory left to right, denoises the whole interleaved trajectory at once, so each tool-use decision is made with the full context of what comes before and after it rather than only what came before.
+
+Mengdi Liu, …, Shiguang Shan · arXiv · 9 Oct · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>De Novo Design of Flavoproteins with Controlled Excited State Dynamics</title>
+      <link>https://doi.org/10.64898/2026.10.08.757584</link>
+      <guid isPermaLink="false">2026-W42:10.64898/2026.10.08.757584</guid>
+      <pubDate>Sat, 10 Oct 2026 00:00:00 +0000</pubDate>
+      <category>enzyme</category>
+      <description>Folds QM/MM MD and time-dependent DFT excited-state calculations directly into the design loop, not just post-hoc characterization, so the same thermostable scaffold with and without a heme-binding site lets them dial flavin redox and excited-state behavior while X-ray confirms near-angstrom design accuracy.
+
+Anderson, R., …, Mulholland, A. J. · bioRxiv · 10 Oct · enzyme · action: read</description>
+    </item>
+    <item>
+      <title>How Fluctuations Control Chiral Symmetry Breaking in Reacting Mixtures of Chiral Molecules</title>
+      <link>https://arxiv.org/abs/2610.13523v1</link>
+      <guid isPermaLink="false">2026-W42:arxiv:2610.13523v1</guid>
+      <pubDate>Fri, 09 Oct 2026 00:00:00 +0000</pubDate>
+      <category>ml-method</category>
+      <description>This models chiral symmetry breaking in small reacting populations as a stochastic, fluctuation-driven selection problem rather than a thermodynamic one, deriving how finite-population noise decides which of several equivalent states a system commits to and how long that commitment takes.
+
+BLINDSPOT · Leonardo Silva-Dias, Christoph A. Weber · arXiv · 9 Oct · ml-method · action: track</description>
+    </item>
+    <item>
+      <title>Good to know: Aspartate Transcarbamoylase</title>
+      <link>https://pdb101.rcsb.org/motm/215</link>
+      <guid isPermaLink="false">2026-W42:gtk:https://pdb101.rcsb.org/motm/215</guid>
+      <pubDate>Sun, 18 Oct 2026 00:00:00 +0000</pubDate>
+      <description>Key biosynthetic enzymes are regulated by their ultimate products through allosteric motions.
+
+GOOD TO KNOW · Molecule of the Month #215 · RCSB PDB-101 · illustration by David S. Goodsell</description>
+    </item>
     <item>
       <title>Multimodal reasoning for broadly neutralizing antibody discovery from label-free human B cell repertoires across virus families</title>
       <link>https://arxiv.org/abs/2610.03160v1</link>
@@ -482,126 +601,6 @@ BLINDSPOT · Konstantinos Andreadis, …, Guillaume Salbreux · arXiv · 11 Sep 
       <description>A concentrated solution of crystallins refracts light in our eye lens
 
 GOOD TO KNOW · Molecule of the Month #127 · RCSB PDB-101 · illustration by David S. Goodsell</description>
-    </item>
-    <item>
-      <title>RFOptimization: Guiding Design Optimization with All-Atom Structure Prediction</title>
-      <link>https://doi.org/10.64898/2026.09.04.749184</link>
-      <guid isPermaLink="false">2026-W37:10.64898/2026.09.04.749184</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>Alternates gradient-guided mutation with an orthogonal structure predictor and MPNN redesign, so a binder has to survive a model it wasn't optimized against before it counts as improved.
-
-Zhang, O., …, Baker, D. · bioRxiv · 7 Sep · design-method · action: read</description>
-    </item>
-    <item>
-      <title>Inverse FoldDir: Structure-conditioned Protein Sequence Design by Dirichlet Flow Matching</title>
-      <link>https://doi.org/10.64898/2026.09.06.749733</link>
-      <guid isPermaLink="false">2026-W37:10.64898/2026.09.06.749733</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <category>design-method</category>
-      <description>Runs inverse folding as Dirichlet flow matching directly over the amino-acid simplex, so fixed-residue inpainting and soft biochemical preferences fall out of the same denoising process instead of needing separate machinery.
-
-TARTICI, A., …, Wittmann, B. J. · bioRxiv · 7 Sep · design-method · action: read</description>
-    </item>
-    <item>
-      <title>A rugged binding landscape unifies static and dynamic paradigms in protein-protein interactions</title>
-      <link>https://doi.org/10.64898/2026.03.29.715155</link>
-      <guid isPermaLink="false">2026-W37:10.64898/2026.03.29.715155</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>Two nanobody series bind their antigens the same way but for different reasons: one obeys Rosetta scoring of the crystal structure, the other only ranks correctly once the interface is allowed to move in MD.
-
-Liu, T., …, Sun, B. · bioRxiv · 4 Sep · struct-pred · action: read · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
-    </item>
-    <item>
-      <title>ABAG-Rank: Improving Model Selection of AlphaFold Antibody-Antigen Complexes by Learning to Rank.</title>
-      <link>https://doi.org/10.1093/bioinformatics/btag663</link>
-      <guid isPermaLink="false">2026-W37:10.1093/bioinformatics/btag663</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>A permutation-invariant DeepSets ranker picks the right antibody-antigen decoy out of an AF ensemble, indifferent to how many candidates you hand it.
-
-Tadiello M, …, Elofsson A · Bioinformatics (Oxford, England) · 4 Sep · struct-pred · action: skim</description>
-    </item>
-    <item>
-      <title>Ensemble tests mask missing dynamics in protein conformational generators</title>
-      <link>https://doi.org/10.64898/2026.09.02.748111</link>
-      <guid isPermaLink="false">2026-W37:10.64898/2026.09.02.748111</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>Randomly shuffle the frames of a real MD trajectory and it still passes the field's standard ensemble-fidelity test — the metric can't distinguish learned dynamics from a slideshow.
-
-Liu, K., …, Chi, Y. · bioRxiv · 4 Sep · ml-method · action: read</description>
-    </item>
-    <item>
-      <title>The fitness landscape of a form II rubisco in a photosynthetic bacterium guides engineering of oxygen tolerance.</title>
-      <link>https://doi.org/10.1126/sciadv.aee9222</link>
-      <guid isPermaLink="false">2026-W37:10.1126/sciadv.aee9222</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>enzyme</category>
-      <description>A 15,000-variant fitness screen plus a trained transformer turns rubisco's oxygen-tolerance problem into a recombination search over real fitness data, not a hand-picked hotspot list.
-
-Hoffmann UA, …, Hudson EP · Science advances · 4 Sep · enzyme · action: skim · touches: negative-example construction for design-quality regression</description>
-    </item>
-    <item>
-      <title>Squidly harnesses enzyme functional hierarchy and contrastive learning to efficiently predict catalytic residues from sequence.</title>
-      <link>https://doi.org/10.7554/eLife.108186</link>
-      <guid isPermaLink="false">2026-W37:10.7554/eLife.108186</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>enzyme</category>
-      <description>Contrastive learning on protein language model embeddings finds catalytic residues from sequence alone, beating methods that require a crystal structure.
-
-Rieger WJF, …, Mora A · eLife · 4 Sep · enzyme · action: read</description>
-    </item>
-    <item>
-      <title>BAGEL-CAR: Reflections on the Bits to Binders Competition</title>
-      <link>https://doi.org/10.64898/2026.09.02.748856</link>
-      <guid isPermaLink="false">2026-W37:10.64898/2026.09.02.748856</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>function-design</category>
-      <description>Their winning CAR binders were never refolded before submission — apply the standard ESMFold refiltering step after the fact and every experimentally enriched hit would have been thrown out.
-
-Lala, J., Angioletti-Uberti, S. · bioRxiv · 4 Sep · function-design · action: read · touches: negative-example construction for design-quality regression</description>
-    </item>
-    <item>
-      <title>ProRB: a structure-free unified framework for joint prediction and design of protein-RNA interactions.</title>
-      <link>https://doi.org/10.1093/nar/gkag870</link>
-      <guid isPermaLink="false">2026-W37:10.1093/nar/gkag870</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <category>function-design</category>
-      <description>One sequence-only model both scores protein-RNA affinity and generates the RNA that binds your protein, with cross-attention maps that read out the motif it learned.
-
-Xue Y, …, Pan X · Nucleic acids research · 7 Sep · function-design · action: read</description>
-    </item>
-    <item>
-      <title>Learning Universal Representations of Intermolecular Interactions with ATOMICA</title>
-      <link>https://doi.org/10.1101/2025.04.02.646906</link>
-      <guid isPermaLink="false">2026-W37:10.1101/2025.04.02.646906</guid>
-      <pubDate>Mon, 07 Sep 2026 00:00:00 +0000</pubDate>
-      <category>ml-method</category>
-      <description>Pretrains one geometric model on two million interaction complexes so the same embeddings zero-shot-prioritize binding residues across proteins, ligands, metals and nucleic acids.
-
-Fang, A., …, Zitnik, M. · bioRxiv · 7 Sep · ml-method · action: read · touches: oracles predicting whether a designed subunit assembles, without experimental positives</description>
-    </item>
-    <item>
-      <title>The elasticity of semiflexible polymers with reversible spontaneous curvature in two dimensions</title>
-      <link>https://doi.org/10.1063/5.0349713</link>
-      <guid isPermaLink="false">2026-W37:arxiv:2609.04856v1</guid>
-      <pubDate>Fri, 04 Sep 2026 00:00:00 +0000</pubDate>
-      <category>struct-pred</category>
-      <description>Models a semiflexible polymer as a two-state system where an uncurved and a curved conformation compete, with the state populated according to an activation-energy-controlled equilibrium rather than being fixed by chain identity.
-
-BLINDSPOT · Donghyeon Kim, Panayotis Benetatos · arXiv · 4 Sep · struct-pred · action: track</description>
-    </item>
-    <item>
-      <title>Creating bottom-up RNA transfer vehicles from synthetic protein assemblies.</title>
-      <link>https://doi.org/10.1038/s41586-026-10952-3</link>
-      <guid isPermaLink="false">2026-W36:10.1038/s41586-026-10952-3</guid>
-      <pubDate>Wed, 02 Sep 2026 00:00:00 +0000</pubDate>
-      <category>assembly</category>
-      <description>Over a hundred designed protein shells that move RNA orders of magnitude better than lipid nanoparticles, retargeted by grafting on a different designed peptide binder — and carried all the way to a pig gene-editing model.
-
-Schuhmacher MK, …, Wurst W · Nature · 2 Sep · assembly · action: read · touches: symmetry-native / tied-ASU diffusion for icosahedral assemblies</description>
     </item>
   </channel>
 </rss>

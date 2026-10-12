@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>2026-W41 · Assembling concepts</title>
+<title>2026-W42 · Assembling concepts</title>
 <meta name="description" content="Weekly automated literature radar for protein design, self-assembly and structural machine learning.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -38,16 +38,16 @@
 <main class="page">
 
 <div class="issue-head">
-  <h1>Week 41</h1>
+  <h1>Week 42</h1>
     <div class="issue-dates">
-      2 October – 11 October 2026
-      <span class="sep">·</span>74 papers screened
+      9 October – 18 October 2026
+      <span class="sep">·</span>176 papers screened
     </div>
 </div>
 
 <div class="banner warn">
   This run was degraded — some of the literature was not seen.
-    <ul><li>openalex failed: all openalex queries failed: [&#39;ChemRxiv&#39;, &#39;search:de novo protein design&#39;, &#39;search:protein nanoparticle assembly&#39;, &#39;search:designed protein nanomaterial&#39;]</li><li>biorxiv returned 46, below its expected minimum of 300</li><li>medrxiv returned 11, below its expected minimum of 20</li><li>pubmed returned 101, below its expected minimum of 150</li></ul>
+    <ul><li>openalex failed: all openalex queries failed: [&#39;ChemRxiv&#39;, &#39;search:de novo protein design&#39;, &#39;search:protein nanoparticle assembly&#39;, &#39;search:designed protein nanomaterial&#39;]</li><li>biorxiv returned 265, below its expected minimum of 300</li><li>pubmed returned 127, below its expected minimum of 150</li></ul>
 </div>
 
 
@@ -57,237 +57,234 @@
     <span class="count label">max 2 per category</span>
   </div>
   <div class="entries">
+<article class="entry" style="--cat: var(--c-design-method, var(--muted));">
+  <div class="entry-top">
+<span class="action action-read">read</span>    <span class="cat">De novo design methodology</span>
+    <span class="right">
+<span class="watchlist">Baker D</span>      <span class="score" title="Ranking score">2.27</span>
+    </span>
+  </div>
+
+  <h3><a href="https://arxiv.org/abs/2610.13917v1" rel="noopener">Designing Protein Structures from Natural Language</a></h3>
+
+  <p class="byline">
+Joseph Lee, …, Pang Wei Koh<span class="sep">·</span>    arXiv<span class="sep">·</span>9 Oct
+  </p>
+
+    <p class="why">Trains an all-atom generator on 1.8M structures paired with 50M+ residue-aligned captions, so you can write what you want a protein to look like or do and get a structure conditioned directly on that text, like text-to-image but for backbones.</p>
+
+
+
+  <div class="links">
+<a href="https://arxiv.org/pdf/2610.13917v1" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>A central challenge in de novo protein design is generating proteins with desired structural and functional properties. Existing design models typically require a dedicated input representation for each property, limiting the design objectives they support. We develop Prompteina, the first all-atom structure generation model that supports new and broader design objectives specified in natural language, analogous to text-to-image generation. To train Prompteina, we construct Prompteina-Data, a paired text--protein structure dataset of 1.8M structures and 50M+ captions describing global and residue-specific structural and functional properties. We adapt Proteina-Complexa, a pretrained structure generation model, through text-conditioned pretraining and finetuning that aligns residues with their corresponding text. Prompteina outperforms baselines on 15 of 18 structural properties and generates proteins that more closely match descriptions of their intended functions. In binder design, it leads baselines on at least 13 of 20 targets and improves interface confidence by 14\% over the strongest baseline. With iterative in silico feedback, Prompteina&#39;s gain over non-iterative generation is 57\% larger than the next-best baseline on the hardest targets. Finally, we experimentally validate Prompteina designs against GM2A, a target with no reported de novo binders. We identify nine binders, with the strongest at an apparent $K_{\mathrm{D}}$ of 107 nM. These results establish natural language as an effective and powerful conditioning interface for protein structure generation.</p></details>
+  </div>
+</article>
+<article class="entry" style="--cat: var(--c-design-method, var(--muted));">
+  <div class="entry-top">
+<span class="action action-read">read</span>    <span class="cat">De novo design methodology</span>
+    <span class="right">
+      <span class="score" title="Ranking score">1.87</span>
+    </span>
+  </div>
+
+  <h3><a href="https://doi.org/10.64898/2026.10.08.757794" rel="noopener">De novo protein design in an expanded chemical space</a></h3>
+
+  <p class="byline">
+Li, Y., …, Liu, T.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>9 Oct
+  </p>
+
+    <p class="why">Loosens the pair-representation conditioning in a pretrained all-atom structure model while keeping chemical anchors fixed, so noncanonical residues and PTMs become native building blocks the generator can place and denoise around, not post-hoc substitutions.</p>
+
+
+
+  <div class="links">
+<a href="https://doi.org/10.64898/2026.10.08.757794" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.10.08.757794v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Generative protein design has made sequence and structure programmable, yet its chemical alphabet remains largely confined to the canonical twenty. Here, we establish CheMoDesign, an experimentally validated generative framework for designing proteins de novo around user-specified chemistry. CheMoDesign weakens pair-representation conditioning in a pretrained all-atom structure-prediction model while preserving chemical anchors, then refines generated backbones through sequence-conditioned denoising. By treating post-translational modifications, synthetic residues, and chemical modifications as user-defined building blocks, the framework generated proteins with chemistry-dependent recognition and reactivity in single-round experimental campaigns. Sulfotyrosine and nitrotyrosine enabled modification-dependent recognition of thrombin and HER2, respectively. Genetically encoded noncanonical residues enabled bioorthogonal affinity switching and light- or proximity-triggered covalent target capture. Post-expression chemical modifications yielded a light-activated covalent PD-L1 binder and an isoform-selective CA IX inhibitor (KD = 45 nM) designed to engage catalytic Zn2+;. CheMoDesign makes chemical mechanism a programmable dimension of de novo protein design.</p></details>
+  </div>
+</article>
 <article class="entry" style="--cat: var(--c-function-design, var(--muted));">
   <div class="entry-top">
 <span class="action action-read">read</span>    <span class="cat">Functional design: binders, therapeutics, sensors</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.49</span>
+<span class="watchlist">Baker D</span>      <span class="score" title="Ranking score">1.81</span>
     </span>
   </div>
 
-  <h3><a href="https://arxiv.org/abs/2610.03160v1" rel="noopener">Multimodal reasoning for broadly neutralizing antibody discovery from label-free human B cell repertoires across virus families</a></h3>
+  <h3><a href="https://doi.org/10.1101/2025.08.03.668343" rel="noopener">Design of Orthogonal Far-Red, Orange and Green Fluorophore-binding Proteins for Multiplex Imaging</a></h3>
 
   <p class="byline">
-Hantao Lou, …, Xuetao Cao<span class="sep">·</span>    arXiv<span class="sep">·</span>2 Oct
+Tran, L., …, Baker, D.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>9 Oct
   </p>
 
-    <p class="why">Closes the loop between multimodal reasoning and wet-lab screening to mine natural B-cell repertoires directly, turning a ~55% neutralization hit rate into broadly neutralizing antibodies without any synthetic library design.</p>
+    <p class="why">Splits a de novo dye-binding protein into two halves that only reconstitute fluorescence when both halves are present at the same subcellular location, turning a designed binder into a proximity sensor, and separately gives the binder a covalent nucleophilic-aromatic-substitution active site to lock onto its dye.</p>
 
 
 
   <div class="links">
-<a href="https://arxiv.org/pdf/2610.03160v1" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Discovering broadly neutralizing antibodies (bnAbs) from human natural immune repertoires remains a fundamental challenge in immunology, hindered by: the extreme rarity of bnAb, incomplete understanding of their cellular origins across pathogens, and the inability of existing computational tools to generalize across emerging viral threats. Here we present ImmuneAgent, a closed-loop AI system that integrates multimodal reasoning with continual meta-learning and wet-lab feedback to overcome these barriers. Applied to screen the natural BCR repertoires from vaccinated or infected cohorts, the system achieves a ~55% neutralization antibody discovery rate (60 of 110 cloned candidates) and a ~11% bnAb yield (12 of 110), substantially outperforming a state-of-the-art sequence-based neutralization predictor or cofolding models evaluated at the same cloning budget. Five ImmuneAgent-discovered antibodies conferred 100% in vivo protection against lethal influenza challenge, comparable to the clinical-stage therapeutic MEDI8852. The system recovered the cellular and structural determinants of bnAb activity and identified FCRL5+CD27+ atypical memory B cells as a conserved bnAb reservoir and hydrophobic interface enrichment as a cross-viral structural signature, which generalized to unseen antigens, discovering human metapneumovirus (hMPV) cross-neutralizing and human papillomavirus (HPV)-neutralizing antibodies without antigen-specific sorting. These results validate that ImmuneAgent is a generalizable framework for rapid therapeutic antibody discovery against emerging viral threats.</p></details>
+<a href="https://doi.org/10.1101/2025.08.03.668343" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.1101/2025.08.03.668343v5.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Fluorescent proteins have transformed biological imaging, yet their limited photostability and brightness restrict their applications. We used deep learning-based de novo protein design methods to design binders to three bright, stable and cell-permeable dyes spanning the imaging spectrum: JF657 (far red), JF596 (orange-red) and JF494 (green). We obtain highly specific dye-binding proteins with low nanomolar affinities for the intended target; a crystal structure of one binder confirms close resemblance to the design model. Simultaneous labeling of mammalian cells expressing three dye-specific binders at different subcellular compartments demonstrates the utility in multiplex imaging. We further expand the functionality of the binder by incorporating an active site that carries out nucleophilic aromatic substitution to form a covalent linkage with the dye, and develop split versions which reconstitute fluorescence at subcellular locations where both halves are present towards monitoring in-cell protein interactions and chemically induced dimerization. Our designed high affinity and specificity dye binders open up new opportunities for multiplexed biological imaging.</p></details>
   </div>
 </article>
-<article class="entry" style="--cat: var(--c-ml-method, var(--muted));">
+<article class="entry" style="--cat: var(--c-struct-pred, var(--muted));">
   <div class="entry-top">
-<span class="action action-read">read</span>    <span class="cat">ML methodology (transferable)</span>
+<span class="action action-read">read</span>    <span class="cat">Structure prediction &amp; biomolecular representation</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.49</span>
+<span class="has-code">code</span>      <span class="score" title="Ranking score">1.75</span>
     </span>
   </div>
 
-  <h3><a href="https://arxiv.org/abs/2610.03641v1" rel="noopener">IDRF: Inverse-Distilled Reward Fine-tuning of Masked Discrete Diffusion Models</a></h3>
+  <h3><a href="https://doi.org/10.64898/2026.10.05.756918" rel="noopener">Filling the Missing Puzzle: Integrating Interaction and Evolutionary Information to Enhance Protein Fitness Prediction in Inverse Folding</a></h3>
 
   <p class="byline">
-Vladislav Gromadskii, …, Alexander Korotin<span class="sep">·</span>    arXiv<span class="sep">·</span>2 Oct
+Wang, Z., …, Li, W.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>11 Oct
   </p>
 
-    <p class="why">Fine-tunes a discrete diffusion model&#39;s few-step sampler with policy-gradient RL by bounding the usual intractable sequence-level KL penalty through inverse distillation, and shows it works on DNA sequences as well as text and images.</p>
+    <p class="why">Builds inverse folding around a heterogeneous residue-ligand graph fused with ESM-2 embeddings, so sequence design gets scored on whether it preserves the actual physical contacts to a bound ligand rather than backbone geometry and evolutionary likelihood alone.</p>
 
 
 
   <div class="links">
-<a href="https://arxiv.org/pdf/2610.03641v1" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Masked discrete diffusion models offer a promising alternative to autoregressive generation, but iterative sampling can be costly, and intractable sequence likelihoods complicate reward fine-tuning. We introduce IDRF, a framework for reward fine-tuning of few-step masked discrete diffusion generators. Starting from a standard reverse-KL-regularized objective, IDRF replaces the intractable sequence-level KL penalty with inverse-distillation regularization. With an optimal auxiliary denoiser, we prove that the population inverse-distillation loss upper-bounds the sequence-level KL divergence to the reference distribution. IDRF optimizes a trajectory-based surrogate of this loss without reference-model rollouts, so the student keeps its own few-step sampler. We view few-step generation as a finite-horizon Markov decision process and optimize reward with a clipped policy-gradient objective over the student&#39;s trajectories. Across DNA, image, and text generation, IDRF achieves high reward with up to $32\times$ fewer denoising steps than the reference while mitigating reward hacking and preserving sample quality.</p></details>
+<a href="https://doi.org/10.64898/2026.10.05.756918" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.10.05.756918v1.full.pdf" rel="noopener">pdf</a><a href="https://github.com/zelixirSH/zPolaron" rel="noopener">code</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Protein inverse folding, which infers compatible amino acid sequences from a given backbone structure, is central to rational protein design. Current methods rely largely on sequence recovery rate as the evaluation metric, emphasizing structural compatibility but seldom addressing function. Yet functional activity depends on the proper network of non-covalent interactions-protein-ligand contacts being a prime example. We argue that function-oriented protein design is governed by three complementary constraints: structural, interaction, and evolutionary, none of which are handled in a unified manner by existing pretrained models. To bridge this gap, we introduce zPolaron, a graph neural network built on protein-ligand complexes for functional protein design. zPolaron represents residues and ligand atoms as a heterogeneous graph and jointly encodes structural, interaction, and evolutionary information by fusing physical-interaction-enhanced graph representations with ESM-2 embeddings. Across multiple fitness prediction benchmarks, zPolaron outperforms all baselines, with gains evident across structural, interaction, and evolutionary dimensions. Wet-lab experiments further confirm its utility in functional enzyme screening and design: the optimized CalA6-D205A-S160G mutant achieves a 17.84-fold improvement in activity, while the CalB-I121M mutant yields a 1.91-fold increase. Together, these results show that integrating interaction and evolutionary information fills the missing puzzle of inverse folding, enhancing protein fitness prediction beyond structural compatibility. zPolaron is available at https://github.com/zelixirSH/zPolaron.</p></details>
   </div>
 </article>
-<article class="entry" style="--cat: var(--c-assembly, var(--muted));">
+<article class="entry" style="--cat: var(--c-enzyme, var(--muted));">
   <div class="entry-top">
-<span class="action action-skim">skim</span>    <span class="cat">Self-assembly &amp; nanomaterials</span>
+<span class="action action-read">read</span>    <span class="cat">Enzyme design &amp; catalysis</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.40</span>
+      <span class="score" title="Ranking score">1.62</span>
     </span>
   </div>
 
-  <h3><a href="https://doi.org/10.64898/2026.09.30.755772" rel="noopener">Serum IgM crosslinks hepatitis B subviral particles into supramolecular immune complexes</a></h3>
+  <h3><a href="https://doi.org/10.64898/2026.10.09.758133" rel="noopener">Chain of Structures: Connecting Reasoning and Generation for Protein Design</a></h3>
 
   <p class="byline">
-Liu, C., …, Ke, Z.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>2 Oct
+Cai, Q., …, Zhang, Z.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>11 Oct
   </p>
 
-    <p class="why">Catches serum IgM in the act of stitching hepatitis B subviral particles into supramolecular complexes, resolving three distinct Fc-core crosslinking architectures at 2.8 angstroms directly from patient serum.</p>
+    <p class="why">Alternates a language-reasoning model and a structure-generation model round by round, catalytic core then active site then global backbone then full sequence, so each reasoning step directly conditions the next generation step and the resulting geometry feeds back into the next reasoning decision.</p>
 
 
 
   <div class="links">
-<a href="https://doi.org/10.64898/2026.09.30.755772" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.09.30.755772v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Hepatitis B virus (HBV)-infected cells release hepatitis B surface antigen (HBsAg)-rich subviral particles (SVPs) in large excess over infectious virions. SVPs bind antibodies against HBsAg (anti-HBs), including neutralizing antibodies, but the physical products of antibody capture in human blood are uncharacterized. Here we used cryo-electron tomography (cryo-ET) to image HBsAg-enriched serum from a patient with severe acute Hepatitis B and observed three-dimensional assemblies of intact IgM-SVP immune complexes. These associations persisted at a lower particle density and were validated by a spatial-randomization null model. Subtomogram averaging and single-particle cryo-electron microscopy (cryo-EM) identified three serum IgM Fc-core assemblies, IgM-J-CD5L, IgM-J and IgM-J-SC, with cryo-EM maps reaching 2.8 angstrom resolution. Mapping these Fc core assemblies into tomograms revealed full-length IgM engaging individual SVPs through several Fab arms and bridging neighboring particles into immune complex networks containing multiple IgM molecules and SVPs. Thus, serum IgM uses multivalent Fab interactions to crosslink HBsAg-rich SVPs into supramolecular immune complexes. This observation extends the SVP decoy model from passive antibody sequestration to higher-order particle organization.</p></details>
+<a href="https://doi.org/10.64898/2026.10.09.758133" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.10.09.758133v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Scientific design requires reasoning in scientific spaces that represent the objects being designed. Building on Scinetics&#39; Chain of Science Tokens, we present chain-of-structures (COS) as a concrete protein-design case study that connects reasoning and generation through explicit structural states. In this technical report, we apply COS to enzyme design, where catalytic function requires precise local geometry within a compatible global fold, making it a demanding test of reasoning from chemical requirements to protein structure. Starting from a reaction specification and target length, COS couples a language reasoning expert with an all-atom generation expert across four rounds: catalytic core, active site, global backbone, and complete sequence and structure. Each reasoning state directly conditions generation, and the resulting structure becomes context for the next decision. Discrete residue constraints and continuous latents connect the two experts, enabling structural supervision of the reasoning interface. On the evaluated benchmark, COS leads the compared baselines on five of six metrics, achieving 57.0% EC3 agreement and a TM-score of 0.729.</p></details>
   </div>
 </article>
 <article class="entry" style="--cat: var(--c-function-design, var(--muted));">
   <div class="entry-top">
 <span class="action action-skim">skim</span>    <span class="cat">Functional design: binders, therapeutics, sensors</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.40</span>
+<span class="has-code">code</span>      <span class="score" title="Ranking score">1.56</span>
     </span>
   </div>
 
-  <h3><a href="https://doi.org/10.1126/sciadv.aef5325" rel="noopener">Multiobjective VHH discovery through integrated high-throughput screening and AlphaFold3-guided structural prioritization.</a></h3>
+  <h3><a href="https://doi.org/10.64898/2026.10.09.750540" rel="noopener">kitAb: an automated framework for assay-specific antibody developability modeling and large-scale landscape analysis</a></h3>
 
   <p class="byline">
-Overath MD, …, Jenkins TP<span class="sep">·</span>    Science advances<span class="sep">·</span>30 Sep
+Trofimova, E., …, Ramensky, V.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>11 Oct
   </p>
 
-    <p class="why">Uses AlphaFold3 complex predictions as a structural filter to pull the rare polyspecific VHHs that bind a conserved epitope across multiple snake toxins out of a sea of promiscuous yeast-display hits.</p>
+    <p class="why">Instead of one fixed developability score, fits a separate regression per assay from 59 interpretable descriptors, because which physicochemical property actually predicts an assay&#39;s readout turns out to depend entirely on which assay you&#39;re predicting.</p>
 
 
 
   <div class="links">
-<a href="https://doi.org/10.1126/sciadv.aef5325" rel="noopener">doi</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Finding therapeutic antibodies that bind multiple related targets with high affinity and favorable biophysical properties remains challenging and resource-intensive. For snakebite antivenoms, this challenge is critical as treatments must neutralize toxins across multiple snake species. We developed a pipeline combining high-throughput yeast screening, deep sequencing, and AlphaFold3 structure prediction to identify polyspecific variable domains of heavy chain-only antibodies (VHHs) against long-chain α-neurotoxins. Multiplexed yeast display screening generated a dataset of diverse hits with varying binding specificities. AlphaFold3-generated VHH-toxin complex predictions enabled stringent high-precision structural triage of polyspecific VHHs that bind conserved epitopes across multiple toxins, with a representative subset experimentally confirmed to block toxin binding to the acetylcholine receptor. These structural insights provided a starting point for computational optimization of affinity and soluble expression of the VHHs, with experimental validation confirming that optimized VHH variants maintained broad binding specificity across toxins. This integrated approach supports structure-guided prioritization of polyspecific VHH hits, offering a high-precision filter that could reduce future reliance on extensive experimental specificity screening and providing a framework applicable to other therapeutic contexts, in which substantial antigen variation occurs and broad neutralization is essential.</p></details>
+<a href="https://doi.org/10.64898/2026.10.09.750540" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.10.09.750540v1.full.pdf" rel="noopener">pdf</a><a href="https://github.com/katyachemistry/kitAb" rel="noopener">code</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Antibody developability is determined by multiple physicochemical properties, and the relevance of individual properties varies among experimental assays. Existing computational approaches, however, often provide fixed assessments or rely on computationally intensive descriptors. We present kitAb, an open-source framework for scalable physicochemical characterization of antibody Fv regions and assay-specific developability modeling. kitAb calculates 59 interpretable sequence- and structure-based descriptors and integrates them with automated feature selection and regression. We evaluated kitAb across ten public datasets comprising 46 experimental endpoints, using sequence-aware or predefined splits where feasible. Predictive performance was strongly assay-dependent. In nested evaluations with sequence-aware or predefined data splits, models using kitAb descriptors achieved predictive performance comparable on average to those using PROPERMAB descriptors, while outperforming models based on TAP or sequence-only features. In a single-structure CPU timing benchmark, kitAb descriptor calculation was approximately 11-fold faster than PROPERMAB. Predictive performance was similar across the three structure-generation backends, and broader AutoML searches did not substantially improve mean performance. We further applied the same descriptor representation to approximately 3.4 million paired natural antibodies and 706 Phase II or later therapeutic antibodies. Repertoire-scale analysis revealed systematic differences in surface charge, hydrophobic and aromatic organization, CDR length and germline-associated physicochemical profiles. The kitAb code and analysis workflows are openly available at https://github.com/katyachemistry/kitAb/.</p></details>
   </div>
 </article>
 <article class="entry" style="--cat: var(--c-struct-pred, var(--muted));">
   <div class="entry-top">
 <span class="action action-skim">skim</span>    <span class="cat">Structure prediction &amp; biomolecular representation</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.36</span>
+<span class="has-code">code</span>      <span class="score" title="Ranking score">1.55</span>
     </span>
   </div>
 
-  <h3><a href="https://doi.org/10.64898/2026.09.26.754739" rel="noopener">EnsPlex: Integrative Protein Complex Prediction through Multi-source Complementary Structural Sampling and Topology-Aware Candidate Selection</a></h3>
+  <h3><a href="https://doi.org/10.1093/bioinformatics/btag757" rel="noopener">AutoHMD: Scalable and Accurate Validation of Antibody-Antigen Complexes by Heated Molecular Dynamics.</a></h3>
 
   <p class="byline">
-Hu, B., …, He, X.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>2 Oct
+Souza JS, …, Silva JHM<span class="sep">·</span>    Bioinformatics (Oxford, England)<span class="sep">·</span>9 Oct
   </p>
 
-    <p class="why">Treats complex prediction as a candidate-selection problem, pooling AF-Multimer, AF3, Boltz-1 and expanded docking, then learns a DockQ-trained reranker to pick the single best model instead of trusting any one generator.</p>
+    <p class="why">Reheats antibody-antigen docking poses and watches which ones hold their interface together under thermal stress, since near-native complexes stay stable while wrong poses fall apart, succeeding where static scoring functions can&#39;t tell the two apart.</p>
 
 
 
   <div class="links">
-<a href="https://doi.org/10.64898/2026.09.26.754739" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.09.26.754739v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Protein complex structure prediction depends on both the breadth of candidate coverage and the ability to select accurate models within a limited output budget. Most existing approaches emphasize only one stage. End-to-end models and molecular docking workflows generate candidate structures, whereas quality-assessment models primarily rerank a predefined candidate pool. A complete strategy must account for complementary sampling across generators, differences among scoring scales and the allocation of final candidate quotas. Here, EnsPlex is presented as a multi-source framework that couples structural sampling with candidate selection for protein-protein interaction complex prediction. EnsPlex combines conformation-expanded docking, AlphaFold-Multimer, AlphaFold3 and Boltz-1 to expand the sampled conformational space. Conformation-expanded docking comprises monomer conformational expansion followed by flexible HADDOCK docking. FACET is trained to predict candidate quality using DockQ and its component metrics as supervision. Across 102 antigen-antibody systems, EnsPlex achieved up to a 27.8% relative improvement in target success rate over AlphaFold3 with its built-in ranking under matched output budgets. FACET also improved within-source ranking in the internal candidate pools and in homology-filtered external data. These findings support the utility of EnsPlex for structure prediction in the evaluated antigen-antibody systems.</p></details>
+<a href="https://doi.org/10.1093/bioinformatics/btag757" rel="noopener">doi</a><a href="https://github.com/SFBBGroup/AutoHMD" rel="noopener">code</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Antibody-antigen (Ab-Ag) interactions are central to immune recognition and widely exploited in therapeutic design, making accurate structural characterization of these complexes a central challenge in the field. While docking and artificial intelligence-based approaches can generate multiple candidate binding modes, reliably identifying near-native conformations represent a key bottleneck. Existing methods depend largely on static scoring functions, which fail to capture the dynamic nature of Ab-Ag interfaces and, as a result, offer limited power to discriminate between competing poses. Here, we evaluate heated molecular dynamics (HMD) as a strategy to discriminate binding pose quality based on structural stability under thermal perturbation, implemented through the automated workflow AutoHMD. Across a diverse set of Ab-Ag complexes, HMD enabled clear separation between high-quality and incorrect poses. During simulations, near-native complexes maintained a stable interface, whereas incorrect ones showed progressive divergence, particularly at elevated temperatures. Interaction analysis revealed that high-quality poses maintain more stable and persistent interfacial contacts throughout the simulations. In contrast, incorrect poses display an unstable interaction network. Additional simulation replicates increased classification consistency, while a mean iRMSD cutoff of approximately 2.5 Å achieved 90% accuracy in cross-validation and retained robust performance on an independent external set. Its transfer to Boltz-2-generated complexes further supported the broader applicability of HMD to AI-predicted binding poses. Overall, AutoHMD provides a reproducible, scalable, and high-throughput framework for validation of predicted antibody-antigen complexes, with potential applications in structural bioinformatics and biopharmaceutical design. Supplementary data are available at Bioinformatics online. The AutoHMD workflow scripts are available on GitHub at https://github.com/SFBBGroup/AutoHMD. The version used in this study is permanently archived in Zenodo at https://doi.org/10.5281/zenodo.22757672. All simulation and structural data supporting this study are publicly available in Zenodo at https://doi.org/10.5281/zenodo.20722229; https://doi.org/10.5281/zenodo.22750139; https://doi.org/10.5281/zenodo.20707612.</p></details>
+  </div>
+</article>
+<article class="entry" style="--cat: var(--c-wetlab-method, var(--muted));">
+  <div class="entry-top">
+<span class="action action-skim">skim</span>    <span class="cat">Experimental methods &amp; validation</span>
+    <span class="right">
+<span class="watchlist">Zhong ED</span>      <span class="score" title="Ranking score">1.55</span>
+    </span>
+  </div>
+
+  <h3><a href="https://doi.org/10.64898/2026.09.15.751515" rel="noopener">The CAHRA Challenge: A Community-Wide Assessment of Cryo-EM Heterogeneous Reconstruction Algorithms</a></h3>
+
+  <p class="byline">
+Feathers, J. R., …, Zhong, E.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>10 Oct
+  </p>
+
+    <p class="why">Builds three separate benchmark datasets that each isolate one normally-entangled failure mode of cryo-EM heterogeneity analysis, compositional mixtures, continuous conformational flexibility, and pose-conformation confound, so algorithms can finally be scored against ground truth on each one independently.</p>
+
+
+
+  <div class="links">
+<a href="https://doi.org/10.64898/2026.09.15.751515" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.09.15.751515v3.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>The ability of cryo-electron microscopy (cryo-EM) to interrogate the atomic structure and motion of biomolecules has motivated the development of a wide range of algorithms for heterogeneity analysis. However, evaluating and comparing these methods remains challenging because ground-truth structures are generally unknown for experimental samples. Here, we introduce the 2026 Community-Wide Assessment of Heterogeneous Reconstruction Algorithms (CAHRA), a community-wide challenge centered on three benchmark datasets that probe distinct tasks in heterogeneity analysis. These include (1) compositional heterogeneity arising from mixtures of distinct protein complexes, (2) continuous conformational variability and atomic modeling, and (3) entanglement between molecular conformation and particle pose. We describe the design, construction, and validation of these datasets, as well as their use in the recently completed CAHRA Challenge.</p></details>
   </div>
 </article>
 <article class="entry" style="--cat: var(--c-ml-method, var(--muted));">
   <div class="entry-top">
 <span class="action action-track">track</span>    <span class="cat">ML methodology (transferable)</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.35</span>
+<span class="has-code">code</span>      <span class="score" title="Ranking score">1.53</span>
     </span>
   </div>
 
-  <h3><a href="https://arxiv.org/abs/2610.02651v1" rel="noopener">Equivariant Flow Matching for Electron Density Prediction</a></h3>
+  <h3><a href="https://arxiv.org/abs/2610.13330v1" rel="noopener">Masked Diffusion Language Agents for Tool-Integrated Chemical Reasoning</a></h3>
 
   <p class="byline">
-Chenxing Liang, …, Shuiwang Ji<span class="sep">·</span>    arXiv<span class="sep">·</span>2 Oct
+Mengdi Liu, …, Shiguang Shan<span class="sep">·</span>    arXiv<span class="sep">·</span>9 Oct
   </p>
 
-    <p class="why">Replaces pointwise regression of electron density with SE(3)-equivariant flow matching over the full orbital-coefficient space, so the model learns a probability path instead of a single best guess.</p>
+    <p class="why">Instead of generating a reasoning-plus-tool-call trajectory left to right, denoises the whole interleaved trajectory at once, so each tool-use decision is made with the full context of what comes before and after it rather than only what came before.</p>
 
 
 
   <div class="links">
-<a href="https://arxiv.org/pdf/2610.02651v1" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Machine learning surrogates for density functional theory (DFT) have been increasingly used to reduce the cost of first-principles calculations. In this arena, predicting real-space electron densities offers a scalable and transferable initialization for self-consistent field (SCF) procedures. However, current methods face a clear dilemma. That is, grid-based architectures incur a high computational cost, while basis-set methods fail to capture the structural correlations inherent in the coefficient space. Here, we develop OrbFlow, an $\mathrm{SE}(3)$-equivariant generative model that predicts Gaussian-type orbital (GTO) coefficients via flow matching. OrbFlow retains the efficiency of a compact atom-centered basis while replacing pointwise regression with a learned probability path over the full coefficient space. It is trained through a two-phase trajectory curriculum that mitigates discretization drift during numerical integration. OrbFlow achieves state-of-the-art accuracy on QM9, reducing density error by 13.6% relative to the previous best model, and reduces error by 51% to 63% on every molecule of the MD benchmark relative to the strongest prior method sharing its basis. The predicted density also cuts SCF iterations by up to 68% with zero-shot transfer to unseen exchange-correlation functionals and recovers dipole and quadrupole moments to within a few percent of DFT references without any SCF calculation.</p></details>
+<a href="https://arxiv.org/pdf/2610.13330v1" rel="noopener">pdf</a><a href="https://github.com/bilemond/ChemDiffAgent" rel="noopener">code</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Designing tool-integrated reasoning agent systems for complex chemical tasks remains a fundamental challenge. Although recent chemical agents have demonstrated promising performance through the integration of external tools, they are still built on the autoregressive paradigm, which is inherently constrained by causal attention and left-to-right generation. As a result, they often struggle with bidirectional molecular understanding, global coordinated tool planning and multi-source evidence integration. To address this challenge, we introduce ChemDiffAgent, the first masked diffusion language agent for tool-integrated chemical reasoning. It reformulates chemical reasoning as iterative denoising over interleaved reasoning and tool-use trajectories, enabling tool-use decisions to be jointly determined under full-trajectory context and thereby better aligning the agent&#39;s decision boundary with its knowledge boundary. We further analyze how this paradigm benefits agentic reasoning through harder infilling subproblems during training and flexible arbitrary-order decoding during inference. Then we develop a two-stage post-training framework, comprising agentic supervised fine-tuning and variance-reduced preference optimization, to enhance tool-use and reasoning capabilities. We also construct a comprehensive benchmark covering six chemistry tasks across both single-turn and multi-turn tool-use scenarios. Under matched budgets and evaluation, ChemDiffAgent consistently outperforms autoregressive agents, achieving an overall improvement of approximately 20%. Notably, our 8B model achieves performance comparable to, in some cases surpassing, significantly larger frontier models, such as GPT 5.5 and Claude Opus 4.7. Code is available at https://github.com/bilemond/ChemDiffAgent.</p></details>
   </div>
 </article>
-<article class="entry" style="--cat: var(--c-assembly, var(--muted));">
+<article class="entry" style="--cat: var(--c-enzyme, var(--muted));">
   <div class="entry-top">
-<span class="action action-track">track</span>    <span class="cat">Self-assembly &amp; nanomaterials</span>
+<span class="action action-read">read</span>    <span class="cat">Enzyme design &amp; catalysis</span>
     <span class="right">
-      <span class="score" title="Ranking score">1.34</span>
+      <span class="score" title="Ranking score">1.52</span>
     </span>
   </div>
 
-  <h3><a href="https://doi.org/10.1126/sciadv.aec2365" rel="noopener">Topology-enforced synthesis of atomically precise silver nanoclusters in 3D DNA lattices.</a></h3>
+  <h3><a href="https://doi.org/10.64898/2026.10.08.757584" rel="noopener">De Novo Design of Flavoproteins with Controlled Excited State Dynamics</a></h3>
 
   <p class="byline">
-Perren L, …, Vecchioni S<span class="sep">·</span>    Science advances<span class="sep">·</span>2 Oct
+Anderson, R., …, Mulholland, A. J.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>10 Oct
   </p>
 
-    <p class="why">Encodes silver-cluster nucleation directly into DNA triangle topology inside a 3D lattice, so crystal geometry rather than solution chemistry fixes cluster size and intercluster spacing to atomic precision.</p>
+    <p class="why">Folds QM/MM MD and time-dependent DFT excited-state calculations directly into the design loop, not just post-hoc characterization, so the same thermostable scaffold with and without a heme-binding site lets them dial flavin redox and excited-state behavior while X-ray confirms near-angstrom design accuracy.</p>
 
 
 
   <div class="links">
-<a href="https://doi.org/10.1126/sciadv.aec2365" rel="noopener">doi</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>DNA nanotechnology leverages the molecular design resolution of the DNA double helix to fold and tile matter into designer architectures. Recent advances in bioinorganic chemistry have exploited DNA/Ag+ affinity to carry out the templated reduction of silver nanoclusters. Here, we develop a unified method that leverages the topology of DNA triangles with embedded silver base pairs to nucleate controlled cluster growth in a mesoporous 3D lattice. Use of confocal fluorescence microscopy allows for the direct observation of reaction kinetics and reconstruction of the optical bandgap. These crystals yield molecular structures of Ag4 and Ag6 by x-ray diffraction in varying pyrimidine:pyrimidine pairs. Intercluster distances of less than 2 nanometers show observable electronic coupling, with red shifting observed relative to literature standards. A thorough computational investigation establishes a theoretical basis for our observed behavior and establishes the interplay between cluster size, charge, geometry, and resonance. We anticipate that these results will yield advances in materials synthesis, DNA-based plasmonic crystals, and optically active nanoelectronics.</p></details>
-  </div>
-</article>
-<article class="entry" style="--cat: var(--c-struct-pred, var(--muted));">
-  <div class="entry-top">
-<span class="action action-cite">cite</span>    <span class="cat">Structure prediction &amp; biomolecular representation</span>
-    <span class="right">
-      <span class="score" title="Ranking score">1.30</span>
-    </span>
-  </div>
-
-  <h3><a href="https://doi.org/10.64898/2026.09.27.754758" rel="noopener">Auditing Protein-Protein Interaction Signals with Sparse Autoencoder Fingerprints</a></h3>
-
-  <p class="byline">
-Zhu, W., …, Pan, X.<span class="sep">·</span>    bioRxiv<span class="sep">·</span>2 Oct
-  </p>
-
-    <p class="why">Turns a protein-language-model PPI predictor&#39;s embeddings into sparse, auditable fingerprints and finds most of its apparent accuracy is a partner-independent shortcut that evaporates under topology-controlled splits.</p>
-
-
-    <p class="touches">
-      <span class="label">touches</span>
-        <a href="archive.html?q=oracles%20predicting%20whether%20a%20designed%20subunit%20assembles%2C%20without%20experimental%20positives">oracles predicting whether a designed subunit assembles, without experimental positives</a>    </p>
-
-  <div class="links">
-<a href="https://doi.org/10.64898/2026.09.27.754758" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.09.27.754758v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Protein language models have become a dominant foundation for sequence-based protein-protein interaction (PPI) prediction, but their generalization remains limited under stringent evaluation, and benchmark accuracy alone cannot reveal whether a PPI predictor learns partner-specific biological signals or exploits contextual shortcuts. Here we introduce AuditPPI, an interpretable framework that transforms sparse-autoencoder (SAE) features from a frozen protein language model into order-invariant pair fingerprints, recasting PPI prediction as an auditable tabular-learning problem. AuditPPI achieves competitive predictive performance across diverse PPI benchmarks while enabling multiscale auditing of the information supporting its predictions. Protein-level audits show that partner-independent participation signals remain substantial in conventional benchmarks, including protein-disjoint benchmark, but are largely insufficient for pair-level discrimination in topology- and degree-controlled benchmark. Pair-level analyses further show that removing protein identity overlap does not eliminate contextual structure: protein-disjoint benchmarking retains strong subcellular co-localization signals and benchmark-dependent feature matching captured by SAE co-activation and absolute-difference. Structural analyses, however, provide little evidence that these predictive signals are specifically grounded in PPI interfaces: feature enrichment at interfaces for protein-disjoint benchmark was no longer detectable after controlling for surface exposure, and contact-specific enrichment was observed for only a small fraction of testable SAE feature pairs. AuditPPI therefore separates predictive success from mechanistic fidelity and provides a practical framework for evaluating whether sequence-based PPI predictors capture partner-specific biological signals instead of contextual shortcuts.</p></details>
-  </div>
-</article>
-<article class="entry" style="--cat: var(--c-immunogen, var(--muted));">
-  <div class="entry-top">
-    <span class="cat">Immunogen engineering &amp; vaccines</span>
-    <span class="right">
-      <span class="score" title="Ranking score">1.25</span>
-    </span>
-  </div>
-
-  <h3><a href="https://doi.org/10.7554/eLife.110887" rel="noopener">Distinct allosteric remodeling of HIV-1 Env dynamics on virions by gp41-directed antibodies reveals two modes of neutralization.</a></h3>
-
-  <p class="byline">
-Xu W, …, Lu M<span class="sep">·</span>    eLife<span class="sep">·</span>2 Oct
-  </p>
-
-    <p class="why lexical">smFRET shows gp41 bNAbs allosterically lock Env prefusion conformation</p>
-
-
-
-  <div class="links">
-<a href="https://doi.org/10.7554/eLife.110887" rel="noopener">doi</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>HIV-1 envelope glycoprotein (Env), a gp120-gp41 trimer, undergoes coordinated conformational changes that drive membrane fusion and allow immune evasion by transiently concealing neutralization-sensitive epitopes. Most broadly neutralizing antibodies (bNAbs) target gp120, whereas a distinct subset recognizes conserved gp41 regions, such as the fusion peptide and the membrane-proximal external region; however, their impact on Env dynamics and associated neutralization mechanisms remains unclear. By using bioorthogonal tagging for single-molecule FRET, we monitored real-time bNAb-induced conformational sampling of Env on intact virions. Most gp41-directed bNAbs allosterically stabilized the prefusion-closed (PC) state, whereas the bivalent 10E8.4/iMab favored both PC and CD4-bound open (predominant) states. Antibodies redistributed the conformational populations of Env with modest kinetic effects, preserving a sequential transition pathway. These findings reveal two modes of neutralization for gp41-directed antibodies, fixing the PC conformation and opening it up - in both cases, with neutralization occurring via long-range allosteric control of Env dynamics.</p></details>
-  </div>
-</article>
-<article class="entry" style="--cat: var(--c-delivery, var(--muted));">
-  <div class="entry-top">
-    <span class="cat">Delivery, virology &amp; cell entry</span>
-    <span class="right">
-      <span class="score" title="Ranking score">1.09</span>
-    </span>
-  </div>
-
-  <h3><a href="https://doi.org/10.1126/sciadv.aej5440" rel="noopener">Once yearly cell-based therapy for sustained and dose-tunable delivery of monoclonal antibodies.</a></h3>
-
-  <p class="byline">
-Fell C, …, Veiseh O<span class="sep">·</span>    Science advances<span class="sep">·</span>2 Oct
-  </p>
-
-    <p class="why lexical">encapsulated-cell alginate implant gives year-long sustained mAb delivery</p>
-
-
-
-  <div class="links">
-<a href="https://doi.org/10.1126/sciadv.aej5440" rel="noopener">doi</a>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>More than 200 monoclonal antibodies (mAbs) are approved for clinical use, yet their therapeutic potential is constrained by dependence on repeated injections or infusions that drive nonadherence, limit access in low-resource settings, and generate peak-trough pharmacokinetics linked to adverse effects and reduced efficacy. Here, we developed an immunomodulatory, encapsulated cell-based &#34;biologics factory&#34; that overcomes mAb instability, immunogenicity, and the fibrotic foreign body response that have limited previous approaches, enabling continuous in situ production of therapeutic antibodies from a single administration. Screening chemically modified alginate biomaterials in immunocompetent mice identified a lead immunomodulatory alginate formulation that sustains stable serum titers of the HIV-neutralizing mAb 3BNC117 for 1 year. Single-cell RNA sequencing revealed that this formulation promotes a local anti-inflammatory, proresolving immune niche that attenuates fibrosis. The platform&#39;s versatility was demonstrated by the production of 13 diverse mAbs from an allogeneic cell chassis, with sustained in vivo delivery of a subset including ipilimumab, pembrolizumab, adalimumab, and PGT121. Integration into a retrievable macrodevice enabled on-demand therapeutic termination and reimplantation for dose-proportional tuning. In a nonhuman primate, subcutaneous implantation maintained stable ipilimumab titers for more than 6 months with no detectable toxicity, antidrug antibodies, or adverse events, and dose-dependent exposure was confirmed across a three-dose escalation. These results demonstrate a clinically translatable platform that offers a practical strategy to replace frequent injections with single-administration therapy. A cell-based delivery platform within an antifibrotic minimally invasive device enables year-long mAb delivery.</p></details>
+<a href="https://doi.org/10.64898/2026.10.08.757584" rel="noopener">doi</a><a href="https://www.biorxiv.org/content/10.64898/2026.10.08.757584v1.full.pdf" rel="noopener">pdf</a>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>Designing photochemical properties in proteins is a frontier challenge in biomolecular design, which, when realised, will open new avenues in catalysis and biomolecular electronics. Here we demonstrate an integrated computational design framework, supported by ultrafast spectroscopy, combining protein design, quantum mechanical/molecular mechanics molecular dynamics (QM/MM MD) and electronic structure calculations, to control flavin excited states in de novo proteins. Iterative design yields FC-4D2, a flavocytochrome with covalently bound flavin and non-covalently bound heme B and Fl-4D2, where the heme-binding site is removed. Both proteins are highly thermostable, and access all physiologically relevant flavin redox and protonation states, while high-resolution X-ray crystallography confirms the near-[A]ngstrom-level accuracy in design. Incorporating QM/MM MD and linear-response time-dependent density functional theory (LR-TDDFT) into the design workflow enables engineering of a flavin-tryptophan charge-transfer variant, Fl-4D2CT, that modifies the flavin absorption spectrum, substantially alters its redox properties and suppresses fluorescence. Ultrafast studies reveal how protein design reshapes the excited state relaxation timescale and mechanism. Our study establishes a modular strategy for programming flavin photochemistry in designed proteins.</p></details>
   </div>
 </article>
   </div>
@@ -300,42 +297,45 @@ Fell C, …, Veiseh O<span class="sep">·</span>    Science advances<span class=
       <h2>Blindspot</h2>
       <span class="count label">from the rejected pool</span>
     </div>
-    <div class="entries single"><article class="entry" style="--cat: var(--c-struct-pred, var(--muted));">
+    <div class="entries single"><article class="entry" style="--cat: var(--c-ml-method, var(--muted));">
   <div class="entry-top">
-<span class="action action-track">track</span>    <span class="cat">Structure prediction &amp; biomolecular representation</span>
+<span class="action action-track">track</span>    <span class="cat">ML methodology (transferable)</span>
     <span class="right">
-      <span class="score" title="Ranking score">0.96</span>
+      <span class="score" title="Ranking score">0.71</span>
     </span>
   </div>
 
-  <h3><a href="https://arxiv.org/abs/2610.03613v1" rel="noopener">Surface Charge--Potential Relation for Spherical Particles in Electrolyte Solutions</a></h3>
+  <h3><a href="https://arxiv.org/abs/2610.13523v1" rel="noopener">How Fluctuations Control Chiral Symmetry Breaking in Reacting Mixtures of Chiral Molecules</a></h3>
 
   <p class="byline">
-Olga I. Vinogradova, Elena F. Silkina<span class="sep">·</span>    arXiv<span class="sep">·</span>2 Oct
+Leonardo Silva-Dias, Christoph A. Weber<span class="sep">·</span>    arXiv<span class="sep">·</span>9 Oct
   </p>
 
-    <p class="why">Derives closed-form surface charge-potential relations for charged spheres across the full curvature range, replacing numerical Poisson-Boltzmann solving with an exact dual-asymptotic formula that spans weakly curved to highly curved regimes.</p>
+    <p class="why">This models chiral symmetry breaking in small reacting populations as a stochastic, fluctuation-driven selection problem rather than a thermodynamic one, deriving how finite-population noise decides which of several equivalent states a system commits to and how long that commitment takes.</p>
 
-    <p class="connection">An assembly oracle needs a cheap way to score whether a designed interface&#39;s electrostatics are compatible at the specific local curvature it sits on in an icosahedral shell, since high- and low-curvature subunits see very different charge-potential behavior. This paper&#39;s exact, curvature-indexed formula is a physical scoring term that could substitute for per-design Poisson-Boltzmann runs, giving assembly propensity without needing experimental positives to train against.</p>
+    <p class="connection">Symmetry-native tied-ASU diffusion and quasi-equivalence both assume a subunit&#39;s commitment to one of several degenerate symmetric assembly outcomes is governed by free energy, but this paper&#39;s analytical treatment of finite-population fluctuations deciding between mirror-symmetric outcomes suggests assembly-slot or conformer choice in quasi-equivalent capsids may instead be a kinetic, fluctuation-dominated branching process. The same bias-dependent selection-time formalism could motivate building design-quality oracles around stochastic commitment probabilities rather than static thermodynamic scores.</p>
 
 
   <div class="links">
-<a href="https://arxiv.org/pdf/2610.03613v1" rel="noopener">pdf</a><span class="label">confidence medium</span>    <span class="spacer"></span>
-      <details class="abstract"><summary>abstract</summary><p>Predicting the relationship between surface charge density and electrostatic potential for spherical particles remains a fundamental challenge in colloid science. Because the governing non-linear Poisson--Boltzmann equation lacks a general exact analytical solution, researchers typically rely on numerical calculations or various semi-empirical approximations. In this paper, we overcome these limitations by developing a dual-asymptotic framework that provides explicit, closed-form expressions for this surface charge--potential relationship across the entire spectrum of particle curvature. For weakly curved systems, where the Debye length $λ_D$ is much smaller than the particle radius $R$ ($λ_D/R \ll 1$), a formal mathematical derivation rigorously establishes the Ohshima--Healy--White formula as an exact regular perturbation expansion. Conversely, for highly curved spheres ($R/λ_D \ll 1$), we employ singular perturbation analysis using the scaled particle radius as the small parameter. This approach provides a first-principles mathematical justification for the spherical Debye--Hückel theory, proving that its leading-order expansion remains asymptotically exact within the full non-linear Poisson--Boltzmann framework due to the geometric deactivation of non-linearity. Crucially, we map the exact limits of this geometric regulation, demonstrating how non-linear screening re-emerges as the particle radius increases, with the breakdown threshold governed by the interplay between curvature and surface charge density.</p></details>
+<a href="https://arxiv.org/pdf/2610.13523v1" rel="noopener">pdf</a><span class="label">confidence medium</span>    <span class="spacer"></span>
+      <details class="abstract"><summary>abstract</summary><p>The pronounced chiral asymmetry of biomolecules is a defining feature of living systems, yet the mechanisms by which such asymmetry emerged remain unresolved. Chiral symmetry breaking may have occurred under prebiotic conditions in systems with sufficiently small molecular populations for intrinsic fluctuations to play an important role. Here, we investigate how finite-population fluctuations affect chiral-state selection, the characteristic time for symmetry breaking, and stochastic switching between chiral states in a system driven by autocatalysis and mutual antagonism. We determine how these dynamical processes scale with particle number and derive an analytical expression for the probability of selecting either chiral state as a function of the initial enantiomeric bias. We further calculate the mean selection time for different initial biases and show that, for weak mutual antagonism, fluctuations can induce transitions between opposite chiral states. These results characterize how finite-population fluctuations control both the emergence and stability of molecular chirality in autocatalytic chemical systems.</p></details>
   </div>
 </article>
 </div>
   </section>
 
-  <section class="section good-to-know" id="gtk-section" data-url="https://improbable.com/ig/winners/#2005-economics">
+  <section class="section good-to-know" id="gtk-section" data-url="https://pdb101.rcsb.org/motm/215">
     <div class="section-head">
       <h2>Good to know</h2>
-      <span class="count label" id="gtk-note">Ig Nobel · 2005</span>
+      <span class="count label" id="gtk-note">Molecule of the Month #215</span>
       <button type="button" class="gtk-shuffle" id="gtk-shuffle" title="Show another pick from the archive">Shuffle ⟳</button>
     </div>
-    <article class="gtk gtk-ignobel" id="gtk-article">
-      <h3><a href="https://improbable.com/ig/winners/#2005-economics" rel="noopener">Ig Nobel Economics Prize, 2005</a></h3>
-<p class="gtk-blurb">Inventing an alarm clock that runs away and hides, repeatedly, thus ensuring that people DO get out of bed, and thus theoretically adding many productive hours to the workday.</p><p class="gtk-credit">Ig Nobel Prizes · Annals of Improbable Research</p>    </article>
+    <article class="gtk gtk-motm" id="gtk-article">
+      <h3><a href="https://pdb101.rcsb.org/motm/215" rel="noopener">Aspartate Transcarbamoylase</a></h3>
+        <a href="https://pdb101.rcsb.org/motm/215" rel="noopener" class="gtk-figure">
+          <img src="https://cdn.rcsb.org/pdb101/motm/215/215-Aspartate_Transcarbamoylase-5at1.jpg" alt="Aspartate Transcarbamoylase" loading="lazy" decoding="async">
+        </a>
+<p class="gtk-blurb">Key biosynthetic enzymes are regulated by their ultimate products through allosteric motions.</p><p class="gtk-credit">RCSB PDB-101 · illustration by David S. Goodsell</p>    </article>
   </section>
 
 </div>
@@ -343,155 +343,353 @@ Olga I. Vinogradova, Elena F. Silkina<span class="sep">·</span>    arXiv<span c
 
 <section class="section">
   <details class="backlog">
-    <summary>Backlog · 32 papers by category</summary>
+    <summary>Backlog · 80 papers by category</summary>
     <div class="backlog-cats">
+        <div class="backlog-cat" style="--cat: var(--c-function-design, var(--muted));">
+          <h4>Functional design: binders, therapeutics, sensors (10)</h4>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aeb2110" rel="noopener">A bifunctional actuator to correct loss-of-function deficits in cardiac voltage-gated sodium channels.</a>
+              <span class="r">bifunctional nanobody-deubiquitinase fusion restores NaV1.5 channel gating and trafficking</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.04.755611" rel="noopener">A deep learning-generated hASIC1a miniprotein inhibitor confers neuroprotection in stroke</a>
+              <span class="r">de novo miniprotein blocks ASIC1a, reduces infarct volume in stroke model</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.757469" rel="noopener">Sense-and-response to intracellular signaling via nucleocytoplasmic localization control of a synthetic transcription factor platform</a>
+              <span class="r">nucleocytoplasmic localization tags create modular synthetic TFs sensing diverse intracellular signals</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aej8942" rel="noopener">DNA nanodevice-engineered macrophages as living sensors for dual-mode in vivo monitoring of tumor-associated macrophage polarization.</a>
+              <span class="r">DNA origami nanodevice engineered into macrophages reports tumor-macrophage polarization in vivo</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.03.755986" rel="noopener">Design and characterization of peptide-responsive biosensors</a>
+              <span class="r">peptide-responsive transcription factors enable switch-like intracellular translation-readout circuits</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.04.756577" rel="noopener">Characterization of artificial riboswitches for Coxsackievirus B3 detection using machine learning</a>
+              <span class="r">ML model classifies riboswitch biosensor performance from RNA sequence and structure features</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1038/s41467-026-78428-6" rel="noopener">A co-evolved peptide-GPCR system senses host entry to drive fungal infection.</a>
+              <span class="r">crystal structure reveals cryptic peptide ligand release activating fungal GPCR during host sensing</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1038/s41589-026-02347-2" rel="noopener">Proteome-guided drug discovery maps and mitigates therapeutic degrader toxicity.</a>
+              <span class="r">proteomics-guided ML maps and mitigates hepatotoxicity mechanism of degraders</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.756687" rel="noopener">Repurposing dopamine D3 receptor fluorescent ligands for D2 receptor</a>
+              <span class="r">ML-assisted screening repurposes D3-receptor fluorescent ligands for D2-receptor binding</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.05.756761" rel="noopener">CD19 CAR Engineered T Regulatory Cells Promote Durable Immune Tolerance in Experimental Systemic Lupus Erythematosus</a>
+              <span class="r">CD19 CAR-Treg engineered via FOXP3 locus HDR promotes durable tolerance in lupus model</span>
+            </div>
+        </div>
+        <div class="backlog-cat" style="--cat: var(--c-enzyme, var(--muted));">
+          <h4>Enzyme design &amp; catalysis (10)</h4>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aeh3246" rel="noopener">Machine learning-assisted directed evolution of plant Rubisco.</a>
+              <span class="r">ESM-IF1-guided library design improves Rubisco carboxylation rate by 29%</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757560" rel="noopener">MINT: Predicting Enzyme-Cofactor Specificity by Multimodal Knowledge Transfer from Protein-Ligand Interactions</a>
+              <span class="r">multimodal transfer learning predicts enzyme-cofactor specificity, AUC 0.932</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.04.24.720615" rel="noopener">The quantum environment in cryptochrome enhances light absorption of FAD</a>
+              <span class="r">QM framework extended to 1,200 atoms reveals protein-enhanced FAD light absorption in cryptochrome</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.757362" rel="noopener">Photobiocatalytic Diastereo- and Enantioselective Synthesis of Non-Canonical Amino Acids Bearing Challenging Stereochemical Dyads and Triads</a>
+              <span class="r">directed evolution yields biocatalysts for stereodivergent noncanonical amino acid synthesis</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757671" rel="noopener">Structural Basis for Near Infrared Absorption and Noncanonical Photoisomerization in Neorhodopsin</a>
+              <span class="r">electrostatic tuning of chromophore pocket redirects neorhodopsin isomerization to noncanonical C7=C8</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.757487" rel="noopener">Structural Insights into the Expanded Substrate Scope of a Cysteine-Dependent Hydrolase from Rhodococcus opacus for Polyethylene, Polypropylene, and Polystyrene Biodegradation</a>
+              <span class="r">crystal structures reveal substrate-tunnel plasticity enabling broad plastic biodegradation</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.02.25.707755" rel="noopener">A base-modifying enzyme extends the range of anti-phage defense provided by DNA glycosylases</a>
+              <span class="r">crystal structure reveals Brig3 glycosylase flips 5hmC base out of DNA for phage defense</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757645" rel="noopener">Directed evolution of a thermostable family-A DNA polymerase into a reverse transcriptase for 2&#39;-modified RNA</a>
+              <span class="r">directed evolution converts DNA polymerase into reverse transcriptase for modified RNA</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757636" rel="noopener">Mechanistic Basis of Sulfo Transfer in a PAPS-Independent ArylSulfate SulfoTransferases Revealed by Crystallography and QM/MM Simulations</a>
+              <span class="r">crystallography and QM/MM reveal histidine cooperation in PAPS-independent sulfotransferase</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1038/s41467-026-77424-0" rel="noopener">PI3Kδ is selectively inhibited by roginolisib by stabilizing the C-terminal helix kα12.</a>
+              <span class="r">X-ray/MD/HDX reveal roginolisib locks PI3Kδ inactive by stabilizing helix kα12</span>
+            </div>
+        </div>
+        <div class="backlog-cat" style="--cat: var(--c-assembly, var(--muted));">
+          <h4>Self-assembly &amp; nanomaterials (10)</h4>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.7554/eLife.111124" rel="noopener">Role of desolvation on biomolecular liquid-liquid phase separation.</a>
+              <span class="r">desolvation-aware coarse-grained model reshapes LLPS phase diagram, fixes dense-phase overcompaction</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757509" rel="noopener">Defense-associated reverse transcriptases synthesize DNA in a telomerase-like manner</a>
+              <span class="r">cryo-EM reveals unprecedented 2:1 RT:ncRNA assembly with asymmetric catalytic activity</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757173" rel="noopener">Large-Scale Mutagenesis Identifies Sequence Changes That Bias Tau Toward CTE-like Aggregation</a>
+              <span class="r">saturation mutagenesis maps sequence network controlling tau amyloid fold selection</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.05.756799" rel="noopener">Blockiness as Determinant of Liquid Phase Formation by Polypeptide-Like Polymers in Stickers-Spacers Paradigm</a>
+              <span class="r">sequence blockiness of side-chain volumes tunes LLPS nucleation and connectivity</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.06.756102" rel="noopener">tRNA-derived second messengers confer bacterial immunity</a>
+              <span class="r">Cas13-generated tRNA-derived dinucleotides activate a membrane-disrupting multimeric pore complex</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757093" rel="noopener">Small-Molecule Inhibitors Allosterically Control Bruton&#39;s Tyrosine Kinase Assembly on the Membrane</a>
+              <span class="r">active-site inhibitors allosterically control Btk mesoscale self-assembly on membranes</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.02.756345" rel="noopener">Cross-linker binding strength influences actin assembly microstructure and myosin II driven remodeling</a>
+              <span class="r">programmable DNA cross-linker affinity controls actin bundling vs network microstructure</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aeg3842" rel="noopener">Packing-accelerated consecutive NIR excitation (PACE) enables high energy photocatalysis and antitumor immunity in vivo.</a>
+              <span class="r">self-assembling Ru nanoaggregates enable NIR-driven high-energy photocatalysis</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2025.12.06.692780" rel="noopener">Structural Basis of Human Kinetochore-Microtubule Coupling by the Ndc80 and Ska Complexes</a>
+              <span class="r">cryo-EM reveals phosphorylation-regulated Ndc80-Ska coupled assembly on microtubules</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.ael8266" rel="noopener">Erratum for the Research Article &#34;Microenvironment-driven transformable self-assembly nanoplatform enables spatiotemporal remodeling for rheumatoid arthritis therapy&#34; by C. Hu et al.</a>
+              <span class="r">abstract unavailable</span>
+            </div>
+        </div>
+        <div class="backlog-cat" style="--cat: var(--c-struct-pred, var(--muted));">
+          <h4>Structure prediction &amp; biomolecular representation (10)</h4>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.04.756538" rel="noopener">CHORUS: A proteome-scale atlas of membrane interaction interfaces constructed using cross-protein language model embeddings from sequences alone</a>
+              <span class="r">sequence-only PLM framework decodes membrane-protein interfaces, beats 18 methods</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757587" rel="noopener">Combining AlphaFold 3 with microscale thermophoresis for aptamer optimisation</a>
+              <span class="r">AlphaFold3 confidence scores don&#39;t correlate with aptamer-protein binding affinity</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2025.12.05.692009" rel="noopener">Sequence context decodes multi-state conformational heterogeneity from crystallographic B-factors</a>
+              <span class="r">fine-tuned protein language model decodes conformational heterogeneity from B-factors</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.05.756861" rel="noopener">Frustration Quenching and Network Topology of the Energy Landscape as Primary Determinants of Protein-Ligand Binding Pose Prediction by Deep Learning Models</a>
+              <span class="r">frustration-quenching metric explains why co-folding models fail at allosteric pockets</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.09.30.755750" rel="noopener">Position-wise Fold-Switch Prediction in Metamorphic Proteins: A Comparison of Handcrafted and Language Model Features</a>
+              <span class="r">position-wise classifiers predict fold-switching residues using PLM and handcrafted features</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://arxiv.org/abs/2610.13106v1" rel="noopener">Scaling RNA Foundation Models through Iterative Refinement</a>
+              <span class="r">RNA foundation model with learned iterative refinement raises fitness correlation</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1093/bioinformatics/btag762" rel="noopener">FunFOLD5: Combining Localised Templates and Structural Homology for Accurate Predictions of Biologically Relevant Protein-Ligand Interactions.</a>
+              <span class="r">localized template search improves protein-ligand binding-site and pose prediction</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.7554/eLife.109450" rel="noopener">The structural context of mutations in proteins predicts their effect on antibiotic resistance.</a>
+              <span class="r">3D clustering of resistance mutations across 1350 crystal and AlphaFold structures</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.757448" rel="noopener">STRUCTURAL AND MOLECULAR DYNAMICS ANALYSIS OF HUMAN β-DEFENSIN 1 VARIANTS REVEALS DISTINCT PERTURBATION SIGNATURES</a>
+              <span class="r">structural MD maps perturbation signatures of 93 human beta-defensin-1 missense variants</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1038/s41467-026-78496-8" rel="noopener">Recognition and mechanism of M. tuberculosis cell wall galactan transport.</a>
+              <span class="r">cryo-EM captures ATP-driven gate-helix movement during Mtb galactan ABC-transporter cycle</span>
+            </div>
+        </div>
         <div class="backlog-cat" style="--cat: var(--c-ml-method, var(--muted));">
           <h4>ML methodology (transferable) (10)</h4>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03202v1" rel="noopener">Contextual Flow Matching: Adaptive Step Selection in Flow Models for Efficient Visual Generation</a>
-              <span class="r">adaptive per-prompt step count for flow-matching inference speedup</span>
+              <a href="https://doi.org/10.64898/2026.10.05.755809" rel="noopener">Autonomous AI agents discover reverse transcriptases with tandem repeat arrays</a>
+              <span class="r">autonomous LLM agents surveyed 1.9B protein clusters, discovered a novel tandem-repeat RT family</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03483v1" rel="noopener">AREX: Affine-Residual Exponential Integrator for Few-Step Sampling in Flow Matching</a>
-              <span class="r">affine exponential integrator enables few-step sampling for flow matching</span>
+              <a href="https://arxiv.org/abs/2610.12848v1" rel="noopener">Reinforcement Learning via Fixed-point Flow Matching</a>
+              <span class="r">data-free fixed-point flow matching enables RL fine-tuning of flow policies</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03503v1" rel="noopener">Getting Your Guidance Weights Right in diffusion and flow-matching posterior sampling</a>
-              <span class="r">least-squares offline tuning of guidance weights in diffusion/flow posterior sampling</span>
+              <a href="https://arxiv.org/abs/2610.13834v1" rel="noopener">On the Design Space of Continuous Diffusion Language Models</a>
+              <span class="r">analyzes self-conditioning and embedding-geometry levers in continuous diffusion LMs</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.02665v1" rel="noopener">Large Language Continuous Diffusion Models</a>
-              <span class="r">continuous latent diffusion LM with steerable ODE/SDE trajectories</span>
+              <a href="https://arxiv.org/abs/2610.13614v1" rel="noopener">Some remarks on the connection between generative diffusion and optimal transport</a>
+              <span class="r">entropic-OT view explains mode-speciation transition in diffusion vs flow matching</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03071v1" rel="noopener">Learn Feasibility Once, Optimize All Objectives: Derivative-Free Diffusion Models for Chance-Constrained Programming</a>
-              <span class="r">frozen feasibility diffusion prior reused across objectives via Feynman-Kac correction</span>
+              <a href="https://arxiv.org/abs/2610.13369v1" rel="noopener">Opening the Black Box of Classifier-Free Guidance via Information Bottleneck</a>
+              <span class="r">information-bottleneck theory finds critical stage to activate classifier-free guidance</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.02663v1" rel="noopener">Generalization Properties of Score-matching Diffusion Models for Intrinsically Low-dimensional Data</a>
-              <span class="r">finite-sample generalization bounds for diffusion models on low-dim data</span>
+              <a href="https://arxiv.org/abs/2610.13690v1" rel="noopener">Transformer-based In-Context Score Operator Learning for Diffusion Models</a>
+              <span class="r">transformer learns in-context diffusion score operator, generalizes without retraining</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.02754v1" rel="noopener">Jumping up and down: Denoiser diffusion models for discrete ordinal data</a>
-              <span class="r">bidirectional denoiser diffusion family for discrete ordinal data like gene counts</span>
+              <a href="https://arxiv.org/abs/2610.13305v1" rel="noopener">MORAD: Reinforcement Learning with Multi-Objective Rewards for RNA Inverse Design</a>
+              <span class="r">online RL trains shared backbone-conditioned policy for RNA inverse design across six objectives</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aeh8819" rel="noopener">GenAI-Net: A generative AI framework for automated biomolecular network design.</a>
-              <span class="r">generative AI couples reaction proposal and simulation to design CRNs from specs</span>
+              <a href="https://arxiv.org/abs/2610.13812v1" rel="noopener">Spanning Diffusion and Flow-based Posterior Sampling via Exact Gaussian Conditioning</a>
+              <span class="r">exact Gaussian-conditioning Kalman update generalizes plug-and-play guided sampling across priors</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03396v1" rel="noopener">A Unified Framework for Bayesian Data Assimilation with Generative Models and Observation Interpolants</a>
-              <span class="r">unifies diffusion/flow posterior samplers for observation-conditioned assimilation</span>
+              <a href="https://doi.org/10.64898/2026.06.25.734678" rel="noopener">AI-guided discovery for low-resource peptide engineering using evolutionary scale modeling</a>
+              <span class="r">ESM2 embeddings plus Gaussian-process active learning for low-data peptide engineering</span>
             </div>
             <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.02780v1" rel="noopener">Controlling Polar Exposure to Delay Memorization in Diffusion Models</a>
-              <span class="r">controller delays diffusion model memorization via polar-update geometry</span>
+              <a href="https://arxiv.org/abs/2610.13786v1" rel="noopener">Your Discrete Graph Diffusion Model is Secretly Memorizing</a>
+              <span class="r">discrete graph diffusion models show conditional memorization of training graphs</span>
             </div>
         </div>
         <div class="backlog-cat" style="--cat: var(--c-wetlab-method, var(--muted));">
           <h4>Experimental methods &amp; validation (10)</h4>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755785" rel="noopener">Heterologous engineering of receptors using OrthoRep (HERO) for directed evolution of GPCRs in yeast</a>
-              <span class="r">OrthoRep continuous evolution applied to GPCR biosensors in yeast</span>
+              <a href="https://doi.org/10.64898/2026.10.03.756391" rel="noopener">Ab initio CryoEM maps minimizing preferred orientation problems in heterogeneous mixtures: ReconSIREN</a>
+              <span class="r">deep learning ab initio cryo-EM framework minimizes preferred-orientation artifacts in heterogeneous data</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1038/s41589-026-02338-3" rel="noopener">Transcription remodeling and stalling by cisplatin-induced interstrand crosslinks.</a>
-              <span class="r">cryo-EM of Pol II processing cisplatin DNA crosslinks, unrelated field</span>
+              <a href="https://doi.org/10.64898/2026.10.07.756995" rel="noopener">Structural thermodynamics by cryo-EM resolves minute energy differences in heterogeneous protein complexes.</a>
+              <span class="r">cryo-EM classification plus thermodynamic modeling resolves kT-scale pairwise interaction energies</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1038/s41594-026-01895-4" rel="noopener">Single-molecule chromatin tracing reveals a diversity of megabase heterochromatin domains.</a>
-              <span class="r">single-molecule tracing classifies C. elegans heterochromatin domain types</span>
+              <a href="https://doi.org/10.64898/2026.10.07.757472" rel="noopener">CryoFAST: A Fab-Aided Cryo-EM Workflow for High-Resolution Structure Determination of Sub-50-kDa Protein Targets</a>
+              <span class="r">Fab-fiducial workflow enables cryo-EM structures of sub-50-kDa drug targets</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755414" rel="noopener">Rank Normalization Enables Cross Pathway Comparison in Degradation Resolved Proteome Turnover Analysis</a>
-              <span class="r">rank normalization compares UPS vs autophagy protein turnover pathways</span>
+              <a href="https://doi.org/10.64898/2026.10.08.757607" rel="noopener">Single-molecule reaction chambers reveal intramolecular protein kinase activation</a>
+              <span class="r">DNA-origami single-molecule chambers resolve cis vs trans kinase autophosphorylation</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aef8456" rel="noopener">Structural and kinetic mechanisms of state-dependent potassium channel inhibition.</a>
-              <span class="r">cryo-EM/MD of KCNQ1 channel state-dependent drug inhibition, unrelated</span>
+              <a href="https://doi.org/10.64898/2026.10.09.757932" rel="noopener">Autofocusing molecular simulations for integrative structural biology of broad conformational ensembles</a>
+              <span class="r">automated force-field finetuning satisfies 82 NMR order parameters simultaneously</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aeg8897" rel="noopener">Trans-Eurasian steppe herder and barley farmer migrations shaped paternal genomic dynamics in Northwest China and Hui evolution.</a>
-              <span class="r">Y-chromosome phylogeny of Eurasian steppe and farmer migrations, unrelated</span>
+              <a href="https://doi.org/10.64898/2026.10.08.757488" rel="noopener">Purification-free cryo-EM reveals endogenous assemblies from minute tardigrade samples</a>
+              <span class="r">purification-free cryo-EM with long-read cDNA assignment resolves assemblies from crude extract</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aeg6567" rel="noopener">Systematic identification of p11 as a signaling modulator across the GPCRome.</a>
-              <span class="r">p11 scaffold protein modulates GPCR signaling, unrelated field</span>
+              <a href="https://doi.org/10.64898/2026.10.07.756993" rel="noopener">SCKAnalyzer: A Web Tool for Single-Cycle Kinetics Analysis and Simulation</a>
+              <span class="r">free web tool fits single-cycle BLI/SPR kinetics data without surface regeneration</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aeh5939" rel="noopener">A NIR-II AIEgen with superior fluorescence and photothermal performance for precision theranostics.</a>
-              <span class="r">NIR-II AIEgen small-molecule dye for phototheranostic imaging, unrelated</span>
+              <a href="https://doi.org/10.64898/2026.10.09.757888" rel="noopener">A modular DNA toolkit for single-molecule biophysics</a>
+              <span class="r">modular DNA toolkit builds up to 100kb user-defined sequences for single-molecule assays</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755716" rel="noopener">Taccalonolide AJ uncouples tubulin GTP hydrolysis from microtubule depolymerization</a>
-              <span class="r">microtubule-stabilizing natural product mechanism, unrelated field</span>
+              <a href="https://doi.org/10.1101/2025.01.10.632389" rel="noopener">Tracking Without Linking or Localization: Single-Photon Tracking</a>
+              <span class="r">single-photon framework tracks fast biomolecules directly from binary image stacks</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755740" rel="noopener">Molecular Determinants of G Protein Subtype-Specific Coupling to the Angiotensin II Type 1 Receptor</a>
-              <span class="r">structural basis of AT1R G-protein subtype selectivity, unrelated</span>
-            </div>
-        </div>
-        <div class="backlog-cat" style="--cat: var(--c-struct-pred, var(--muted));">
-          <h4>Structure prediction &amp; biomolecular representation (4)</h4>
-            <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.07.30.741616" rel="noopener">Homology-Based Variant-Effect Predictors Break Down on Cytochrome P450 Pharmacogenes</a>
-              <span class="r">AlphaMissense tracks abundance not activity, fails on CYP2C9 deep mutational scan</span>
-            </div>
-            <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.27.753847" rel="noopener">Downstream mRNA Secondary Structure, Not Codon Elongation Supply, Coordinates Co-Translational Protein Folding Across the Human Ribosomal Exit Tunnel</a>
-              <span class="r">mRNA secondary structure, not codon supply, paces co-translational folding</span>
-            </div>
-            <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aef0670" rel="noopener">DeCoRE: A computational method to resolve RNA structural heterogeneity from RNA structure probing data by direct RNA sequencing.</a>
-              <span class="r">direct RNA sequencing deconvolves per-transcript structural ensembles at single-nt resolution</span>
-            </div>
-            <div class="backlog-row">
-              <a href="https://arxiv.org/abs/2610.03029v1" rel="noopener">SoftGene: Protein Language Model-Enhanced Soft Prompting for Interpretable Gene Set Annotation</a>
-              <span class="r">ESM-based soft prompting for LLM gene-set annotation, not design</span>
+              <a href="https://doi.org/10.1126/sciadv.aei0096" rel="noopener">Atomic structure and dynamics of the mechanosensitive channel MscL from Escherichia coli by cryo-EM and solid-state NMR.</a>
+              <span class="r">cryo-EM and solid-state NMR together resolve MscL gating intermediate dynamics</span>
             </div>
         </div>
-        <div class="backlog-cat" style="--cat: var(--c-enzyme, var(--muted));">
-          <h4>Enzyme design &amp; catalysis (3)</h4>
+        <div class="backlog-cat" style="--cat: var(--c-immunogen, var(--muted));">
+          <h4>Immunogen engineering &amp; vaccines (8)</h4>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755852" rel="noopener">Synthetic inhibitors of pregnancy-associated plasma protein-A regulate IGF-1 signaling in vitro and in vivo</a>
-              <span class="r">phosphinate-based peptidomimetic inhibitors block PAPP-A active site, cryo-EM solved</span>
+              <a href="https://doi.org/10.1101/2025.04.26.649701" rel="noopener">Immunogenicity and Structure of a Stabilized HIV -1 clade C Env from a Pediatric Elite neutralizer in Complex with an Autologous bnAb</a>
+              <span class="r">ferritin-NP and SOSIP immunogens from pediatric elite-neutralizer Env, cryo-EM with bnAb</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.29.754712" rel="noopener">KPB82 potently and selectively inhibits ACER2 and protects tumor and primary cells from doxorubicin-induced cytotoxicity</a>
-              <span class="r">small-molecule ACER2 inhibitor, AF3 used only for incidental modeling</span>
+              <a href="https://doi.org/10.1016/j.immuni.2026.09.013" rel="noopener">Lymphatic constraint of germinal centers optimizes protective antibody responses.</a>
+              <span class="r">lymphatic remodeling constrains germinal-center size to optimize antibody responses</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aej1532" rel="noopener">Heterogeneous hydroformylation of propene over surface rhodium coordinated by immobilized multi-N ligands.</a>
-              <span class="r">heterogeneous Rh catalyst for propene hydroformylation, unrelated chemistry</span>
-            </div>
-        </div>
-        <div class="backlog-cat" style="--cat: var(--c-function-design, var(--muted));">
-          <h4>Functional design: binders, therapeutics, sensors (2)</h4>
-            <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.29.755403" rel="noopener">Engineered CTLA-4 targeting chimeras for targeted protein degradation and immune synapse reprogramming</a>
-              <span class="r">CD80-anti-PD-L1 chimera hijacks CTLA-4 trans-endocytosis to degrade tumor PD-L1</span>
+              <a href="https://doi.org/10.1128/jvi.00848-26" rel="noopener">A multivalent mRNA-lipid nanoparticle vaccine containing eight hemagglutinin antigens elicited broad neutralizing antibody responses and protected against influenza A virus challenge in swine.</a>
+              <span class="r">8-HA multivalent mRNA-LNP vaccine protects pigs against influenza challenge</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755738" rel="noopener">Angiotensin (1-7)-based Proteomimetic Polymers as Topicals for the Remediation and Repair of the Cornea following Injury</a>
-              <span class="r">norleucine Ang-(1-7) peptide-brush polymer treats corneal mustard-gas injury</span>
+              <a href="https://doi.org/10.64898/2026.10.04.756542" rel="noopener">AI-Driven Design of Next-Generation Immunoinformatics Multi-Epitope Subunit Vaccine Targeting the Most Virulent Mpox Proteome: A Structural and Kinetic Validation Framework</a>
+              <span class="r">in-silico multi-epitope Mpox vaccine design pipeline, no experimental validation</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757815" rel="noopener">HIV remodels germinal centers through T follicular helper cell loss</a>
+              <span class="r">HIV depletes germinal-center Tfh cells, altering GC architecture independent of CD4 count</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1101/2025.08.27.672737" rel="noopener">BLIMP1 shapes germinal center B cell clonal diversity by gating chromatin accessibility during light-to-dark zone transition</a>
+              <span class="r">Blimp1 restrains germinal-center clonal dominance by gating BCR-signaling chromatin accessibility</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aeh6480" rel="noopener">Long-term immunoprophylaxis by TLR9 ligand mediates macrophage-ILC cross-talk against respiratory viral infection.</a>
+              <span class="r">intranasal CpG-schizophyllan complex gives 100-day innate antiviral protection via macrophage-ILC crosstalk</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.757254" rel="noopener">In silico subtractive genomics and reverse vaccinology approach reveal outer membrane proteins OMP47 and LptD as dual-purpose drug and vaccine targets in Pasteurella multocida Pm70</a>
+              <span class="r">in-silico subtractive genomics identifies vaccine/drug targets, no experimental validation</span>
             </div>
         </div>
         <div class="backlog-cat" style="--cat: var(--c-delivery, var(--muted));">
-          <h4>Delivery, virology &amp; cell entry (2)</h4>
+          <h4>Delivery, virology &amp; cell entry (7)</h4>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aeg3270" rel="noopener">Targeting the ENO1 metabolic checkpoint via microenvironment-responsive nanotherapeutics promotes postinfarction cardiac repair.</a>
-              <span class="r">acid-responsive nanocarrier delivers siENO1 to post-infarct macrophages</span>
+              <a href="https://doi.org/10.64898/2026.10.08.757482" rel="noopener">One Scaffold, Many Targets: Fully Modified RNA Nanostructures for Multi-Gene Silencing Beyond the Liver</a>
+              <span class="r">fully modified vehicle-free RNA nanostructures enable multi-gene silencing beyond the liver</span>
             </div>
             <div class="backlog-row">
-              <a href="https://doi.org/10.1126/sciadv.aei3417" rel="noopener">A forward genetics platform for papillomavirus research.</a>
-              <span class="r">forward genetics platform links HPV capsid genotype to phenotype</span>
+              <a href="https://doi.org/10.64898/2026.10.07.757025" rel="noopener">Physical Basis Of pKa Shift For Ionizable Lipids In An LNP-like Environment</a>
+              <span class="r">MD free-energy calculations reveal composition-dependent pKa shifts in LNP-like lipids</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.09.30.755793" rel="noopener">Predicting viral host range for reverse zoonosis surveillance</a>
+              <span class="r">deep learning plus yeast-display RBD library predicts viral reverse-zoonotic host range</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.07.756773" rel="noopener">A minimally modified AAV9 variant (AAV9fyhr) for enhanced CNS gene delivery by intra-CSF administration.</a>
+              <span class="r">directed evolution yields AAV9 variant with enhanced CNS delivery via CSF</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.04.02.715584" rel="noopener">Bovine H5N1 influenza viruses have adapted to more efficiently use receptors abundant in cattle</a>
+              <span class="r">H5N1 HA mutations enable bovine NeuGc-glycan receptor engagement in dairy cattle</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.08.757771" rel="noopener">Rational Design of 5&#39; UTRs for Optimized mRNA Expression and Cost-Effective, Rapid Analysis of Capped mRNA</a>
+              <span class="r">engineered 5&#39; UTR enables probe-free mRNA capping and poly(A) QC assay</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.1126/sciadv.aeh0494" rel="noopener">Senescent tumor cell membrane-based &#34;time engine&#34; nanosystem amplifies endoplasmic reticulum targeting for metastasis blockade.</a>
+              <span class="r">senescent-cell-membrane-coated nanoparticles sequentially amplify ER-targeted drug delivery</span>
             </div>
         </div>
-        <div class="backlog-cat" style="--cat: var(--c-assembly, var(--muted));">
-          <h4>Self-assembly &amp; nanomaterials (1)</h4>
+        <div class="backlog-cat" style="--cat: var(--c-design-method, var(--muted));">
+          <h4>De novo design methodology (5)</h4>
             <div class="backlog-row">
-              <a href="https://doi.org/10.64898/2026.09.30.755723" rel="noopener">A bacteriophage split DNA polymerase incorporates a sliding clamp-derived processivity subunit</a>
-              <span class="r">cryo-EM of phage split DNA polymerase with clamp-derived subunit</span>
+              <a href="https://arxiv.org/abs/2610.13844v1" rel="noopener">Inference-Time Steering Across Scaffolds and Epitopes for Sample-Efficient De Novo Nanobody Design</a>
+              <span class="r">dynamic compute allocation across scaffolds/epitopes boosts nanobody design yield 5x</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.04.753929" rel="noopener">Benchmarking interface confidence as a selection criterion for computational nanobody design against survivin&#39;s BIR-domain groove</a>
+              <span class="r">interface-confidence filtering shows no association with actual nanobody epitope engagement</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.09.757799" rel="noopener">PeTFlow: Flow-Matching Based All-Atom Peptide Design through Side-Chain State Tokenization</a>
+              <span class="r">pocket-conditioned flow matching co-designs peptide sequence, conformation, interface via side-chain tokens</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.10.757878" rel="noopener">Buried Ion-Pairs Reshape Folding Pathways of Artificial Proteins</a>
+              <span class="r">buried ion-pairs in de novo helical bundles reshape folding kinetic barriers</span>
+            </div>
+            <div class="backlog-row">
+              <a href="https://doi.org/10.64898/2026.10.05.756260" rel="noopener">TopFor: Automated Preparation of AMBER-Compatible Parameters for Noncanonical Amino Acids in Peptides</a>
+              <span class="r">automates AMBER force-field parameterization for noncanonical-amino-acid peptide MD</span>
             </div>
         </div>
     </div>
@@ -499,16 +697,16 @@ Olga I. Vinogradova, Elena F. Silkina<span class="sep">·</span>    arXiv<span c
 </section>
 
 <div class="run-record">
-  <span><b>394</b> fetched</span><span class="sep">→</span>
-  <span><b>388</b> new</span><span class="sep">→</span>
-  <span><b>74</b> screened</span><span class="sep">→</span>
+  <span><b>609</b> fetched</span><span class="sep">→</span>
+  <span><b>602</b> new</span><span class="sep">→</span>
+  <span><b>176</b> screened</span><span class="sep">→</span>
   <span><b>10</b> picks</span>
-    <span>arxiv 236</span>
-    <span class="warn">biorxiv 46 low</span>
-    <span class="warn">medrxiv 11 low</span>
+    <span>arxiv 195</span>
+    <span class="warn">biorxiv 265 low</span>
+    <span>medrxiv 22</span>
     <span class="bad">openalex 0 failed</span>
-    <span class="warn">pubmed 101 low</span>
-  <span>5 Oct 08:15 UTC</span>
+    <span class="warn">pubmed 127 low</span>
+  <span>12 Oct 08:29 UTC</span>
 </div>
 
 
