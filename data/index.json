@@ -1,7 +1,34 @@
 {
-  "generated_at": "2026-10-19T08:19:31.674720+00:00",
-  "latest": "2026-W43",
+  "generated_at": "2026-10-26T08:28:31.187993+00:00",
+  "latest": "2026-W44",
   "weeks": [
+    {
+      "week": "2026-W44",
+      "from": "2026-10-23",
+      "to": "2026-11-01",
+      "generated_at": "2026-10-26T08:28:31.147179+00:00",
+      "degraded": true,
+      "stats": {
+        "fetched": 510,
+        "new": 503,
+        "shortlisted": 144,
+        "scored": 144,
+        "rejected": 359
+      },
+      "front_page": 10,
+      "backlog": 49,
+      "categories": [
+        "assembly",
+        "delivery",
+        "design-method",
+        "enzyme",
+        "function-design",
+        "immunogen",
+        "ml-method",
+        "struct-pred",
+        "wetlab-method"
+      ]
+    },
     {
       "week": "2026-W43",
       "from": "2026-10-16",
